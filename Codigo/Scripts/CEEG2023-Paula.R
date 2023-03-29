@@ -21,6 +21,7 @@ library(packcircles)
 library(ggplot2)
 
 # Rutas del directorio de bases y gráficas
+directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
 directorioBases <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\LaTeX\\Bases\\"
 directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\LaTeX\\Graficas\\"
 

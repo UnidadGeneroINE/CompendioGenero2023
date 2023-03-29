@@ -1,0 +1,1877 @@
+\documentclass[11pt,twoside]{book}
+%Versión 4.0
+% paquetes-----------------------------------------------------------------------------------------
+\usepackage{lipsum} % para pruebas
+\usepackage{pdftexcmds} %Para switch case
+\usepackage[
+paperwidth = 8.5in,
+paperheight = 11in,
+left = 1.25in,
+right = 0.75in,
+top = 0.950in,
+bottom = 0.925in
+]{geometry}
+\usepackage{varwidth}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{setspace} 
+\usepackage{xltxtra}
+\usepackage{enumitem}
+\usepackage{xifthen}
+\usepackage{xargs}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{bigstrut}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{tocloft}
+\usepackage[hidelinks, verbose]{hyperref}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{changepage}
+\usepackage[skins, breakable, hooks]{tcolorbox}
+\usepackage[input-decimal-markers={.}, input-ignore={,}, group-separator={,}]{siunitx}
+\usepackage{polyglossia}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usepackage{array}
+% \usepackage{fontspec} % se carga en xltxtra
+% \usepackage{fixltx2e} % fixltx2e is not required with releases after 2015. All fixes are now in the LaTeX kernel.
+% FIN-paquetes-------------------------------------------------------------------------------------
+\setlength{\columnsep}{1.1cm} % estaba luego de multicol
+\strictpagecheck % algo de changepage
+\setmainlanguage{spanish} % de polyglossia
+% leer pag 4 https://mirrors.ucr.ac.cr/CTAN/macros/latex/required/tools/array.pdf
+% nuevos tipos de columnas
+\newcolumntype{x}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{g}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{q}[1]{>{\raggedright\arraybackslash}p{#1}}
+% Tipo de letra
+\usepackage[abspath]{currfile}
+\setmainfont[
+	Path=\currfileabsdir,
+	BoldFont = Fuentes/OpenSans-CondBold.ttf ,
+	ItalicFont = Fuentes/OpenSans-CondLightItalic.ttf ,
+	BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
+]{OpenSans-CondLight.ttf}
+\newfontfamily\Bold{Open Sans Condensed Bold}
+\newfontfamily\Sans{Open Sans}
+\newfontfamily\SansBold{Open Sans Bold}
+\newfontfamily\Italic{Open Sans Condensed Light Italic}
+\newfontfamily\Logos{Latin Modern Roman}
+\newfontfamily\Cinzel{Open Sans}
+% diagramas de tikz
+\tikzset{
+    max width/.style args={#1}{
+        execute at begin node={\begin{varwidth}{#1}},
+        execute at end node={\end{varwidth}}
+    }
+}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [thick,->,>=stealth, to path={-| (\tikztotarget)}]
+\tikzstyle{iniciofin} = [rectangle, minimum width=2cm, minimum height=0.7cm, text centered, draw=black, fill=blue!30, rounded corners]
+\tikzstyle{process} = [rectangle, minimum width=3.5cm, minimum height=2cm, text centered, draw=black, max width=3.5cm]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{aux} = [fill=white,inner sep=0,outer sep=0]
+\tikzstyle{diagrama} = [node distance=4cm, auto,scale=0.7, every node/.style={scale=0.7}]
+
+% Estilo de página en blanco en el índice
+\newcommand{\blank}{\addtocontents{toc}{\protect\thispagestyle{empty}}}
+
+%título y fuente
+\newcommand{\titulodoc}{Nombre del documento}
+\newcommand{\lafuente}{Estadísticas INE}
+
+\newcounter{Cuadro}[chapter]
+\renewcommand{\theCuadro}{\thechapter.\arabic{Cuadro}}
+
+\newcommand{\titulocuadro}[1]{\addtocounter{Cuadro}{1}
+{\Bold\color{color1}{\normalsize Cuadro \theCuadro $\,-$  #1 }}
+}
+
+%%%%%%%%%%% Diseño global del documento
+%	\setlength{\headsep}{0pt}
+%	\setlength{\footskip}{46pt}
+\setlength{\parindent}{1.5em}		%sangría
+\setlength{\parskip}{2ex}		%separación entre párrafos  
+
+%Distancias
+\newlength{\cuadri} 
+\setlength{\cuadri}{0.125in}
+
+%Formato de contenidos
+\setlength{\cftbeforetoctitleskip}{0em}
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} 
+
+\makeatletter
+\renewcommand*\l@subsection{\@dottedtocline{2}{5.2em}{3.2em}}
+\makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+\cftsetpnumwidth{2\cuadri}
+\cftsetrmarg{8\cuadri}
+\renewcommand{\cftsecnumwidth}{2.5\cuadri}
+\renewcommand{\cftchapnumwidth}{2\cuadri}
+\renewcommand{\cftsecindent}{2\cuadri}
+
+%Colores base del documento
+\definecolor{color1}{rgb}{0,0,0} % -Negro
+%\definecolor{color2}{rgb}{0.56,0.36,0.65} %Debe ir en porcentaje de rgb (i.e. decimal) - morado rosadón
+\definecolor{color2}{rgb}{0.45,0.44,0.78} % - Lila
+%\definecolor{color2}{rgb}{0.09,0.47,0.27} % - Verde feminista
+\definecolor{color3}{rgb}{0.2,0.2,0.5} %Debe ir en porcentaje de rgb (i.e. decimal) - Morado oscuro
+
+%Para que las páginas en blanco no estén numeradas
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{
+\clearpage
+{\pagestyle{empty}\origdoublepage}
+}
+\let\cleardoublepage\clearemptydoublepage
+
+%%%%%%%% Llamadas y notas al pie
+\makeatletter
+\newcommand{\markerspace}{\@ifnextchar.
+{$\!$}{\@ifnextchar,
+    {$\!$}{\@ifnextchar;
+        {$\!$}{\@ifnextchar:
+            {$\!$}{$\ $}
+        }
+    }
+}}
+\makeatother
+
+\newcounter{numllamada}
+\newcounter{numtextollamada}
+\setcounter{numllamada}{0}
+\setcounter{numtextollamada}{0}
+
+\newcommand{\llamada}[1][\thenumllamada]{
+	\stepcounter{numllamada}
+	\begingroup
+	\setcounter{mpfootnote}{#1}
+	\renewcommand\thefootnote\thempfootnote$\hspace{0.2ex}$\footnotemark
+	\endgroup
+	\markerspace
+}
+
+\newcommand{\notita}[2][\thenumtextollamada]{
+\stepcounter{numtextollamada}
+\stepcounter{numllamada}
+$\hspace{0.2ex}$
+\footnote[#1]{#2}
+}
+
+\newcommand{\textollamada}[2][\thenumtextollamada]{
+\ifthenelse{\equal{#1}{*}}
+{
+\begingroup
+\renewcommand\thefootnote\thempfootnote\footnotetext[0]{#2\\[-1.7ex]}
+\endgroup
+}{
+\stepcounter{numtextollamada}
+\begingroup
+\renewcommand\thefootnote\thempfootnote\footnotetext[#1]{#2}
+\endgroup
+}}
+
+%redefinición de footnote
+\newlength{\footnoterulewidth}
+\setlength{\footnoterulewidth}{2.5cm}
+\newlength{\footnoteruleheight}
+\setlength{\footnoteruleheight}{.4pt} 
+\makeatletter
+\renewcommand{\footnoterule}{
+	\kern -3pt
+	\color{color2}
+	\hrule width 
+	\footnoterulewidth height 
+	\footnoteruleheight
+	\kern
+	\dimexpr 3pt - \footnoteruleheight \relax
+} 
+\makeatother
+
+\makeatletter
+\renewcommand\@makefntext[1]{
+	\noindent
+	\makebox[1em][r]{\scriptsize\@makefnmark}
+	\scriptsize#1
+}
+\makeatother
+
+%%%%%%%%%%% tablas
+\LTcapwidth=1.234\textwidth
+\setlength{\arrayrulewidth}{0.8pt}
+\arrayrulecolor{color2}
+
+% Definición del comando cajita
+
+\newtcolorbox{cajita-arriba}{
+	width = 52\cuadri,
+	height = 35\cuadri,
+	enlarge left by = 0pt,
+	enlarge top by = 1\cuadri,
+	enlarge bottom by = 2\cuadri,
+	nobeforeafter,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	right = 0pt,
+	bottom = 0pt,
+	top = -3pt,
+	arc = 0pt,
+	boxrule = 0pt
+}
+
+\newtcolorbox{cajita-abajo}{
+	width = 52\cuadri,
+	height = 35\cuadri,
+	enlarge top by = 0pt,
+	enlarge left by = 0pt,
+	enlarge bottom by = -2\cuadri,
+	nobeforeafter,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	right = 0pt,
+	bottom = 0pt,
+	top = -3pt,
+	arc = 0pt,
+	boxrule = 0pt
+}
+
+\newtcolorbox{cajota-unica}{
+	width = 52\cuadri,
+	height = 72\cuadri,
+	enlarge left by = 0pt,
+	enlarge top by  = 1\cuadri,
+	enlarge bottom by = -2\cuadri,
+	nobeforeafter,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	right = 0pt,
+	bottom =  0pt,
+	top = -3pt,
+	arc = 0pt,
+	boxrule = 0pt
+}
+
+\newtcolorbox{descripcion-cajita}{
+	width = 18\cuadri,
+	height = 30.8\cuadri,
+	nobeforeafter,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	right = -3pt,
+	bottom = -3pt,
+	top = -8pt,
+	arc = 0pt,
+	boxrule = 0pt,
+	enlarge bottom by = -29.78\cuadri
+}
+
+\newtcolorbox{grafica-cajita}{
+	width = 32\cuadri,
+	height = 30.8\cuadri,
+	nobeforeafter,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	right = -3pt,
+	bottom = -3pt,
+	top = -2pt,
+	arc = 0pt,
+	boxrule = 0pt,
+	enlarge bottom by = -29.78\cuadri
+}
+% Cajas para fondos de capítulo y encabezado
+\newtcolorbox{fondo-capitulo}{
+	width = 8.5in,
+	height = 11in,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/Capitulo_CEEG_2022.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge left by=-1.475in,
+	enlarge top by = -0.95in,
+	enlarge bottom by = -20\cuadri,
+	boxrule = 0pt,
+	colframe = white,
+	left = -3pt,
+	bottom = -1pt,
+	top = 8\cuadri,
+	right = -3pt,
+	arc = 0pt
+}
+
+% Cajas para agregar ODS
+
+
+
+\newcommand{\cajitaODS}[1]{%
+	\ifthenelse{ \equal{#1}{1} }{%
+			\begin{tcolorbox}[
+			width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods1.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}%
+	\ifthenelse{\equal{#1}{2}}{%
+			\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods2.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{3}}{%
+			\begin{tcolorbox}[
+			width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods3.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{4}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods4.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{5}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods5.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{6}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods6.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{7}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods7.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+		\ifthenelse{\equal{#1}{8}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods8.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{9}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods9.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{10}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods10.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{11}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods11.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{12}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods12.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{13}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods13.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{14}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods14.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{15}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods15.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{16}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods16.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+			\ifthenelse{\equal{#1}{17}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods17.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = 0.01in,
+			enlarge bottom by = -1.5cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			left = -3pt,
+			bottom = -5in,
+			top = -10\cuadri,
+			right = -3pt,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+}
+
+\newcommand{\cajitaODSArriba}[1]{%
+				\ifthenelse{\equal{#1}{1}}{%
+				\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods1.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{2}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods2.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+					\ifthenelse{\equal{#1}{3}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods3.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{4}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods4.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{5}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods5.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{6}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods6.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{7}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods7.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{8}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods8.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{9}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods9.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{10}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods10.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{11}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods11.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{12}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods12.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{13}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods13.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{14}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods14.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{15}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods15.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{16}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods16.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+	
+					\ifthenelse{\equal{#1}{17}}{%
+		\begin{tcolorbox}[
+			width = 1.5cm,
+			height = 1.5cm,
+			skin = enhancedmiddle, 
+			nobeforeafter,
+			watermark graphics = Plantilla/ods17.pdf,
+			watermark opacity = 1.0,
+			watermark overzoom = 1.0,
+			enlarge top by = -5mm,
+			enlarge bottom by = -1cm,
+			boxrule = 0pt,
+			colframe = white,
+			colback = white,
+			arc = 0pt]
+		\end{tcolorbox}	
+	}%
+	{}
+
+
+}
+
+
+\newtcolorbox{parte-toc}{
+	width = 52\cuadri,
+	enlarge left by = 0pt,
+	enlarge top by = 0\cuadri,
+	enlarge bottom by = 0\cuadri,
+	nobeforeafter,
+	colframe = color1!90!black,
+	colback = white,
+	left = 3pt,
+	right = 0pt,
+	bottom = 0pt,
+	top = 0pt,
+	arc = 0pt,
+	boxrule = 0pt,
+	leftrule = 4pt
+}
+
+\newtcolorbox{fondo-parte}{
+	width=8.5in,
+	height=11in,
+	skin=enhancedmiddle,
+	nobeforeafter,
+	watermark graphics=Plantilla/parte.pdf,
+	watermark opacity=1.0,
+	watermark overzoom=1.0,
+	enlarge left by=-1.455in,
+	enlarge top by=-0.95in, 
+	enlarge bottom by=-20\cuadri,
+	boxrule=0pt,
+	colframe=white,
+	left=-3pt,
+	bottom=-1pt,
+	top=8\cuadri,
+	right=-3pt,
+	arc=0pt
+}
+
+\newtcolorbox{fondo-capitulo-no-descripcion}{
+	width=8.5in,
+	height=11in,
+	skin=enhancedmiddle,
+	nobeforeafter,
+	watermark graphics=Plantilla/Apendice_CEEG_2022.pdf,
+	watermark opacity=1.0,
+	watermark overzoom=1.0,
+	enlarge left by=-1.475in,
+	enlarge top by=-0.95in,
+	enlarge bottom by=-20\cuadri,
+	boxrule=0pt,
+	colframe=white,
+	left=-3pt,
+	bottom=-1pt,
+	top=8\cuadri,
+	right=-3pt,
+	arc=0pt
+}
+
+\newtcolorbox{numcapitulo}{
+	height=1.2in,
+	width=1.12in,
+	enlarge top by= -1.3in,
+	enlarge bottom by=-0.47in,
+	boxrule=3pt,arc=3pt,
+	colframe=white,
+	colback=white,
+	right=2pt,
+	left=3pt,
+	top=14pt,
+	bottom=2pt
+}
+
+\newtcolorbox{encabezadoimpar}{
+	width=8.5in,
+	height=0.86in,
+	skin=enhancedmiddle,
+	nobeforeafter,
+	watermark graphics=Plantilla/ai_Cintillo_Derecha_DCE.pdf,
+%	watermark opacity=1.0,
+	watermark overzoom=1.0,
+	enlarge left by=-1.25in,
+	enlarge top by=-0.45in,
+	enlarge bottom by=3\cuadri,
+	boxrule=0pt, colframe=white,
+	left=0.71in,
+	bottom=-1pt,
+	top=2.5\cuadri,
+	right=0.71in,
+	arc=0pt
+}
+
+\newtcolorbox{encabezadopar}{
+	width=8.5in,
+	height=0.86in,
+	skin=enhancedmiddle,
+	nobeforeafter,
+	watermark graphics=Plantilla/ai_Cintillo_izquierda_DCE.pdf,
+	watermark opacity=1.0,
+	watermark overzoom=1.0,
+	enlarge left by=-0.75in,
+	enlarge top by=-0.45in,
+	enlarge bottom by=3\cuadri,
+	boxrule=0pt,
+	colframe=white,
+	left=0.71in,
+	bottom=-1pt,
+	top=2.5\cuadri,
+	right=0.71in,
+	arc=0pt
+}
+
+\newtcbox{numpag}{
+	colback=color1,
+	colframe=color1,
+	arc=0pt,
+	top=3pt,
+	bottom=2pt,
+	left=3pt,
+	right=3pt,
+	nobeforeafter,
+	enlarge top by=-0.125in
+}
+
+%%%%%%%%%%% Encabezado y pie de página
+\fancypagestyle{estandar}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead[CO]{
+		\begin{encabezadoimpar}
+		\end{encabezadoimpar}
+	}
+	\fancyfoot[RO]{
+		\color{color3}{\capituloencabezado \ \ }
+		\color{color3}
+		\raisebox{0.5mm}{$\mid$}
+		\color{color3}
+		\textbf{ \ \ \ \thepage}
+	}
+	\fancyhead[CE]{
+		\begin{encabezadopar}
+		\end{encabezadopar}
+	}
+	\fancyhead[CO]{
+		\begin{encabezadoimpar}
+		\end{encabezadoimpar}
+	}
+	\fancyfoot[LE]{
+		\color{color3}
+		\textbf{\thepage \ \ \ }
+		\color{black}
+		\raisebox{0.5mm}{$\mid$}
+		\color{color3}{ \ \  \titulodoc}
+	}
+}
+
+\fancypagestyle{soloarriba}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead[CO]{
+		\begin{encabezadoimpar}
+		\end{encabezadoimpar}
+	}
+	\fancyfoot[RO]{}
+	\fancyhead[CE]{
+		\begin{encabezadopar}
+		\end{encabezadopar}
+	}
+	\fancyfoot[LE]{}
+}
+
+\pagestyle{estandar}
+
+%%%%%%%%%%% Macros de cajitas
+%  El comando se escribe así: \cajita[Sección en índice]{Sección en cuerpo}{Descripción}{Título gráfica}{Desagregación}{Gráfica con \includegraphics o tikz}{Fuente}
+\newcounter{updown}
+\setcounter{updown}{0}
+
+\newcommand{\cajitaalternante}[1]{
+\ifthenelse{\equal{\theupdown}{0}}{
+	\noindent
+	\begin{cajita-arriba}
+		\phantomsection
+		\stepcounter{section} #1
+	\end{cajita-arriba}
+	\setcounter{updown}{1}
+	}{
+	\noindent
+	\begin{cajita-abajo}
+		\phantomsection
+		\stepcounter{section} #1
+	\end{cajita-abajo}
+	\setcounter{updown}{0}
+	}
+}
+
+\newcommand{\titulizador}[1]{
+	\begin{tabular}{@{}p{3.5\cuadri}p{3pt}@{}p{46.0\cuadri}}
+		& &\\[-1\cuadri]
+		\textbf{\color{color3}\Huge \thesection}$\ $ & & \textbf{\color{color3}\Huge #1}\\[-1\cuadri]
+	\end{tabular}
+}
+
+\newcommand{\titulizadormanual}[2]{
+	\begin{tabular}{@{}p{3.5\cuadri}|p{3pt}@{}p{46.0\cuadri}}
+		& &\\[-1\cuadri]
+		\textbf{\color{color2}\Large #2}$\ $ & &\textbf{\Large #1}\\[-1\cuadri]
+		& &\\[-0.8pt] \cline{2-3}
+	\end{tabular}
+}
+
+\newcommand{\cajitaderecha}[8][]{%
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}x{3\cuadri}}
+				 &  &  &  \\[\cuadri]
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em 
+					#3
+				\end{descripcion-cajita}
+				&  &
+				\begin{grafica-cajita}
+				\begin{center}
+					\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
+					\ifthenelse{\isempty{#5}}{
+						$\ $\\[-0.1\cuadri]
+					}{
+						{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+					}
+					#6
+					\begin{flushleft}
+						$\ $\\[-2\cuadri]
+						\ \ \ \footnotesize Fuente: #7
+					\end{flushleft}
+				\end{center}
+			
+				\end{grafica-cajita}& \ifthenelse{\isempty{#8}}{}{\cajitaODS{#8} }
+			\end{tabular}
+		}
+	}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}x{3\cuadri}}
+				 &  &  & \\[\cuadri]
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em%
+					#3
+				\end{descripcion-cajita}
+				&  &
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}%
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita} & & \ifthenelse{\isempty{#8}}{}{\cajitaODS{#8} }
+			\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajitaizquierda}[8][]{
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}x{7\cuadri}}
+				&  &  &  \\[\cuadri]
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}%
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita}
+				& &
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em%
+					#3
+				\end{descripcion-cajita} & \ifthenelse{\isempty{#8}}{}{\cajitaODSArriba{#8} }
+			\end{tabular}
+		}
+	}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}x{7\cuadri}}
+				&  &  & \\[0.5\cuadri]
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}%
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita}
+				& &
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em%
+					#3
+				\end{descripcion-cajita}& \ifthenelse{\isempty{#8}}{}{\cajitaODSArriba{#8} }
+			\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajita}[8][]{
+	\ifthenelse{\equal{\theupdown}{0}}{
+		\cajitaizquierda[#1]{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+	}{
+		\cajitaderecha[#1]{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+	}
+}
+%%%%%%%%%%%%%%%  Cajita manual
+\newcommand{\cajitaderechamanual}[8][]{
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizadormanual{#2}{#8}
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{descripcion-cajita}
+				\parskip 6pt\parindent 1em
+				#3
+				\end{descripcion-cajita}
+				& &
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita}
+			\end{tabular}
+		}
+	}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizadormanual{#2}{#8}
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+					\end{descripcion-cajita}
+					& &
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}%
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita}
+			\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajitaizquierdamanual}[8][]{
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizadormanual{#2}{#8}
+			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						#6
+						\begin{flushleft}
+							$\ $\\[-2\cuadri]
+							\ \ \ \footnotesize Fuente: #7
+						\end{flushleft}
+					\end{center}
+				\end{grafica-cajita}
+				& &
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+				\end{descripcion-cajita}
+			\end{tabular}
+		}
+	}{
+	\cajitaalternante{
+		\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+		\addtocontents{toc}{\protect\thispagestyle{empty}}
+		\titulizadormanual{#2}{#8}
+		\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
+			& &\\[0.5\cuadri]
+			\begin{grafica-cajita}
+				\begin{center}
+					\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+					\ifthenelse{\isempty{#5}}{
+						$\ $\\[-0.1\cuadri]
+					}{
+						{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+					}
+					#6
+					\begin{flushleft}
+						$\ $\\[-2\cuadri]
+						\ \ \ \footnotesize Fuente: #7
+					\end{flushleft}
+				\end{center}
+			\end{grafica-cajita}
+			& &
+			\begin{descripcion-cajita}
+				\parskip 6pt\parindent 1em
+				#3
+			\end{descripcion-cajita}
+		\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajitamanual}[8][]{
+	\ifthenelse{\equal{\theupdown}{0}}{
+		\cajitaizquierdamanual[#1]{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+	}{
+		\cajitaderechamanual[#1]{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+	}
+}
+
+%%%%%%%%%%%%%%%  Cajita de tabla
+\newcommand{\cajitaizquierdatabla}[7][]{
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{$\ $\\[-0.1\cuadri]}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]}
+						\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
+						\begin{tabular}{l}
+							#6\\[4mm]
+							$\ $\\[-3.5mm]
+							{\footnotesize $\ \ \ $Fuente: \lafuente}
+						\end{tabular}
+					\end{center}
+				\end{grafica-cajita}
+				& &
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+				\end{descripcion-cajita}
+			\end{tabular}
+		}
+	}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{
+							$\ $\\[-0.1\cuadri]
+						}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+						}
+						\ifthenelse{\isempty{#7}}{
+							\renewcommand{\lafuente}{Estadísticas INE}
+						}{
+							\renewcommand{\lafuente}{#7}
+						}
+						\begin{tabular}{l}
+							#6\\[4mm]
+							$\ $\\[-3.5mm]
+							{\footnotesize $\ \ \ $Fuente: \lafuente}
+						\end{tabular}
+					\end{center}
+				\end{grafica-cajita}
+				& &
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+				\end{descripcion-cajita}
+			\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajitaderechatabla}[7][]{
+	\ifthenelse{\isempty{#1}}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+				\end{descripcion-cajita}
+				& &
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{$\ $\\[-0.1\cuadri]}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]}
+						\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
+						\begin{tabular}{l}
+							#6\\[4mm]
+							$\ $\\[-3.5mm]
+							{\footnotesize $\ \ \ $Fuente: \lafuente}
+						\end{tabular}
+					\end{center}
+				\end{grafica-cajita}
+			\end{tabular}
+		}
+	}{
+		\cajitaalternante{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+			
+			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}}
+				& &\\[0.5\cuadri]
+				\begin{descripcion-cajita}
+					\parskip 6pt\parindent 1em
+					#3
+				\end{descripcion-cajita}
+				& &
+				\begin{grafica-cajita}
+					\begin{center}
+						\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+						\ifthenelse{\isempty{#5}}{$\ $\\[-0.1\cuadri]}{
+							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]}
+						\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
+						\begin{tabular}{l}
+							#6\\[4mm]
+							$\ $\\[-3.5mm]
+							{\footnotesize $\ \ \ $Fuente: \lafuente}
+						\end{tabular}
+					\end{center}
+				\end{grafica-cajita}
+			\end{tabular}
+		}
+	}
+}
+
+\newcommand{\cajitatabla}[7][]{
+	\ifthenelse{\equal{\theupdown}{0}}{
+		\cajitaizquierdatabla[#1]{#2}{#3}{#4}{#5}{#6}{#7}
+	}{
+		\cajitaderechatabla[#1]{#2}{#3}{#4}{#5}{#6}{#7}
+	}
+}
+% seguir con psudo-pep8
+%%%%%%%%%%%%%%%% Macro de cajota
+
+\newcommand{\cajota}[7][]{
+\noindent\begin{cajota-unica}\phantomsection\stepcounter{section}
+\ifthenelse{\equal{\theupdown}{0}}{}{\setcounter{updown}{0}}
+\ifthenelse{\isempty{#1}}{
+\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\titulizador{#2}}{
+\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\titulizador{#2}
+}
+\parskip 6pt\parindent 2em
+$\ $\\
+
+#3$\ $\\[-1\cuadri]
+
+\begin{center}
+\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+\ifthenelse{\isempty{#5}}{$\ $\\[0.2\cuadri]}{
+	{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[2.0\cuadri]}
+#6
+\begin{flushright}
+$\ $\\[-1.5\cuadri]
+\footnotesize Fuente: #7 $\ \ \ $ 
+\end{flushright}
+\end{center}
+$\ $\\[-3\cuadri]
+
+\end{cajota-unica}
+}
+
+%%%%%%%%% Cajota de Tabla
+
+\newcommand{\cajotatabla}[7][]{
+	\noindent\begin{cajota-unica}\phantomsection\stepcounter{section}
+		\ifthenelse{\equal{\theupdown}{0}}{}{\setcounter{updown}{0}}
+		\ifthenelse{\isempty{#1}}{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}}{
+			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+			\addtocontents{toc}{\protect\thispagestyle{empty}}
+			\titulizador{#2}
+		}
+		\parskip 6pt\parindent 2em
+		$\ $\\
+		
+		#3$\ $\\[-1\cuadri]
+		
+		\begin{center}
+			\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
+			\ifthenelse{\isempty{#5}}{$\ $\\[0.2\cuadri]}{
+			{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[2.0\cuadri]}
+		\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
+			\begin{tabular}{l}
+				#6\\[4mm]
+				$\ $\\[-3.5mm]
+				{\footnotesize $\ \ \ $Fuente: \lafuente}
+			\end{tabular}
+		\end{center}
+		$\ $\\[-3\cuadri]
+		
+	\end{cajota-unica}
+	
+	
+}
+
+%%%%%%%%%% Macro de capítulo
+
+%previos
+
+\newcommand{\capituloencabezado}{}
+
+\newcommand{\capitulocondescripcion}[2]{%
+\begin{fondo-capitulo}
+$\ $\\[10\cuadri]
+\begin{center}
+\begin{tabular}{p{4.75in}}
+ \fontsize{2.5in}{3em}\selectfont\color{white}\centering\textbf{\thechapter}\\[1cm]
+ \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1
+\end{tabular}
+\\[1cm]
+
+\begin{tabular}{p{5.5in}}
+ \parskip 2.5ex \parindent 2em \Large #2
+\end{tabular} 
+\end{center}
+\end{fondo-capitulo}
+}
+
+\newcommand{\capitulosindescripcion}[1]{%
+\begin{fondo-capitulo-no-descripcion}
+$\ $\\[18\cuadri]
+\begin{center}
+\begin{tabular}{p{4.75in}}
+ \fontsize{2.5in}{3em}\selectfont\color{white}\centering\textbf{\thechapter} \\[1cm]
+ \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1 
+ \end{tabular}
+\end{center}
+\end{fondo-capitulo-no-descripcion}
+}
+
+\newcommand{\rayitatoc}{\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color2}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{black}} }
+
+% El macro definitivo
+\newcommand{\partes}{}
+\newcommand{\INEchaptercarta}[3][]{%
+\cleardoublepage\stepcounter{chapter}\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color3}}%
+\phantomsection
+\ifthenelse{\isempty{#1}}{
+	\addcontentsline{toc}{chapter}{\numberline{\thechapter}#2}
+	\renewcommand{\capituloencabezado}{#2}
+}{
+	\addcontentsline{toc}{chapter}{\numberline{\thechapter}#1}
+	\renewcommand{\capituloencabezado}{#1}
+}
+\thispagestyle{empty}
+\ifthenelse{\equal{\partes}{}}{\rayitatoc}{}
+\addtocontents{toc}{\color{black}\addvspace{0.2\baselineskip}}
+\ifthenelse{\equal{\unexpanded{#3}}{}}{
+	\capitulosindescripcion{#2}
+}{
+	\capitulocondescripcion{#2}{#3}
+}
+\cleardoublepage
+\setcounter{section}{0}
+\setcounter{updown}{0}
+\setcounter{footnote}{0}
+}
+
+%%%%%%%%%%  PARTES
+
+\newcommand{\partesindescripcion}[1]{%
+\begin{fondo-parte}
+$\ $\\[17.65\cuadri]
+\begin{tabular}{p{1.4in}p{5.75in}}
+ & \begin{tabular}[t]{x{5.75in}}
+\Cinzel \fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
+\\[-0.08in]
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1}  \\[0.2in]\hline
+ \end{tabular} \\ 
+\end{tabular}
+\end{fondo-parte}
+}
+
+\newcommand{\partecondescripcion}[2]{%
+\begin{fondo-parte}
+$\ $\\[7.00\cuadri]
+\begin{tabular}{p{1.4in}p{5.75in}}
+ &  \begin{tabular}[t]{x{5.75in}} 
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
+\\[-0.08in]
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1} 
+  \\[0.2in]\hline
+ \end{tabular} \\ 
+\end{tabular}\\[0.85in]
+
+\begin{tabular}{p{1.4in}p{5.75in}}
+ &\parskip 2.5ex \parindent 2em \Logos\LARGE
+ \begin{multicols}{2}
+ #2
+\end{multicols}
+\\ 
+\end{tabular} 
+\end{fondo-parte}
+}
+
+% El macro de parte definitivo
+
+\newcounter{parte}
+\setcounter{parte}{0}
+
+\newcommand{\INEpartecarta}[3][]{%
+	\cleardoublepage\stepcounter{parte}\addtocontents{toc}{\protect\addvspace{3.1\baselineskip}\color{color2!60!black}}%
+	\phantomsection
+	\ifthenelse{\isempty{#1}}{
+	\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #2 }\\[-2.5mm]
+			\protect \par} \rayitatoc	
+		}{
+\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #1 }\\[-2.5mm]
+	\protect \par} \rayitatoc
+}
+\thispagestyle{empty}%
+\addtocontents{toc}{\protect\addvspace{-0.1\baselineskip}\color{black}}%
+\ifthenelse{\equal{\unexpanded{#3}}{}}{%
+	\partesindescripcion{#2}
+}{%
+\partecondescripcion{#2}{#3}
+}
+
+\cleardoublepage
+\setcounter{section}{0}
+\setcounter{updown}{0}
+}
+
+%%%%%%%%
+
+\let\oldappendix\appendix
+
+\renewcommand{\appendix}{
+\cleardoublepage
+\oldappendix
+
+$\ $
+\vspace{6.6cm}
+
+\thispagestyle{empty}
+\begin{center}
+	\fontsize{16mm}{1em}\selectfont\Bold \color{color3} APÉNDICES
+\end{center}
+\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}}
+\addcontentsline{toc}{chapter}{APÉNDICES}
+\cleardoublepage
+\renewcommand{\rayitatoc}{}
+}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%  Parte en construcción
+
+% De la ENEI vieja.
+\newtcolorbox{fondo}{width=6.5in, height=9in, nobeforeafter, boxrule=0pt, colframe=white, left=-3pt, bottom=-1in, top=-13pt, right=0pt, arc=0pt, enlarge bottom by= -3in, colback= white}
+\newcommand{\hoja}[1]{\noindent\begin{fondo} #1 \end{fondo}\clearpage}
+
+
+\newcommand{\titulo}[1]{
+$\ $\\[0.3in]
+\noindent{\color{color1}\LARGE \textbf{#1}}\\[-0.1in]
+{\color{color1}\hrule}
+$\ $\\[-0.1in]
+}

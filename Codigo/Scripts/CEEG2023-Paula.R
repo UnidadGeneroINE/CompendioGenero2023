@@ -22,12 +22,12 @@ library(ggplot2)
 
 # Rutas del directorio de bases y gráficas
 directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
-directorioBases <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\LaTeX\\Bases\\"
-directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\LaTeX\\Graficas\\"
+directorioBases <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\Codigo\\Bases\\"
+directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\Codigo\\Graficas\\"
 
 # Lectura de bases de datos
-hogaresCenso <- read.spss(paste0(directorioBases, "HOGAR_BDP.sav"), to.data.frame =T)
-personasCenso <- read.spss(paste0(directorioBases, "PERSONA_BDP.sav"), 
+hogaresCenso <- read.spss(paste0(directorioBasesCenso, "HOGAR_BDP.sav"), to.data.frame =T)
+personasCenso <- read.spss(paste0(directorioBasesCenso, "PERSONA_BDP.sav"), 
                       to.data.frame =T)
 migracionesCenso <- read.spss(paste0(directorioBases, "MIGRACION_BDP.sav"), 
                          to.data.frame =T)
@@ -36,13 +36,14 @@ viviendasCenso <- read.spss(paste0(directorioBases, "VIVIENDA_BDP.sav"),
 hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
                      use.value.labels = T,
                      to.data.frame = T)
-personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), to.data.frame =T)
+personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), 
+                          to.data.frame =T)
 
 ################################################################################
 # DEFINIR CONSTANTES
 ################################################################################
 
-poblacion2018 = nrow(personasCenso)
+poblacion2018 <- nrow(personasCenso)
 
 
 ############################################################################
@@ -61,8 +62,8 @@ poblacion_por_pueblos <- personasCenso %>%
   summarise(Porcentaje = n()/poblacion2018 * 100) %>%
   rename(Sexo = PCP6, Pueblo = PCP12)
 
-x <- c("Maya", "Garífuna", "Xinka", "	Afrodescendiente/Creole/Afromestizo", "9
-Ladina (o)", "Extranjera (o)")
+x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente/Creole/Afromestizo", 
+       "Ladina (o)", "Extranjera (o)")
 Hombres <- c(as.numeric(poblacion_por_pueblos[1,3]), as.numeric(poblacion_por_pueblos[3,3]), 
              as.numeric(poblacion_por_pueblos[5,3]), as.numeric(poblacion_por_pueblos[7,3]),
              as.numeric(poblacion_por_pueblos[9,3]), as.numeric(poblacion_por_pueblos[11,3]))
@@ -71,3 +72,11 @@ Mujeres <- c(as.numeric(poblacion_por_pueblos[2,3]), as.numeric(poblacion_por_pu
              as.numeric(poblacion_por_pueblos[10,3]), as.numeric(poblacion_por_pueblos[12,3]))
 
 poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
+
+g1_01 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g1_01.tex"), 
+                              etiquetasCategorias = "A", etiquetas = "h")
+
+temp <- data.frame(c(1,2,3,4,5,6),Mujeres)
+gg <- graficaLinea(data = temp, modalidad = "trimestral")
+exportarLatex(graph = gg, nombre = paste0(directorioGraficas, "gg.tex"), 
+              preambulo = F)

@@ -1,0 +1,46 @@
+\input{Plantilla/Carta3.tex}
+
+\renewcommand{\titulodoc}{Compendio Estadístico con Enfoque de Género 2022}
+
+
+\begin{document}
+	
+	\includepdf[offset=1cm 0cm]{Plantilla/Portada_CEEG_2022.pdf}
+	\cleardoublepage
+	\thispagestyle{soloarriba}
+	\begin{center}
+	\input{Generalidades/organizacion.tex}
+	\end{center}
+	\cleardoublepage
+	$\ $
+	\vspace{0.0cm}
+	\thispagestyle{soloarriba}
+	\begin{center}
+	\input{Generalidades/participantes.tex}
+	\end{center}
+	\cleardoublepage
+	$\ $
+	\vspace{0.0cm}
+	\thispagestyle{soloarriba}
+	\input{Generalidades/presentacion-Brenda.tex}
+	\cleardoublepage
+	$\ $\\[2cm]
+	\tableofcontents
+	\pagestyle{estandar}	
+	\vspace{0.0cm}
+	\clearpage
+	\setcounter{page}{0}
+	
+\INEchaptercarta{Población y demografía}{Las proyecciones de la población y la evolución de la actividad económica (producto interno bruto, producto  interno bruto per cápita y ritmo inflacionario) son variables que inciden en el mercado laboral y que afecta a la fuerza laboral por ser el contexto donde se desenvuelve.}
+\input{Capitulos/capitulo1.tex}
+\appendix
+
+\INEchaptercarta{Glosario}{}
+\input{Generalidades/glosario.tex}
+
+
+\includepdf{Plantilla/Contraportada_CEEG_2022.pdf}
+	
+	
+\end{document}
+	

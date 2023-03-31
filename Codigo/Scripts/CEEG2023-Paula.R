@@ -41,9 +41,9 @@ personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"),
 
 
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
-# documento
+# documento color1 es el principal, color2 es el secundario
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
-# color1 es el principal, color2 es el secundario
+
 
 ################################################################################
 # DEFINIR CONSTANTES
@@ -51,6 +51,28 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 
 poblacion2018 <- nrow(personasCenso)
 
+personasCenso <- personasCenso %>%
+  mutate(quinqueneo = case_when( PCP7 < 5 ~ '0-4',
+                                 PCP7 > 4 & PCP7 < 10 ~ '5-9',
+                                 PCP7 > 9 & PCP7 < 15 ~ '10-14',
+                                 PCP7 > 14 & PCP7 < 20 ~ '15-19',
+                                 PCP7 > 19 & PCP7 < 25 ~ '20-24',
+                                 PCP7 > 24 & PCP7 < 30 ~ '25-29',
+                                 PCP7 > 29 & PCP7 < 35 ~ '30-34',
+                                 PCP7 > 34 & PCP7 < 40 ~ '35-39',
+                                 PCP7 > 39 & PCP7 < 45 ~ '40-44',
+                                 PCP7 > 44 & PCP7 < 50 ~ '45-49',
+                                 PCP7 > 49 & PCP7 < 55 ~ '50-54',
+                                 PCP7 > 54 & PCP7 < 60 ~ '55-59',
+                                 PCP7 > 59 & PCP7 < 65 ~ '60-64',
+                                 PCP7 > 64 & PCP7 < 70 ~ '65-69',
+                                 PCP7 > 69 & PCP7 < 75 ~ '70-74',
+                                 PCP7 > 74 & PCP7 < 80 ~ '75-79',
+                                 PCP7 > 79 & PCP7 < 85 ~ '80-84',
+                                 PCP7 > 84 & PCP7 < 90 ~ '85-89',
+                                 PCP7 > 89 & PCP7 < 95 ~ '90-94',
+                                 PCP7 > 94 & PCP7 < 100 ~ '95-99',
+                                 PCP7 > 99 ~ '100+'))
 
 ############################################################################
 ###                                                                      ###
@@ -60,7 +82,7 @@ poblacion2018 <- nrow(personasCenso)
 ############################################################################
 
 ################################################################################
-# 1. Porcentaje de población según sexo por pueblos
+# 0. Porcentaje de población según sexo por pueblos (MUESTRA)
 ################################################################################
 
 poblacion_por_pueblos <- personasCenso %>%
@@ -81,3 +103,25 @@ poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
 
 g1_01 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g1_01.tex"), 
                               etiquetas = "h")
+################################################################################
+# 1.1.	Población por sexo, según grupo de edad simple
+################################################################################
+
+poblacion_por_edad <- personasCenso %>%
+  group_by(PCP6, quinqueneo) %>%
+  summarize(porcentaje = n()/poblacion2018 * 100)
+
+# load sample data
+sample_data <- read.csv(paste0(directorioBases, "Population.CSV"))
+
+# load library ggplot2 and dplyr
+library(ggplot2)
+library(dplyr)
+
+# change male population to negative
+sample_data %>%mutate(
+  population = ifelse(gender=="M", population*(-1),
+                      population*1))%>%
+  ggplot(aes(x = age,y = population)) +
+  geom_bar(stat = "identity") +
+  coord_flip()

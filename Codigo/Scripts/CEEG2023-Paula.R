@@ -80,4 +80,4 @@ Mujeres <- c(as.numeric(poblacion_por_pueblos[2,3]), as.numeric(poblacion_por_pu
 poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
 
 g1_01 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g1_01.tex"), 
-                              etiquetasCategorias = "A", etiquetas = "h")
+                              etiquetas = "h")

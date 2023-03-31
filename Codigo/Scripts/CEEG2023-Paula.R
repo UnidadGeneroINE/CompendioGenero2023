@@ -39,6 +39,12 @@ hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
 personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), 
                           to.data.frame =T)
 
+
+# Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
+# documento
+anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
+# color1 es el principal, color2 es el secundario
+
 ################################################################################
 # DEFINIR CONSTANTES
 ################################################################################
@@ -62,8 +68,8 @@ poblacion_por_pueblos <- personasCenso %>%
   summarise(Porcentaje = n()/poblacion2018 * 100) %>%
   rename(Sexo = PCP6, Pueblo = PCP12)
 
-x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente/Creole/Afromestizo", 
-       "Ladina (o)", "Extranjera (o)")
+x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente*", 
+       "Ladino", "Extranjero")
 Hombres <- c(as.numeric(poblacion_por_pueblos[1,3]), as.numeric(poblacion_por_pueblos[3,3]), 
              as.numeric(poblacion_por_pueblos[5,3]), as.numeric(poblacion_por_pueblos[7,3]),
              as.numeric(poblacion_por_pueblos[9,3]), as.numeric(poblacion_por_pueblos[11,3]))
@@ -74,9 +80,4 @@ Mujeres <- c(as.numeric(poblacion_por_pueblos[2,3]), as.numeric(poblacion_por_pu
 poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
 
 g1_01 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g1_01.tex"), 
-                              etiquetasCategorias = "A", etiquetas = "h")
-
-temp <- data.frame(c(1,2,3,4,5,6),Mujeres)
-gg <- graficaLinea(data = temp, modalidad = "trimestral")
-exportarLatex(graph = gg, nombre = paste0(directorioGraficas, "gg.tex"), 
-              preambulo = F)
+                              etiquetas = "h")

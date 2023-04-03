@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAR 2023 06:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAR 2023 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,8 +1486,8 @@ Package hyperref Info: Anchor `page.2' on input line 9.
 
 
 ] (./Generalidades/organizacion.tex)
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1495,11 +1495,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.3' on input line 14.
 [3]
@@ -1520,8 +1520,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (./Generalidades/participantes.tex)
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1529,11 +1529,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.5' on input line 21.
 [5]
@@ -1557,8 +1557,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--14
  []
 
 )
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1566,11 +1566,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.7' on input line 26.
 [7]
@@ -1710,8 +1710,8 @@ Overfull \hbox (13.72247pt too wide) in paragraph at lines 3--36
 []           
  []
 
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1719,11 +1719,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.3' on input line 36.
 [3]
@@ -1779,8 +1779,8 @@ Package hyperref Info: Anchor `page.8' on input line 38.
 
 
 ] (./Generalidades/glosario.tex
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1788,11 +1788,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.9' on input line 24.
 [9]
@@ -1813,8 +1813,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Info: Anchor `page.10' on input line 52.
 [10]
-File: Plantilla/ai_Cintillo_Derecha_DCE.pdf Graphic file (type pdf)
-<use Plantilla/ai_Cintillo_Derecha_DCE.pdf>
+File: Plantilla/Cintillo_Derecha_UG.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_UG.pdf>
 
 Overfull \hbox (54.2025pt too wide) has occurred while \output is active
  [][] 
@@ -1822,11 +1822,11 @@ Overfull \hbox (54.2025pt too wide) has occurred while \output is active
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 74.41222pt, for example:
-(fancyhdr)                \setlength{\headheight}{74.41222pt}.
+(fancyhdr)                Make it at least 807.22997pt, for example:
+(fancyhdr)                \setlength{\headheight}{807.22997pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-62.41222pt}.
+(fancyhdr)                \addtolength{\topmargin}{-795.22997pt}.
 
 Package hyperref Info: Anchor `page.11' on input line 70.
 [11]
@@ -1938,7 +1938,7 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
  ) 
 Here is how much of TeX's memory you used:
  36342 strings out of 476684
- 819821 string characters out of 5807583
+ 819789 string characters out of 5807583
  1872012 words of memory out of 5000000
  55875 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000

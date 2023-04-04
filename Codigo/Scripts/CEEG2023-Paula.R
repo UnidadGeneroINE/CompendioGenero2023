@@ -117,36 +117,14 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
 
 c1_01 <- personasCenso %>%
   group_by(PCP6, quinqueneo) %>%
-  summarize(Poblacion = n()) %>%
-  rename(Sexo = PCP6) %>%
-  arrange(factor(quinqueneo, levels = quinqueneos)) %>%
+  summarize(y = n()) %>%
+  rename(z = PCP6, x = quinqueneo) %>%
+  arrange(factor(x, levels = quinqueneos)) %>%
   arrange(factor(c1_01$Sexo, levels = c("Mujer", "Hombre")))
 
 # Indica el orden en el que se debe mostrar los grupos quinquenales
-c1_01$quinqueneo <- factor(c1_01$quinqueneo, levels = quinqueneos)
-c1_01$Sexo <- factor(c1_01$Sexo, levels = c("Mujer", "Hombre"))
+c1_01$x <- factor(c1_01$x, levels = quinqueneos)
+c1_01$z <- factor(c1_01$z, levels = c("Mujer", "Hombre"))
 
-# Calcula datos para etiquetas eje x
-max_mujeres <- max(subset(c1_01, Sexo == "Mujer")$Poblacion)
-mitad_mujeres <- max(subset(c1_01, Sexo == "Mujer")$Poblacion)/2
-max_hombres <- max(subset(c1_01, Sexo == "Hombres")$Poblacion)
-mitad_hombres <- max(subset(c1_01, Sexo == "Hombres")$Poblacion)/2
-Breaks = c()
-
-# Hace la población de mujeres negativa para dar forma de pirámide y grafica
-c1_01 %>% mutate(Poblacion = ifelse(Sexo=="Mujer", Poblacion*(-1),
-                                     Poblacion*1)) %>%
-  ggplot(aes(x = c1_01$quinqueneo, y = Poblacion, fill = Sexo)) +
-  # Usa colores predeterminados del documento
-  scale_fill_manual(values = c(pkg.env$color1, pkg.env$color2)) + 
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  # Elimina cuadrícula y fondo
-  theme(panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank()) +
-  # Agrega etiquetas de ejes
-  labs(x = "Grupo de edad",
-       y = "Población en número de personas") +
-  scale_y_continuous(breaks = c(-851905, 0, 847437), labels = c("-851905", "0", "847437"))
-                     
+g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
+g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph = g1_01)

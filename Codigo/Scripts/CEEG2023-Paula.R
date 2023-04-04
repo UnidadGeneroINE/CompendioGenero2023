@@ -1,5 +1,5 @@
 # READ ME: SCRIPT PARA COMPENDIO ESTADÍSTICO CON ENFOQUE DE GÉNERO 2022
-# AUTOR: PAULA GÁLVEZ MOLINA - MARZO 2023
+# AUTOR: PAULA GÁLVEZ MOLINA - MARZO/ABRIL 2023
 
 
 #################################################################
@@ -41,7 +41,7 @@ personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"),
 
 
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
-# documento color1 es el principal, color2 es el secundario
+# documento. color1 es el principal, color2 es el secundariom del documento
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
 
 
@@ -49,8 +49,14 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 # DEFINIR CONSTANTES
 ################################################################################
 
+# Población total para censo 2018
 poblacion2018 <- nrow(personasCenso)
 
+# Agregando columna quinqueneo que indica el grupo de edad al que pertenece
+# dependiendo de la edad reportada en el censo
+quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
+                 '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69',
+                 '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+')
 personasCenso <- personasCenso %>%
   mutate(quinqueneo = case_when( PCP7 < 5 ~ '0-4',
                                  PCP7 > 4 & PCP7 < 10 ~ '5-9',
@@ -73,6 +79,7 @@ personasCenso <- personasCenso %>%
                                  PCP7 > 89 & PCP7 < 95 ~ '90-94',
                                  PCP7 > 94 & PCP7 < 100 ~ '95-99',
                                  PCP7 > 99 ~ '100+'))
+
 
 ############################################################################
 ###                                                                      ###
@@ -101,27 +108,45 @@ Mujeres <- c(as.numeric(poblacion_por_pueblos[2,3]), as.numeric(poblacion_por_pu
 
 poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
 
-g1_01 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g1_01.tex"), 
+g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g0_00.tex"), 
                               etiquetas = "h")
+
 ################################################################################
-# 1.1.	Población por sexo, según grupo de edad simple
+# 1.1.	Población por sexo, según grupos de edad
 ################################################################################
 
-poblacion_por_edad <- personasCenso %>%
+c1_01 <- personasCenso %>%
   group_by(PCP6, quinqueneo) %>%
-  summarize(porcentaje = n()/poblacion2018 * 100)
+  summarize(Poblacion = n()) %>%
+  rename(Sexo = PCP6) %>%
+  arrange(factor(quinqueneo, levels = quinqueneos)) %>%
+  arrange(factor(c1_01$Sexo, levels = c("Mujer", "Hombre")))
 
-# load sample data
-sample_data <- read.csv(paste0(directorioBases, "Population.CSV"))
+# Indica el orden en el que se debe mostrar los grupos quinquenales
+c1_01$quinqueneo <- factor(c1_01$quinqueneo, levels = quinqueneos)
+c1_01$Sexo <- factor(c1_01$Sexo, levels = c("Mujer", "Hombre"))
 
-# load library ggplot2 and dplyr
-library(ggplot2)
-library(dplyr)
+# Calcula datos para etiquetas eje x
+max_mujeres <- max(subset(c1_01, Sexo == "Mujer")$Poblacion)
+mitad_mujeres <- max(subset(c1_01, Sexo == "Mujer")$Poblacion)/2
+max_hombres <- max(subset(c1_01, Sexo == "Hombres")$Poblacion)
+mitad_hombres <- max(subset(c1_01, Sexo == "Hombres")$Poblacion)/2
+Breaks = c()
 
-# change male population to negative
-sample_data %>%mutate(
-  population = ifelse(gender=="M", population*(-1),
-                      population*1))%>%
-  ggplot(aes(x = age,y = population)) +
+# Hace la población de mujeres negativa para dar forma de pirámide y grafica
+c1_01 %>% mutate(Poblacion = ifelse(Sexo=="Mujer", Poblacion*(-1),
+                                     Poblacion*1)) %>%
+  ggplot(aes(x = c1_01$quinqueneo, y = Poblacion, fill = Sexo)) +
+  # Usa colores predeterminados del documento
+  scale_fill_manual(values = c(pkg.env$color1, pkg.env$color2)) + 
   geom_bar(stat = "identity") +
-  coord_flip()
+  coord_flip() +
+  # Elimina cuadrícula y fondo
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank()) +
+  # Agrega etiquetas de ejes
+  labs(x = "Grupo de edad",
+       y = "Población en número de personas") +
+  scale_y_continuous(breaks = c(-851905, 0, 847437), labels = c("-851905", "0", "847437"))
+                     

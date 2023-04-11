@@ -119,8 +119,8 @@ c1_01 <- personasCenso %>%
   group_by(PCP6, quinqueneo) %>%
   summarize(y = n()) %>%
   rename(z = PCP6, x = quinqueneo) %>%
-  arrange(factor(x, levels = quinqueneos)) %>%
-  arrange(factor(c1_01$Sexo, levels = c("Mujer", "Hombre")))
+  arrange(factor(x, levels = quinqueneos))%>%
+  arrange(factor(c1_01$z, levels = c("Mujer", "Hombre")))
 
 # Indica el orden en el que se debe mostrar los grupos quinquenales
 c1_01$x <- factor(c1_01$x, levels = quinqueneos)
@@ -128,3 +128,21 @@ c1_01$z <- factor(c1_01$z, levels = c("Mujer", "Hombre"))
 
 g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
 g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph = g1_01)
+
+################################################################################
+# 1.2.	Población por sexo, según dominio de estudio
+################################################################################
+
+c1_02 <- personasCenso %>%
+  group_by(PCP6, AREA) %>%
+  summarize(y = n()/poblacion2018 *100) %>%
+  rename(Sexo = PCP6)
+
+x <- c("Hombre Urbana", "Hombre Rural", "Mujer Urbana", "Mujer Rural")
+y <- c(as.numeric(c1_02[1,3]), as.numeric(c1_02[2,3]), as.numeric(c1_02[3,3]), as.numeric(c1_02[4,3]))
+
+c1_02 <- data.frame(x,y)
+
+g1_02 <- graficaPackedBubbles(data = c1_02)
+g1_02 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
+

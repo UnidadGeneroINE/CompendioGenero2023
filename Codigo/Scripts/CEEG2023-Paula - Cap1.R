@@ -161,13 +161,28 @@ c1_03 <- personasENEI %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
   rename(Sexo = P03A02)
 
-x <- c("Urbano Metropolitano", "Resto Urbano","Rural Nacional")
-Hombres <- c(as.numeric(c1_02[1,3]), as.numeric(c1_02[2,3]), 
-             as.numeric(c1_02[3,3]))
-Mujeres <- c(as.numeric(c1_02[4,3]), as.numeric(c1_02[5,3]), 
-             as.numeric(c1_02[6,3]))
+x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
+Hombres <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
+             as.numeric(c1_03[3,3]), as.numeric(c1_03[4,3]), 
+             as.numeric(c1_03[5,3]), as.numeric(c1_03[6,3]))
+Mujeres <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]), 
+             as.numeric(c1_03[9,3]), as.numeric(c1_03[10,3]), 
+             as.numeric(c1_03[11,3]), as.numeric(c1_03[12,3]))
 
-c1_02 <- data.frame(x, Mujeres, Hombres)
+c1_03 <- data.frame(x, Mujeres, Hombres)
 
-g1_02 <- graficaColCategorias(data = c1_02, ruta = paste0(directorioGraficas, "g1_02.tex"),
+g1_03 <- graficaColCategorias(data = c1_02, ruta = paste0(directorioGraficas, "g1_02.tex"),
                               etiquetas = "h")
+
+########################################################
+library(knitr)
+library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
+library(colorspace)
+test <- kable(c1_03, format = "latex", align = "c", digits = 1, booktabs = TRUE,
+              linesep = "") %>%
+  kable_styling(latex_options = "striped",
+                      stripe_color = lighten("#7470C8", amount = 0.5)) %>% 
+  row_spec(0, bold = TRUE) %>% 
+  column_spec(1:ncol(c1_03), align = "c", 
+              latex_options = "m{2cm}") %>%
+cat(file = paste0(directorioGraficas, "test.tex"))

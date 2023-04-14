@@ -42,20 +42,12 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 # DEFINIR CONSTANTES
 ################################################################################
 
-# Cálculo de PET 2022
-#
-# Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
-#
-PET_22 <- filter(personasENEI, P03A03 > 14)
-
-PET_18 <- filter(personasENEI_18, PPA03 > 14)
-
 # Agregando columna quinqueneo que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
 quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
                  '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69',
                  '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+')
-  personasCenso <- personasENEI %>%
+  personasENEI <- personasENEI %>%
     #no identifico quebien que quiere decir al ser iguales, cuando llame a 
     #quinqueneo jala ambos o se debe crear quiqueneo segun los años de la 
     #encuenta
@@ -81,7 +73,6 @@ quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34',
                                  P03A03 > 94 & P03A03 < 100 ~ '95-99',
                                  P03A03 > 99 ~ '100+'))
 
-
 ############################################################################
 ###                                                                      ###
 ###                              CAPÍTULO 4                              ###
@@ -94,6 +85,14 @@ quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34',
 #(comparar 2018 y 2022)
 ################################################################################
 
+# Cálculo de PET 2022
+#
+# Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
+#
+PET_22 <- filter(personasENEI, P03A03 > 14)
+  
+PET_18 <- filter(personasENEI_18, PPA03 > 14)
+  
 # Cálculo de PEA 2022
 # cálculo de desocupados y ocupados 2022
 # desocupados 2022 <- filter(PET, P05B04 >=0 | P05B01 == 'Sí')
@@ -109,16 +108,24 @@ num_desocupados_22 = sum(desocupados_22$Factor)
 # la base limpia
 ocupados_22 <- filter(PET_22, !is.na(P05C01))
 num_ocupados_22 = sum(ocupados_22$Factor)
-totales_PEA_22 <- rbind(desocupados_22, ocupados_22)
+PEA_22 <- rbind(desocupados_22, ocupados_22)
+
+c4_06 <- PEA_22 %>%
+  select(P03A02, quinqueneo, P03A06, factor) %>%
+  group_by(P03A02, quinqueneo, P03A06) %>%
+  summarise( y = sum(factor) )%>%
+  rename( sexo = P03A02) %>%
+  rename( edad = P03A02) %>%
 
 
-# Valor provisional arbitrario del PEA 2018
+
+# Cálculo de PEA 2018
 # Cálculo de PEA 2018
 # cálculo de desocupados y ocupados 2022
 # desocupados 2022 <- filter(PET, P05B04 >=0 | P05B01 == 'Sí')
 desocupados_18 <- filter(PET_18, P05B01 == 'Sí')
 
-num_desocupados_18 = sum(desocupados_18$Factor)
+
 
 # Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
 # tienen más de un trabajo, si no respondieron nada quiere decir que son
@@ -131,10 +138,9 @@ num_ocupados_18 = sum(ocupados_18$Factor)
 totales_PEA_18 <- rbind(desocupados_22, ocupados_18)
 
 
-
 # PEA 2018 - 2022
 PEATOTAL = sum(totales_PEA$Factor) # número de personas económicamente activas (PEA)
-x <- c('PEA 2021', 'PEA 2022')
+x <- c('PEA 2018', 'PEA 2022')
 y <- c(PEA_2021, PEATOTAL)
 c4_06 <- data.frame(x, y)
 # g4_06 <- graficaLinea(data = c3_02)

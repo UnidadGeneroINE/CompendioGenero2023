@@ -95,10 +95,11 @@ PET_18 <- filter(personasENEI_18, PPA03 > 14)
   
 # Cálculo de PEA 2022
 # cálculo de desocupados y ocupados 2022
-# desocupados 2022 <- filter(PET, P05B04 >=0 | P05B01 == 'Sí')
+# desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
 desocupados_22 <- filter(PET_22, P05B01 == 'Sí')
 
-num_desocupados_22 = sum(desocupados_22$Factor)
+# numero de desocupados 2022 <- sum(desocupados_22$factor))
+num_desocupados_22 = sum(desocupados_22$factor)
 
 # Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
 # tienen más de un trabajo, si no respondieron nada quiere decir que son
@@ -109,16 +110,28 @@ num_desocupados_22 = sum(desocupados_22$Factor)
 ocupados_22 <- filter(PET_22, !is.na(P05C01))
 num_ocupados_22 = sum(ocupados_22$Factor)
 PEA_22 <- rbind(desocupados_22, ocupados_22)
+# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
+PEATOTAL_22 <- sum(PEA_22$factor)
 
+
+# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
+# 
 c4_06 <- PEA_22 %>%
   select(P03A02, quinqueneo, P03A06, factor) %>%
-  group_by(P03A02, quinqueneo, P03A06) %>%
-  summarise( y = sum(factor) )%>%
-  rename( sexo = P03A02) %>%
-  rename( edad = P03A02) %>%
+  group_by(quinqueneo,P03A02, P03A06) %>%
+  summarise( PEA = sum(factor)) %>%
+  mutate( Porcentaje_PEA_22 = PEA / PEATOTAL_22 * 100 ) %>% 
+  rename( Sexo = P03A02) %>%
+  rename( Edad = quinqueneo) %>%
+  rename( Pueblo = P03A06)
 
-
-
+x <- c("Urbano", "Rural", "Urbano Metropolitano")
+Mujer <- c(as.numeric(c4_02[2,3]/PO_2022*100), as.numeric(c4_02[4,3]/PO_2022*100),
+           as.numeric(c4_02[6,3]/PO_2022*100))
+Hombre <- c(as.numeric(c4_02[1,3]/PO_2022*100), as.numeric(c4_02[3,3]/PO_2022*100),
+            as.numeric(c4_02[5,3]/PO_2022*100))
+  
+  
 # Cálculo de PEA 2018
 # Cálculo de PEA 2018
 # cálculo de desocupados y ocupados 2022

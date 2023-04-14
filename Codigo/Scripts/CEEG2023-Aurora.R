@@ -125,7 +125,7 @@ c4_06 <- PEA_22 %>%
   rename( Edad = quinqueneo) %>%
   rename( Pueblo = P03A06)
 
-x <- c("Urbano", "Rural", "Urbano Metropolitano")
+Sexo <- c("Urbano", "Rural", "Urbano Metropolitano")
 Mujer <- c(as.numeric(c4_02[2,3]/PO_2022*100), as.numeric(c4_02[4,3]/PO_2022*100),
            as.numeric(c4_02[6,3]/PO_2022*100))
 Hombre <- c(as.numeric(c4_02[1,3]/PO_2022*100), as.numeric(c4_02[3,3]/PO_2022*100),

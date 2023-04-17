@@ -19,6 +19,7 @@ library(openxlsx)
 library(remotes)
 library(packcircles)
 library(ggplot2)
+library(tidyr) # install.packages("tidyverse")
 
 # Rutas del directorio de bases y gráficas
 directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Githob\\CompendioGenero2023\\Codigo\\Bases\\"
@@ -120,17 +121,26 @@ c4_06 <- PEA_22 %>%
   select(P03A02, quinqueneo, P03A06, factor) %>%
   group_by(quinqueneo,P03A02, P03A06) %>%
   summarise( PEA = sum(factor)) %>%
-  mutate( Porcentaje_PEA_22 = PEA / PEATOTAL_22 * 100 ) %>% 
   rename( Sexo = P03A02) %>%
   rename( Edad = quinqueneo) %>%
   rename( Pueblo = P03A06)
 
-Sexo <- c("Urbano", "Rural", "Urbano Metropolitano")
-Mujer <- c(as.numeric(c4_02[2,3]/PO_2022*100), as.numeric(c4_02[4,3]/PO_2022*100),
-           as.numeric(c4_02[6,3]/PO_2022*100))
-Hombre <- c(as.numeric(c4_02[1,3]/PO_2022*100), as.numeric(c4_02[3,3]/PO_2022*100),
-            as.numeric(c4_02[5,3]/PO_2022*100))
+
+
+c4_06_test <- c4_06 %>%
+  pivot_wider(names_from = Sexo, values_from = PEA)
+
+c4_06_test2 <- c4_06 %>%
+  pivot_wider(names_from = Pueblo, values_from = PEA)
+
+mutate( Porcentaje_PEA_22 = PEA / PEATOTAL_22 * 100 ) %>% 
   
+  
+data_c4_06 <- t(data_c4_06)
+colnames(data_c4_06) <- data_c4_06[1, ]
+data_c4_06 <- data_c4_06[-1, ]
+
+print(data_c4_06)
   
 # Cálculo de PEA 2018
 # Cálculo de PEA 2018

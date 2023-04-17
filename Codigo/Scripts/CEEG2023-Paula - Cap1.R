@@ -19,6 +19,11 @@ library(openxlsx)
 library(remotes)
 library(packcircles)
 library(ggplot2)
+# Nuevas bibliotecas añadidas en cap 1
+library(knitr)
+library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
+library(colorspace)
+
 
 # Rutas del directorio de bases y gráficas
 directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
@@ -29,9 +34,9 @@ directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Gi
 hogaresCenso <- read.spss(paste0(directorioBasesCenso, "HOGAR_BDP.sav"), to.data.frame =T)
 personasCenso <- read.spss(paste0(directorioBasesCenso, "PERSONA_BDP.sav"), 
                       to.data.frame =T)
-migracionesCenso <- read.spss(paste0(directorioBases, "MIGRACION_BDP.sav"), 
+migracionesCenso <- read.spss(paste0(directorioBasesCenso, "MIGRACION_BDP.sav"), 
                          to.data.frame =T)
-viviendasCenso <- read.spss(paste0(directorioBases, "VIVIENDA_BDP.sav"), 
+viviendasCenso <- read.spss(paste0(directorioBasesCenso, "VIVIENDA_BDP.sav"), 
                        to.data.frame =T)
 hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
                      use.value.labels = T,
@@ -171,17 +176,16 @@ Mujeres <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]),
 
 c1_03 <- data.frame(x, Mujeres, Hombres)
 
-g1_03 <- graficaColCategorias(data = c1_02, ruta = paste0(directorioGraficas, "g1_02.tex"),
+g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
                               etiquetas = "h")
 
 ########################################################
-library(knitr)
-library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
-library(colorspace)
+
+
 test <- kable(c1_03, format = "latex", align = "c", digits = 1, booktabs = TRUE,
               linesep = "") %>%
   kable_styling(latex_options = "striped",
-                      stripe_color = lighten("#7470C8", amount = 0.5)) %>% 
+                      stripe_color = lighten("#7470C8", amount = 0.25)) %>% 
   row_spec(0, bold = TRUE) %>% 
   column_spec(1:ncol(c1_03), align = "c", 
               latex_options = "m{2cm}") %>%

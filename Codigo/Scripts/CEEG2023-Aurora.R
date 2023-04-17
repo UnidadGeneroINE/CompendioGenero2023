@@ -117,30 +117,18 @@ PEATOTAL_22 <- sum(PEA_22$factor)
 
 # Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
 # 
-c4_06 <- PEA_22 %>%
+c4_06_data <- PEA_22 %>%
   select(P03A02, quinqueneo, P03A06, factor) %>%
   group_by(quinqueneo,P03A02, P03A06) %>%
-  summarise( PEA = sum(factor)) %>%
+  summarise( PEA = sum(factor)/PEATOTAL_22 * 100) %>%
   rename( Sexo = P03A02) %>%
   rename( Edad = quinqueneo) %>%
   rename( Pueblo = P03A06)
 
+c4_06_Pueblo_Sexo <- c4_06 %>%
+  pivot_wider(names_from = Sexo, values_from = PEA) %>%
+  pivot_wider(names_from = Pueblo, values_from = c(Mujer, Hombre), names_sep = "_")
 
-
-c4_06_test <- c4_06 %>%
-  pivot_wider(names_from = Sexo, values_from = PEA)
-
-c4_06_test2 <- c4_06 %>%
-  pivot_wider(names_from = Pueblo, values_from = PEA)
-
-mutate( Porcentaje_PEA_22 = PEA / PEATOTAL_22 * 100 ) %>% 
-  
-  
-data_c4_06 <- t(data_c4_06)
-colnames(data_c4_06) <- data_c4_06[1, ]
-data_c4_06 <- data_c4_06[-1, ]
-
-print(data_c4_06)
   
 # Cálculo de PEA 2018
 # Cálculo de PEA 2018

@@ -42,38 +42,24 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 ################################################################################
 # DEFINIR CONSTANTES
 ################################################################################
-
-# Agregando columna quinqueneo que indica el grupo de edad al que pertenece
+# en el capitulo 4 no se puede usar la clasificación de gurpos de edad
+# Agregando columna GruposEdad que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
-quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
-                 '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69',
-                 '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+')
+GruposEdad <- c('0-14', '15-30', '31-65', '65+')
   personasENEI <- personasENEI %>%
     #no identifico quebien que quiere decir al ser iguales, cuando llame a 
-    #quinqueneo jala ambos o se debe crear quiqueneo segun los años de la 
+    #GruposEdad jala ambos o se debe crear GruposEdad segun los años de la 
     #encuenta
-  mutate(quinqueneo = case_when( P03A03 < 5 ~ '0-4',
-                                 P03A03 > 4 & P03A03 < 10 ~ '5-9',
-                                 P03A03 > 9 & P03A03 < 15 ~ '10-14',
-                                 P03A03 > 14 & P03A03 < 20 ~ '15-19',
-                                 P03A03 > 19 & P03A03 < 25 ~ '20-24',
-                                 P03A03 > 24 & P03A03 < 30 ~ '25-29',
-                                 P03A03 > 29 & P03A03 < 35 ~ '30-34',
-                                 P03A03 > 34 & P03A03 < 40 ~ '35-39',
-                                 P03A03 > 39 & P03A03 < 45 ~ '40-44',
-                                 P03A03 > 44 & P03A03 < 50 ~ '45-49',
-                                 P03A03 > 49 & P03A03 < 55 ~ '50-54',
-                                 P03A03 > 54 & P03A03 < 60 ~ '55-59',
-                                 P03A03 > 59 & P03A03 < 65 ~ '60-64',
-                                 P03A03 > 64 & P03A03 < 70 ~ '65-69',
-                                 P03A03 > 69 & P03A03 < 75 ~ '70-74',
-                                 P03A03 > 74 & P03A03 < 80 ~ '75-79',
-                                 P03A03 > 79 & P03A03 < 85 ~ '80-84',
-                                 P03A03 > 84 & P03A03 < 90 ~ '85-89',
-                                 P03A03 > 89 & P03A03 < 95 ~ '90-94',
-                                 P03A03 > 94 & P03A03 < 100 ~ '95-99',
-                                 P03A03 > 99 ~ '100+'))
+  mutate(GruposEdad = case_when( P03A03 < 15 ~ '0-14',
+                                 P03A03 > 14 & P03A03 < 30 ~ '15-29',
+                                 P03A03 > 29 & P03A03 < 65 ~ '30-65',
+                                 P03A03 > 64 ~ '65+'))
 
+  # codigo para verificar porcetaje 
+  print(sum(c4_06_data$PEA))
+  print(sum(c4_06_Pueblo_Sexo$Hombre))
+  print(sum(c4_06_Pueblo_Sexo$Mujer))
+  
 ############################################################################
 ###                                                                      ###
 ###                              CAPÍTULO 4                              ###
@@ -86,21 +72,21 @@ quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34',
 #(comparar 2018 y 2022)
 ################################################################################
 
-# Cálculo de PET 2022
+# Cálculo de PET 2022 
+# (personas en edad de trabaja = PET)
 #
 # Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
-#
+# P03A03 = edad de la persona 
 PET_22 <- filter(personasENEI, P03A03 > 14)
-  
-PET_18 <- filter(personasENEI_18, PPA03 > 14)
   
 # Cálculo de PEA 2022
 # cálculo de desocupados y ocupados 2022
 # desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
+# pP05B01 = Sí bUSCO trabajo 
 desocupados_22 <- filter(PET_22, P05B01 == 'Sí')
 
 # numero de desocupados 2022 <- sum(desocupados_22$factor))
-num_desocupados_22 = sum(desocupados_22$factor)
+num_desocupados_22 = sum(desocupados_22$FACTOR)
 
 # Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
 # tienen más de un trabajo, si no respondieron nada quiere decir que son
@@ -108,38 +94,41 @@ num_desocupados_22 = sum(desocupados_22$factor)
 
 # Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
 # la base limpia
+# pO5C01 = cantidad de trabajos 
 ocupados_22 <- filter(PET_22, !is.na(P05C01))
 num_ocupados_22 = sum(ocupados_22$Factor)
+# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
 PEA_22 <- rbind(desocupados_22, ocupados_22)
 # Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
 PEATOTAL_22 <- sum(PEA_22$factor)
 
 
 # Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
-# 
-c4_06_data <- PEA_22 %>%
-  select(P03A02, quinqueneo, P03A06, factor) %>%
-  group_by(quinqueneo,P03A02, P03A06) %>%
-  summarise( PEA = sum(factor)/PEATOTAL_22 * 100) %>%
+# P03A02, P03A06, factor (Sexo, Pueblo, factor)
+PEA_22_data <- PEA_22 %>%
+  select(P03A02, P03A06, factor) %>%
+  group_by(P03A02, P03A06) %>%
+  summarise( PEA22 = sum(factor)/PEATOTAL_22 * 100) %>%
   rename( Sexo = P03A02) %>%
-  rename( Edad = quinqueneo) %>%
-  rename( Pueblo = P03A06) 
- 
+  rename( Pueblo = P03A06)
 
-c4_06_Pueblo_Sexo <- c4_06 %>%
-  pivot_wider(names_from = Sexo, values_from = PEA) %>%
-  pivot_wider(names_from = Pueblo, values_from = c(Mujer, Hombre), names_sep = "_") %>%
-  
- 
+# Se crea el cuadro con Porcentaje de PEA 2022 por pueblo y sexo  
+PEA_22_Pueblo_Sexo <- PEA_22_data %>%
+  pivot_wider(names_from = Sexo, values_from = PEA22)
 
-  
+# Cálculo de PET 2018
+#
+# Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
+# (personas en edad de trabaja = PET) 
+# # PPA03 = edad de la persona 
+PET_18 <- filter(personasENEI_18, PPA03 > 14)
+
 # Cálculo de PEA 2018
 # Cálculo de PEA 2018
-# cálculo de desocupados y ocupados 2022
+# cálculo de desocupados y ocupados 2018
 # desocupados 2022 <- filter(PET, P05B04 >=0 | P05B01 == 'Sí')
-desocupados_18 <- filter(PET_18, P05B01 == 'Sí')
-
-
+# pP05B01 = Sí bUSCO trabajo 
+desocupados_18 <- filter(PET_18, P04B02 == 'Sí')
 
 # Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
 # tienen más de un trabajo, si no respondieron nada quiere decir que son
@@ -147,19 +136,47 @@ desocupados_18 <- filter(PET_18, P05B01 == 'Sí')
 
 # Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
 # la base limpia
-ocupados_18 <- filter(PET_18, !is.na(P05C01))
-num_ocupados_18 = sum(ocupados_18$Factor)
-totales_PEA_18 <- rbind(desocupados_22, ocupados_18)
+# P04C01 = cantidad de trabajos 
+ocupados_18 <- filter(PET_18, !is.na(P04C01))
+num_ocupados_18 = sum(ocupados_18$FACTOR)
+# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
+PEA_18 <- rbind(desocupados_18, ocupados_18)
+
+###############################################################################
+#VERIFICACIÓN DEL PEA 2018
+#Se verifico el PEA creado y el PEA que se encotraba en la personas ENEI 2018
+# pera creado por Aurora utilizando el codigo anterios
+PEA18_CREADO <- PEA_18 %>%
+  select(PPA02, FACTOR) %>%
+  group_by(PPA02) %>%
+  summarise( PEA18_prueba = n())
+
+#Se selecciono la columna PEA y se conto el numero de casos. 
+PEA18_PEA_EXISTENTE <- PEA_18 %>%
+  select(PPA02, PEA) %>%
+  group_by(PPA02) %>%
+  summarise( PEA18_PEA = n())
+###############################################################################
+
+# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
+PEATOTAL_18 <- sum(PEA_18$FACTOR)
 
 
-# PEA 2018 - 2022
-PEATOTAL = sum(totales_PEA$Factor) # número de personas económicamente activas (PEA)
-x <- c('PEA 2018', 'PEA 2022')
-y <- c(PEA_2021, PEATOTAL)
-c4_06 <- data.frame(x, y)
-# g4_06 <- graficaLinea(data = c3_02)
-# g4_06 <- graficaBar(data = c3_02, escala="millones")
-g4_06 <- graficaPackedBubbles(c4_06)
+# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
+# P03A02, P03A06, factor (Sexo, Pueblo, FACTOR)
+PEA_18_data <- PEA_18 %>%
+  select(PPA02, PPA06, FACTOR) %>%
+  group_by(PPA02, PPA06) %>%
+  summarise( PEA18 = sum(FACTOR)/PEATOTAL_18 * 100) %>%
+  rename( Sexo = PPA02) %>%
+  rename( Pueblo = PPA06)
+
+# Cuadro con el Porcentaje de PEA por pueblo y sexo  
+PEA_18_Pueblo_Sexo <- PEA_18_data %>%
+  pivot_wider(names_from = Sexo, values_from = PEA18)
+ #poner etiqueta con los datos del 2018*
+
+
 
 ################################################################################
 # 0. Porcentaje de población según sexo por pueblos (MUESTRA)

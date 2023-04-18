@@ -123,11 +123,14 @@ c4_06_data <- PEA_22 %>%
   summarise( PEA = sum(factor)/PEATOTAL_22 * 100) %>%
   rename( Sexo = P03A02) %>%
   rename( Edad = quinqueneo) %>%
-  rename( Pueblo = P03A06)
+  rename( Pueblo = P03A06) 
+ 
 
 c4_06_Pueblo_Sexo <- c4_06 %>%
   pivot_wider(names_from = Sexo, values_from = PEA) %>%
-  pivot_wider(names_from = Pueblo, values_from = c(Mujer, Hombre), names_sep = "_")
+  pivot_wider(names_from = Pueblo, values_from = c(Mujer, Hombre), names_sep = "_") %>%
+  
+ 
 
   
 # Cálculo de PEA 2018

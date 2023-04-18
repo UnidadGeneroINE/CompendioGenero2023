@@ -1,7 +1,6 @@
 # READ ME: SCRIPT PARA COMPENDIO ESTADÍSTICO CON ENFOQUE DE GÉNERO 2022
 # AUTOR: Aurora Monzon - ABRIL 2023
 
-
 #################################################################
 ##            	                                               ##
 ##                                                             ##
@@ -112,6 +111,13 @@ PEA_22_data <- PEA_22 %>%
   rename( Sexo = P03A02) %>%
   rename( Pueblo = P03A06)
 
+PEA_22_data_Edad <- PEA_22 %>%
+  select(P03A02, GruposEdad, factor) %>%
+  group_by(P03A02, GruposEdad) %>%
+  summarise( PEA22 = sum(factor)/PEATOTAL_22 * 100) %>%
+  rename( Sexo = P03A02) %>%
+  rename( Edad = GruposEdad)
+
 # Se crea el cuadro con Porcentaje de PEA 2022 por pueblo y sexo  
 PEA_22_Pueblo_Sexo <- PEA_22_data %>%
   pivot_wider(names_from = Sexo, values_from = PEA22)
@@ -167,16 +173,44 @@ PEATOTAL_18 <- sum(PEA_18$FACTOR)
 PEA_18_data <- PEA_18 %>%
   select(PPA02, PPA06, FACTOR) %>%
   group_by(PPA02, PPA06) %>%
-  summarise( PEA18 = sum(FACTOR)/PEATOTAL_18 * 100) %>%
+  summarise( PEA_2018 = sum(FACTOR)/PEATOTAL_18 * 100) %>%
   rename( Sexo = PPA02) %>%
-  rename( Pueblo = PPA06)
+  rename( Edad = PPA06)
 
 # Cuadro con el Porcentaje de PEA por pueblo y sexo  
 PEA_18_Pueblo_Sexo <- PEA_18_data %>%
-  pivot_wider(names_from = Sexo, values_from = PEA18)
+  pivot_wider(names_from = Sexo, values_from = PEA_2018)
  #poner etiqueta con los datos del 2018*
 
 
+
+
+
+
+c04_06 <- rbind(
+  data.frame(PEA2018, station = '2018', what = factor(rownames(PEA2018), levels = rownames(PEA2018)), 
+             row.names= "Xinka", "Garífuna", "Ladino", "Afrodescendiente/Creole/Afro mestizo",
+             "Extranjero", "Maya", check.names = FALSE), 
+  data.frame(PEA2022,station = '2022',what = factor(rownames(PEA2022), levels = rownames(PEA2022)), 
+             row.names = "Xinka", "Garífuna", "Ladino", "Afrodescendiente/Creole/Afro mestizo",
+             "Extranjero", "Maya",check.names = FALSE))
+  
+
+################################################################################
+
+library(tables)
+
+# rbind with rownames as a column 
+st <- rbind(
+  data.frame(stT1, station = 'T1', what = factor(rownames(stT1), levels = rownames(stT1)), 
+             row.names= NULL, check.names = FALSE), 
+  data.frame(stT2,station = 'T2',what = factor(rownames(stT2), levels = rownames(stT2)), 
+             row.names = NULL,check.names = FALSE)
+)
+
+
+mytable <- tabular(Heading()*what ~ station*(`Observed-modeled` +`|observed-modeled|`)*Heading()*(identity),data=st)
+mytable   
 
 ################################################################################
 # 0. Porcentaje de población según sexo por pueblos (MUESTRA)

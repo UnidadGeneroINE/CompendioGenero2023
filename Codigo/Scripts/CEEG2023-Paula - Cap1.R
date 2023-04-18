@@ -88,6 +88,28 @@ personasCenso <- personasCenso %>%
                                  PCP7 > 94 & PCP7 < 100 ~ '95-99',
                                  PCP7 > 99 ~ '100+'))
 
+personasENEI <- personasENEI %>%
+  mutate(quinqueneo = case_when( P03A03 < 5 ~ '0-4',
+                                 P03A03 > 4 & P03A03 < 10 ~ '5-9',
+                                 P03A03 > 9 & P03A03 < 15 ~ '10-14',
+                                 P03A03 > 14 & P03A03 < 20 ~ '15-19',
+                                 P03A03 > 19 & P03A03 < 25 ~ '20-24',
+                                 P03A03 > 24 & P03A03 < 30 ~ '25-29',
+                                 P03A03 > 29 & P03A03 < 35 ~ '30-34',
+                                 P03A03 > 34 & P03A03 < 40 ~ '35-39',
+                                 P03A03 > 39 & P03A03 < 45 ~ '40-44',
+                                 P03A03 > 44 & P03A03 < 50 ~ '45-49',
+                                 P03A03 > 49 & P03A03 < 55 ~ '50-54',
+                                 P03A03 > 54 & P03A03 < 60 ~ '55-59',
+                                 P03A03 > 59 & P03A03 < 65 ~ '60-64',
+                                 P03A03 > 64 & P03A03 < 70 ~ '65-69',
+                                 P03A03 > 69 & P03A03 < 75 ~ '70-74',
+                                 P03A03 > 74 & P03A03 < 80 ~ '75-79',
+                                 P03A03 > 79 & P03A03 < 85 ~ '80-84',
+                                 P03A03 > 84 & P03A03 < 90 ~ '85-89',
+                                 P03A03 > 89 & P03A03 < 95 ~ '90-94',
+                                 P03A03 > 94 & P03A03 < 100 ~ '95-99',
+                                 P03A03 > 99 ~ '100+'))
 
 ############################################################################
 ###                                                                      ###
@@ -144,18 +166,12 @@ g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph =
 c1_02 <- personasENEI %>%
   group_by(P03A02, dominio) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
-  rename(Sexo = P03A02)
+  rename(z = P03A02) %>%
+  rename(x = dominio)
 
-x <- c("Urbano Metropolitano", "Resto Urbano","Rural Nacional")
-Hombres <- c(as.numeric(c1_02[1,3]), as.numeric(c1_02[2,3]), 
-             as.numeric(c1_02[3,3]))
-Mujeres <- c(as.numeric(c1_02[4,3]), as.numeric(c1_02[5,3]), 
-             as.numeric(c1_02[6,3]))
+g1_02 <- graficaColApilada(c1_02, "Sexo")
 
-c1_02 <- data.frame(x, Mujeres, Hombres)
-
-g1_02 <- graficaColCategorias(data = c1_02, ruta = paste0(directorioGraficas, "g1_02.tex"),
-                              etiquetas = "h")
+exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
 
 ################################################################################
 # 1.3.	Población por sexo, según Pueblos
@@ -164,6 +180,31 @@ g1_02 <- graficaColCategorias(data = c1_02, ruta = paste0(directorioGraficas, "g
 c1_03 <- personasENEI %>%
   group_by(P03A02, P03A06) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
+  rename(Sexo = P03A02) 
+
+x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
+Hombres <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
+             as.numeric(c1_03[3,3]), as.numeric(c1_03[4,3]), 
+             as.numeric(c1_03[5,3]), as.numeric(c1_03[6,3]))
+Mujeres <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]), 
+             as.numeric(c1_03[9,3]), as.numeric(c1_03[10,3]), 
+             as.numeric(c1_03[11,3]), as.numeric(c1_03[12,3]))
+
+c1_03 <- data.frame(x, Mujeres, Hombres)
+
+g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
+                              etiquetas = "h")
+
+################################################################################
+# 1.4.	Población por sexo, según comunidad lingüística
+################################################################################
+
+c1_04 <- personasENEI %>%
+  mutate(case_when(P03A08 == "Otro" ~ P03A08 == "NS/NR")) %>%
+  filter(P03A08 == "NS/NR") %>%
+  group_by(P03A02, P03A08) %>%
+  #summarize(y = sum(factor)/poblacion2022 *100) %>%
+  summarize(y = n()) %>%
   rename(Sexo = P03A02)
 
 x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
@@ -179,8 +220,6 @@ c1_03 <- data.frame(x, Mujeres, Hombres)
 g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
                               etiquetas = "h")
 
-########################################################
-
 
 test <- kable(c1_03, format = "latex", align = "c", digits = 1, booktabs = TRUE,
               linesep = "") %>%
@@ -190,3 +229,28 @@ test <- kable(c1_03, format = "latex", align = "c", digits = 1, booktabs = TRUE,
   column_spec(1:ncol(c1_03), align = "c", 
               latex_options = "m{2cm}") %>%
 cat(file = paste0(directorioGraficas, "test.tex"))
+################################################################################
+# 1.16.	Jefatura de hogar por sexo, según estado civil 
+################################################################################
+
+# ARRÉGLAME WEY :) (falta expandir factores)
+
+c1_16 <- filter(personasENEI, P03A05 == "Jefe (a) del hogar") %>%
+  group_by(P03A02, P03A10) %>%
+  summarize(y = n())
+
+################################################################################
+# DATOS EXTRAS DEL CAP. 1
+################################################################################
+
+esposasDeJefes <- filter(personasENEI, P03A02 == "Mujer" & 
+                           P03A05 == "Esposo (a) o compañero (a)") %>%
+  select(P03A02, P03A05, P03A10) %>%
+  group_by(P03A05, P03A10) %>%
+  summarize(y = n())
+
+espososDeJefas <- filter(personasENEI, P03A02 == "Hombre" & 
+                           P03A05 == "Esposo (a) o compañero (a)") %>%
+  select(P03A02, P03A05, P03A10) %>%
+  group_by(P03A05, P03A10) %>%
+  summarize(y = n())

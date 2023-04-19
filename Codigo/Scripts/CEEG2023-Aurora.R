@@ -21,18 +21,10 @@ library(packcircles)
 library(ggplot2)
 
 # Rutas del directorio de bases y gráficas
-directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
-directorioBases <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\Codigo\\Bases\\"
-directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\Codigo\\Graficas\\"
+directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Githob\\CompendioGenero2023\\Codigo\\Bases\\"
+directorioGraficas <- "\\C:Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Githob\\CompendioGenero2023\\Codigo\\Graficas\\"
 
 # Lectura de bases de datos
-hogaresCenso <- read.spss(paste0(directorioBasesCenso, "HOGAR_BDP.sav"), to.data.frame =T)
-personasCenso <- read.spss(paste0(directorioBasesCenso, "PERSONA_BDP.sav"), 
-                      to.data.frame =T)
-migracionesCenso <- read.spss(paste0(directorioBases, "MIGRACION_BDP.sav"), 
-                         to.data.frame =T)
-viviendasCenso <- read.spss(paste0(directorioBases, "VIVIENDA_BDP.sav"), 
-                       to.data.frame =T)
 hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
                      use.value.labels = T,
                      to.data.frame = T)
@@ -83,8 +75,8 @@ personasCenso <- personasCenso %>%
 
 ############################################################################
 ###                                                                      ###
-###                              CAPÍTULO 1                              ###
-###                        Población y demografía                        ###
+###                              CAPÍTULO 2                              ###
+###                               salud                                  ###
 ###                                                                      ###
 ############################################################################
 
@@ -112,7 +104,8 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
                               etiquetas = "h")
 
 ################################################################################
-# 1.1.	Población por sexo, según grupos de edad
+# 2.1.	Número de casos de mujeres embarazadas entre 15 y 49 años por Pueblo 
+# (serie histórica de 2018 a 2022)
 ################################################################################
 
 c1_01 <- personasCenso %>%
@@ -145,4 +138,21 @@ c1_02 <- data.frame(x,y)
 
 g1_02 <- graficaPackedBubbles(data = c1_02)
 g1_02 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
+
+
+
+
+############################################################################
+###                                                                      ###
+###                              CAPÍTULO 4                              ###
+###                               economia                               ###
+###                                                                      ###
+############################################################################
+
+################################################################################
+#4.5.	Población económicamente activa por sexo, según dominio de estudio
+#comparar 2018 y 2022)
+################################################################################
+
+
 

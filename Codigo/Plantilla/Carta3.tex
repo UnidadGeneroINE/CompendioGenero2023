@@ -1656,20 +1656,20 @@ $\hspace{0.2ex}$
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \titulizador{#2}
 }
-\parskip 6pt\parindent 2em
-$\ $\\
-
-#3$\ $\\[-1\cuadri]
 
 \begin{center}
-\ifthenelse{\isempty{#4}}{}{{\textbf{#4}}\\[-1pt]}
-\ifthenelse{\isempty{#5}}{$\ $\\[0.2\cuadri]}{
-	{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[2.0\cuadri]}
+\ifthenelse{\isempty{#4}}{}{{\large\textbf{#4}}\\[2pt]}
+\ifthenelse{\isempty{#5}}{$\ $\\[0.5\cuadri]}{
+	{\normalsize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[4.0\cuadri]}
 #6
 \begin{flushright}
 $\ $\\[-1.5\cuadri]
-\footnotesize Fuente: #7 $\ \ \ $ 
+\normalsize Fuente: #7 $\ \ \ $ 
 \end{flushright}
+\parskip 6pt\parindent 2em
+$\ $\\[0.3cm]
+
+#3$\ $\\[-1\cuadri]
 \end{center}
 $\ $\\[-3\cuadri]
 
@@ -1723,7 +1723,7 @@ $\ $\\[-3\cuadri]
 $\ $\\[10\cuadri]
 \begin{center}
 \begin{tabular}{p{4.75in}}
- \fontsize{2.5in}{3em}\selectfont\color{color1}\centering\textbf{\thechapter}\\[1cm]
+ \fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter}\\[1cm]
  \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1
 \end{tabular}
 \\[1cm]
@@ -1740,14 +1740,14 @@ $\ $\\[10\cuadri]
 $\ $\\[18\cuadri]
 \begin{center}
 \begin{tabular}{p{4.75in}}
- \fontsize{2.5in}{3em}\selectfont\color{white}\centering\textbf{\thechapter} \\[1cm]
+ \fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter} \\[1cm]
  \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1 
  \end{tabular}
 \end{center}
 \end{fondo-capitulo-no-descripcion}
 }
 
-\newcommand{\rayitatoc}{\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color2}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{black}} }
+\newcommand{\rayitatoc}{\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color2}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{color1}} }
 
 % El macro definitivo
 \newcommand{\partes}{}
@@ -1763,7 +1763,7 @@ $\ $\\[18\cuadri]
 }
 \thispagestyle{empty}
 \ifthenelse{\equal{\partes}{}}{\rayitatoc}{}
-\addtocontents{toc}{\color{black}\addvspace{0.2\baselineskip}}
+\addtocontents{toc}{\color{color1}\addvspace{0.2\baselineskip}}
 \ifthenelse{\equal{\unexpanded{#3}}{}}{
 	\capitulosindescripcion{#2}
 }{

@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.12.4 on 2023-04-17 10:00:38
+% Created by tikzDevice version 0.12.4 on 2023-04-19 12:50:14
 % !TEX encoding = UTF-8 Unicode
 \definecolor{fillColor}{RGB}{255,255,255}
 \path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (289.08,198.74);
@@ -136,10 +136,10 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (289.08,198.74);
-\coordinate (apoyo) at (55.92,189.21);
+\coordinate (apoyo) at (59.42,189.21);
 \coordinate (longitudFicticia) at (7.11,9.53);
 \coordinate (longitud) at (7.11,7.11);
-\coordinate (desX) at (137.28,0);
+\coordinate (desX) at (135.34,0);
 \coordinate (desY) at (0,1.21);
 \definecolor[named]{ct1}{HTML}{
 363283
@@ -154,9 +154,9 @@
 7470C8
 }
 \path [fill=none] (apoyo) rectangle ($(apoyo)+(longitudFicticia)$)
-node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,midway,right,scale = 0.9]{Mujeres};
+node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,midway,right,scale = 0.9]{Mujer};
 \draw [color = ctb1,fill=ct1] ( $(apoyo)  + (desY) $) rectangle ($(apoyo)+ (desY) +(longitud)$);
 \path [fill=none] ($(apoyo)+(desX)$) rectangle ($(apoyo)+(desX)+(longitudFicticia)$)
-node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,midway,right,scale = 0.9]{Hombres};
+node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,midway,right,scale = 0.9]{Hombre};
 \draw [color = ctb2 ,fill=ct2] ( $(apoyo)  + (desY) + (desX) $) rectangle ($(apoyo)+ (desY)+ (desX) +(longitud)$);
 \end{scope}

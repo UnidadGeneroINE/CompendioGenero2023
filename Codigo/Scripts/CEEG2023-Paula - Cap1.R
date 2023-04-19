@@ -60,6 +60,9 @@ poblacion2018 <- nrow(personasCenso)
 # Población total para ENEI 2022
 poblacion2022 <- sum(personasENEI$factor)
 
+# Población Maya para censo 2018
+poblacionMaya2018 <- nrow(filter(personasCenso, PCP12 == "Maya"))
+
 # Agregando columna quinqueneo que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
 quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
@@ -111,6 +114,10 @@ personasENEI <- personasENEI %>%
                                  P03A03 > 94 & P03A03 < 100 ~ '95-99',
                                  P03A03 > 99 ~ '100+'))
 
+# Indica el orden en el que se deben mostrar los sexos
+personasCenso$PCP6 <- factor(personasCenso$PCP6, levels = c("Mujer", "Hombre"))
+personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
+
 ############################################################################
 ###                                                                      ###
 ###                              CAPÍTULO 1                              ###
@@ -149,12 +156,10 @@ c1_01 <- personasCenso %>%
   group_by(PCP6, quinqueneo) %>%
   summarize(y = n()) %>%
   rename(z = PCP6, x = quinqueneo) %>%
-  arrange(factor(x, levels = quinqueneos))%>%
-  arrange(factor(c1_01$z, levels = c("Mujer", "Hombre")))
+  arrange(factor(x, levels = quinqueneos))
 
 # Indica el orden en el que se debe mostrar los grupos quinquenales
 c1_01$x <- factor(c1_01$x, levels = quinqueneos)
-c1_01$z <- factor(c1_01$z, levels = c("Mujer", "Hombre"))
 
 g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
 g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph = g1_01)
@@ -183,14 +188,14 @@ c1_03 <- personasENEI %>%
   rename(Sexo = P03A02) 
 
 x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
-Hombres <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
+Hombre <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
              as.numeric(c1_03[3,3]), as.numeric(c1_03[4,3]), 
              as.numeric(c1_03[5,3]), as.numeric(c1_03[6,3]))
-Mujeres <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]), 
+Mujer <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]), 
              as.numeric(c1_03[9,3]), as.numeric(c1_03[10,3]), 
              as.numeric(c1_03[11,3]), as.numeric(c1_03[12,3]))
 
-c1_03 <- data.frame(x, Mujeres, Hombres)
+c1_03 <- data.frame(x, Mujer, Hombre)
 
 g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
                               etiquetas = "h")
@@ -198,37 +203,21 @@ g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g
 ################################################################################
 # 1.4.	Población por sexo, según comunidad lingüística
 ################################################################################
+# Se optó a usar datos menos actualizados (Censo 2018) ya que la muestra de la 
+# ENEI no permite para esta desagregación.
 
-c1_04 <- personasENEI %>%
-  mutate(case_when(P03A08 == "Otro" ~ P03A08 == "NS/NR")) %>%
-  filter(P03A08 == "NS/NR") %>%
-  group_by(P03A02, P03A08) %>%
-  #summarize(y = sum(factor)/poblacion2022 *100) %>%
+c1_04 <- personasCenso %>%
+  filter(!is.na(PCP13)) %>%
+  group_by(PCP6, PCP13) %>%
   summarize(y = n()) %>%
-  rename(Sexo = P03A02)
-
-x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
-Hombres <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
-             as.numeric(c1_03[3,3]), as.numeric(c1_03[4,3]), 
-             as.numeric(c1_03[5,3]), as.numeric(c1_03[6,3]))
-Mujeres <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]), 
-             as.numeric(c1_03[9,3]), as.numeric(c1_03[10,3]), 
-             as.numeric(c1_03[11,3]), as.numeric(c1_03[12,3]))
-
-c1_03 <- data.frame(x, Mujeres, Hombres)
-
-g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
-                              etiquetas = "h")
+  rename(z = PCP6) %>%
+  rename(x = PCP13)
 
 
-test <- kable(c1_03, format = "latex", align = "c", digits = 1, booktabs = TRUE,
-              linesep = "") %>%
-  kable_styling(latex_options = "striped",
-                      stripe_color = lighten("#7470C8", amount = 0.25)) %>% 
-  row_spec(0, bold = TRUE) %>% 
-  column_spec(1:ncol(c1_03), align = "c", 
-              latex_options = "m{2cm}") %>%
-cat(file = paste0(directorioGraficas, "test.tex"))
+g1_04 <- graficaColPorcentajeApilada(c1_04, "Sexo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
+
 ################################################################################
 # 1.16.	Jefatura de hogar por sexo, según estado civil 
 ################################################################################
@@ -254,3 +243,14 @@ espososDeJefas <- filter(personasENEI, P03A02 == "Hombre" &
   select(P03A02, P03A05, P03A10) %>%
   group_by(P03A05, P03A10) %>%
   summarize(y = n())
+
+
+# Código para hacer tablas
+TABLA <- kable(DATA, format = "latex", align = "c", digits = 1, booktabs = TRUE,
+               linesep = "") %>%
+  kable_styling(latex_options = "striped",
+                stripe_color = lighten("#7470C8", amount = 0.25)) %>% 
+  row_spec(0, bold = TRUE) %>% 
+  #column_spec(1:ncol(c1_04), align = "c", 
+  #latex_options = "m{2cm}") %>%
+  cat(file = paste0(directorioGraficas, "TABLA.tex"))

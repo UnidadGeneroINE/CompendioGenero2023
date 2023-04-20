@@ -24,8 +24,8 @@ library(tables) #install.packages("tables")
 library(xtable) #install.packages("Xtables")
 
 # Rutas del directorio de bases y gráficas
-directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Githob\\CompendioGenero2023\\Codigo\\Bases\\"
-directorioGraficas <- "\\C:Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Githob\\CompendioGenero2023\\Codigo\\Graficas\\"
+directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\"
+directorioGraficas <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Graficas\\"
 
 # Lectura de bases de datos
 hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
@@ -44,6 +44,12 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 ################################################################################
 # DEFINIR CONSTANTES
 ################################################################################
+# Numero de casos en la ENEi 2022
+NumeroCasosENEI22 <- nrow(personasENEI)
+
+#Proyeción de población ENEI 2022
+poblacionENEI22 <- sum(personasENEI$factor)
+
 # en el capitulo 4 no se puede usar la clasificación de gurpos de edad
 # Agregando columna GruposEdad que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
@@ -57,7 +63,39 @@ GruposEdad <- c('0-14', '15-30', '31-65', '65+')
                                  P03A03 > 29 & P03A03 < 65 ~ '30-65',
                                  P03A03 > 64 ~ '65+'))
 
-  # codigo para verificar porcetaje 
+# Agregando columna quinqueneo que indica el grupo de edad al que pertenece
+# dependiendo de la edad reportada en el ENEI
+quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
+                   '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69',
+                   '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+')
+personasENEI <- personasENEI %>%
+    mutate(quinqueneo = case_when( P03A03 < 5 ~ '0-4',
+                                   P03A03 > 4 & P03A03 < 10 ~ '5-9',
+                                   P03A03 > 9 & P03A03 < 15 ~ '10-14',
+                                   P03A03 > 14 & P03A03 < 20 ~ '15-19',
+                                   P03A03 > 19 & P03A03 < 25 ~ '20-24',
+                                   P03A03 > 24 & P03A03 < 30 ~ '25-29',
+                                   P03A03 > 29 & P03A03 < 35 ~ '30-34',
+                                   P03A03 > 34 & P03A03 < 40 ~ '35-39',
+                                   P03A03 > 39 & P03A03 < 45 ~ '40-44',
+                                   P03A03 > 44 & P03A03 < 50 ~ '45-49',
+                                   P03A03 > 49 & P03A03 < 55 ~ '50-54',
+                                   P03A03 > 54 & P03A03 < 60 ~ '55-59',
+                                   P03A03 > 59 & P03A03 < 65 ~ '60-64',
+                                   P03A03 > 64 & P03A03 < 70 ~ '65-69',
+                                   P03A03 > 69 & P03A03 < 75 ~ '70-74',
+                                   P03A03 > 74 & P03A03 < 80 ~ '75-79',
+                                   P03A03 > 79 & P03A03 < 85 ~ '80-84',
+                                   P03A03 > 84 & P03A03 < 90 ~ '85-89',
+                                   P03A03 > 89 & P03A03 < 95 ~ '90-94',
+                                   P03A03 > 94 & P03A03 < 100 ~ '95-99',
+                                   P03A03 > 99 ~ '100+'))
+  
+# Indica el orden en el que se deben mostrar los sexos
+personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
+
+
+# codigo para verificar porcetaje 
   print(sum(c4_06_data$PEA))
   print(sum(c4_06_Pueblo_Sexo$Hombre))
   print(sum(c4_06_Pueblo_Sexo$Mujer))
@@ -74,6 +112,35 @@ GruposEdad <- c('0-14', '15-30', '31-65', '65+')
 # nivel educativo
 ################################################################################
 
+# Flitro de base personas ENEI 2022 se selecciono solo a las de Personas en Edad 
+# de Trabajar -PET-
+PET_22 <- filter(personasENEI, P03A03 > 14)
+
+
+PETTOTAL_22 <- sum(PET_22$factor)
+
+
+
+c4_01 <- PET_22 %>%
+  filter(formalidad == "Formal" | 
+           formalidad == "Informal") %>%
+  select(P03A02, formalidad, factor) %>%
+  group_by(P03A02, formalidad) %>%
+  summarise( z = sum(factor)) %>%
+  rename(x = formalidad) %>%
+  rename(y = P03A02) %>%
+  select(x, y, z)
+
+x <- c("Formal", "infromal")
+Mujer <- c(as.numeric(c4_01[2,3]/PETTOTAL_22*100), as.numeric(c4_01[1,3]/PETTOTAL_22*100))
+Hombre <- c(as.numeric(c4_01[4,3]/PETTOTAL_22*100), as.numeric(c4_01[3,3]/PETTOTAL_22*100))
+
+c4_01 <- data.frame(x, Mujer, Hombre)
+
+g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g1_02.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
+
+  
 ################################################################################
 # 4.2.	Carga global de trabajo entre las personas ocupadas de 15 años y más 
 # por sexo (comparar 2018 y 2022)

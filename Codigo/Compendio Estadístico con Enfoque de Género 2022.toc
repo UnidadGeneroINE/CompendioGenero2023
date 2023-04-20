@@ -1,17 +1,13 @@
 \thispagestyle {empty}
 \selectlanguage *{spanish}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {1\hfil }Población y demografía}{1}{section*.1}%
+\contentsline {chapter}{\hbox to\@tempdima {1\hfil }Economía}{1}{section*.1}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Población por sexo, según grupos de edad}{3}{section*.2}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Población por sexo, según dominio de estudio}{4}{section*.3}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.3\hfil } Producto interno bruto}{4}{section*.4}%
+\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Población de 15 años o más por sector económico, según sexo }{3}{section*.2}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{5}{section*.4}%
+\contentsline {chapter}{APÉNDICES}{5}{section*.2}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.5}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.3}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

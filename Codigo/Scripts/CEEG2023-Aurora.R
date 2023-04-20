@@ -116,11 +116,8 @@ personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre")
 # de Trabajar -PET-
 PET_22 <- filter(personasENEI, P03A03 > 14)
 
-
-PETTOTAL_22 <- sum(PET_22$factor)
-
-
-
+# Se filtro la base segun la columna formalidas que se compone de la población ocupada
+# desagregada segun sector Formal o Informal
 c4_01 <- PET_22 %>%
   filter(formalidad == "Formal" | 
            formalidad == "Informal") %>%
@@ -131,14 +128,21 @@ c4_01 <- PET_22 %>%
   rename(y = P03A02) %>%
   select(x, y, z)
 
+# Se creo la sumatoaria de personas que se encuentra en el sector formal e informal.
+TotalSector <- sum(c4_01$z)
+
 x <- c("Formal", "infromal")
-Mujer <- c(as.numeric(c4_01[2,3]/PETTOTAL_22*100), as.numeric(c4_01[1,3]/PETTOTAL_22*100))
-Hombre <- c(as.numeric(c4_01[4,3]/PETTOTAL_22*100), as.numeric(c4_01[3,3]/PETTOTAL_22*100))
+Mujer <- c(as.numeric(c4_01[2,3]/TotalSector*100), as.numeric(c4_01[1,3]/TotalSector*100))
+Hombre <- c(as.numeric(c4_01[4,3]/TotalSector*100), as.numeric(c4_01[3,3]/TotalSector*100))
 
 c4_01 <- data.frame(x, Mujer, Hombre)
 
-g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g1_02.tex"),
+g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g4_01.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
+
+# Verificación de porcentajes
+  print(sum(c4_01$Mujer))
+  print(sum(c4_01$Hombre))
 
   
 ################################################################################

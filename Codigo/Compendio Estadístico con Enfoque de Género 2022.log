@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  20 APR 2023 14:06
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  20 APR 2023 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1664,9 +1664,43 @@ Overfull \hbox (67.4098pt too wide) in paragraph at lines 3--3
 [] 
  []
 
+Package hyperref Info: Anchor `section*.3' on input line 5.
+Package hyperref Info: bookmark on input line 5:
+(hyperref)             thecounter {1.2}
+(hyperref)             text {\numberline {\thesection } Producto interno bruto}
+
+(hyperref)             reference {section*.3}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+(./Descripciones/des4_04.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
+[]|[]| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 5.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 5.
+(./Graficas/g4_04.tex)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 5--5
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 5--5
+[] 
+ []
+
 )
-Overfull \hbox (13.72247pt too wide) in paragraph at lines 3--36
-[]           
+Overfull \hbox (487.59375pt too wide) in paragraph at lines 3--36
+[]             []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--36
+
  []
 
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
@@ -1694,7 +1728,7 @@ Package hyperref Info: Anchor `page.4' on input line 36.
 Package hyperref Info: bookmark on input line 36:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.2}
+(hyperref)             reference {section*.3}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.5' on input line 36.
@@ -1704,11 +1738,11 @@ Package hyperref Info: Anchor `page.6' on input line 36.
 
 
 ]
-Package hyperref Info: Anchor `section*.3' on input line 38.
+Package hyperref Info: Anchor `section*.4' on input line 38.
 Package hyperref Info: bookmark on input line 38:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.3}
+(hyperref)             reference {section*.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -1896,13 +1930,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36336 strings out of 476683
- 819790 string characters out of 5807575
- 1865012 words of memory out of 5000000
- 55875 multiletter control sequences out of 15000+600000
+ 36349 strings out of 476683
+ 820051 string characters out of 5807575
+ 1868012 words of memory out of 5000000
+ 55882 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,18n,92p,818b,1451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,18n,92p,866b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (23 page
 s).

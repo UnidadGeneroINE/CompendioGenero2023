@@ -6,8 +6,10 @@
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
 \contentsline {section}{\hbox to\@tempdima {1.1\hfil } Población de 15 años o más por sector económico, según sexo }{3}{section*.2}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Producto interno bruto}{3}{section*.3}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{5}{section*.2}%
+\contentsline {chapter}{APÉNDICES}{5}{section*.3}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.3}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.4}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

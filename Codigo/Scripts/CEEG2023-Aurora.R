@@ -144,22 +144,75 @@ g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g4
   print(sum(c4_01$Mujer))
   print(sum(c4_01$Hombre))
 
-  
 ################################################################################
 # 4.2.	Carga global de trabajo entre las personas ocupadas de 15 años y más 
 # por sexo (comparar 2018 y 2022)
 ################################################################################  
+
+  # PENDIENTE 
 
 ################################################################################
 # 4.3.	Carga global de trabajo de la población de 7 años o más, por sexo, 
 # según Pueblos, (comparar 2018 y 2022)
 ################################################################################  
 
+  # PENDIENTE 
+
 ################################################################################
 #  4.4.	Tasa de participación económica por dominio de estudio, según sexo y 
 # estado conyugal (serie histórica de 2018 a 2022)
 ################################################################################  
 
+# Calculo del Personas en Edad de Trabajar (PET) 
+# Todas las personas mayores de 14 años
+PET <- filter(personasENEI, P03A03 > 14) 
+
+# Cálculo de PEA 2022
+# cálculo de desocupados y ocupados 2022
+# desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
+# pP05B01 = Sí bUSCO trabajo 
+desocupados <- filter(PET, P05B01 == 'Sí')
+  
+# numero de desocupados 2022 <- sum(desocupados_22$factor))
+num_desocupados = sum(desocupados$factor)
+  
+# Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
+# tienen más de un trabajo, si no respondieron nada quiere decir que son
+# desocupados
+  
+# Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
+# la base limpia
+# pO5C01 = cantidad de trabajos 
+ocupados <- filter(PET, !is.na(P05C01))
+num_ocupados = sum(ocupados$factor)
+# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
+PEA <- rbind(desocupados, ocupados)
+# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
+PEATOTAL <- sum(PEA$factor)
+
+# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
+# P03A02, P03A06, factor (Sexo, Pueblo, factor)
+c4_04 <- PEA %>%
+  select(dominio, P03A02, P03A09F, factor) %>%
+  group_by(dominio, P03A09F,P03A02) %>%
+  summarise( z = sum(factor), t = n()) %>%
+  rename(x = dominio) %>%
+  rename(y = P03A02) %>%
+  rename(w = P03A09F) %>%
+  select(x, y, z)
+
+x <- c("Resto urbano", "Rural", "Urbano Metropolitano")
+Mujer <- c(as.numeric(c4_04[2,3]/PEATOTAL*100), as.numeric(c4_04[4,3]/PEATOTAL*100),
+           as.numeric(c4_04[6,3]/PEATOTAL*100))
+Hombre <- c(as.numeric(c4_04[1,3]/PEATOTAL*100), as.numeric(c4_04[3,3]/PEATOTAL*100),
+            as.numeric(c4_04[5,3]/PEATOTAL*100))
+
+c4_04 <- data.frame(x, Mujer, Hombre)
+
+g4_04 <- graficaColCategorias(data = c4_04, ruta = paste0(directorioGraficas,"g4_04.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
+  
+  
 ################################################################################
 #  4.5.	Población económicamente activa por sexo, según dominio de estudio 
 # (comparar 2018 y 2022)

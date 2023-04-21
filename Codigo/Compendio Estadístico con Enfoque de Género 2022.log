@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 08:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1670,37 +1670,37 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 1--2
 []        
  []
 
-Package hyperref Info: Anchor `section*.3' on input line 3.
-Package hyperref Info: bookmark on input line 3:
+Package hyperref Info: Anchor `section*.3' on input line 5.
+Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {1.2}
-(hyperref)             text {\numberline {\thesection } Proyecciones de Poblaci
-ón}
+(hyperref)             text {\numberline {\thesection } Tasa de participación e
+conómica por dominio de estudio, según sexo y estado conyugalo}
 (hyperref)             reference {section*.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 (./Descripciones/des4_04.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 3--3
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 3.
+            Default family used instead on input line 5.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 3.
+            Default family used instead on input line 5.
 (./Graficas/g4_04.tex)
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 3--3
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 5--5
 [][]
  []
 
 
-Overfull \hbox (44.82545pt too wide) in paragraph at lines 3--3
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 5--5
 [] 
  []
 
 
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 3--4
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 5--6
 []        
  []
 
@@ -1934,11 +1934,11 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 Here is how much of TeX's memory you used:
  36349 strings out of 476683
  820051 string characters out of 5807575
- 1868012 words of memory out of 5000000
+ 1875012 words of memory out of 5000000
  55882 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,18n,92p,866b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,18n,92p,866b,1451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (23 page
 s).

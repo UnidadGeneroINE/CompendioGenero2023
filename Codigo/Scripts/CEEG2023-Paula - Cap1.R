@@ -44,11 +44,12 @@ hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
 personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), 
                           to.data.frame =T)
 
+personasENEIINE <- read.spss(paste0(directorioBases, "ENEI2022INE.sav"), 
+                             to.data.frame =T)
 
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
 # documento. color1 es el principal, color2 es el secundariom del documento
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
-
 
 ################################################################################
 # DEFINIR CONSTANTES
@@ -213,10 +214,83 @@ c1_04 <- personasCenso %>%
   rename(z = PCP6) %>%
   rename(x = PCP13)
 
-
-g1_04 <- graficaColPorcentajeApilada(c1_04, "Sexo")
+g1_04 <- graficaBarPorcentajeApilada(c1_04, "Sexo", escala = 100)
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
+
+################################################################################
+# 1.5.	Población por sexo, según tipo de hogar (PENDIENTE DE TERMINAR)
+################################################################################
+# El tipo de hogar se define desde la página 9 del compendio del 2021 (miembros
+# del hogar).
+
+# Obtiene datos de la base de datos trabajada para el reporte de la ENEI 2022
+c1_05 <- personasENEI %>%
+  # filter(hogar_num == 56)
+  group_by(hogar_num, id, P03A05) %>%
+  summarize(y = n()) %>%
+  filter(y > 1) %>%
+  select(hogar_num, id, P03A05)
+
+# Obtiene datos de la base de datos descargada del INE
+c1_05INE <- personasENEIINE %>%
+  # filter(hogar_num == 56)
+  group_by(hogar_num, id, P03A05) %>%
+  summarize(y = n()) %>%
+  filter(y > 1) %>%
+  select(hogar_num, id, P03A05)
+
+# Mostrar datos que pueden ser duplicados para corroborar (en base al numero de hogar)
+datosduplicados <- personasENEIINE %>%
+  filter(hogar_num == 925)
+
+g1_05 <- graficaBarPorcentajeApilada(c1_05, "Sexo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_05) 
+
+################################################################################
+# 1.6.	Población por sexo, según tipo de vivienda (PENDIENTE DE TERMINAR)
+################################################################################
+# Se optó a usar datos menos actualizados (Censo 2018) ya que la muestra de la 
+# ENEI no permite para esta desagregación.
+
+c1_06 <- ENEIJoined %>%
+  filter(P03A05 == "Jefe (a) del hogar") %>%
+  group_by(P03A02, P02A01) %>%
+  summarize(porcentaje = n())
+
+g1_04 <- graficaBarPorcentajeApilada(c1_04, "Sexo", escala = 100)
+
+exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
+
+################################################################################
+# 1.7.	Mapa departamental por número de mujeres (PENDIENTE MAPA ACTUALIZADO)
+################################################################################
+
+# Datos obtenidos de https://www.ine.gob.gt/proyecciones/
+
+################################################################################
+# 1.8.	Mapa municipal por número de mujeres (PENDIENTE MAPA ACTUALIZADO)
+################################################################################
+
+# Datos obtenidos de https://www.ine.gob.gt/proyecciones/
+
+################################################################################
+# 1.9.	Esperanza de vida al nacer por sexo 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "Datos_vitales.xlsx")
+c1_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "ESPERANZA_DE_VIDA"))
+g1_09 <- graficaDobleLinea(c1_09, ruta = paste0(directorioGraficas,"g1_09.tex"), inicio = 60.0,  fin = 84.0)
+
+################################################################################
+# 1.10.	Tasa global de fecundidad (mujeres 15 a 49 años) 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "Datos_vitales.xlsx")
+c1_10 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "TGF"))
+g1_10 <- graficaLinea(c1_10)
+exportarLatex(nombre = paste0(directorioGraficas,"g1_10.tex"), graph = g1_10)
 
 ################################################################################
 # 1.16.	Jefatura de hogar por sexo, según estado civil 

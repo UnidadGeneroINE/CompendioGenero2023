@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 15:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1674,7 +1674,7 @@ Package hyperref Info: Anchor `section*.3' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {1.2}
 (hyperref)             text {\numberline {\thesection } Tasa de participación e
-conómica por dominio de estudio, según sexo y estado conyugalo}
+conómica por dominio de estudio, según sexo y estado conyugal}
 (hyperref)             reference {section*.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.

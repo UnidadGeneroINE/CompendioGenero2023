@@ -6,7 +6,7 @@
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
 \contentsline {section}{\hbox to\@tempdima {1.1\hfil } Población de 15 años o más por sector económico, según sexo }{3}{section*.2}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Tasa de participación económica por dominio de estudio, según sexo y estado conyugalo}{3}{section*.3}%
+\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Tasa de participación económica por dominio de estudio, según sexo y estado conyugal}{3}{section*.3}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
 \contentsline {chapter}{APÉNDICES}{5}{section*.3}%

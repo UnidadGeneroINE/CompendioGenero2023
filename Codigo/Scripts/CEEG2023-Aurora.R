@@ -94,6 +94,28 @@ personasENEI <- personasENEI %>%
 # Indica el orden en el que se deben mostrar los sexos
 personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
 
+# Calculo del Personas en Edad de Trabajar (PET) 
+# Todas las personas mayores de 14 años
+PET <- filter(personasENEI, P03A03 > 14) 
+
+EstadoConyugal <- c('Con pareja', 'Sin pareja', 'Menor de 12 años')
+personasENEI <- personasENEI %>%
+  # se creo una nueva varible que representan que visibilice el estado conyugal, 
+  # con pareja = Unido (a), Casado (a), 
+  # sin pareja =  Viudo (a), Separado (a) de matrimonio, Separado (a) de unión, 	
+  # Divorciado (a) 
+  # Soltero (a) = Soltero (a)
+  # Menor de 12 años = Menor de 12 años
+  mutate( EstadoConyugal = case_when( P03A10 == "Unido (a)" ~ 'Con pareja',
+                                      P03A10 == "Casado (a)" ~ 'Con pareja',
+                                      P03A10 == "Viudo (a)" ~ 'Sin pareja', 
+                                      P03A10 == "Separado (a) de matrimonio" ~ 'Sin pareja', 
+                                      P03A10 == "Separado (a) de matrimonio" ~ 'sin pareja', 
+                                      P03A10 == "Divorciado (a)" ~ 'Sin pareja',  
+                                      P03A10 == "Separado (a) de unión" ~ 'Sin pareja',
+                                      P03A10 == "Soltero (a)" ~ 'Sin pareja',
+                                      P03A10 == "Menor de 12 años" ~ 'Menor de 12 años'))
+
 
 # codigo para verificar porcetaje 
   print(sum(c4_06_data$PEA))
@@ -163,10 +185,6 @@ g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g4
 # estado conyugal (serie histórica de 2018 a 2022)
 ################################################################################  
 
-# Calculo del Personas en Edad de Trabajar (PET) 
-# Todas las personas mayores de 14 años
-PET <- filter(personasENEI, P03A03 > 14) 
-
 # Cálculo de PEA 2022
 # cálculo de desocupados y ocupados 2022
 # desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
@@ -190,29 +208,37 @@ PEA <- rbind(desocupados, ocupados)
 # Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
 PEATOTAL <- sum(PEA$factor)
 
+conteoConyigal <- personasENEI %>%
+  select(P03A10) %>%
+  group_by(P03A10) %>%
+  summarise(y = n())
+
 # Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
 # P03A02, P03A06, factor (Sexo, Pueblo, factor)
 c4_04 <- PEA %>%
-  select(dominio, P03A02, P03A09F, factor) %>%
-  group_by(dominio, P03A09F,P03A02) %>%
-  summarise( z = sum(factor), t = n()) %>%
+  select(dominio, EstadoConyugal, P03A02, factor) %>%
+  group_by(dominio, EstadoConyugal, P03A02) %>%
+  summarise( z = sum(factor), casos = n()) %>%
   rename(x = dominio) %>%
   rename(y = P03A02) %>%
-  rename(w = P03A09F) %>%
-  select(x, y, z)
+  rename(w = EstadoConyugal) %>%
+  select(x, y, w, z, casos)
+
 
 x <- c("Resto urbano", "Rural", "Urbano Metropolitano")
-Mujer <- c(as.numeric(c4_04[2,3]/PEATOTAL*100), as.numeric(c4_04[4,3]/PEATOTAL*100),
-           as.numeric(c4_04[6,3]/PEATOTAL*100))
-Hombre <- c(as.numeric(c4_04[1,3]/PEATOTAL*100), as.numeric(c4_04[3,3]/PEATOTAL*100),
-            as.numeric(c4_04[5,3]/PEATOTAL*100))
+Mujer <- c(as.numeric(c4_04[2,4] / PEATOTAL * 100), as.numeric(c4_04[4,4] / PEATOTAL * 100),
+           as.numeric(c4_04[6,4] / PEATOTAL * 100))
+Hombre <- c(as.numeric(c4_04[1,4] / PEATOTAL * 100), as.numeric(c4_04[3,4] / PEATOTAL * 100),
+            as.numeric(c4_04[5,4] / PEATOTAL * 100))
 
-c4_04 <- data.frame(x, Mujer, Hombre)
+c4_04 <- data.frame(x, EstadoConyugal, Mujer, Hombre)
 
-g4_04 <- graficaColCategorias(data = c4_04, ruta = paste0(directorioGraficas,"g4_04.tex"),
-                              etiquetasCategorias = "A", etiquetas = "h")
-  
-  
+
+# Verificación de porcentajes
+print(sum(c4_01$Mujer))
+print(sum(c4_01$Hombre)) 
+
+casos = n()
 ################################################################################
 #  4.5.	Población económicamente activa por sexo, según dominio de estudio 
 # (comparar 2018 y 2022)

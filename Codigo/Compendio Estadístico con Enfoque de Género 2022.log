@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  20 APR 2023 15:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 08:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1589,8 +1589,9 @@ LaTeX Info: Redefining \sffamily on input line 2.
 LaTeX Info: Redefining \ttfamily on input line 2.
 Package hyperref Info: Reference (link) `section*.1' on input line 4.
 Package hyperref Info: Reference (link) `section*.2' on input line 7.
-Package hyperref Info: Reference (link) `section*.2' on input line 10.
+Package hyperref Info: Reference (link) `section*.3' on input line 9.
 Package hyperref Info: Reference (link) `section*.3' on input line 12.
+Package hyperref Info: Reference (link) `section*.4' on input line 14.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1634,8 +1635,8 @@ Package hyperref Info: Anchor `page.2' on input line 34.
 
 
 ] (./Capitulos/capitulo4.tex
-Package hyperref Info: Anchor `section*.2' on input line 3.
-Package hyperref Info: bookmark on input line 3:
+Package hyperref Info: Anchor `section*.2' on input line 1.
+Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {1.1}
 (hyperref)             text {\numberline {\thesection } Población de 15 años o 
 más por sector económico, según sexo }
@@ -1644,65 +1645,66 @@ más por sector económico, según sexo }
 (hyperref)             type {toc}.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 3.
+            Default family used instead on input line 1.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 3.
+            Default family used instead on input line 1.
  (./Graficas/g4_01.tex)
 (./Descripciones/des4_01.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 3--3
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 1--1
  []|[]| 
  []
 
 
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 3--3
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 1--1
 [][]
  []
 
 
-Overfull \hbox (67.4098pt too wide) in paragraph at lines 3--3
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 1--1
 [] 
  []
 
-Package hyperref Info: Anchor `section*.3' on input line 5.
-Package hyperref Info: bookmark on input line 5:
-(hyperref)             thecounter {1.2}
-(hyperref)             text {\numberline {\thesection } Producto interno bruto}
 
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 1--2
+[]        
+ []
+
+Package hyperref Info: Anchor `section*.3' on input line 3.
+Package hyperref Info: bookmark on input line 3:
+(hyperref)             thecounter {1.2}
+(hyperref)             text {\numberline {\thesection } Proyecciones de Poblaci
+ón}
 (hyperref)             reference {section*.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 (./Descripciones/des4_04.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 3--3
 []|[]| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 5.
+            Default family used instead on input line 3.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 5.
+            Default family used instead on input line 3.
 (./Graficas/g4_04.tex)
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 5--5
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 3--3
 [][]
  []
 
 
-Overfull \hbox (44.82545pt too wide) in paragraph at lines 5--5
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 3--3
 [] 
  []
 
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 3--4
+[]        
+ []
+
 )
-Overfull \hbox (487.59375pt too wide) in paragraph at lines 3--36
-[]             []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--36
-
- []
-
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 

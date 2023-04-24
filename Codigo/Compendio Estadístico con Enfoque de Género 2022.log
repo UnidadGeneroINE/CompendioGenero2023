@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  21 APR 2023 15:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  24 APR 2023 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,8 +1590,9 @@ LaTeX Info: Redefining \ttfamily on input line 2.
 Package hyperref Info: Reference (link) `section*.1' on input line 4.
 Package hyperref Info: Reference (link) `section*.2' on input line 7.
 Package hyperref Info: Reference (link) `section*.3' on input line 9.
-Package hyperref Info: Reference (link) `section*.3' on input line 12.
+Package hyperref Info: Reference (link) `section*.4' on input line 11.
 Package hyperref Info: Reference (link) `section*.4' on input line 14.
+Package hyperref Info: Reference (link) `section*.5' on input line 16.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1674,7 +1675,7 @@ Package hyperref Info: Anchor `section*.3' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {1.2}
 (hyperref)             text {\numberline {\thesection } Tasa de participación e
-conómica por dominio de estudio, según sexo y estado conyugal}
+conómica por dominio de estudio, sexo y estado conyugal}
 (hyperref)             reference {section*.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1704,7 +1705,43 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 5--6
 []        
  []
 
+Package hyperref Info: Anchor `section*.4' on input line 9.
+Package hyperref Info: bookmark on input line 9:
+(hyperref)             thecounter {1.3}
+(hyperref)             text {\numberline {\thesection } Población económicament
+e activa por sexo, según dominio de estudio (comparar 2018 y 2022)}
+(hyperref)             reference {section*.4}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 9.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 9.
+(./Graficas/g4_05.tex) (./Descripciones/des4_05.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 9--9
+ []|[]| 
+ []
+
+
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 9--9
+[][]
+ []
+
+
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 9--9
+[] 
+ []
+
 )
+Overfull \hbox (13.72247pt too wide) in paragraph at lines 9--36
+[]           
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -1722,29 +1759,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Info: Anchor `page.3' on input line 36.
 [3]
+File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
+
+Overfull \hbox (90.3375pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
 Package hyperref Info: Anchor `page.4' on input line 36.
- [4
-
-
-]
+[4]
 Package hyperref Info: bookmark on input line 36:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.3}
+(hyperref)             reference {section*.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.5' on input line 36.
- [5]
+ [5
+
+
+]
 Package hyperref Info: Anchor `page.6' on input line 36.
  [6
 
 
 ]
-Package hyperref Info: Anchor `section*.4' on input line 38.
+Package hyperref Info: Anchor `section*.5' on input line 38.
 Package hyperref Info: bookmark on input line 38:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.4}
+(hyperref)             reference {section*.5}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -1932,13 +1984,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36349 strings out of 476683
- 820051 string characters out of 5807575
- 1875012 words of memory out of 5000000
- 55882 multiletter control sequences out of 15000+600000
+ 36365 strings out of 476683
+ 820371 string characters out of 5807575
+ 1882012 words of memory out of 5000000
+ 55892 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,18n,92p,866b,1451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,18n,92p,866b,1453s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (23 page
 s).

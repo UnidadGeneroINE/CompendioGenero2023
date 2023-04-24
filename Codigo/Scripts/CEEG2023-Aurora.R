@@ -19,9 +19,10 @@ library(remotes)
 library(packcircles)
 library(ggplot2)
 library(tidyr) # install.packages("tidyverse")
-library(gt) #install.packages("gt")
-library(tables) #install.packages("tables")
+#library(gt) #install.packages("gt")
+#library(tables) #install.packages("tables")
 library(xtable) #install.packages("Xtables")
+library(kableExtra) #install.packages("kableExtra")
 
 # Rutas del directorio de bases y gráficas
 directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\"
@@ -38,7 +39,7 @@ personasENEI_18 <- read.spss(paste0(directorioBases, "BASE_ENEI_18_PERSONAS.sav"
 
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
 # documento. color1 es el principal, color2 es el secundariom del documento
-anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
+anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255))
 
 
 ################################################################################
@@ -135,11 +136,11 @@ personasENEI <- personasENEI %>%
 
 # Flitro de base personas ENEI 2022 se selecciono solo a las de Personas en Edad 
 # de Trabajar -PET-
-PET_22 <- filter(personasENEI, P03A03 > 14)
+PET <- filter(personasENEI, P03A03 > 14)
 
 # Se filtro la base segun la columna formalidas que se compone de la población ocupada
 # desagregada segun sector Formal o Informal
-c4_01 <- PET_22 %>%
+c4_01 <- PET %>%
   filter(formalidad == "Formal" | 
            formalidad == "Informal") %>%
   select(P03A02, formalidad, factor) %>%
@@ -204,7 +205,7 @@ ocupados <- filter(PET, !is.na(P05C01))
 num_ocupados = sum(ocupados$factor)
 # PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
 PEA <- rbind(desocupados, ocupados)
-# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
+# Se crea la contante PEAtotal 2022 a partir de la sumatoria de factores del la data PEA
 PEATOTAL <- sum(PEA$factor)
 
 conteoConyugal <- personasENEI %>%
@@ -212,7 +213,7 @@ conteoConyugal <- personasENEI %>%
   group_by(P03A10) %>%
   summarise(y = n())
 
-# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
+# Se debe crear el cuadro a partir de la base de PEA 2022 limpia se selecciona
 # P03A02, P03A06, factor (Sexo, Pueblo, factor)
 c4_04 <- PEA %>%
   select(dominio, EstadoConyugal, P03A02, factor) %>%
@@ -241,56 +242,32 @@ print(sum(c4_01$Hombre))
 #  4.5.	Población económicamente activa por sexo, según dominio de estudio 
 # (comparar 2018 y 2022)
 ################################################################################ 
-   
+
+#Usar el PEA 2022 de la de ENEI 2022
+PEA <- rbind(desocupados, ocupados)
+# Se crea la contante PEAtotal 2022 a partir de la sumatoria de factores del la data PEA
+PEATOTAL <- sum(PEA$factor)
+
+# Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
+PEA2022 <- PEA %>%
+  select(dominio, P03A02, factor) %>%
+  group_by(dominio, P03A02) %>%
+  summarise( y2022 = sum(factor)/ PEATOTAL * 100) %>%
+  rename(x = dominio) %>%
+  rename(z = P03A02) %>%
+  select(z, x, y2022)
+
+# Se segmenta el cuadro por dominio de estudio
+PEA2022 <- unite(data = PEA2022, col = z, sep = " ", z, x)
+
+#Verificación de porcetaje
+print(sum(PEA2022$y2022))
+
+
+############################################################ CALCULO DE PEA 2018
 ################################################################################
-# 4.6.	Población económicamente activa por sexo, según Pueblos y grupos de edad
-#(comparar 2018 y 2022)
-################################################################################
 
-# Cálculo de PET 2022 
-# (personas en edad de trabaja = PET)
-#
-# Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
-# P03A03 = edad de la persona 
-PET_22 <- filter(personasENEI, P03A03 > 14)
-  
-# Cálculo de PEA 2022
-# cálculo de desocupados y ocupados 2022
-# desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
-# pP05B01 = Sí bUSCO trabajo 
-desocupados_22 <- filter(PET_22, P05B01 == 'Sí')
-
-# numero de desocupados 2022 <- sum(desocupados_22$factor))
-num_desocupados_22 = sum(desocupados_22$FACTOR)
-
-# Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
-# tienen más de un trabajo, si no respondieron nada quiere decir que son
-# desocupados
-
-# Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
-# la base limpia
-# pO5C01 = cantidad de trabajos 
-ocupados_22 <- filter(PET_22, !is.na(P05C01))
-num_ocupados_22 = sum(ocupados_22$Factor)
-# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
-PEA_22 <- rbind(desocupados_22, ocupados_22)
-# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
-PEATOTAL_22 <- sum(PEA_22$factor)
-
-
-# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
-# P03A02, P03A06, factor (Sexo, Pueblo, factor)
-PEA_22_data <- PEA_22 %>%
-  select(P03A02, P03A06, factor) %>%
-  group_by(P03A02, P03A06) %>%
-  summarise( PEA22 = sum(factor)/PEATOTAL_22 * 100) %>%
-  rename( Sexo = P03A02) %>%
-  rename( Pueblo = P03A06)
-
-
-# Se crea el cuadro con Porcentaje de PEA 2022 por pueblo y sexo  
-PEA_22_Pueblo_Sexo <- PEA_22_data %>%
-  pivot_wider(names_from = Sexo, values_from = PEA22)
+personasENEI_18$PPA02 <- factor(personasENEI_18$PPA02, levels = c("Mujer", "Hombre"))
 
 # Cálculo de PET 2018
 #
@@ -337,31 +314,57 @@ PEA18_PEA_EXISTENTE <- PEA_18 %>%
 # Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
 PEATOTAL_18 <- sum(PEA_18$FACTOR)
 
+# Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
+PEA2018 <- PEA_18 %>%
+  select(DOMINIO, PPA02, FACTOR) %>%
+  group_by(DOMINIO, PPA02) %>%
+  summarise( y2018 = sum(FACTOR)/ PEATOTAL_18 * 100) %>%
+  rename(x = DOMINIO) %>%
+  rename(z = PPA02) %>%
+  select(z, x, y2018)
+
+# Se segmenta el cuadro por dominio de estudio
+PEA2018 <- unite(data = PEA2018, col = x, sep = " ", z, x)
+
+#Verificación de porcetaje
+print(sum(PEA2018$y2018))
+
+###############################################################################
+####################################Tabla comparativa de PEA entre  2018 y 2022
+
+#Unón de PEA 2022 a 2018
+c4_05_data <- cbind(PEA2018, PEA2022[, c("y2022")])
+
+# Se renombro las columnas por años  
+c4_05 <- c4_05_data %>%
+  rename("2018" = y2018) %>%
+  rename("2022" = y2022)
+
+#Crear grafica de columnas por categoria y exportar a latex
+g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4_05.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
+
+
+
+
+################################################################################
+# 4.6.	Población económicamente activa por sexo, según Pueblos y grupos de edad
+#(comparar 2018 y 2022)
+################################################################################
 
 # Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
-# P03A02, P03A06, factor (Sexo, Pueblo, FACTOR)
-PEA_18_data <- PEA_18 %>%
-  select(PPA02, PPA06, FACTOR) %>%
-  group_by(PPA02, PPA06) %>%
-  summarise( PEA_2018 = sum(FACTOR)/PEATOTAL_18 * 100) %>%
-  rename( Sexo = PPA02) %>%
-  rename( Edad = PPA06)
+# P03A02, P03A06, factor (Sexo, Pueblo, factor)
+PEA22_PUEBLOS <- PEA %>%
+  select(P03A02, P03A06, factor) %>%
+  group_by(P03A02, P03A06) %>%
+  summarise( y = sum(factor)/PEATOTAL * 100) %>%
+  rename( z = P03A02) %>%
+  rename( x = P03A06)
 
-# Cuadro con el Porcentaje de PEA por pueblo y sexo  
-PEA_18_Pueblo_Sexo <- PEA_18_data %>%
-  pivot_wider(names_from = Sexo, values_from = PEA_2018)
- #poner etiqueta con los datos del 2018*
+# Se segmenta el cuadro por dominio de estudio
+PEA22_PUEBLOS <- unite(data = PEA2018, col = x, sep = " ", z, x)
 
 
-compPEA <- rbind(
-  data.frame(PEA_18_Pueblo_Sexo, PEA = '2018', what = factor(rownames(PEA_18_Pueblo_Sexo), levels = rownames(PEA_18_Pueblo_Sexo)), 
-             row.names= NULL, check.names = FALSE), 
-  data.frame(PEA_22_Pueblo_Sexo, PEA = '2022', what = factor(rownames(PEA_22_Pueblo_Sexo), levels = rownames(PEA_22_Pueblo_Sexo)), 
-             row.names= NULL, check.names = FALSE), 
-)
-
-c04_06 <- mytable <- tabular(Heading()*what ~ station*("Hombre" +"Mujer")*Heading()*(identity),data=compPEA)
-c04_06  
 
 
 ################################################################################

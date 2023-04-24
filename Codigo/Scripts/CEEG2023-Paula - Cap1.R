@@ -47,6 +47,9 @@ personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"),
 personasENEIINE <- read.spss(paste0(directorioBases, "ENEI2022INE.sav"), 
                              to.data.frame =T)
 
+hogaresENEIINE <- read.spss(paste0(directorioBases, "ENEI2022INE_HOGARES.sav"), 
+                             to.data.frame =T)
+
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
 # documento. color1 es el principal, color2 es el secundariom del documento
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
@@ -219,43 +222,44 @@ g1_04 <- graficaBarPorcentajeApilada(c1_04, "Sexo", escala = 100)
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
 
 ################################################################################
-# 1.5.	Población por sexo, según tipo de hogar (PENDIENTE DE TERMINAR)
+# 1.5.	Población por sexo, según tipo de hogar (OBSOLETA)
 ################################################################################
 # El tipo de hogar se define desde la página 9 del compendio del 2021 (miembros
 # del hogar).
 
 # Obtiene datos de la base de datos trabajada para el reporte de la ENEI 2022
-c1_05 <- personasENEI %>%
-  # filter(hogar_num == 56)
-  group_by(hogar_num, id, P03A05) %>%
-  summarize(y = n()) %>%
-  filter(y > 1) %>%
-  select(hogar_num, id, P03A05)
+c1_05 <- personasENEIINE %>%
+  group_by(hogar_num) %>%
+  summarize(tipo_hogar = case_when(all(P03A05 == "Jefe (a) del hogar") ~ "Unipersonal",
+                                   all(P03A05 %in% c("Jefe (a) del hogar","Esposo (a) o compañero (a)","Hijo (a)")) ~ "Nuclear",
+                                   all(P03A05 %in% c("Jefe (a) del hogar", "Esposo (a) o compañero (a)",
+                                                     "Hijo (a)", "Yerno o Nuera","Nieto (a)",
+                                                     "Otro pariente", "Suegro (a)", "Padre o Madre", 
+                                                     "Hermano (a)", "Cuñado (a)")) ~ "Ampliado",
+                                   all(P03A05 %in% c("Jefe (a) del hogar", "Empleado domestico","Otro no pariente")) ~ "Corresidente",
+                                   TRUE ~ "Compuesto"))
 
-# Obtiene datos de la base de datos descargada del INE
-c1_05INE <- personasENEIINE %>%
-  # filter(hogar_num == 56)
-  group_by(hogar_num, id, P03A05) %>%
-  summarize(y = n()) %>%
-  filter(y > 1) %>%
-  select(hogar_num, id, P03A05)
-
-# Mostrar datos que pueden ser duplicados para corroborar (en base al numero de hogar)
-datosduplicados <- personasENEIINE %>%
-  filter(hogar_num == 925)
+c1_05 <- merge(x = personasENEIINE, y = c1_05, by = "hogar_num") %>%
+  group_by(tipo_hogar, P03A02) %>%
+  summarise(casos = n())
+  
+  # TESTEANDO SI ESTÁ CORRECTO
+compare <- personasENEIINE %>%
+  group_by(hogar_num, P03A05) %>%
+  summarize(integrantes = n()) %>%
+  filter(hogar_num == 5252)
 
 g1_05 <- graficaBarPorcentajeApilada(c1_05, "Sexo")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_05) 
-
+#, id, P03A05
 ################################################################################
 # 1.6.	Población por sexo, según tipo de vivienda (PENDIENTE DE TERMINAR)
 ################################################################################
 # Se optó a usar datos menos actualizados (Censo 2018) ya que la muestra de la 
 # ENEI no permite para esta desagregación.
 
-c1_06 <- ENEIJoined %>%
-  filter(P03A05 == "Jefe (a) del hogar") %>%
+c1_06 <- merge(personasENEIINE, hogaresENEIINE, by = c("upm", "hogar_num")) %>%
   group_by(P03A02, P02A01) %>%
   summarize(porcentaje = n())
 
@@ -289,8 +293,17 @@ g1_09 <- graficaDobleLinea(c1_09, ruta = paste0(directorioGraficas,"g1_09.tex"),
 
 xlsxFile1 <- paste0(directorioBases, "Datos_vitales.xlsx")
 c1_10 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "TGF"))
-g1_10 <- graficaLinea(c1_10)
+g1_10 <- graficaLinea(c1_10, rotar = F)
 exportarLatex(nombre = paste0(directorioGraficas,"g1_10.tex"), graph = g1_10)
+
+################################################################################
+# 1.11.	Tasa de fecundidad juvenil según edades simples (13 - 19 años)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "Datos_vitales.xlsx")
+c1_11 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "ESPECIFICA"))
+g1_11 <- graficaLinea(c1_11, rotar = F)
+exportarLatex(nombre = paste0(directorioGraficas,"g1_11.tex"), graph = g1_11)
 
 ################################################################################
 # 1.16.	Jefatura de hogar por sexo, según estado civil 

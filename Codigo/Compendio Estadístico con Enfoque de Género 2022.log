@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  24 APR 2023 15:28
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  24 APR 2023 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1541,22 +1541,7 @@ Package hyperref Info: Anchor `page.6' on input line 21.
  [6
 
 
-] (./Generalidades/presentacion-Brenda.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--14
-
- []
-
-)
+] (./Generalidades/presentacion-Brenda.tex)
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -2111,7 +2096,7 @@ Package hyperref Info: Anchor `page.10' on input line 37.
 Package hyperref Info: Anchor `section*.11' on input line 37.
 Package hyperref Info: bookmark on input line 37:
 (hyperref)             thecounter {2}
-(hyperref)             text {\numberline {\thechapter }Economía}
+(hyperref)             text {\numberline {\thechapter }Economía y trabajo}
 (hyperref)             reference {section*.11}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
@@ -2344,7 +2329,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.19' on input line 19.
+Package hyperref Info: Anchor `page.19' on input line 18.
 [19]
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
@@ -2361,7 +2346,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.20' on input line 47.
+Package hyperref Info: Anchor `page.20' on input line 37.
 [20]
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
@@ -2378,13 +2363,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.21' on input line 57.
+Package hyperref Info: Anchor `page.21' on input line 47.
 [21]
-Overfull \hbox (63.60626pt too wide) in paragraph at lines 61--75
+Overfull \hbox (63.60626pt too wide) in paragraph at lines 51--65
 [][][][] 
  []
 
-Package hyperref Info: bookmark on input line 75:
+Package hyperref Info: bookmark on input line 65:
 (hyperref)             thecounter {A.1}
 (hyperref)             text {\protect \numberline {\csname the\@captype \endcsn
 ame }{\ignorespaces Categorías de acuerdo a la Clasificación Industrial Interna
@@ -2392,7 +2377,7 @@ cional Uniforme de todas las Actividades Económicas -CIIU-.}}
 (hyperref)             reference {table.A.1}
 (hyperref)             toclevel {0}
 (hyperref)             type {lot}.
-Package hyperref Info: Anchor `table.A.1' on input line 75.
+Package hyperref Info: Anchor `table.A.1' on input line 65.
 )
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf>
@@ -2487,11 +2472,11 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36540 strings out of 476683
- 824481 string characters out of 5807575
+ 36538 strings out of 476683
+ 824357 string characters out of 5807575
  1890012 words of memory out of 5000000
- 56007 multiletter control sequences out of 15000+600000
- 520708 words of font info for 123 fonts, out of 8000000 for 9000
+ 56006 multiletter control sequences out of 15000+600000
+ 520700 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,18n,103p,909b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

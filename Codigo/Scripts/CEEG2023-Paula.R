@@ -19,6 +19,11 @@ library(openxlsx)
 library(remotes)
 library(packcircles)
 library(ggplot2)
+# Nuevas bibliotecas añadidas en cap 1
+library(knitr)
+library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
+library(colorspace)
+
 
 # Rutas del directorio de bases y gráficas
 directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
@@ -29,9 +34,9 @@ directorioGraficas <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Gi
 hogaresCenso <- read.spss(paste0(directorioBasesCenso, "HOGAR_BDP.sav"), to.data.frame =T)
 personasCenso <- read.spss(paste0(directorioBasesCenso, "PERSONA_BDP.sav"), 
                       to.data.frame =T)
-migracionesCenso <- read.spss(paste0(directorioBases, "MIGRACION_BDP.sav"), 
+migracionesCenso <- read.spss(paste0(directorioBasesCenso, "MIGRACION_BDP.sav"), 
                          to.data.frame =T)
-viviendasCenso <- read.spss(paste0(directorioBases, "VIVIENDA_BDP.sav"), 
+viviendasCenso <- read.spss(paste0(directorioBasesCenso, "VIVIENDA_BDP.sav"), 
                        to.data.frame =T)
 hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
                      use.value.labels = T,
@@ -39,11 +44,9 @@ hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
 personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), 
                           to.data.frame =T)
 
-
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
 # documento. color1 es el principal, color2 es el secundariom del documento
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
-
 
 ################################################################################
 # DEFINIR CONSTANTES
@@ -51,6 +54,12 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 
 # Población total para censo 2018
 poblacion2018 <- nrow(personasCenso)
+
+# Población total para ENEI 2022
+poblacion2022 <- sum(personasENEI$factor)
+
+# Población Maya para censo 2018
+poblacionMaya2018 <- nrow(filter(personasCenso, PCP12 == "Maya"))
 
 # Agregando columna quinqueneo que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
@@ -80,6 +89,32 @@ personasCenso <- personasCenso %>%
                                  PCP7 > 94 & PCP7 < 100 ~ '95-99',
                                  PCP7 > 99 ~ '100+'))
 
+personasENEI <- personasENEI %>%
+  mutate(quinqueneo = case_when( P03A03 < 5 ~ '0-4',
+                                 P03A03 > 4 & P03A03 < 10 ~ '5-9',
+                                 P03A03 > 9 & P03A03 < 15 ~ '10-14',
+                                 P03A03 > 14 & P03A03 < 20 ~ '15-19',
+                                 P03A03 > 19 & P03A03 < 25 ~ '20-24',
+                                 P03A03 > 24 & P03A03 < 30 ~ '25-29',
+                                 P03A03 > 29 & P03A03 < 35 ~ '30-34',
+                                 P03A03 > 34 & P03A03 < 40 ~ '35-39',
+                                 P03A03 > 39 & P03A03 < 45 ~ '40-44',
+                                 P03A03 > 44 & P03A03 < 50 ~ '45-49',
+                                 P03A03 > 49 & P03A03 < 55 ~ '50-54',
+                                 P03A03 > 54 & P03A03 < 60 ~ '55-59',
+                                 P03A03 > 59 & P03A03 < 65 ~ '60-64',
+                                 P03A03 > 64 & P03A03 < 70 ~ '65-69',
+                                 P03A03 > 69 & P03A03 < 75 ~ '70-74',
+                                 P03A03 > 74 & P03A03 < 80 ~ '75-79',
+                                 P03A03 > 79 & P03A03 < 85 ~ '80-84',
+                                 P03A03 > 84 & P03A03 < 90 ~ '85-89',
+                                 P03A03 > 89 & P03A03 < 95 ~ '90-94',
+                                 P03A03 > 94 & P03A03 < 100 ~ '95-99',
+                                 P03A03 > 99 ~ '100+'))
+
+# Indica el orden en el que se deben mostrar los sexos
+personasCenso$PCP6 <- factor(personasCenso$PCP6, levels = c("Mujer", "Hombre"))
+personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
 
 ############################################################################
 ###                                                                      ###

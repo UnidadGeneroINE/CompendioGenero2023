@@ -95,9 +95,7 @@ personasENEI <- personasENEI %>%
 # Indica el orden en el que se deben mostrar los sexos
 personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
 
-# Calculo del Personas en Edad de Trabajar (PET) 
-# Todas las personas mayores de 14 años
-PET <- filter(personasENEI, P03A03 > 14)
+
 
 EstadoConyugal <- c('con pareja', 'sin pareja', 'Menor de 12 años')
 personasENEI <- personasENEI %>%
@@ -116,6 +114,10 @@ personasENEI <- personasENEI %>%
                                       P03A10 == "Soltero (a)" ~ 'sin pareja',
                                       P03A10 == "Menor de 12 años" ~ 'Menor de 12 años'))
 
+
+# Calculo del Personas en Edad de Trabajar (PET) 
+# Todas las personas mayores de 14 años
+PET <- filter(personasENEI, P03A03 > 14)
 
 # codigo para verificar porcetaje 
   print(sum(c4_06_data$PEA))
@@ -295,6 +297,7 @@ num_ocupados_18 = sum(ocupados_18$FACTOR)
 # PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
 PEA_18 <- rbind(desocupados_18, ocupados_18)
 
+
 ###############################################################################
 #VERIFICACIÓN DEL PEA 2018
 #Se verifico el PEA creado y el PEA que se encotraba en la personas ENEI 2018
@@ -309,7 +312,7 @@ PEA18_PEA_EXISTENTE <- PEA_18 %>%
   select(PPA02, PEA) %>%
   group_by(PPA02) %>%
   summarise( PEA18_PEA = n())
-###############################################################################
+############################################################################2018
 
 # Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
 PEATOTAL_18 <- sum(PEA_18$FACTOR)
@@ -330,8 +333,9 @@ PEA2018 <- unite(data = PEA2018, col = x, sep = " ", z, x)
 print(sum(PEA2018$y2018))
 
 ###############################################################################
-####################################Tabla comparativa de PEA entre  2018 y 2022
 
+####################################Tabla comparativa de PEA entre  2018 y 2022
+################################################################################
 #Unón de PEA 2022 a 2018
 c4_05_data <- cbind(PEA2018, PEA2022[, c("y2022")])
 
@@ -344,29 +348,81 @@ c4_05 <- c4_05_data %>%
 g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4_05.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
-
-
-
 ################################################################################
 # 4.6.	Población económicamente activa por sexo, según Pueblos y grupos de edad
 #(comparar 2018 y 2022)
 ################################################################################
 
-# Se debe crear el cuadro apartir de la base de PEA 2022 limpia se selecciona
+#Usar el PEA 2022 de la de ENEI 2022
+PEA <- rbind(desocupados, ocupados)
+# Se crea la contante PEAtotal 2022 a partir de la sumatoria de factores del la data PEA
+PEATOTAL <- sum(PEA$factor)
+
+
+# Se debe crear el cuadro apartir de la base de PEA 2022, se selecciona
 # P03A02, P03A06, factor (Sexo, Pueblo, factor)
 PEA22_PUEBLOS <- PEA %>%
   select(P03A02, P03A06, factor) %>%
   group_by(P03A02, P03A06) %>%
   summarise( y = sum(factor)/PEATOTAL * 100) %>%
-  rename( z = P03A02) %>%
-  rename( x = P03A06)
+  rename( x = P03A02) %>%
+  rename( z = P03A06)
 
-# Se segmenta el cuadro por dominio de estudio
-PEA22_PUEBLOS <- unite(data = PEA2018, col = x, sep = " ", z, x)
+#Se segmenta la tabla por sexo
+x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente*", 
+       "Ladino", "Extranjero")
+Mujer <- c(as.numeric(PEA22_PUEBLOS[6,3]), as.numeric(PEA22_PUEBLOS[2,3]), 
+             as.numeric(PEA22_PUEBLOS[1,3]), as.numeric(PEA22_PUEBLOS[4,3]),
+             as.numeric(PEA22_PUEBLOS[3,3]), as.numeric(PEA22_PUEBLOS[5,3]))
+Hombre <- c(as.numeric(PEA22_PUEBLOS[12,3]), as.numeric(PEA22_PUEBLOS[8,3]), 
+             as.numeric(PEA22_PUEBLOS[7,3]), as.numeric(PEA22_PUEBLOS[10,3]),
+             as.numeric(PEA22_PUEBLOS[9,3]), as.numeric(PEA22_PUEBLOS[11,3]))
+
+PEA22_PUEBLOS <- data.frame(x, Mujer, Hombre)
+
+# Verificación de porcentajes
+print(sum(PEA22_PUEBLOS$Mujer))
+print(sum(PEA22_PUEBLOS$Hombre))
+
+###########################################################################2018
+
+# Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
+PEA18_PUEBLOS <- PEA_18 %>%
+  select(PPA06, PPA02, FACTOR) %>%
+  group_by(PPA06, PPA02) %>%
+  summarise( y = sum(FACTOR)/ PEATOTAL_18 * 100) %>%
+  rename(x = PPA06) %>%
+  rename(z = PPA02)
+
+#Se segmenta la tabla por sexo
+x <- c("Maya", "Garífuna", "Xinka", "Ladino", "Extranjero")
+Mujer <- c(as.numeric(PEA18_PUEBLOS[9,3]), as.numeric(PEA18_PUEBLOS[3,3]), 
+           as.numeric(PEA18_PUEBLOS[1,3]), as.numeric(PEA18_PUEBLOS[5,3]),
+           as.numeric(PEA18_PUEBLOS[7,3]))
+Hombre <- c(as.numeric(PEA18_PUEBLOS[10,3]), as.numeric(PEA18_PUEBLOS[4,3]), 
+            as.numeric(PEA18_PUEBLOS[2,3]), as.numeric(PEA18_PUEBLOS[6,3]),
+            as.numeric(PEA18_PUEBLOS[8,3]))
+
+PEA18_PUEBLOS <- data.frame(x, Mujer, Hombre)
+
+#Agregar la fila afro al PEA18
+# Se parte el el data frame de PEA18
+Fila_123 <- slice(PEA18_PUEBLOS, 1:3)
+Fila_45 <- slice(PEA18_PUEBLOS, 4:5)
+#Se crea la fila Afrodesendiente 
+fila_Afro <- data.frame(x = "Afrodescendiente*", Mujer = 0, Hombre = 0)
+
+#Se usen las tres tablas de PEA por pueblo 2018
+PEA18_PUEBLOS <- rbind(Fila_123, fila_Afro, Fila_45)
+
+#Unón de PEA 2022 a 2018
+c4_06 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
 
 
 
 
+
+summarise(casos = n())
 ################################################################################
 # 4.7.	Población económicamente activa por sexo, según dominio de estudio y
 # sector económico

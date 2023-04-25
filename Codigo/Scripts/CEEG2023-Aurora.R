@@ -384,8 +384,8 @@ PEA22_PUEBLOS <- data.frame(x, Mujer, Hombre)
 print(sum(PEA22_PUEBLOS$Mujer))
 print(sum(PEA22_PUEBLOS$Hombre))
 
-###########################################################################2018
 
+#Población Econiomicamente Activa 2018
 # Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
 PEA18_PUEBLOS <- PEA_18 %>%
   select(PPA06, PPA02, FACTOR) %>%
@@ -415,18 +415,45 @@ fila_Afro <- data.frame(x = "Afrodescendiente*", Mujer = 0, Hombre = 0)
 #Se usen las tres tablas de PEA por pueblo 2018
 PEA18_PUEBLOS <- rbind(Fila_123, fila_Afro, Fila_45)
 
-#Unón de PEA 2022 a 2018
+#Unión de PEA 2022 a 2018
 c4_06 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
 
-
-
-
-
+# Falta agregar el codigo para la creación de tablas agrupadas por año y exportar
+# a latex
 summarise(casos = n())
 ################################################################################
 # 4.7.	Población económicamente activa por sexo, según dominio de estudio y
 # sector económico
 ################################################################################
+
+#PEA por sector economico
+
+PEA_Sector_economico <- PEA %>%
+  filter(formalidad == "Formal" | 
+           formalidad == "Informal")
+
+TotalSector <- sum(PEA_Sector_economico$factor)
+
+c4_07 <- PEA_Sector_economico %>%
+  select(dominio, formalidad, P03A02, factor) %>%
+  group_by(dominio, formalidad, P03A02) %>%
+  summarise( y = sum(factor)/ TotalSector * 100) %>%
+  rename(z = dominio) %>%
+  rename(w = P03A02) %>%
+  rename(a = formalidad) %>%
+  select(w, a, z, y)
+
+
+#Se unifico la columna sexo = z1 con la culumna Estado contyugal = w
+c4_07 <- unite(data = c4_07, col = x, sep = " ", w, a)
+
+g4_07 <- graficaColApilada(c4_07, "Sexo y Dominio")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_07.tex"), graph = g4_07)
+
+# Verificación de porcentajes
+print(sum(c4_07$y))
+
 
 ################################################################################
 # 4.8.	Población ocupada por sexo, según rango de edad

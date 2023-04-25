@@ -10,8 +10,10 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.3\hfil } PEA por sexo, según dominio de estudio (comparar 2018 y 2022)}{4}{section*.4}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.4\hfil } PEA por sexo, según dominio de estudio y sector económico}{4}{section*.5}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{5}{section*.4}%
+\contentsline {chapter}{APÉNDICES}{5}{section*.5}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.5}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.6}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

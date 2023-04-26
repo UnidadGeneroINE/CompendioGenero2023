@@ -12,8 +12,10 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.4\hfil } PEA por sexo, según dominio de estudio y sector económico}{4}{section*.5}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.5\hfil } Población ocupada por sexo, según rango de edad}{5}{section*.6}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{5}{section*.5}%
+\contentsline {chapter}{APÉNDICES}{7}{section*.6}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{7}{section*.6}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{9}{section*.7}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

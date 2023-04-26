@@ -117,6 +117,7 @@
 \coordinate (apoyo1) at (20,189.21);
 \coordinate (apoyo2) at (109.09,189.21);
 \coordinate (apoyo3) at (207.48,189.21);
+\coordinate (apoyo4) at (207.48,169.21);
 \coordinate (longitudFicticia) at (7.11,9.53);
 \coordinate (longitud) at (7.11,7.11);
 \coordinate (desY) at (0,1.21);
@@ -138,6 +139,9 @@
 \definecolor[named]{ctb3}{HTML}{
 5F5BB1
 }
+\definecolor[named]{ctb4}{HTML}{
+7470c8
+}
 \path [fill=none] (apoyo1) rectangle ($(apoyo1)+(longitudFicticia)$)
 node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,text width=1.33333333333333in,midway,right,scale = 0.9]{Mujer Informal};
 \draw [color= ctb1, fill=ct1] ( $(apoyo1)  + (desY) $) rectangle ($(apoyo1)+ (desY) +(longitud)$);
@@ -147,4 +151,7 @@ node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,text width=1.33333333333333in,mi
 \path [fill=none] (apoyo3) rectangle ($(apoyo3)+(longitudFicticia)$)
 node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,text width=1.33333333333333in,midway,right,scale = 0.9]{Mujer Formal};
 \path [color = ctb3, fill=ct3] ( $(apoyo3)  + (desY) $) rectangle ($(apoyo3)+ (desY) +(longitud)$);
+\path [fill=none] (apoyo2) rectangle ($(apoyo2)+(longitudFicticia)$)
+node [xshift=0.3cm,inner sep=0pt, outer sep=0pt,text width=1.33333333333333in,midway,right,scale = 0.9]{Hombre Formal};
+\draw [color = ctb4, fill=ctb4] ( $(apoyo4)  + (desY) $) rectangle ($(apoyo4)+ (desY) +(longitud)$);
 \end{scope}

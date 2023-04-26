@@ -203,7 +203,7 @@ conteoConyugal <- personasENEI %>%
 
 # Se debe crear el cuadro a partir de la base de PEA 2022 limpia se selecciona
 # P03A02, P03A06, factor (Sexo, Pueblo, factor)
-c4_04 <- PEA %>%
+c4_02 <- PEA %>%
   select(dominio, EstadoConyugal, P03A02, factor) %>%
   group_by(dominio, EstadoConyugal, P03A02) %>%
   summarise( y = sum(factor)/ PEATOTAL * 100) %>%
@@ -213,14 +213,14 @@ c4_04 <- PEA %>%
   select(z1, w, x, y)
 
 #Se unifico la columna sexo = z1 con la culumna Estado contyugal = w
-c4_04 <- unite(data = c4_04, col = z, sep = " ", z1, w)
+c4_02 <- unite(data = c4_02, col = z, sep = " ", z1, w)
 
 # Se creo la condición para posicionar a las mujeres 
-c4_04$z <- factor(c4_04$z, levels = c("Mujer con pareja", "Hombre con pareja", "Mujer sin pareja", "Hombre sin pareja"))
+c4_02$z <- factor(c4_02$z, levels = c("Mujer con pareja", "Hombre con pareja", "Mujer sin pareja", "Hombre sin pareja"))
 
-g4_04 <- graficaColApilada(c4_04, "Sexo y Estado conyugal")
+g4_02 <- graficaColApilada(c4_02, "Sexo y Estado conyugal")
 
-exportarLatex(nombre = paste0(directorioGraficas, "g4_04.tex"), graph = g4_04)
+exportarLatex(nombre = paste0(directorioGraficas, "g4_02.tex"), graph = g4_02)
 
 # Verificación de porcentajes
 print(sum(c4_01$Mujer))
@@ -287,19 +287,19 @@ print(sum(PEA2018$y2018))
 
 #Tabla comparativa de PEA entre  2018 y 2022
 #Unón de PEA 2022 a 2018
-c4_05_data <- cbind(PEA2018, PEA2022[, c("y2022")])
+c4_03_data <- cbind(PEA2018, PEA2022[, c("y2022")])
 
 # Se renombro las columnas por años  
-c4_05 <- c4_05_data %>%
+c4_03 <- c4_03_data %>%
   rename("2018" = y2018) %>%
   rename("2022" = y2022)
 
 #Crear grafica de columnas por categoria y exportar a latex
-g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4_05.tex"),
+g4_03 <- graficaColCategorias(data = c4_03, ruta = paste0(directorioGraficas,"g4_03.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
-# 4.3.	Población económicamente activa por sexo, según Pueblos y grupos de edad
+# 4.4.	Población económicamente activa por sexo, según Pueblos y grupos de edad
 #(comparar 2018 y 2022)
 ################################################################################
 
@@ -366,13 +366,13 @@ fila_Afro <- data.frame(x = "Afrodescendiente*", Mujer = 0, Hombre = 0)
 PEA18_PUEBLOS <- rbind(Fila_123, fila_Afro, Fila_45)
 
 #Unión de PEA 2022 a 2018
-c4_06 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
+c4_04 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
 
-# Falta agregar el codigo para la creación de tablas agrupadas por año y exportar
+#########Falta agregar el codigo para la creación de tablas agrupadas por año y exportar
 # a latex
 summarise(casos = n())
 ################################################################################
-# 4.4.	Población económicamente activa por sexo, según dominio de estudio y
+# 4.5.	Población económicamente activa por sexo, según dominio de estudio y
 # sector económico
 ################################################################################
 
@@ -384,7 +384,7 @@ PEA_Sector_economico <- PEA %>%
 
 TotalSector <- sum(PEA_Sector_economico$factor)
 
-c4_07 <- PEA_Sector_economico %>%
+c4_05 <- PEA_Sector_economico %>%
   select(dominio, formalidad, P03A02, factor) %>%
   group_by(dominio, formalidad, P03A02) %>%
   summarise( z = sum(factor)/ TotalSector * 100) %>%
@@ -395,74 +395,73 @@ c4_07 <- PEA_Sector_economico %>%
 
 
 #Se unifico la columna y = sexo + sector economico 
-c4_07 <- unite(data = c4_07, col = y, sep = " ", w, a)
+c4_05 <- unite(data = c4_05, col = y, sep = " ", w, a)
 
 # Se paso las filas de "y" a columnas
-c4_07 <- pivot_wider(c4_07, names_from = y, values_from = c(z))
+c4_05 <- pivot_wider(c4_05, names_from = y, values_from = c(z))
 
 
 #Grafica para latex
-g4_07 <- graficaColCategorias(data = c4_07, ruta = paste0(directorioGraficas,"g4_07.tex"),
+g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4_05.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
 # Verificación de porcentajes
-print(sum(c4_07$y))
-
-
-################################################################################
-# 4.5.	Población ocupada por sexo, según rango de edad
-################################################################################
+print(sum(c4_05$y))
 
 ################################################################################
-# 4.6.	Población ocupada por sexo, según dominio de estudio y categoría 
+# 4.6.	Población ocupada por sexo, según rango de edad
+################################################################################
+
+################################################################################
+# 4.7.	Población ocupada por sexo, según dominio de estudio y categoría 
 # ocupacional
 ################################################################################
 
 ################################################################################
-# 4.7.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 
+# 4.8.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 
 # rama de actividad (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.8.	Créditos otorgados a la pequeña y mediana empresa por sexo 
+# 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 
+# 4.10.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 
 # rama de actividad económica (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.10.	Salario o ingresos promedio por sexo, según dominio de estudio y 
+# 4.11.	Salario o ingresos promedio por sexo, según dominio de estudio y 
 # rama de actividad económica
 ################################################################################
 
 ################################################################################
-# 4.11.	Salarios o ingresos promedio, desagregado por sexo, según pueblo
+# 4.12.	Salarios o ingresos promedio, desagregado por sexo, según pueblo
 ################################################################################
 
 ################################################################################
-# 4.12.	Tasa de desempleo en la población de 15 años o más por sexo, según 
+# 4.13.	Tasa de desempleo en la población de 15 años o más por sexo, según 
 # dominio de estudio (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.13.	Tasa desempleo en la población de 15 años o más por sexo, según 
+# 4.14.	Tasa desempleo en la población de 15 años o más por sexo, según 
 # Pueblos (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.14.	Mujeres jefas de hogar por número de hijas/hijos en la PO
+# 4.15.	Mujeres jefas de hogar por número de hijas/hijos en la PO
 ################################################################################
 
 ################################################################################
-# 4.15.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
+# 4.16.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
 # por sexo (ODS)
 ################################################################################
 
 ################################################################################
-# 4.16.	Distribución de tareas no remuneradas en el hogar por sexo
+# 4.17.	Distribución de tareas no remuneradas en el hogar por sexo
 ################################################################################
 
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  26 APR 2023 11:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  26 APR 2023 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1680,7 +1680,7 @@ conómica por dominio de estudio, sexo y estado conyugal}
 (hyperref)             reference {section*.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-(./Descripciones/des4_04.tex)
+(./Descripciones/des4_02.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -1691,7 +1691,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 5.
-(./Graficas/g4_04.tex)
+(./Graficas/g4_02.tex)
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 5--5
 [][]
  []
@@ -1720,7 +1720,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 7.
-(./Graficas/g4_05.tex) (./Descripciones/des4_05.tex)
+(./Graficas/g4_03.tex) (./Descripciones/des4_03.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 7--7
  []|[]| 
  []
@@ -1768,7 +1768,7 @@ inio de estudio y sector económico}
 (hyperref)             reference {section*.5}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
- (./Descripciones/des4_07.tex)
+ (./Descripciones/des4_05.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 9--9
 []|[]| 
  []
@@ -1779,7 +1779,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 9.
-(./Graficas/g4_07.tex)
+(./Graficas/g4_05.tex)
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 9--9
 [][]
  []

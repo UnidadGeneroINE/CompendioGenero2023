@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  25 APR 2023 16:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  26 APR 2023 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1706,8 +1706,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 5--6
 []        
  []
 
-Package hyperref Info: Anchor `section*.4' on input line 9.
-Package hyperref Info: bookmark on input line 9:
+Package hyperref Info: Anchor `section*.4' on input line 7.
+Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {1.3}
 (hyperref)             text {\numberline {\thesection } PEA por sexo, según dom
 inio de estudio (comparar 2018 y 2022)}
@@ -1716,27 +1716,27 @@ inio de estudio (comparar 2018 y 2022)}
 (hyperref)             type {toc}.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 9.
+            Default family used instead on input line 7.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 9.
+            Default family used instead on input line 7.
 (./Graficas/g4_05.tex) (./Descripciones/des4_05.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 9--9
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 7--7
  []|[]| 
  []
 
 
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 9--9
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 7--7
 [][]
  []
 
 
-Overfull \hbox (67.4098pt too wide) in paragraph at lines 9--9
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 7--7
 [] 
  []
 
 
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 9--10
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 7--8
 []        
  []
 
@@ -1758,10 +1758,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.3' on input line 11.
+Package hyperref Info: Anchor `page.3' on input line 9.
 [3]
-Package hyperref Info: Anchor `section*.5' on input line 11.
-Package hyperref Info: bookmark on input line 11:
+Package hyperref Info: Anchor `section*.5' on input line 9.
+Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {1.4}
 (hyperref)             text {\numberline {\thesection } PEA por sexo, según dom
 inio de estudio y sector económico}
@@ -1769,28 +1769,28 @@ inio de estudio y sector económico}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
  (./Descripciones/des4_07.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 11--11
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 9--9
 []|[]| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 11.
+            Default family used instead on input line 9.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 11.
+            Default family used instead on input line 9.
 (./Graficas/g4_07.tex)
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 11--11
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 9--9
 [][]
  []
 
 
-Overfull \hbox (44.82545pt too wide) in paragraph at lines 11--11
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 9--9
 [] 
  []
 
 )
-Overfull \hbox (13.72247pt too wide) in paragraph at lines 11--36
+Overfull \hbox (13.72247pt too wide) in paragraph at lines 9--36
 []           
  []
 
@@ -2019,13 +2019,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36378 strings out of 476683
- 820631 string characters out of 5807575
+ 36404 strings out of 476683
+ 821045 string characters out of 5807575
  1884012 words of memory out of 5000000
- 55899 multiletter control sequences out of 15000+600000
+ 55925 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,18n,103p,866b,1453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,19n,103p,866b,1477s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (23 page
 s).

@@ -169,21 +169,7 @@ g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g4
   print(sum(c4_01$Hombre))
 
 ################################################################################
-# 4.2.	Carga global de trabajo entre las personas ocupadas de 15 años y más 
-# por sexo (comparar 2018 y 2022)
-################################################################################  
-
-  # PENDIENTE 
-
-################################################################################
-# 4.3.	Carga global de trabajo de la población de 7 años o más, por sexo, 
-# según Pueblos, (comparar 2018 y 2022)
-################################################################################  
-
-  # PENDIENTE 
-
-################################################################################
-#  4.4.	Tasa de participación económica por dominio de estudio, según sexo y 
+#  4.2.	Tasa de participación económica por dominio de estudio, según sexo y 
 # estado conyugal
 ################################################################################  
 
@@ -241,7 +227,7 @@ print(sum(c4_01$Mujer))
 print(sum(c4_01$Hombre)) 
 
 ################################################################################
-#  4.5.	Población económicamente activa por sexo, según dominio de estudio 
+#  4.3.	Población económicamente activa por sexo, según dominio de estudio 
 # (comparar 2018 y 2022)
 ################################################################################ 
 
@@ -266,39 +252,7 @@ PEA2022 <- unite(data = PEA2022, col = z, sep = " ", z, x)
 print(sum(PEA2022$y2022))
 
 
-############################################################ CALCULO DE PEA 2018
-################################################################################
-
-personasENEI_18$PPA02 <- factor(personasENEI_18$PPA02, levels = c("Mujer", "Hombre"))
-
-# Cálculo de PET 2018
-#
-# Se filtran las personas mayores a 14 años, que son las que sí se pueden considerar como PET
-# (personas en edad de trabaja = PET) 
-# # PPA03 = edad de la persona 
-PET_18 <- filter(personasENEI_18, PPA03 > 14)
-
-# Cálculo de PEA 2018
-# Cálculo de PEA 2018
-# cálculo de desocupados y ocupados 2018
-# desocupados 2022 <- filter(PET, P05B04 >=0 | P05B01 == 'Sí')
-# pP05B01 = Sí bUSCO trabajo 
-desocupados_18 <- filter(PET_18, P04B02 == 'Sí')
-
-# Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
-# tienen más de un trabajo, si no respondieron nada quiere decir que son
-# desocupados
-
-# Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
-# la base limpia
-# P04C01 = cantidad de trabajos 
-ocupados_18 <- filter(PET_18, !is.na(P04C01))
-num_ocupados_18 = sum(ocupados_18$FACTOR)
-# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
-PEA_18 <- rbind(desocupados_18, ocupados_18)
-
-
-###############################################################################
+# CALCULO DE PEA 2018
 #VERIFICACIÓN DEL PEA 2018
 #Se verifico el PEA creado y el PEA que se encotraba en la personas ENEI 2018
 # pera creado por Aurora utilizando el codigo anterios
@@ -312,9 +266,8 @@ PEA18_PEA_EXISTENTE <- PEA_18 %>%
   select(PPA02, PEA) %>%
   group_by(PPA02) %>%
   summarise( PEA18_PEA = n())
-############################################################################2018
 
-# Se crea la contante PEAtotal 2022 apartir de la sumatoria de factores del
+# Se crea la contante PEAtotal 2018 apartir de la sumatoria de factores del
 PEATOTAL_18 <- sum(PEA_18$FACTOR)
 
 # Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
@@ -332,10 +285,7 @@ PEA2018 <- unite(data = PEA2018, col = x, sep = " ", z, x)
 #Verificación de porcetaje
 print(sum(PEA2018$y2018))
 
-###############################################################################
-
-####################################Tabla comparativa de PEA entre  2018 y 2022
-################################################################################
+#Tabla comparativa de PEA entre  2018 y 2022
 #Unón de PEA 2022 a 2018
 c4_05_data <- cbind(PEA2018, PEA2022[, c("y2022")])
 
@@ -349,7 +299,7 @@ g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4
                               etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
-# 4.6.	Población económicamente activa por sexo, según Pueblos y grupos de edad
+# 4.3.	Población económicamente activa por sexo, según Pueblos y grupos de edad
 #(comparar 2018 y 2022)
 ################################################################################
 
@@ -422,7 +372,7 @@ c4_06 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
 # a latex
 summarise(casos = n())
 ################################################################################
-# 4.7.	Población económicamente activa por sexo, según dominio de estudio y
+# 4.4.	Población económicamente activa por sexo, según dominio de estudio y
 # sector económico
 ################################################################################
 
@@ -437,78 +387,82 @@ TotalSector <- sum(PEA_Sector_economico$factor)
 c4_07 <- PEA_Sector_economico %>%
   select(dominio, formalidad, P03A02, factor) %>%
   group_by(dominio, formalidad, P03A02) %>%
-  summarise( y = sum(factor)/ TotalSector * 100) %>%
-  rename(z = dominio) %>%
+  summarise( z = sum(factor)/ TotalSector * 100) %>%
+  rename(x = dominio) %>%
   rename(w = P03A02) %>%
   rename(a = formalidad) %>%
-  select(w, a, z, y)
+  select(w, a, x, z)
 
 
-#Se unifico la columna sexo = z1 con la culumna Estado contyugal = w
-c4_07 <- unite(data = c4_07, col = x, sep = " ", w, a)
+#Se unifico la columna y = sexo + sector economico 
+c4_07 <- unite(data = c4_07, col = y, sep = " ", w, a)
 
-g4_07 <- graficaColApilada(c4_07, "Sexo y Dominio")
+# Se paso las filas de "y" a columnas
+c4_07 <- pivot_wider(c4_07, names_from = y, values_from = c(z))
 
-exportarLatex(nombre = paste0(directorioGraficas, "g4_07.tex"), graph = g4_07)
+
+#Grafica para latex
+g4_07 <- graficaColCategorias(data = c4_07, ruta = paste0(directorioGraficas,"g4_07.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
 
 # Verificación de porcentajes
 print(sum(c4_07$y))
 
 
 ################################################################################
-# 4.8.	Población ocupada por sexo, según rango de edad
+# 4.5.	Población ocupada por sexo, según rango de edad
 ################################################################################
 
 ################################################################################
-# 4.9.	Población ocupada por sexo, según dominio de estudio y categoría 
+# 4.6.	Población ocupada por sexo, según dominio de estudio y categoría 
 # ocupacional
 ################################################################################
 
 ################################################################################
-# 4.10.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 
+# 4.7.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 
 # rama de actividad (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.11.	Créditos otorgados a la pequeña y mediana empresa por sexo 
+# 4.8.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.12.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 
+# 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 
 # rama de actividad económica (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.13.	Salario o ingresos promedio por sexo, según dominio de estudio y 
+# 4.10.	Salario o ingresos promedio por sexo, según dominio de estudio y 
 # rama de actividad económica
 ################################################################################
 
 ################################################################################
-# 4.14.	Salarios o ingresos promedio, desagregado por sexo, según pueblo
+# 4.11.	Salarios o ingresos promedio, desagregado por sexo, según pueblo
 ################################################################################
 
 ################################################################################
-# 4.15.	Tasa de desempleo en la población de 15 años o más por sexo, según 
+# 4.12.	Tasa de desempleo en la población de 15 años o más por sexo, según 
 # dominio de estudio (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.16.	Tasa desempleo en la población de 15 años o más por sexo, según 
+# 4.13.	Tasa desempleo en la población de 15 años o más por sexo, según 
 # Pueblos (comparar 2018 y 2022)
 ################################################################################
 
 ################################################################################
-# 4.17.	Mujeres jefas de hogar por número de hijas/hijos en la PO
+# 4.14.	Mujeres jefas de hogar por número de hijas/hijos en la PO
 ################################################################################
 
 ################################################################################
-# 4.18.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
+# 4.15.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
 # por sexo (ODS)
 ################################################################################
 
 ################################################################################
-# 4.19.	Distribución de tareas no remuneradas en el hogar por sexo
+# 4.16.	Distribución de tareas no remuneradas en el hogar por sexo
 ################################################################################
 
 

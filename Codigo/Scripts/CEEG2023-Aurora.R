@@ -19,10 +19,17 @@ library(remotes)
 library(packcircles)
 library(ggplot2)
 library(tidyr) # install.packages("tidyverse")
+
+# Biblioteca de librerias del capitulo 4
 #library(gt) #install.packages("gt")
 #library(tables) #install.packages("tables")
 library(xtable) #install.packages("Xtables")
+library(scales) #install.packages("scales")
 library(kableExtra) #install.packages("kableExtra")
+library(knitr) #install.packages("knitr")
+library(colorspace) #install.packages("colorspace")
+
+
 
 # Rutas del directorio de bases y gráficas
 directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\"
@@ -366,10 +373,16 @@ fila_Afro <- data.frame(x = "Afrodescendiente*", Mujer = 0, Hombre = 0)
 PEA18_PUEBLOS <- rbind(Fila_123, fila_Afro, Fila_45)
 
 #Unión de PEA 2022 a 2018
-c4_04 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
+c4_04 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")]) %>%
+  rename(Pueblos = x)
 
-#########Falta agregar el codigo para la creación de tablas agrupadas por año y exportar
-# a latex
+
+#Tabla latex 
+Tabla4_04 <- tablaLaTeX(c4_04, nombre_columnas = colnames(c4_04), 
+                       nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                       opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla4_04.tex"))
+
+
 summarise(casos = n())
 ################################################################################
 # 4.5.	Población económicamente activa por sexo, según dominio de estudio y
@@ -441,8 +454,7 @@ g4_06 <- graficaColCategorias(data = c4_06, ruta = paste0(directorioGraficas,"g4
 
 
 ################################################################################
-# 4.7.	Población ocupada por sexo, según dominio de estudio y categoría 
-# ocupacional
+# 4.7.	Población ocupada por sexo, según categoría ocupacional
 ################################################################################
 
 #Se filtra por la categoria de ocupación se excluye la categoaria "Ingnorado"
@@ -492,6 +504,35 @@ print(sum(c4_07$Hombre))
 # rama de actividad (comparar 2018 y 2022)
 ################################################################################
 
+#total de ocupados afiliados 
+Totalocupados_22<- sum(ocupados_22$factor)
+
+c4_08 <- ocupados_22 %>%
+  select(P03A02, P05C03B_1D, factor) %>%
+  group_by(P03A02, P05C03B_1D) %>%
+  summarise( y = sum(factor) / Totalocupados_22 * 100) %>%
+  rename(z = P03A02) %>%
+  rename(x = P05C03B_1D)
+
+c4_08 <- pivot_wider(c4_08, names_from = z, values_from = c(y)) 
+
+c4_08 <- c4_08 %>%
+  mutate(x =case_when(x == "Comercio al por mayor y al por menor, transporte y almacenamiento, actividades de alojamiento y de servicio de comidas" ~ "Comercio",
+                      x == "Agricultura, ganadería, silvicultura y pesca" ~ "Agricultura",
+                      x == "Industrias manufactureras, explotación de minas y canteras y otras actividades industriales" ~ "Industrias manufactureras",
+                      x == "Actividades de administración pública y defensa, enseñanza, actividades de atención de la salud y asistencia social" ~ "Administración pública",
+                      x == "Actividades financieras y de seguros" ~ "Financieras y de seguros",
+                      x == "Actividades profesionales, científicas, técnicas, y de servicios administrativos y de apoyo" ~ "Profesionales",
+                      x == "Construcción" ~ "Construcción",
+                      x == "Otras actividades de servicios" ~ "Otras de servicios",
+                      x == "Actividades inmobiliarias" ~ "Inmobiliarias",
+                      x == "Información y comunicación" ~ "Comunicaciones",
+                      x == "9999" ~ "NS/NR", TRUE ~ x)) # Reemplazando los valores y si ninguna condición se cumple conserva el valor original de la base almacenado temporalmente en col_categoría_ocupacional
+
+g4_08 <- graficaColCategorias(data = c4_08, ruta = paste0(directorioGraficas,"g4_08.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
+
+
 
 ################################################################################
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
@@ -534,69 +575,3 @@ print(sum(c4_07$Hombre))
 ################################################################################
 # 4.17.	Distribución de tareas no remuneradas en el hogar por sexo
 ################################################################################
-
-
-
-################################################################################
-# 0. Porcentaje de población según sexo por pueblos (MUESTRA)
-################################################################################
-
-poblacion_por_pueblos <- personasCenso %>%
-  group_by(PCP12, PCP6) %>%
-  summarise(Porcentaje = n()/poblacion2018 * 100) %>%
-  rename(Sexo = PCP6, Pueblo = PCP12)
-
-x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente*", 
-       "Ladino", "Extranjero")
-Hombres <- c(as.numeric(poblacion_por_pueblos[1,3]), as.numeric(poblacion_por_pueblos[3,3]), 
-             as.numeric(poblacion_por_pueblos[5,3]), as.numeric(poblacion_por_pueblos[7,3]),
-             as.numeric(poblacion_por_pueblos[9,3]), as.numeric(poblacion_por_pueblos[11,3]))
-Mujeres <- c(as.numeric(poblacion_por_pueblos[2,3]), as.numeric(poblacion_por_pueblos[4,3]), 
-             as.numeric(poblacion_por_pueblos[6,3]), as.numeric(poblacion_por_pueblos[8,3]),
-             as.numeric(poblacion_por_pueblos[10,3]), as.numeric(poblacion_por_pueblos[12,3]))
-
-poblacion_por_pueblos <- data.frame(x, Mujeres, Hombres)
-
-g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(directorioGraficas,"g0_00.tex"), 
-                              etiquetas = "h")
-
-################################################################################
-# 4.6.	Población económicamente activa por sexo, según Pueblos y grupos de edad
-#(comparar 2018 y 2022) 
-################################################################################
-
-c1_01 <- personasCenso %>%
-  group_by(PCP6, quinqueneo) %>%
-  summarize(y = n()) %>%
-  rename(z = PCP6, x = quinqueneo) %>%
-  arrange(factor(x, levels = quinqueneos))%>%
-  arrange(factor(c1_01$z, levels = c("Mujer", "Hombre")))
-
-# Indica el orden en el que se debe mostrar los grupos quinquenales
-c1_01$x <- factor(c1_01$x, levels = quinqueneos)
-c1_01$z <- factor(c1_01$z, levels = c("Mujer", "Hombre"))
-
-g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
-g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph = g1_01)
-
-################################################################################
-# 1.2.	Población por sexo, según dominio de estudio
-################################################################################
-
-c1_02 <- personasCenso %>%
-  group_by(PCP6, AREA) %>%
-  summarize(y = n()/poblacion2018 *100) %>%
-  rename(Sexo = PCP6)
-
-x <- c("Hombre Urbana", "Hombre Rural", "Mujer Urbana", "Mujer Rural")
-y <- c(as.numeric(c1_02[1,3]), as.numeric(c1_02[2,3]), as.numeric(c1_02[3,3]), as.numeric(c1_02[4,3]))
-
-c1_02 <- data.frame(x,y)
-
-g1_02 <- graficaPackedBubbles(data = c1_02)
-g1_02 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
-
-
-
-
-

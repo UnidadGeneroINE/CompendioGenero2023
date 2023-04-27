@@ -14,8 +14,10 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.5\hfil } Población ocupada por sexo, según rango de edad}{5}{section*.6}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.6\hfil } Población ocupada por sexo, según dominio de estudio y categoría ocupaciona}{5}{section*.7}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{7}{section*.6}%
+\contentsline {chapter}{APÉNDICES}{7}{section*.7}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{9}{section*.7}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{9}{section*.8}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

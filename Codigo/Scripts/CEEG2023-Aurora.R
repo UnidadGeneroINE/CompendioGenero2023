@@ -435,7 +435,7 @@ Hombre <- c(as.numeric(c4_06[4,3]), as.numeric(c4_06[5,3]), as.numeric(c4_06[6,3
 
 c4_06 <- data.frame(x, Mujer, Hombre)
 
-#Exportar grafica a latex
+#Exportar grafica columnas por categoria a latex
 g4_06 <- graficaColCategorias(data = c4_06, ruta = paste0(directorioGraficas,"g4_06.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
@@ -457,17 +457,6 @@ PO_CAT <- PO %>%
           P05C20 == "Patrón empleador (a) socio (a) agrícola" |
           P05C20 == "Trabajador No remunerado (Familiar o No familiar)")
 
-#Se acorta los nombres de las categoarias
-PO_CAT <- PO_CAT %>%
-  mutate(P05C20 = case_when((P05C20 == 'En el servicio doméstico' ~ 'Servicio doméstico',
-                             P05C20 == 'Empleado jornalero o peón' ~ 'Jornalero o peón',
-                             P05C20 == 'Trabajador por cuenta propia NO agrícola' ~ 'Cuenta propia no agrícola',
-                             P05C20 == 'Trabajador No remunerado (Familiar o No familiar)' ~ 'Trabajador no remunerado',
-                             P05C20 == 'Trabajador por cuenta propia agrícola' ~ 'Por cuenta propia agrícola',
-                             P05C20 == 'Patrón empleador (a) socio (a) agrícola' ~ 'Patrón agrícola',
-                             P05C20 == 'Patrón empleador (a) socio (a) NO agrícola' ~ 'Patrón no agrícola')))
-
-
 #Se calculo el total de PO para sacar porcentajes
 TotalPO_CAT<- sum(PO_CAT$factor)
 
@@ -476,57 +465,27 @@ c4_07 <- PO_CAT %>%
     group_by(P03A02, P05C20) %>%
     summarise( y = sum(factor)/ TotalPO_CAT * 100) %>%
     rename(z = P03A02) %>%
-    mutate(P05C20 = case_when((P05C20 == "En el servicio doméstico" ~ "Servicio doméstico",
-                               P05C20 == "Empleado jornalero o peón" ~ "Jornalero o peón",
-                               P05C20 == "Trabajador por cuenta propia NO agrícola" ~ "Cuenta propia no agrícola",
-                               P05C20 == "Trabajador No remunerado (Familiar o No familiar)" ~ "Trabajador no remunerado",
-                               P05C20 == "Trabajador por cuenta propia agrícola" ~ "Por cuenta propia agrícola",
-                               P05C20 == "Empleado de gobierno" ~ "Empleado del gobierno",
-                               P05C20 == "Patrón empleador (a) socio (a) agrícola" ~ "Patrón agrícola",
-                               P05C20 == "Patrón empleador (a) socio (a) NO agrícola" ~ "Patrón no agrícola" )))
+    rename(x = P05C20)
 
-#Aun no no puedo canbiar el nombre de las tablas 
+c4_07 <- pivot_wider(c4_07, names_from = z, values_from = c(y))  
 
-c4_07 <- pivot_wider(c4_07, names_from = z, values_from = c(y))
+#Acortar los valores de la columna x
+c4_07 <- c4_07 %>%
+  mutate(x = case_when(x == "En el servicio doméstico" ~ "Servicio doméstico",
+                       x == "Empleado jornalero o peón" ~ "Jornalero o peón",
+                       x == "Trabajador por cuenta propia NO agrícola" ~ "Cuenta propia no agrícola",
+                       x == "Trabajador No remunerado (Familiar o No familiar)" ~ "Trabajador no remunerado",
+                       x == "Trabajador por cuenta propia agrícola" ~ "Por cuenta propia agrícola",
+                       x == "Patrón empleador (a) socio (a) agrícola" ~ "Patrón agrícola",
+                       x == "Patrón empleador (a) socio (a) NO agrícola" ~ "Patrón no agrícola",
+                       TRUE ~ x))
+
 
 g4_07 <- graficaColCategorias(data = c4_07, ruta = paste0(directorioGraficas,"g4_07.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
-               
-ocupaciones <- unique(subempleados$P05C20)
-# ocupaciones <- as.vector(unique(na.omit(subempleados$C05C02B_1D)))
-# print(ocupaciones)
-TSV_ocupaciones <- list()
-# print(unique(personas2$C05C02B_1D))
-grupos <- case_when(ocupaciones == "En el servicio doméstico" ~ "Servicio doméstico",
-                    ocupaciones == "Empleado jornalero o peón " ~ "Jornalero o peón",
-                    ocupaciones == "Trabajador por cuenta propia NO agrícola" ~ "Cuenta propia no agrícola",
-                    ocupaciones == "Trabajador No remunerado (Familiar o No familiar)" ~ "Trabajador no remunerado",
-                    ocupaciones == "Trabajador por cuenta propia agrícola " ~ "Por cuenta propia agrícola",
-                    ocupaciones == "Empleado de gobierno" ~ "Empleado del gobierno",
-                    ocupaciones == "Patrón empleador (a) socio (a) agrícola" ~ "Patrón agrícola",
-                    ocupaciones == "Patrón empleador (a) socio (a) NO agrícola" ~ "Patrón no agrícola", TRUE ~ ocupaciones
-)
-names(grupos) <- ocupaciones
 
-for (ocupacion in ocupaciones) {
-  TSV_ocupaciones[[ocupacion]] <- sumFactor(filter(subempleados, P05C20==ocupacion))/
-    sumFactor(totales_PEA)*100
-  x <- c(x, grupos[[ocupacion]])
-}
-print(unlist(grupos, use.names = FALSE))
-
-y <- unlist(TSV_ocupaciones, use.names=FALSE)
-c7_06 <- data.frame(x,y)
-
-g7_06 <- graficaBar(c7_06, ordenar = TRUE)
-g7_06 <- etiquetasBarras(g7_06)
-
-
-exportarLatex(paste0(directorioGraficas, "g7_06.tex"), graph = g7_06, preambulo = F)
-
-
-
-
+print(sum(c4_07$Mujer))
+print(sum(c4_07$Hombre))
 
 ################################################################################
 # 4.8.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 

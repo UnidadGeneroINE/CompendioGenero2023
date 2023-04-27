@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  26 APR 2023 13:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  27 APR 2023 09:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,8 +1593,9 @@ Package hyperref Info: Reference (link) `section*.3' on input line 9.
 Package hyperref Info: Reference (link) `section*.4' on input line 11.
 Package hyperref Info: Reference (link) `section*.5' on input line 13.
 Package hyperref Info: Reference (link) `section*.6' on input line 15.
-Package hyperref Info: Reference (link) `section*.6' on input line 18.
+Package hyperref Info: Reference (link) `section*.7' on input line 17.
 Package hyperref Info: Reference (link) `section*.7' on input line 20.
+Package hyperref Info: Reference (link) `section*.8' on input line 22.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1824,9 +1825,9 @@ Overfull \hbox (67.4098pt too wide) in paragraph at lines 11--11
 [] 
  []
 
-)
-Overfull \hbox (13.72247pt too wide) in paragraph at lines 11--36
-[]           
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 11--12
+[]        
  []
 
 
@@ -1847,8 +1848,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.4' on input line 36.
+Package hyperref Info: Anchor `page.4' on input line 13.
 [4]
+Package hyperref Info: Anchor `section*.7' on input line 13.
+Package hyperref Info: bookmark on input line 13:
+(hyperref)             thecounter {1.6}
+(hyperref)             text {\numberline {\thesection } Población ocupada por s
+exo, según dominio de estudio y categoría ocupaciona}
+(hyperref)             reference {section*.7}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+ (./Descripciones/des4_07.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 13--13
+[]|[]| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 13.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 13.
+(./Graficas/g4_07.tex)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 13--13
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 13--13
+[] 
+ []
+
+)
+Overfull \hbox (13.72247pt too wide) in paragraph at lines 13--36
+[]           
+ []
+
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -1874,7 +1909,7 @@ Package hyperref Info: Anchor `page.6' on input line 36.
 Package hyperref Info: bookmark on input line 36:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.6}
+(hyperref)             reference {section*.7}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.7' on input line 36.
@@ -1884,11 +1919,11 @@ Package hyperref Info: Anchor `page.8' on input line 36.
 
 
 ]
-Package hyperref Info: Anchor `section*.7' on input line 38.
+Package hyperref Info: Anchor `section*.8' on input line 38.
 Package hyperref Info: bookmark on input line 38:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.7}
+(hyperref)             reference {section*.8}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -2076,10 +2111,10 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36419 strings out of 476683
- 821349 string characters out of 5807575
+ 36432 strings out of 476683
+ 821609 string characters out of 5807575
  1887012 words of memory out of 5000000
- 55934 multiletter control sequences out of 15000+600000
+ 55941 multiletter control sequences out of 15000+600000
  520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,19n,103p,866b,1477s stack positions out of 10000i,1000n,20000p,200000b,200000s

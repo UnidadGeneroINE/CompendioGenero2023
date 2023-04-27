@@ -492,6 +492,7 @@ print(sum(c4_07$Hombre))
 # rama de actividad (comparar 2018 y 2022)
 ################################################################################
 
+
 ################################################################################
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)

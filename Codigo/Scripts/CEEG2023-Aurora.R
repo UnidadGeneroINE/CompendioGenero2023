@@ -24,7 +24,6 @@ library(tidyr) # install.packages("tidyverse")
 #library(gt) #install.packages("gt")
 #library(tables) #install.packages("tables")
 library(xtable) #install.packages("Xtables")
-library(scales) #install.packages("scales")
 library(kableExtra) #install.packages("kableExtra")
 library(knitr) #install.packages("knitr")
 library(colorspace) #install.packages("colorspace")
@@ -306,7 +305,7 @@ g4_03 <- graficaColCategorias(data = c4_03, ruta = paste0(directorioGraficas,"g4
                               etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
-# 4.4.	Población económicamente activa por sexo, según Pueblos y grupos de edad
+# 4.4.	Población económicamente activa por sexo, según Pueblos
 #(comparar 2018 y 2022)
 ################################################################################
 
@@ -322,11 +321,11 @@ PEA22_PUEBLOS <- PEA %>%
   select(P03A02, P03A06, factor) %>%
   group_by(P03A02, P03A06) %>%
   summarise( y = sum(factor)/PEATOTAL * 100) %>%
-  rename( x = P03A02) %>%
+  rename( Pueblos = P03A02) %>%
   rename( z = P03A06)
 
 #Se segmenta la tabla por sexo
-x <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente*", 
+Pueblos <- c("Maya", "Garífuna", "Xinka", "Afrodescendiente*", 
        "Ladino", "Extranjero")
 Mujer <- c(as.numeric(PEA22_PUEBLOS[6,3]), as.numeric(PEA22_PUEBLOS[2,3]), 
              as.numeric(PEA22_PUEBLOS[1,3]), as.numeric(PEA22_PUEBLOS[4,3]),
@@ -335,7 +334,7 @@ Hombre <- c(as.numeric(PEA22_PUEBLOS[12,3]), as.numeric(PEA22_PUEBLOS[8,3]),
              as.numeric(PEA22_PUEBLOS[7,3]), as.numeric(PEA22_PUEBLOS[10,3]),
              as.numeric(PEA22_PUEBLOS[9,3]), as.numeric(PEA22_PUEBLOS[11,3]))
 
-PEA22_PUEBLOS <- data.frame(x, Mujer, Hombre)
+PEA22_PUEBLOS <- data.frame(Pueblos, Mujer, Hombre)
 
 # Verificación de porcentajes
 print(sum(PEA22_PUEBLOS$Mujer))
@@ -348,11 +347,11 @@ PEA18_PUEBLOS <- PEA_18 %>%
   select(PPA06, PPA02, FACTOR) %>%
   group_by(PPA06, PPA02) %>%
   summarise( y = sum(FACTOR)/ PEATOTAL_18 * 100) %>%
-  rename(x = PPA06) %>%
+  rename(Pueblos = PPA06) %>%
   rename(z = PPA02)
 
 #Se segmenta la tabla por sexo
-x <- c("Maya", "Garífuna", "Xinka", "Ladino", "Extranjero")
+Pueblos <- c("Maya", "Garífuna", "Xinka", "Ladino", "Extranjero")
 Mujer <- c(as.numeric(PEA18_PUEBLOS[9,3]), as.numeric(PEA18_PUEBLOS[3,3]), 
            as.numeric(PEA18_PUEBLOS[1,3]), as.numeric(PEA18_PUEBLOS[5,3]),
            as.numeric(PEA18_PUEBLOS[7,3]))
@@ -360,30 +359,29 @@ Hombre <- c(as.numeric(PEA18_PUEBLOS[10,3]), as.numeric(PEA18_PUEBLOS[4,3]),
             as.numeric(PEA18_PUEBLOS[2,3]), as.numeric(PEA18_PUEBLOS[6,3]),
             as.numeric(PEA18_PUEBLOS[8,3]))
 
-PEA18_PUEBLOS <- data.frame(x, Mujer, Hombre)
+PEA18_PUEBLOS <- data.frame(Pueblos, Mujer, Hombre)
 
 #Agregar la fila afro al PEA18
 # Se parte el el data frame de PEA18
 Fila_123 <- slice(PEA18_PUEBLOS, 1:3)
 Fila_45 <- slice(PEA18_PUEBLOS, 4:5)
 #Se crea la fila Afrodesendiente 
-fila_Afro <- data.frame(x = "Afrodescendiente*", Mujer = 0, Hombre = 0)
+fila_Afro <- data.frame(Pueblos = "Afrodescendiente*", Mujer = "N/A", Hombre = "N/A")
 
 #Se usen las tres tablas de PEA por pueblo 2018
 PEA18_PUEBLOS <- rbind(Fila_123, fila_Afro, Fila_45)
 
-#Unión de PEA 2022 a 2018
-c4_04 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")]) %>%
-  rename(Pueblos = x)
+# Convertimos las columnas numéricas utilizando type.convert()
+PEA18_PUEBLOS[, 2:3] <- apply(PEA18_PUEBLOS[, 2:3], 2, function(x) type.convert(as.character(x), na.strings = "N/A"))
 
+#Unión de PEA 2022 a 2018
+c4_04 <- cbind(PEA18_PUEBLOS, PEA22_PUEBLOS[, c("Mujer", "Hombre")])
 
 #Tabla latex 
 Tabla4_04 <- tablaLaTeX(c4_04, nombre_columnas = colnames(c4_04), 
                        nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
                        opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla4_04.tex"))
 
-
-summarise(casos = n())
 ################################################################################
 # 4.5.	Población económicamente activa por sexo, según dominio de estudio y
 # sector económico
@@ -500,8 +498,8 @@ print(sum(c4_07$Mujer))
 print(sum(c4_07$Hombre))
 
 ################################################################################
-# 4.8.	Porcentaje de trabajadoras(es) afiliadas(os) al seguro social, según 
-# rama de actividad (comparar 2018 y 2022)
+# 4.8.  Población ocupada con acceso a seguro social por sexo, según rama de 
+#       actividad económica Porcentaje 
 ################################################################################
 
 #total de ocupados afiliados 
@@ -531,7 +529,6 @@ c4_08 <- c4_08 %>%
 
 g4_08 <- graficaColCategorias(data = c4_08, ruta = paste0(directorioGraficas,"g4_08.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
-
 
 
 ################################################################################

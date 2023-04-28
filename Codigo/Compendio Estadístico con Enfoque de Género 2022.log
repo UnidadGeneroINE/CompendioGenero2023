@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  27 APR 2023 15:57
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  28 APR 2023 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1596,8 +1596,9 @@ Package hyperref Info: Reference (link) `section*.5' on input line 13.
 Package hyperref Info: Reference (link) `section*.6' on input line 15.
 Package hyperref Info: Reference (link) `section*.7' on input line 17.
 Package hyperref Info: Reference (link) `section*.8' on input line 19.
-Package hyperref Info: Reference (link) `section*.8' on input line 22.
+Package hyperref Info: Reference (link) `section*.9' on input line 21.
 Package hyperref Info: Reference (link) `section*.9' on input line 24.
+Package hyperref Info: Reference (link) `section*.10' on input line 26.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1767,12 +1768,15 @@ Package hyperref Info: Anchor `page.3' on input line 7.
 Package hyperref Info: Anchor `section*.5' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {1.4}
-(hyperref)             text {\numberline {\thesection } Población por sexo, seg
-ún tipo de hogar (PENDIENTE)}
+(hyperref)             text {\numberline {\thesection } PEA por sexo, según Pue
+blos (comparar 2018 y 2022)}
 (hyperref)             reference {section*.5}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
- (./Descripciones/des4_04.tex)
+ (./Descripciones/des4_04.tex
+Package hyperref Info: Reference (link) `Hfootnote.1' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.1' on input line 1.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1926,7 +1930,7 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 13--14
 []        
  []
 
-)
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
@@ -1944,8 +1948,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.5' on input line 36.
+Package hyperref Info: Anchor `page.5' on input line 15.
 [5]
+Package hyperref Info: Anchor `section*.9' on input line 15.
+Package hyperref Info: bookmark on input line 15:
+(hyperref)             thecounter {1.8}
+(hyperref)             text {\numberline {\thesection } Población ocupada con a
+cceso a seguro social por sexo, según actividad económica}
+(hyperref)             reference {section*.9}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+ (./Descripciones/des4_08.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 15--15
+[]|[]| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 15.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 15.
+(./Graficas/g4_08.tex)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 15--15
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 15--15
+[] 
+ []
+
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 15--16
+[]        
+ []
+
+)
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
 
@@ -1966,7 +2005,7 @@ Package hyperref Info: Anchor `page.6' on input line 36.
 Package hyperref Info: bookmark on input line 36:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.8}
+(hyperref)             reference {section*.9}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.7' on input line 36.
@@ -1979,11 +2018,11 @@ Package hyperref Info: Anchor `page.8' on input line 36.
 
 
 ]
-Package hyperref Info: Anchor `section*.9' on input line 38.
+Package hyperref Info: Anchor `section*.10' on input line 38.
 Package hyperref Info: bookmark on input line 38:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.9}
+(hyperref)             reference {section*.10}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -2172,13 +2211,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36470 strings out of 476683
- 822826 string characters out of 5807575
- 1885012 words of memory out of 5000000
- 55969 multiletter control sequences out of 15000+600000
- 520327 words of font info for 120 fonts, out of 8000000 for 9000
+ 36487 strings out of 476683
+ 823326 string characters out of 5807575
+ 1887012 words of memory out of 5000000
+ 55978 multiletter control sequences out of 15000+600000
+ 520343 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,21n,103p,866b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,22n,103p,994b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (25 page
 s).

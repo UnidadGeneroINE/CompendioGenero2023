@@ -173,7 +173,7 @@ g4_01 <- graficaColCategorias(data = c4_01, ruta = paste0(directorioGraficas,"g4
 # Verificación de porcentajes
   print(sum(c4_01$Mujer))
   print(sum(c4_01$Hombre))
-
+  
 ################################################################################
 #  4.2.	Tasa de participación económica por dominio de estudio, según sexo y 
 # estado conyugal
@@ -535,6 +535,10 @@ g4_08 <- graficaColCategorias(data = c4_08, ruta = paste0(directorioGraficas,"g4
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)
 ################################################################################
+
+
+
+
 
 ################################################################################
 # 4.10.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 

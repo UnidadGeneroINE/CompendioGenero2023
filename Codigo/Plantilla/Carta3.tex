@@ -57,10 +57,10 @@ bottom = 0.925in
 % Tipo de letra
 \usepackage[abspath]{currfile}
 \setmainfont[
-Path=\currfileabsdir,
-BoldFont = Fuentes/OpenSans-CondBold.ttf ,
-ItalicFont = Fuentes/OpenSans-CondLightItalic.ttf ,
-BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
+	Path=\currfileabsdir,
+	BoldFont = Fuentes/OpenSans-CondBold.ttf ,
+	ItalicFont = Fuentes/OpenSans-CondLightItalic.ttf ,
+	BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 ]{OpenSans-CondLight.ttf}
 \newfontfamily\Bold{Open Sans Condensed Bold}
 \newfontfamily\Sans{Open Sans}
@@ -70,10 +70,10 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 \newfontfamily\Cinzel{Open Sans}
 % diagramas de tikz
 \tikzset{
-	max width/.style args={#1}{
-		execute at begin node={\begin{varwidth}{#1}},
-			execute at end node={\end{varwidth}}
-	}
+    max width/.style args={#1}{
+        execute at begin node={\begin{varwidth}{#1}},
+        execute at end node={\end{varwidth}}
+    }
 }
 \usetikzlibrary{shapes.geometric, arrows}
 \tikzstyle{arrow} = [thick,->,>=stealth, to path={-| (\tikztotarget)}]
@@ -94,7 +94,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 \renewcommand{\theCuadro}{\thechapter.\arabic{Cuadro}}
 
 \newcommand{\titulocuadro}[1]{\addtocounter{Cuadro}{1}
-	{\Bold\color{color1}{\normalsize Cuadro \theCuadro $\,-$  #1 }}
+{\Bold\color{color1}{\normalsize Cuadro \theCuadro $\,-$  #1 }}
 }
 
 %%%%%%%%%%% Diseño global del documento
@@ -133,20 +133,20 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 %Para que las páginas en blanco no estén numeradas
 \let\origdoublepage\cleardoublepage
 \newcommand{\clearemptydoublepage}{
-	\clearpage
-	{\pagestyle{empty}\origdoublepage}
+\clearpage
+{\pagestyle{empty}\origdoublepage}
 }
 \let\cleardoublepage\clearemptydoublepage
 
 %%%%%%%% Llamadas y notas al pie
 \makeatletter
 \newcommand{\markerspace}{\@ifnextchar.
-	{$\!$}{\@ifnextchar,
-		{$\!$}{\@ifnextchar;
-			{$\!$}{\@ifnextchar:
-				{$\!$}{$\ $}
-			}
-		}
+{$\!$}{\@ifnextchar,
+    {$\!$}{\@ifnextchar;
+        {$\!$}{\@ifnextchar:
+            {$\!$}{$\ $}
+        }
+    }
 }}
 \makeatother
 
@@ -165,23 +165,23 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 }
 
 \newcommand{\notita}[2][\thenumtextollamada]{
-	\stepcounter{numtextollamada}
-	\stepcounter{numllamada}
-	$\hspace{0.2ex}$
-	\footnote[#1]{#2}
+\stepcounter{numtextollamada}
+\stepcounter{numllamada}
+$\hspace{0.2ex}$
+\footnote[#1]{#2}
 }
 
 \newcommand{\textollamada}[2][\thenumtextollamada]{
-	\ifthenelse{\equal{#1}{*}}
-	{
-		\begingroup
-		\renewcommand\thefootnote\thempfootnote\footnotetext[0]{#2\\[-1.7ex]}
-		\endgroup
-	}{
-		\stepcounter{numtextollamada}
-		\begingroup
-		\renewcommand\thefootnote\thempfootnote\footnotetext[#1]{#2}
-		\endgroup
+\ifthenelse{\equal{#1}{*}}
+{
+\begingroup
+\renewcommand\thefootnote\thempfootnote\footnotetext[0]{#2\\[-1.7ex]}
+\endgroup
+}{
+\stepcounter{numtextollamada}
+\begingroup
+\renewcommand\thefootnote\thempfootnote\footnotetext[#1]{#2}
+\endgroup
 }}
 
 %redefinición de footnote
@@ -226,8 +226,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	opacityback=0, % Pone fondo transparente
 	opacityframe=0, % Pone fondo transparente
 	colframe=black, % Pone fondo transparente
-	%	colframe = white, % obsoleto, se dejó para referencia
-	%	colback = white, % obsoleto, se dejó para referencia
+%	colframe = white, % obsoleto, se dejó para referencia
+%	colback = white, % obsoleto, se dejó para referencia
 	left = -3pt,
 	right = 0pt,
 	bottom = 0pt,
@@ -246,8 +246,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	opacityback=0, % Pone fondo transparente
 	opacityframe=0, % Pone fondo transparente
 	colframe=black, % Pone fondo transparente
-	%	colframe = white, % obsoleto, se dejó para referencia
-	%	colback = white, % obsoleto, se dejó para referencia
+%	colframe = white, % obsoleto, se dejó para referencia
+%	colback = white, % obsoleto, se dejó para referencia
 	left = -3pt,
 	right = 0pt,
 	bottom = 0pt,
@@ -266,8 +266,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	opacityback=0, % Pone fondo transparente
 	opacityframe=0, % Pone fondo transparente
 	colframe=black, % Pone fondo transparente
-	%	colframe = white, % obsoleto, se dejó para referencia
-	%	colback = white, % obsoleto, se dejó para referencia
+%	colframe = white, % obsoleto, se dejó para referencia
+%	colback = white, % obsoleto, se dejó para referencia
 	left = -3pt,
 	right = 0pt,
 	bottom =  0pt,
@@ -301,8 +301,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	opacityback=0, % Pone fondo transparente
 	opacityframe=0, % Pone fondo transparente
 	colframe=black, % Pone fondo transparente
-	%	colframe = white, % obsoleto, se dejó para referencia
-	%	colback = white, % obsoleto, se dejó para referencia
+%	colframe = white, % obsoleto, se dejó para referencia
+%	colback = white, % obsoleto, se dejó para referencia
 	left = -3pt,
 	right = -3pt,
 	bottom = -3pt,
@@ -338,29 +338,29 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 
 \newcommand{\cajitaODS}[1]{%
 	\ifthenelse{ \equal{#1}{1} }{%
-		\begin{tcolorbox}[
+			\begin{tcolorbox}[
 			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods1.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods1.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}%
 	\ifthenelse{\equal{#1}{2}}{%
-		\begin{tcolorbox}[
+			\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
 			skin = enhancedmiddle, 
@@ -381,140 +381,140 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 		\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{3}}{%
-		\begin{tcolorbox}[
+		\ifthenelse{\equal{#1}{3}}{%
+			\begin{tcolorbox}[
 			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods3.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods3.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{4}}{%
-		\begin{tcolorbox}[
-			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods4.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+		\ifthenelse{\equal{#1}{4}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods4.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{5}}{%
-		\begin{tcolorbox}[
-			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods5.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+		\ifthenelse{\equal{#1}{5}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods5.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{6}}{%
-		\begin{tcolorbox}[
-			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods6.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+		\ifthenelse{\equal{#1}{6}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods6.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{7}}{%
-		\begin{tcolorbox}[
-			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods7.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+		\ifthenelse{\equal{#1}{7}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods7.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{8}}{%
-		\begin{tcolorbox}[
-			width = 1.5cm,
-			height = 1.5cm,
-			skin = enhancedmiddle, 
-			nobeforeafter,
-			watermark graphics = Plantilla/ods8.pdf,
-			watermark opacity = 1.0,
-			watermark overzoom = 1.0,
-			enlarge top by = 0.01in,
-			enlarge bottom by = -1.5cm,
-			boxrule = 0pt,
-			colframe = white,
-			colback = white,
-			left = -3pt,
-			bottom = -5in,
-			top = -10\cuadri,
-			right = -3pt,
-			arc = 0pt]
-		\end{tcolorbox}	
+		\ifthenelse{\equal{#1}{8}}{%
+			\begin{tcolorbox}[
+	width = 1.5cm,
+	height = 1.5cm,
+	skin = enhancedmiddle, 
+	nobeforeafter,
+	watermark graphics = Plantilla/ods8.pdf,
+	watermark opacity = 1.0,
+	watermark overzoom = 1.0,
+	enlarge top by = 0.01in,
+	enlarge bottom by = -1.5cm,
+	boxrule = 0pt,
+	colframe = white,
+	colback = white,
+	left = -3pt,
+	bottom = -5in,
+	top = -10\cuadri,
+	right = -3pt,
+	arc = 0pt]
+\end{tcolorbox}	
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{9}}{%
+			\ifthenelse{\equal{#1}{9}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -537,7 +537,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{10}}{%
+			\ifthenelse{\equal{#1}{10}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -560,7 +560,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{11}}{%
+			\ifthenelse{\equal{#1}{11}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -583,7 +583,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{12}}{%
+			\ifthenelse{\equal{#1}{12}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -606,7 +606,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{13}}{%
+			\ifthenelse{\equal{#1}{13}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -629,7 +629,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{14}}{%
+			\ifthenelse{\equal{#1}{14}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -652,7 +652,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{15}}{%
+			\ifthenelse{\equal{#1}{15}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -675,7 +675,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{16}}{%
+			\ifthenelse{\equal{#1}{16}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -698,7 +698,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{17}}{%
+			\ifthenelse{\equal{#1}{17}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -724,8 +724,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 }
 
 \newcommand{\cajitaODSArriba}[1]{%
-	\ifthenelse{\equal{#1}{1}}{%
-		\begin{tcolorbox}[
+				\ifthenelse{\equal{#1}{1}}{%
+				\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
 			skin = enhancedmiddle, 
@@ -743,7 +743,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{2}}{%
+					\ifthenelse{\equal{#1}{2}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -761,7 +761,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 		\end{tcolorbox}	
 	}%
 	{}
-	\ifthenelse{\equal{#1}{3}}{%
+					\ifthenelse{\equal{#1}{3}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -780,7 +780,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{4}}{%
+					\ifthenelse{\equal{#1}{4}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -799,7 +799,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{5}}{%
+					\ifthenelse{\equal{#1}{5}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -818,7 +818,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{6}}{%
+					\ifthenelse{\equal{#1}{6}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -837,7 +837,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{7}}{%
+					\ifthenelse{\equal{#1}{7}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -856,7 +856,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{8}}{%
+					\ifthenelse{\equal{#1}{8}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -875,7 +875,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{9}}{%
+					\ifthenelse{\equal{#1}{9}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -894,7 +894,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{10}}{%
+					\ifthenelse{\equal{#1}{10}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -913,7 +913,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{11}}{%
+					\ifthenelse{\equal{#1}{11}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -932,7 +932,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{12}}{%
+					\ifthenelse{\equal{#1}{12}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -951,7 +951,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{13}}{%
+					\ifthenelse{\equal{#1}{13}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -970,7 +970,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{14}}{%
+					\ifthenelse{\equal{#1}{14}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -989,7 +989,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{15}}{%
+					\ifthenelse{\equal{#1}{15}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -1008,7 +1008,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{16}}{%
+					\ifthenelse{\equal{#1}{16}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -1027,7 +1027,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	}%
 	{}
 	
-	\ifthenelse{\equal{#1}{17}}{%
+					\ifthenelse{\equal{#1}{17}}{%
 		\begin{tcolorbox}[
 			width = 1.5cm,
 			height = 1.5cm,
@@ -1045,8 +1045,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 		\end{tcolorbox}	
 	}%
 	{}
-	
-	
+
+
 }
 
 
@@ -1127,7 +1127,7 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	skin=enhancedmiddle,
 	nobeforeafter,
 	watermark graphics=Plantilla/Cintillo_Derecha_CEEG_2022.pdf,
-	%	watermark opacity=1.0,
+%	watermark opacity=1.0,
 	watermark overzoom=1.0,
 	enlarge left by=-1.25in,
 	enlarge top by=-0.51in,
@@ -1227,20 +1227,20 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 \setcounter{updown}{0}
 
 \newcommand{\cajitaalternante}[1]{
-	\ifthenelse{\equal{\theupdown}{0}}{
-		\noindent
-		\begin{cajita-arriba}
-			\phantomsection
-			\stepcounter{section} #1
-		\end{cajita-arriba}
-		\setcounter{updown}{1}
+\ifthenelse{\equal{\theupdown}{0}}{
+	\noindent
+	\begin{cajita-arriba}
+		\phantomsection
+		\stepcounter{section} #1
+	\end{cajita-arriba}
+	\setcounter{updown}{1}
 	}{
-		\noindent
-		\begin{cajita-abajo}
-			\phantomsection
-			\stepcounter{section} #1
-		\end{cajita-abajo}
-		\setcounter{updown}{0}
+	\noindent
+	\begin{cajita-abajo}
+		\phantomsection
+		\stepcounter{section} #1
+	\end{cajita-abajo}
+	\setcounter{updown}{0}
 	}
 }
 
@@ -1266,27 +1266,27 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 			\addtocontents{toc}{\protect\thispagestyle{empty}}
 			\titulizador{#2}
 			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}x{3\cuadri}}
-				&  &  &  \\[\cuadri]
+				 &  &  &  \\[\cuadri]
 				\begin{descripcion-cajita}
 					\parskip 6pt\parindent 1em 
 					#3
 				\end{descripcion-cajita}
 				&  &
 				\begin{grafica-cajita}
-					\begin{center}
-						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
-						\ifthenelse{\isempty{#5}}{
-							$\ $\\[-0.1\cuadri]
-						}{
-							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
-						}
-						#6
-						\begin{flushleft}
-							$\ $\\[-2\cuadri]
-							\ \ \ \footnotesize Fuente: #7
-						\end{flushleft}
-					\end{center}
-					
+				\begin{center}
+					\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
+					\ifthenelse{\isempty{#5}}{
+						$\ $\\[-0.1\cuadri]
+					}{
+						{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+					}
+					#6
+					\begin{flushleft}
+						$\ $\\[-2\cuadri]
+						\ \ \ \footnotesize Fuente: #7
+					\end{flushleft}
+				\end{center}
+			
 				\end{grafica-cajita}& \ifthenelse{\isempty{#8}}{}{\cajitaODS{#8} }
 			\end{tabular}
 		}
@@ -1295,9 +1295,9 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
 			\addtocontents{toc}{\protect\thispagestyle{empty}}
 			\titulizador{#2}
-			
+
 			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}x{3\cuadri}}
-				&  &  & \\[\cuadri]
+				 &  &  & \\[\cuadri]
 				\begin{descripcion-cajita}
 					\parskip 6pt\parindent 1em%
 					#3
@@ -1402,8 +1402,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 			\begin{tabular}[b]{@{}p{17.5\cuadri}@{}p{1.5\cuadri}@{} x{34\cuadri}@{}}
 				& &\\[0.5\cuadri]
 				\begin{descripcion-cajita}
-					\parskip 6pt\parindent 1em
-					#3
+				\parskip 6pt\parindent 1em
+				#3
 				\end{descripcion-cajita}
 				& &
 				\begin{grafica-cajita}
@@ -1433,8 +1433,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 				\begin{descripcion-cajita}
 					\parskip 6pt\parindent 1em
 					#3
-				\end{descripcion-cajita}
-				& &
+					\end{descripcion-cajita}
+					& &
 				\begin{grafica-cajita}
 					\begin{center}
 						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}%
@@ -1486,33 +1486,33 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 			\end{tabular}
 		}
 	}{
-		\cajitaalternante{
-			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
-			\addtocontents{toc}{\protect\thispagestyle{empty}}
-			\titulizadormanual{#2}{#8}
-			\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
-				& &\\[0.5\cuadri]
-				\begin{grafica-cajita}
-					\begin{center}
-						\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
-						\ifthenelse{\isempty{#5}}{
-							$\ $\\[-0.1\cuadri]
-						}{
-							{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
-						}
-						#6
-						\begin{flushleft}
-							$\ $\\[-2\cuadri]
-							\ \ \ \footnotesize Fuente: #7
-						\end{flushleft}
-					\end{center}
-				\end{grafica-cajita}
-				& &
-				\begin{descripcion-cajita}
-					\parskip 6pt\parindent 1em
-					#3
-				\end{descripcion-cajita}
-			\end{tabular}
+	\cajitaalternante{
+		\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+		\addtocontents{toc}{\protect\thispagestyle{empty}}
+		\titulizadormanual{#2}{#8}
+		\begin{tabular}[b]{@{}p{34\cuadri}@{}p{0\cuadri}@{} x{17.5\cuadri}@{}}
+			& &\\[0.5\cuadri]
+			\begin{grafica-cajita}
+				\begin{center}
+					\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
+					\ifthenelse{\isempty{#5}}{
+						$\ $\\[-0.1\cuadri]
+					}{
+						{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[0.6\cuadri]
+					}
+					#6
+					\begin{flushleft}
+						$\ $\\[-2\cuadri]
+						\ \ \ \footnotesize Fuente: #7
+					\end{flushleft}
+				\end{center}
+			\end{grafica-cajita}
+			& &
+			\begin{descripcion-cajita}
+				\parskip 6pt\parindent 1em
+				#3
+			\end{descripcion-cajita}
+		\end{tabular}
 		}
 	}
 }
@@ -1661,34 +1661,34 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 %%%%%%%%%%%%%%%% Macro de cajota
 
 \newcommand{\cajota}[7][]{
-	\noindent\begin{cajota-unica}\phantomsection\stepcounter{section}
-		\ifthenelse{\equal{\theupdown}{0}}{}{\setcounter{updown}{0}}
-		\ifthenelse{\isempty{#1}}{
-			\addcontentsline{toc}{section}{\numberline{\thesection} #2}
-			\addtocontents{toc}{\protect\thispagestyle{empty}}
-			\titulizador{#2}}{
-			\addcontentsline{toc}{section}{\numberline{\thesection} #1}
-			\addtocontents{toc}{\protect\thispagestyle{empty}}
-			\titulizador{#2}
-		}
-		
-		\begin{center}
-			\ifthenelse{\isempty{#4}}{}{{\large\textbf{\color{color2}#4}}\\[2pt]}
-			\ifthenelse{\isempty{#5}}{$\ $\\[0.5\cuadri]}{
-				{\normalsize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[4.0\cuadri]}
-			#6
-			\begin{flushright}
-				$\ $\\[-1.5\cuadri]
-				\normalsize Fuente: #7 $\ \ \ $ 
-			\end{flushright}
-			\parskip 6pt\parindent 2em
-			$\ $\\[0.3cm]
-			
-			#3$\ $\\[-1\cuadri]
-		\end{center}
-		$\ $\\[-3\cuadri]
-		
-	\end{cajota-unica}
+\noindent\begin{cajota-unica}\phantomsection\stepcounter{section}
+\ifthenelse{\equal{\theupdown}{0}}{}{\setcounter{updown}{0}}
+\ifthenelse{\isempty{#1}}{
+\addcontentsline{toc}{section}{\numberline{\thesection} #2}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\titulizador{#2}}{
+\addcontentsline{toc}{section}{\numberline{\thesection} #1}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\titulizador{#2}
+}
+
+\begin{center}
+\ifthenelse{\isempty{#4}}{}{{\large\textbf{\color{color2}#4}}\\[2pt]}
+\ifthenelse{\isempty{#5}}{$\ $\\[0.5\cuadri]}{
+	{\normalsize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[4.0\cuadri]}
+#6
+\begin{flushright}
+$\ $\\[-1.5\cuadri]
+\normalsize Fuente: #7 $\ \ \ $ 
+\end{flushright}
+\parskip 6pt\parindent 2em
+$\ $\\[0.3cm]
+
+#3$\ $\\[-1\cuadri]
+\end{center}
+$\ $\\[-3\cuadri]
+
+\end{cajota-unica}
 }
 
 %%%%%%%%% Cajota de Tabla
@@ -1712,8 +1712,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 		\begin{center}
 			\ifthenelse{\isempty{#4}}{}{{\textbf{\color{color2}#4}}\\[-1pt]}
 			\ifthenelse{\isempty{#5}}{$\ $\\[0.2\cuadri]}{
-				{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[2.0\cuadri]}
-			\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
+			{\footnotesize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}\\[2.0\cuadri]}
+		\ifthenelse{\isempty{#7}}{\renewcommand{\lafuente}{Estadísticas INE}}{\renewcommand{\lafuente}{#7}}
 			\begin{tabular}{l}
 				#6\\[4mm]
 				$\ $\\[-3.5mm]
@@ -1734,32 +1734,32 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 \newcommand{\capituloencabezado}{}
 
 \newcommand{\capitulocondescripcion}[2]{%
-	\begin{fondo-capitulo}
-		$\ $\\[10\cuadri]
-		\begin{center}
-			\begin{tabular}{p{4.75in}}
-				\fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter}\\[1cm]
-				\fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1
-			\end{tabular}
-			\\[1cm]
-			
-			\begin{tabular}{p{5.5in}}
-				\parskip 2.5ex \parindent 2em \Large #2
-			\end{tabular} 
-		\end{center}
-	\end{fondo-capitulo}
+\begin{fondo-capitulo}
+$\ $\\[10\cuadri]
+\begin{center}
+\begin{tabular}{p{4.75in}}
+ \fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter}\\[1cm]
+ \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1
+\end{tabular}
+\\[1cm]
+
+\begin{tabular}{p{5.5in}}
+ \parskip 2.5ex \parindent 2em \Large #2
+\end{tabular} 
+\end{center}
+\end{fondo-capitulo}
 }
 
 \newcommand{\capitulosindescripcion}[1]{%
-	\begin{fondo-capitulo-no-descripcion}
-		$\ $\\[18\cuadri]
-		\begin{center}
-			\begin{tabular}{p{4.75in}}
-				\fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter} \\[1cm]
-				\fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1 
-			\end{tabular}
-		\end{center}
-	\end{fondo-capitulo-no-descripcion}
+\begin{fondo-capitulo-no-descripcion}
+$\ $\\[18\cuadri]
+\begin{center}
+\begin{tabular}{p{4.75in}}
+ \fontsize{2.5in}{3em}\selectfont\color{color3}\centering\textbf{\thechapter} \\[1cm]
+ \fontsize{1in}{0.2em}\selectfont\color{color3}\Bold\centering #1 
+ \end{tabular}
+\end{center}
+\end{fondo-capitulo-no-descripcion}
 }
 
 \newcommand{\rayitatoc}{\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color2}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{color1}} }
@@ -1767,64 +1767,64 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 % El macro definitivo
 \newcommand{\partes}{}
 \newcommand{\INEchaptercarta}[3][]{%
-	\cleardoublepage\stepcounter{chapter}\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color3}}%
-	\phantomsection
-	\ifthenelse{\isempty{#1}}{
-		\addcontentsline{toc}{chapter}{\numberline{\thechapter}#2}
-		\renewcommand{\capituloencabezado}{#2}
-	}{
-		\addcontentsline{toc}{chapter}{\numberline{\thechapter}#1}
-		\renewcommand{\capituloencabezado}{#1}
-	}
-	\thispagestyle{empty}
-	\ifthenelse{\equal{\partes}{}}{\rayitatoc}{}
-	\addtocontents{toc}{\color{color1}\addvspace{0.2\baselineskip}}
-	\ifthenelse{\equal{\unexpanded{#3}}{}}{
-		\capitulosindescripcion{#2}
-	}{
-		\capitulocondescripcion{#2}{#3}
-	}
-	\cleardoublepage
-	\setcounter{section}{0}
-	\setcounter{updown}{0}
-	\setcounter{footnote}{0}
+\cleardoublepage\stepcounter{chapter}\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color3}}%
+\phantomsection
+\ifthenelse{\isempty{#1}}{
+	\addcontentsline{toc}{chapter}{\numberline{\thechapter}#2}
+	\renewcommand{\capituloencabezado}{#2}
+}{
+	\addcontentsline{toc}{chapter}{\numberline{\thechapter}#1}
+	\renewcommand{\capituloencabezado}{#1}
+}
+\thispagestyle{empty}
+\ifthenelse{\equal{\partes}{}}{\rayitatoc}{}
+\addtocontents{toc}{\color{color1}\addvspace{0.2\baselineskip}}
+\ifthenelse{\equal{\unexpanded{#3}}{}}{
+	\capitulosindescripcion{#2}
+}{
+	\capitulocondescripcion{#2}{#3}
+}
+\cleardoublepage
+\setcounter{section}{0}
+\setcounter{updown}{0}
+\setcounter{footnote}{0}
 }
 
 %%%%%%%%%%  PARTES
 
 \newcommand{\partesindescripcion}[1]{%
-	\begin{fondo-parte}
-		$\ $\\[17.65\cuadri]
-		\begin{tabular}{p{1.4in}p{5.75in}}
-			& \begin{tabular}[t]{x{5.75in}}
-				\Cinzel \fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
-				\\[-0.08in]
-				\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1}  \\[0.2in]\hline
-			\end{tabular} \\ 
-		\end{tabular}
-	\end{fondo-parte}
+\begin{fondo-parte}
+$\ $\\[17.65\cuadri]
+\begin{tabular}{p{1.4in}p{5.75in}}
+ & \begin{tabular}[t]{x{5.75in}}
+\Cinzel \fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
+\\[-0.08in]
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1}  \\[0.2in]\hline
+ \end{tabular} \\ 
+\end{tabular}
+\end{fondo-parte}
 }
 
 \newcommand{\partecondescripcion}[2]{%
-	\begin{fondo-parte}
-		$\ $\\[7.00\cuadri]
-		\begin{tabular}{p{1.4in}p{5.75in}}
-			&  \begin{tabular}[t]{x{5.75in}} 
-				\Cinzel\fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
-				\\[-0.08in]
-				\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1} 
-				\\[0.2in]\hline
-			\end{tabular} \\ 
-		\end{tabular}\\[0.85in]
-		
-		\begin{tabular}{p{1.4in}p{5.75in}}
-			&\parskip 2.5ex \parindent 2em \Logos\LARGE
-			\begin{multicols}{2}
-				#2
-			\end{multicols}
-			\\ 
-		\end{tabular} 
-	\end{fondo-parte}
+\begin{fondo-parte}
+$\ $\\[7.00\cuadri]
+\begin{tabular}{p{1.4in}p{5.75in}}
+ &  \begin{tabular}[t]{x{5.75in}} 
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont \textbf{PARTE \Roman{parte}}\\[0.4in] \hline
+\\[-0.08in]
+\Cinzel\fontsize{0.4in}{3.5em}\selectfont {\color{color1} #1} 
+  \\[0.2in]\hline
+ \end{tabular} \\ 
+\end{tabular}\\[0.85in]
+
+\begin{tabular}{p{1.4in}p{5.75in}}
+ &\parskip 2.5ex \parindent 2em \Logos\LARGE
+ \begin{multicols}{2}
+ #2
+\end{multicols}
+\\ 
+\end{tabular} 
+\end{fondo-parte}
 }
 
 % El macro de parte definitivo
@@ -1836,23 +1836,23 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 	\cleardoublepage\stepcounter{parte}\addtocontents{toc}{\protect\addvspace{3.1\baselineskip}\color{color2!60!black}}%
 	\phantomsection
 	\ifthenelse{\isempty{#1}}{
-		\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #2 }\\[-2.5mm]
+	\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #2 }\\[-2.5mm]
 			\protect \par} \rayitatoc	
-	}{
-		\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #1 }\\[-2.5mm]
-			\protect \par} \rayitatoc
-	}
-	\thispagestyle{empty}%
-	\addtocontents{toc}{\protect\addvspace{-0.1\baselineskip}\color{black}}%
-	\ifthenelse{\equal{\unexpanded{#3}}{}}{%
-		\partesindescripcion{#2}
-	}{%
-		\partecondescripcion{#2}{#3}
-	}
-	
-	\cleardoublepage
-	\setcounter{section}{0}
-	\setcounter{updown}{0}
+		}{
+\addtocontents{toc}{\protect \textbf{\Cinzel\large PARTE {\Roman{parte}} }\\[1.0mm] {\Cinzel\large #1 }\\[-2.5mm]
+	\protect \par} \rayitatoc
+}
+\thispagestyle{empty}%
+\addtocontents{toc}{\protect\addvspace{-0.1\baselineskip}\color{black}}%
+\ifthenelse{\equal{\unexpanded{#3}}{}}{%
+	\partesindescripcion{#2}
+}{%
+\partecondescripcion{#2}{#3}
+}
+
+\cleardoublepage
+\setcounter{section}{0}
+\setcounter{updown}{0}
 }
 
 %%%%%%%%
@@ -1860,20 +1860,20 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 \let\oldappendix\appendix
 
 \renewcommand{\appendix}{
-	\cleardoublepage
-	\oldappendix
-	
-	$\ $
-	\vspace{6.6cm}
-	
-	\thispagestyle{empty}
-	\begin{center}
-		\fontsize{16mm}{1em}\selectfont\Bold \color{color3} APÉNDICES
-	\end{center}
-	\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}}
-	\addcontentsline{toc}{chapter}{APÉNDICES}
-	\cleardoublepage
-	\renewcommand{\rayitatoc}{}
+\cleardoublepage
+\oldappendix
+
+$\ $
+\vspace{6.6cm}
+
+\thispagestyle{empty}
+\begin{center}
+	\fontsize{16mm}{1em}\selectfont\Bold \color{color3} APÉNDICES
+\end{center}
+\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}}
+\addcontentsline{toc}{chapter}{APÉNDICES}
+\cleardoublepage
+\renewcommand{\rayitatoc}{}
 }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -1885,8 +1885,8 @@ BoldItalicFont = Fuentes/OpenSans-CondLightItalic.ttf
 
 
 \newcommand{\titulo}[1]{
-	$\ $\\[0.3in]
-	\noindent{\color{color1}\LARGE \textbf{#1}}\\[-0.1in]
-	{\color{color1}\hrule}
-	$\ $\\[-0.1in]
+$\ $\\[0.3in]
+\noindent{\color{color1}\LARGE \textbf{#1}}\\[-0.1in]
+{\color{color1}\hrule}
+$\ $\\[-0.1in]
 }

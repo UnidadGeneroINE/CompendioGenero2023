@@ -121,15 +121,27 @@ personasENEI <- personasENEI %>%
                                       P03A10 == "Menor de 12 años" ~ 'Menor de 12 años'))
 
 
+
+
+  
+
+# Creando y calculando columna ingresos (será util en cap. 8)
+personasENEI$P05C26[is.na(personasENEI$P05C26)] <- 0 # Cambiando los NA por 0 para poder sumar
+personasENEI$P05C46[is.na(personasENEI$P05C46)] <- 0 # Cambiando los NA por 0 para poder sumar
+personasENEI$P05C47[is.na(personasENEI$P05C47)] <- 0 # Cambiando los NA por 0 para poder sumar
+personasENEI <- mutate(personasENEI, ingreso = P05C26 + P05C46 + P05C47)  
+  
 # Calculo del Personas en Edad de Trabajar (PET) 
 # Todas las personas mayores de 14 años
 PET <- filter(personasENEI, P03A03 > 14)
 
+
+
 # codigo para verificar porcetaje 
-  print(sum(c4_06_data$PEA))
-  print(sum(c4_06_Pueblo_Sexo$Hombre))
-  print(sum(c4_06_Pueblo_Sexo$Mujer))
-  
+print(sum(c4_06_data$PEA))
+print(sum(c4_06_Pueblo_Sexo$Hombre))
+print(sum(c4_06_Pueblo_Sexo$Mujer))
+
 ############################################################################
 ###                                                                      ###
 ###                              CAPÍTULO 4                              ###
@@ -508,7 +520,7 @@ Totalocupados_22<- sum(ocupados_22$factor)
 c4_08 <- ocupados_22 %>%
   select(P03A02, P05C03B_1D, factor) %>%
   group_by(P03A02, P05C03B_1D) %>%
-  summarise( y = sum(factor) / Totalocupados_22 * 100) %>%
+  summarise( y = sum(factor) / Totalocupados_22 * 100, casos = n()) %>%
   rename(z = P03A02) %>%
   rename(x = P05C03B_1D)
 
@@ -563,11 +575,72 @@ Tabla4_10 <- tablaLaTeX(c4_10, nombre_columnas = colnames(c4_10),
                         ruta = paste0(directorioGraficas, "Tabla4_10.tex"))
 
 ################################################################################
-# 4.11.	Salario o ingresos promedio por sexo, según dominio de estudio y 
-# rama de actividad económica
+# 4.11.	Salario o ingresos promedio por sexo, según dominio de estudio 
 ################################################################################
+#Se filta la base de PEA y se filta segun la P05C20 que la Categía Ocupacional
+# PET = Personas en Edad de Trabajar
+asalariados <- PET %>%
+  filter(P05C20 == "Empleado de gobierno"
+         | P05C20 == "Empleado de empresa privada"
+         | P05C20 == "Empleado jornalero o peón"
+         | P05C20 == "En el servicio doméstico")
+# Para calcular procentajes se saca el total de Salariados sumando el factor
+total_asalariados = sum(asalariados$factor)
+
+c4_11 <- asalariados%>%
+  mutate (ingresoPonderado = ingreso*factor) %>%
+  select(P03A02, dominio, factor, ingresoPonderado) %>%
+  group_by(P03A02, dominio) %>%
+  summarize(y = sum(ingresoPonderado)/sum(factor)) %>%
+  rename(x = P03A02) %>%
+  rename(z = dominio) %>%
+  select(z,x,y)
+
+#Indicador solicitado por UG Ingreso o salario promedio de madres por dominio de estudio
+# Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
+# Se agrupo por Dominio de Estudio 
+Salario_MAdres <- asalariados%>%
+  filter(P03A02 == "Mujer") %>%
+  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
+  mutate (ingresoPonderado = ingreso*factor) %>%
+  select (dominio, factor, ingresoPonderado) %>%
+  group_by (dominio) %>%
+  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  rename(Dominio_Estudio = dominio) %>%
+  select(Dominio_Estudio, Ingreso_Promedio)
+
+### Indicador soliciado por UG Ingreso o salario promedio de madres por categoría Ocuácional
+# Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
+# Se agrupo por la categoría ocupacional 
+Actividad_Madres <- asalariados%>%
+  filter(P03A02 == "Mujer") %>%
+  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
+  mutate (ingresoPonderado = ingreso*factor) %>%
+  select(P05C20, factor, ingresoPonderado) %>%
+  group_by(P05C20) %>%
+  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  rename(Actividad_Ocupacional = P05C20) %>%
+  select(Actividad_Ocupacional, Ingreso_Promedio)
 
 
+c4_08 <- pivot_wider(c4_08, names_from = z, values_from = c(y)) 
+
+c4_08 <- c4_08 %>%
+  mutate(x =case_when(x == "Comercio al por mayor y al por menor, transporte y almacenamiento, actividades de alojamiento y de servicio de comidas" ~ "Comercio",
+                      x == "Agricultura, ganadería, silvicultura y pesca" ~ "Agricultura",
+                      x == "Industrias manufactureras, explotación de minas y canteras y otras actividades industriales" ~ "Industrias manufactureras",
+                      x == "Actividades de administración pública y defensa, enseñanza, actividades de atención de la salud y asistencia social" ~ "Administración pública",
+                      x == "Actividades financieras y de seguros" ~ "Financieras y de seguros",
+                      x == "Actividades profesionales, científicas, técnicas, y de servicios administrativos y de apoyo" ~ "Profesionales",
+                      x == "Construcción" ~ "Construcción",
+                      x == "Otras actividades de servicios" ~ "Otras de servicios",
+                      x == "Actividades inmobiliarias" ~ "Inmobiliarias",
+                      x == "Información y comunicación" ~ "Comunicaciones",
+                      x == "9999" ~ "NS/NR", TRUE ~ x)) # Reemplazando los valores y si ninguna condición se cumple conserva el valor original de la base almacenado temporalmente en col_categoría_ocupacional
+
+################################################################################
+# 4.12.	Salario o ingresos promedio por sexo, según rama de actividad económica
+################################################################################
 
 
 ################################################################################

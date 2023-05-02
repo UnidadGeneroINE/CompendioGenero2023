@@ -530,25 +530,45 @@ c4_08 <- c4_08 %>%
 g4_08 <- graficaColCategorias(data = c4_08, ruta = paste0(directorioGraficas,"g4_08.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
-
 ################################################################################
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)
 ################################################################################
 
+ECONOMÍA_Y_TRABAJO <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\ECONOMÍA_Y_TRABAJO\\"
 
+Creditos <- paste0(ECONOMÍA_Y_TRABAJO, "4-11_4-12.xlsx")
 
+c4_09 <- data.frame(read.xlsx(xlsxFile = Creditos, sheet = "sexo"))
 
+g4_09 <- graficaColCategorias(data = c4_09, ruta = paste0(directorioGraficas,"g4_09.tex"),
+                                       etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
 # 4.10.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 
 # rama de actividad económica (comparar 2018 y 2022)
 ################################################################################
 
+Creditos_2018 <- data.frame(read.xlsx(xlsxFile = Creditos, sheet = "2018")) %>%
+  rename("Actividad Económica" = Actividad.Económica)
+
+Creditos_2022 <- data.frame(read.xlsx(xlsxFile = Creditos, sheet = "2022"))  %>%
+  rename("Actividad Económica" = Actividad.Económica)
+
+c4_10 <- cbind(Creditos_2018, Creditos_2022[, c("Mujeres", "Hombres")])
+
+#Tabla latex 
+Tabla4_10 <- tablaLaTeX(c4_10, nombre_columnas = colnames(c4_10), 
+                        nombre_grupos = c(" ", "2018" = 2, "2022" = 2),
+                        ruta = paste0(directorioGraficas, "Tabla4_10.tex"))
+
 ################################################################################
 # 4.11.	Salario o ingresos promedio por sexo, según dominio de estudio y 
 # rama de actividad económica
 ################################################################################
+
+
+
 
 ################################################################################
 # 4.12.	Salarios o ingresos promedio, desagregado por sexo, según pueblo

@@ -74,6 +74,10 @@ poblacion2022 <- sum(personasENEIINE$factor)
 # Población Maya para censo 2018
 poblacionMaya2018 <- nrow(filter(personasCenso, PCP12 == "Maya"))
 
+# Total jefaturas de hogar ENEI 2022
+jefaturas_de_hogar_22 <- filter(personasENEIINE, P03A05 == "Jefe (a) del hogar")
+total_jefaturas_de_hogar_22 <- sum(jefaturas_de_hogar_22$factor)
+
 # Agregando columna quinqueneo que indica el grupo de edad al que pertenece
 # dependiendo de la edad reportada en el censo
 quinqueneos <- c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', 
@@ -186,7 +190,7 @@ c1_02 <- personasENEI %>%
   rename(z = P03A02) %>%
   rename(x = dominio)
 
-g1_02 <- graficaColApilada(c1_02, "Sexo")
+g1_02 <- graficaAnillosMultiples(c1_02, leyenda = "lado")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
 
@@ -197,10 +201,10 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
 c1_03 <- personasENEIINE %>%
   group_by(P03A02, P03A06) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
-  rename(z = P03A02) %>%
-  rename(x = P03A06) %>%
-  mutate(x = case_when(x == "Afrodescendiente/Creole/Afro mestizo" ~ "Afrodescendiente*",
-                            TRUE ~ x))
+  rename(Sexo = P03A02) %>%
+  rename(Pueblo = P03A06) %>%
+  mutate(Pueblo = case_when(Pueblo == "Afrodescendiente/Creole/Afro mestizo" ~ "Afrodescendiente*",
+                            TRUE ~ Pueblo))
 
 x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
 Hombre <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
@@ -228,7 +232,8 @@ c1_04 <- personasCenso %>%
   rename(z = PCP6) %>%
   rename(x = PCP13)
 
-g1_04 <- graficaBarPorcentajeApilada(c1_04, "Sexo", escala = 100)
+g1_04 <- graficaBarPorcentajeApilada(c1_04, categoria_leyenda = "")
+g1_04 <- graficaPorcentajeApilada(c1_04, categoria_leyenda = "")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
 
@@ -277,10 +282,10 @@ c1_06 <- merge(x = personasENEIINE, y = hogaresENEIINE, by = c("upm", "hogar_num
                             P02A01 == "Formal" ~ "Casa formal",
                             P02A01 == "Improvisada" ~ "Casa improvisada",
                             TRUE ~ P02A01)) %>%
-  rename(z = P03A02) %>%
-  rename(x = P02A01)
+  rename(P03A02 = z) %>%
+  rename(P02A01 = x)
 
-g1_06 <- graficaBarPorcentajeApilada(c1_06, "Sexo", escala = 100)
+g1_06 <- graficaPorcentajeApilada(c1_06, tipo = "columna")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_06.tex"), graph = g1_06) 
 
@@ -323,14 +328,106 @@ g1_11 <- graficaLinea(c1_11, rotar = F)
 exportarLatex(nombre = paste0(directorioGraficas,"g1_11.tex"), graph = g1_11)
 
 ################################################################################
-# 1.16.	Jefatura de hogar por sexo, según estado civil 
+# 1.12.	Jefatura de hogar por sexo
 ################################################################################
 
-# ARRÉGLAME WEY :) (falta expandir factores)
+c1_12 <- jefaturas_de_hogar_22 %>%
+  group_by(P03A02) %>%
+  summarize(y = sum(factor)/total_jefaturas_de_hogar_22 * 100)
 
-c1_16 <- filter(personasENEI, P03A05 == "Jefe (a) del hogar") %>%
+g1_04 <- graficaBarPorcentajeApilada(c1_04, categoria_leyenda = "")
+  
+g1_12 <- graficaAnillo(c1_12, nombre = paste0(directorioGraficas,"g1_12.tex"), 
+                       preambulo = F)
+
+################################################################################
+# 1.14.	Acceso a servicios básicos por sexo de jefatura de hogar
+################################################################################
+# Calculando el número de jefaturas por sexo
+jefaturas_por_sexo <- jefaturas_de_hogar_22 %>% group_by(P03A02) %>% summarize(y = sum(factor))
+jefas <- as.numeric(jefaturas_por_sexo[1,2])
+jefes <- as.numeric(jefaturas_por_sexo[2,2])
+
+# Uniendo bases de datos de personas (jefaturas) y hogares ENEI 2022
+c1_14 <- merge(x = jefaturas_de_hogar_22, y = hogaresENEIINE, by = "hogar_num")
+
+# Calculando el número (expandido) de jefaturas por sexo que tiene acceso a agua
+agua <- filter(c1_14, P02B03 == "Tubería_dentro" | P02B03 == "Tubería_fuera") %>%
+  group_by(P03A02) %>%
+  summarize(y = sum(factor.x))
+# Calculando el porcentaje que tiene acceso sobre el 100% de cada sexo
+agua[1,2] <- as.numeric(agua[1,2])/jefas *100
+agua[2,2] <- as.numeric(agua[2,2])/jefes *100
+
+# Calculando el número (expandido) de jefaturas por sexo que tiene acceso a saneamiento
+saneamiento <- filter(c1_14, P02B07 != "No_tiene") %>%
+  group_by(P03A02) %>%
+  summarize(y = sum(factor.x))
+# Calculando el porcentaje que tiene acceso a saneamiento sobre el 100% de cada sexo
+saneamiento[1,2] <- as.numeric(saneamiento[1,2])/jefas *100
+saneamiento[2,2] <- as.numeric(saneamiento[2,2])/jefes *100
+
+# Calculando el número (expandido) de jefaturas por sexo que tiene acceso a extracción de basura
+extraccion <- filter(c1_14, P02B09 == "Servicio_municipal" | P02B09 == "Servicio_privado") %>%
+  group_by(P03A02) %>%
+  summarize(y = sum(factor.x))
+# Calculando el porcentaje que tiene acceso a extracción sobre el 100% de cada sexo
+extraccion[1,2] <- as.numeric(extraccion[1,2])/jefas *100
+extraccion[2,2] <- as.numeric(extraccion[2,2])/jefes *100
+
+# Calculando el número (expandido) de jefaturas por sexo que tiene acceso a electricidad de basura
+electricidad <- filter(c1_14, P02A05C == "Si") %>%
+  group_by(P03A02) %>%
+  summarize(y = sum(factor.x))
+# Calculando el porcentaje que tiene acceso a electricidad sobre el 100% de cada sexo
+electricidad[1,2] <- as.numeric(electricidad[1,2])/jefas *100
+electricidad[2,2] <- as.numeric(electricidad[2,2])/jefes *100
+
+# Creando base de datos para graficar
+agua <- cbind(x = c("agua", "agua"), agua)
+extraccion <- cbind(x = c("extracción de basura", "extracción de basura"), extraccion)
+electricidad <- cbind(x = c("electricidad", "electricidad"), electricidad)
+c1_14 <- data.frame(rbind(agua, extraccion, electricidad)) %>%
+  rename(z = P03A02)
+
+g1_14 <- graficaCategorias(c1_14, leyenda = "lado")
+exportarLatex(nombre = paste0(directorioGraficas,"g1_14.tex"), graph = g1_14)
+
+################################################################################
+# 1.15.	Jefatura de hogar por sexo, según dominio de estudio 
+################################################################################
+
+c1_15 <- jefaturas_de_hogar_22 %>%
+  group_by(P03A02, dominio) %>%
+  summarize(y = sum(factor)/total_jefaturas_de_hogar_22*100) %>%
+  rename(x = dominio) %>%
+  rename(z = P03A02)
+
+g1_15<- graficaAnillosMultiples(c1_15, leyenda = "lado")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g1_15.tex"), graph = g1_15)
+  
+################################################################################
+# 1.16.	Jefatura de hogar por sexo, según estado conyugal 
+################################################################################
+
+c1_16 <- jefaturas_de_hogar_22 %>%
   group_by(P03A02, P03A10) %>%
-  summarize(y = n())
+  summarize(y = sum(factor)/total_jefaturas_de_hogar_22*100) %>%
+  rename(z = P03A02) %>%
+  rename(x = P03A10)
+
+g1_16 <- graficaPorcentajeApilada(c1_16, tipo = "barra", leyenda = "abajo")
+exportarLatex(nombre = paste0(directorioGraficas, "g1_16.tex"), graph = g1_16)
+
+################################################################################
+# 1.17.	Mujeres jefas de hogar por número de hijas/hijos
+################################################################################
+
+c1_17 <- data.frame(x = c("0", "1-3", "4-6", "7+"), y = c(7.2, 45.8, 31.8, 15.1))
+g1_17 <- graficaCol(c1_17)
+g1_17 <- etiquetasHorizontales(graph = g1_17)
+exportarLatex(nombre = paste0(directorioGraficas, "g1_17.tex"), graph = g1_17)
 
 ################################################################################
 # DATOS EXTRAS DEL CAP. 1
@@ -380,4 +477,5 @@ poblacion2018ENEI <- sum(personasENEIINE2018$FACTOR)
 ################################################################################
   
 
+tablaColApiladas(df, nombre_columnas = c("", "AH", "BEEE", "CI", "D", "EEH", "AH", "BEEE", "CI"), nombre_grupos= c("", "2018" = 4, "2019" = 4), ruta = paste0(directorioGraficas, "TABLA.tex"))
 

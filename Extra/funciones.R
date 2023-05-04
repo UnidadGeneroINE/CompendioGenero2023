@@ -259,14 +259,16 @@ graficaAnillosMultiples <- function(data, categoria_leyenda = "",
 # 
 # test <- graficaCategoriasApiladas(c_test, tipo = "columna", categoria_leyenda = "",
 #                                     leyenda = "abajo")
-# # 
-# t <- c1_03 %>% 
-#   rename(o = z) %>% 
+
+test <- graficaPorcentajeApilada(c1_04)
+
+# t <- c1_03 %>%
+#   rename(o = z) %>%
 #   rename(z = x) %>%
 #   rename(x = o)
-# 
-# test <- graficaAnillosMultiples(t, leyenda = "lado", categoria_leyenda = "Pueblo")
-# exportarLatex(nombre = paste0(directorioGraficas, "test.tex"), graph = test)
-# 
+
+# test <- graficaAnillosMultiples(c1_02, leyenda = "lado", categoria_leyenda = "Pueblo")
+exportarLatex(nombre = paste0(directorioGraficas, "test.tex"), graph = test)
+
 # 
 # 

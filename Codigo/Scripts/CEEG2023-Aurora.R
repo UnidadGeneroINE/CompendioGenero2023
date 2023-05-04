@@ -121,10 +121,6 @@ personasENEI <- personasENEI %>%
                                       P03A10 == "Menor de 12 años" ~ 'Menor de 12 años'))
 
 
-
-
-  
-
 # Creando y calculando columna ingresos (será util en cap. 8)
 personasENEI$P05C26[is.na(personasENEI$P05C26)] <- 0 # Cambiando los NA por 0 para poder sumar
 personasENEI$P05C46[is.na(personasENEI$P05C46)] <- 0 # Cambiando los NA por 0 para poder sumar
@@ -135,12 +131,48 @@ personasENEI <- mutate(personasENEI, ingreso = P05C26 + P05C46 + P05C47)
 # Todas las personas mayores de 14 años
 PET <- filter(personasENEI, P03A03 > 14)
 
-
+# Creando la base de Asalariados para usar en el capitulo 4.
+#Se filta la base de PEA y se filta segun la P05C20 que la Categía Ocupacional
+# PET = Personas en Edad de Trabajar
+asalariados <- PET %>%
+  filter(P05C20 == "Empleado de gobierno"
+         | P05C20 == "Empleado de empresa privada"
+         | P05C20 == "Empleado jornalero o peón"
+         | P05C20 == "En el servicio doméstico")
+# Para calcular procentajes se saca el total de Salariados sumando el factor
 
 # codigo para verificar porcetaje 
 print(sum(c4_06_data$PEA))
 print(sum(c4_06_Pueblo_Sexo$Hombre))
 print(sum(c4_06_Pueblo_Sexo$Mujer))
+
+#Datos ENEI 2018 que se utilizara para comparar los datos 2018 con 2022. 
+# Flitro de base personas ENEI 2018 se selecciono solo a las de Personas en Edad 
+# de Trabajar -PET-
+PET_18 <- filter(personasENEI_18, PPA03 > 14)
+# Cálculo de PEA 2022
+# cálculo de desocupados y ocupados 2022
+# desocupados 2022 <- filter(PET_22, P05B01 == 'Sí)
+# pP05B01 = Sí bUSCO trabajo 
+desocupados_18 <- filter(PET_18, P04B01 == 'Si')
+
+# numero de desocupados 2022 <- sum(desocupados_22$factor))
+num_desocupados_18 = sum(desocupados_18$factor)
+
+# Para encontrar los ocupados, se debe evaluar si respondieron en P05C01 que
+# tienen más de un trabajo, si no respondieron nada quiere decir que son
+# desocupados
+
+# Se debe cambiar de acuerdo a la codificación de la respuesta de P05C01 al tener
+# la base limpia
+# pO5C01 = cantidad de trabajos 
+ocupados_18 <- filter(PET_18, !is.na(P04C01))
+num_ocupados_18 = sum(ocupados_18$factor)
+# PEA_22 es la unión de los desocupados que buscaron trabajo y los ocupados
+PEA_18 <- rbind(desocupados_18, ocupados_18)
+# Se crea la contante PEAtotal 2022 a partir de la sumatoria de factores del la data PEA
+PEATOTAL_18 <- sum(PEA_18$FACTOR)
+
 
 ############################################################################
 ###                                                                      ###
@@ -575,26 +607,24 @@ Tabla4_10 <- tablaLaTeX(c4_10, nombre_columnas = colnames(c4_10),
                         ruta = paste0(directorioGraficas, "Tabla4_10.tex"))
 
 ################################################################################
-# 4.11.	Salario o ingresos promedio por sexo, según dominio de estudio 
+# 4.11.	Salario o ingresos promedio mensual por sexo, según dominio de estudio 
 ################################################################################
-#Se filta la base de PEA y se filta segun la P05C20 que la Categía Ocupacional
-# PET = Personas en Edad de Trabajar
-asalariados <- PET %>%
-  filter(P05C20 == "Empleado de gobierno"
-         | P05C20 == "Empleado de empresa privada"
-         | P05C20 == "Empleado jornalero o peón"
-         | P05C20 == "En el servicio doméstico")
-# Para calcular procentajes se saca el total de Salariados sumando el factor
+
 total_asalariados = sum(asalariados$factor)
 
 c4_11 <- asalariados%>%
   mutate (ingresoPonderado = ingreso*factor) %>%
   select(P03A02, dominio, factor, ingresoPonderado) %>%
   group_by(P03A02, dominio) %>%
-  summarize(y = sum(ingresoPonderado)/sum(factor)) %>%
-  rename(x = P03A02) %>%
-  rename(z = dominio) %>%
-  select(z,x,y)
+  summarize(y = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  rename(z = P03A02) %>%
+  rename(x = dominio) %>%
+  select(x, z, y)
+
+c4_11 <- pivot_wider(c4_11, names_from = z, values_from = c(y)) 
+
+g4_11 <- graficaColCategorias(data = c4_11, ruta = paste0(directorioGraficas,"g4_11.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
 
 #Indicador solicitado por UG Ingreso o salario promedio de madres por dominio de estudio
 # Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
@@ -613,8 +643,8 @@ Salario_MAdres <- asalariados%>%
 # Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
 # Se agrupo por la categoría ocupacional 
 Actividad_Madres <- asalariados%>%
-  filter(P03A02 == "Mujer") %>%
-  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
+  filter(P03A02 == "Mujer" & P03A03 > 11) %>%
+  filter(P03A12 != "No respondio" & P03A12 != 0) %>%
   mutate (ingresoPonderado = ingreso*factor) %>%
   select(P05C20, factor, ingresoPonderado) %>%
   group_by(P05C20) %>%
@@ -622,50 +652,99 @@ Actividad_Madres <- asalariados%>%
   rename(Actividad_Ocupacional = P05C20) %>%
   select(Actividad_Ocupacional, Ingreso_Promedio)
 
-
-c4_08 <- pivot_wider(c4_08, names_from = z, values_from = c(y)) 
-
-c4_08 <- c4_08 %>%
-  mutate(x =case_when(x == "Comercio al por mayor y al por menor, transporte y almacenamiento, actividades de alojamiento y de servicio de comidas" ~ "Comercio",
-                      x == "Agricultura, ganadería, silvicultura y pesca" ~ "Agricultura",
-                      x == "Industrias manufactureras, explotación de minas y canteras y otras actividades industriales" ~ "Industrias manufactureras",
-                      x == "Actividades de administración pública y defensa, enseñanza, actividades de atención de la salud y asistencia social" ~ "Administración pública",
-                      x == "Actividades financieras y de seguros" ~ "Financieras y de seguros",
-                      x == "Actividades profesionales, científicas, técnicas, y de servicios administrativos y de apoyo" ~ "Profesionales",
-                      x == "Construcción" ~ "Construcción",
-                      x == "Otras actividades de servicios" ~ "Otras de servicios",
-                      x == "Actividades inmobiliarias" ~ "Inmobiliarias",
-                      x == "Información y comunicación" ~ "Comunicaciones",
-                      x == "9999" ~ "NS/NR", TRUE ~ x)) # Reemplazando los valores y si ninguna condición se cumple conserva el valor original de la base almacenado temporalmente en col_categoría_ocupacional
-
 ################################################################################
-# 4.12.	Salario o ingresos promedio por sexo, según rama de actividad económica
+# 4.12.	Salario o ingresos promedio mensual por sexo, según Categoría OCupacional
 ################################################################################
 
+# Se crea la tabla de la base de personas asalariadas 
+c4_12 <- asalariados%>%
+  mutate (ingresoPonderado = ingreso*factor) %>%
+  select(P03A02, P05C20, factor, ingresoPonderado) %>%
+  group_by(P03A02, P05C20) %>%
+  summarize(y = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  rename(z = P03A02) %>%
+  rename(x = P05C20) %>%
+  select(x, z, y)
+
+#se convierte la columna sexo (z) a dos columnas por categoría
+c4_12 <- pivot_wider(c4_12, names_from = z, values_from = c(y)) 
+
+g4_12 <- graficaColCategorias(data = c4_12, ruta = paste0(directorioGraficas,"g4_12.tex"),
+                              etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
-# 4.12.	Salarios o ingresos promedio, desagregado por sexo, según pueblo
-################################################################################
+# 4.13.	Salarios o ingresos promedio mensual, desagregado por sexo, según pueblo
+
+# Se crea la tabla de la base de personas asalariadas 
+#c4_13 <- asalariados%>%
+  #mutate (ingresoPonderado = ingreso*factor) %>%
+  #select(P03A02, P03A06, factor, ingresoPonderado) %>%
+  #group_by(P03A02, P03A06,) %>%
+  #summarize(y = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  #rename(z = P03A02) %>%
+  #rename(x = P03A06) %>%
+  #select(x, z, y, casos)
+
+#se convierte la columna sexo (z) a dos columnas por categoría
+#c4_13 <- pivot_wider(c4_13, names_from = z, values_from = c(y)) 
+
+#g4_13 <- graficaColCategorias(data = c4_13, ruta = paste0(directorioGraficas,"g4_13.tex"),
+                              #etiquetasCategorias = "A", etiquetas = "h")
 
 ################################################################################
 # 4.13.	Tasa de desempleo en la población de 15 años o más por sexo, según 
 # dominio de estudio (comparar 2018 y 2022)
 ################################################################################
 
-################################################################################
-# 4.14.	Tasa desempleo en la población de 15 años o más por sexo, según 
-# Pueblos (comparar 2018 y 2022)
-################################################################################
+#Calculo de tasa de desocupados 2022
+#Se utiliza la base de desocupados para el claculo de desempleo del año 2022
+Tasa_desempleo_22 <- desocupados %>%
+  select(dominio, P03A02, factor) %>%
+  group_by(dominio,  P03A02) %>%
+  summarise( y = sum(factor)/ PEATOTAL * 100, casos = n()) %>%
+  rename(x = dominio) %>%
+  rename(z = P03A02) %>%
+  select(x, z, y)
+
+Tasa_desempleo_22 <- pivot_wider(Tasa_desempleo_22, names_from = z, values_from = c(y)) 
+
+#Calculo de tasa de desocupados 2018
+#Se utiliza la base de desocupados para el claculo de desempleo del año 2018
+Tasa_desempleo_18 <- desocupados_18 %>%
+  select(DOMINIO, PPA02, FACTOR) %>%
+  group_by(DOMINIO,  PPA02) %>%
+  summarise( y = sum(FACTOR)/ PEATOTAL_18 * 100, casos = n()) %>%
+  rename(x = DOMINIO,) %>%
+  rename(z = PPA02) %>%
+  select(x, z, y)
+
+Tasa_desocupados_18 <- pivot_wider(Tasa_desempleo_18, names_from = z, values_from = c(y)) 
 
 ################################################################################
-# 4.15.	Mujeres jefas de hogar por número de hijas/hijos en la PO
+# 4.14.	Mujeres jefas de hogar por número de hijas/hijos en la PO
 ################################################################################
 
+Mujeres_PO <- filter(PO, P03A02 == "Mujer" & P03A03 > 11) %>%
+  filter(P03A12 != "No respondio" & P03A12 != 0) %>%
+  select(P03A02, P03A03, P03A12, factor)
+
+Total_Mujeres_PO <- sum(Mujeres_PO$factor)
+
+c4_14 <- Mujeres_PO%>%
+  mutate(x = case_when(P03A12 %in% c("1", "2", "3") ~ "1-3",
+                                 P03A12 %in% c("4", "5", "6") ~ "4-6",
+                                 TRUE ~ "6+")) %>%
+  group_by(x) %>%
+  summarize(y = sum(factor)/Total_Mujeres_PO * 100)
+
+# g4_14 <- graficaAnillo(data = c4_14, nombre = paste0(directorioGraficas, "g4_14.tex"), preambulo = F)
+g4_14 <- graficaAnillo(data = c4_14, nombre = paste0(directorioGraficas,"g4_14.tex"), preambulo = F)
+
 ################################################################################
-# 4.16.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
+# 4.15.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
 # por sexo (ODS)
 ################################################################################
 
 ################################################################################
-# 4.17.	Distribución de tareas no remuneradas en el hogar por sexo
+# 4.16.	Distribución de tareas no remuneradas en el hogar por sexo
 ################################################################################

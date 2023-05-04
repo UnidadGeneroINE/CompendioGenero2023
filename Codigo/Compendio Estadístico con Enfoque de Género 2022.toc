@@ -24,8 +24,14 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.10\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo, según rama de actividad económica (comparar 2018 y 2022)}{7}{section*.11}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{8}{section*.12}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.12\hfil } Población ocupada con acceso a seguro social por sexo, según actividad económica}{8}{section*.13}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.13\hfil } Mujeres jefas de hogar por número de hijas/hijos en la PO}{9}{section*.14}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{9}{section*.11}%
+\contentsline {chapter}{APÉNDICES}{11}{section*.14}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{11}{section*.12}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{13}{section*.15}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

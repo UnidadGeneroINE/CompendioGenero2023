@@ -23,6 +23,7 @@ library(ggplot2)
 library(knitr)
 library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
 library(colorspace)
+library(tidyr)
 
 
 # Rutas del directorio de bases y gráficas
@@ -50,6 +51,12 @@ personasENEIINE <- read.spss(paste0(directorioBases, "ENEI2022INE.sav"),
 hogaresENEIINE <- read.spss(paste0(directorioBases, "ENEI2022INE_HOGARES.sav"), 
                              to.data.frame =T)
 
+personasENEIINE2018 <- read.spss(paste0(directorioBases, "BASE_ENEI_18_PERSONAS.sav"), 
+                             to.data.frame =T)
+
+hogaresENEIINE2018 <- read.spss(paste0(directorioBases, "BASE_ENEI_18_HOGARES.sav"), 
+                            to.data.frame =T)
+
 # Definiendo color y otras caracterísiticas necesarias dependiendo del tipo de 
 # documento. color1 es el principal, color2 es el secundariom del documento
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255)) 
@@ -62,7 +69,7 @@ anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, 
 poblacion2018 <- nrow(personasCenso)
 
 # Población total para ENEI 2022
-poblacion2022 <- sum(personasENEI$factor)
+poblacion2022 <- sum(personasENEIINE$factor)
 
 # Población Maya para censo 2018
 poblacionMaya2018 <- nrow(filter(personasCenso, PCP12 == "Maya"))
@@ -121,6 +128,7 @@ personasENEI <- personasENEI %>%
 # Indica el orden en el que se deben mostrar los sexos
 personasCenso$PCP6 <- factor(personasCenso$PCP6, levels = c("Mujer", "Hombre"))
 personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
+personasENEIINE$P03A02 <- factor(personasENEIINE$P03A02, levels = c("Mujer", "Hombre"))
 
 ############################################################################
 ###                                                                      ###
@@ -186,10 +194,13 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
 # 1.3.	Población por sexo, según Pueblos
 ################################################################################
 
-c1_03 <- personasENEI %>%
+c1_03 <- personasENEIINE %>%
   group_by(P03A02, P03A06) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
-  rename(Sexo = P03A02) 
+  rename(z = P03A02) %>%
+  rename(x = P03A06) %>%
+  mutate(x = case_when(x == "Afrodescendiente/Creole/Afro mestizo" ~ "Afrodescendiente*",
+                            TRUE ~ x))
 
 x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
 Hombre <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
@@ -227,7 +238,9 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04)
 # El tipo de hogar se define desde la página 9 del compendio del 2021 (miembros
 # del hogar).
 
-# Obtiene datos de la base de datos trabajada para el reporte de la ENEI 2022
+# Crea la categorización del tipo de vivienda al restringir quienes puedes ser
+# miembros del hogar usando las funciones casewhen para hacerlo por casos
+# y las funciones all() e %in% para restringir las personas miembros.
 c1_05 <- personasENEIINE %>%
   group_by(hogar_num) %>%
   summarize(tipo_hogar = case_when(all(P03A05 == "Jefe (a) del hogar") ~ "Unipersonal",
@@ -242,7 +255,7 @@ c1_05 <- personasENEIINE %>%
 c1_05 <- merge(x = personasENEIINE, y = c1_05, by = "hogar_num") %>%
   group_by(tipo_hogar, P03A02) %>%
   summarise(casos = n())
-  
+
   # TESTEANDO SI ESTÁ CORRECTO
 compare <- personasENEIINE %>%
   group_by(hogar_num, P03A05) %>%
@@ -252,29 +265,33 @@ compare <- personasENEIINE %>%
 g1_05 <- graficaBarPorcentajeApilada(c1_05, "Sexo")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_05) 
-#, id, P03A05
+
 ################################################################################
 # 1.6.	Población por sexo, según tipo de vivienda (PENDIENTE DE TERMINAR)
 ################################################################################
-# Se optó a usar datos menos actualizados (Censo 2018) ya que la muestra de la 
-# ENEI no permite para esta desagregación.
 
-c1_06 <- merge(personasENEIINE, hogaresENEIINE, by = c("upm", "hogar_num")) %>%
+c1_06 <- merge(x = personasENEIINE, y = hogaresENEIINE, by = c("upm", "hogar_num")) %>%
   group_by(P03A02, P02A01) %>%
-  summarize(porcentaje = n())
+  summarize(y = sum(factor.x)/poblacion2022 *100) %>%
+  mutate(P02A01 = case_when(P02A01 == "Cuarto_vecindad" ~ "Cuarto vecindad",
+                            P02A01 == "Formal" ~ "Casa formal",
+                            P02A01 == "Improvisada" ~ "Casa improvisada",
+                            TRUE ~ P02A01)) %>%
+  rename(z = P03A02) %>%
+  rename(x = P02A01)
 
-g1_04 <- graficaBarPorcentajeApilada(c1_04, "Sexo", escala = 100)
+g1_06 <- graficaBarPorcentajeApilada(c1_06, "Sexo", escala = 100)
 
-exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
+exportarLatex(nombre = paste0(directorioGraficas, "g1_06.tex"), graph = g1_06) 
 
 ################################################################################
-# 1.7.	Mapa departamental por número de mujeres (PENDIENTE MAPA ACTUALIZADO)
+# 1.7.	Mapa departamental por número de mujeres
 ################################################################################
 
 # Datos obtenidos de https://www.ine.gob.gt/proyecciones/
 
 ################################################################################
-# 1.8.	Mapa municipal por número de mujeres (PENDIENTE MAPA ACTUALIZADO)
+# 1.8.	Mapa municipal por número de mujeres
 ################################################################################
 
 # Datos obtenidos de https://www.ine.gob.gt/proyecciones/
@@ -341,3 +358,26 @@ TABLA <- kable(DATA, format = "latex", align = "c", digits = 1, booktabs = TRUE,
   #column_spec(1:ncol(c1_04), align = "c", 
   #latex_options = "m{2cm}") %>%
   cat(file = paste0(directorioGraficas, "TABLA.tex"))
+
+############################# TESTEANDO 2018 ###################################
+c1_05_2018 <- personasENEIINE2018 %>%
+  group_by(NUM_HOGAR) %>%
+  summarize(tipo_hogar = case_when(all(PPA05 == "Jefe(A) del hogar") ~ "Unipersonal",
+                                   all(PPA05 %in% c("Jefe(A) del hogar","Esposo(a) o compañero(a)","Hijo(a)")) ~ "Nuclear",
+                                   all(PPA05 %in% c("Jefe(A) del hogar", "Esposo(a) o compañero(a)",
+                                                     "Hijo(a)", "Yerno o Nuera","Nieto(a)",
+                                                     "Otro(a) pariente", "Suegro(a)", "Padre o madre", 
+                                                     "Hermano(a)", "Cuñado(a)")) ~ "Ampliado",
+                                   all(PPA05 %in% c("Jefe(A) del hogar", "Empleado(a) domestico(a)","Otro(a) no pariente", "Pensionista o huésped")) ~ "Corresidente",
+                                   TRUE ~ "Compuesto"))
+
+c1_05_2018 <- merge(x = personasENEIINE2018, y = c1_05_2018, by = "NUM_HOGAR") %>%
+  group_by(tipo_hogar) %>%
+  summarise(casos = sum(FACTOR)/poblacion2018ENEI*100)
+
+poblacion2018ENEI <- sum(personasENEIINE2018$FACTOR)
+
+################################################################################
+  
+
+

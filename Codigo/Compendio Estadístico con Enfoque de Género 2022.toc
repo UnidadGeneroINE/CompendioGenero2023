@@ -12,18 +12,22 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.4\hfil } Población por sexo, según comunidad lingüística}{5}{section*.5}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.5\hfil } Mapa departamental por número de mujeres}{6}{section*.6}%
+\contentsline {section}{\hbox to\@tempdima {1.5\hfil } Población por sexo, según tipo de hogar (PENDIENTE)}{6}{section*.6}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.6\hfil } Mapa municipal por número de mujeres}{7}{section*.7}%
+\contentsline {section}{\hbox to\@tempdima {1.6\hfil } Población por sexo, según tipo de vivienda}{6}{section*.7}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.7\hfil } Esperanza de vida al nacer por sexo}{8}{section*.8}%
+\contentsline {section}{\hbox to\@tempdima {1.7\hfil } Mapa departamental por número de mujeres}{7}{section*.8}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.8\hfil } Tasa global de fecundidad (mujeres 15 a 49 años)}{8}{section*.9}%
+\contentsline {section}{\hbox to\@tempdima {1.8\hfil } Mapa municipal por número de mujeres}{8}{section*.9}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.9\hfil } Tasa de fecundidad juvenil según edades simples (13 -19 años)}{9}{section*.10}%
+\contentsline {section}{\hbox to\@tempdima {1.9\hfil } Esperanza de vida al nacer por sexo}{9}{section*.10}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.10\hfil } Tasa global de fecundidad (mujeres 15 a 49 años)}{9}{section*.11}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.11\hfil } Tasa de fecundidad juvenil según edades simples (13 -19 años)}{10}{section*.12}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{11}{section*.10}%
+\contentsline {chapter}{APÉNDICES}{11}{section*.12}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{13}{section*.11}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{13}{section*.13}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

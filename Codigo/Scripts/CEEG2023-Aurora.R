@@ -98,7 +98,7 @@ personasENEI <- personasENEI %>%
                                    P03A03 > 94 & P03A03 < 100 ~ '95-99',
                                    P03A03 > 99 ~ '100+'))
   
-# Indica el orden en el que se deben mostrar los sexos
+# Indica el orden en el que se deben mostrar los sexos para ENEI 2022
 personasENEI$P03A02 <- factor(personasENEI$P03A02, levels = c("Mujer", "Hombre"))
 
 
@@ -147,6 +147,9 @@ print(sum(c4_06_Pueblo_Sexo$Hombre))
 print(sum(c4_06_Pueblo_Sexo$Mujer))
 
 #Datos ENEI 2018 que se utilizara para comparar los datos 2018 con 2022. 
+
+# Indica el orden en el que se deben mostrar los sexos para ENEI 2018
+personasENEI_18$PPA02 <- factor(personasENEI_18$PPA02, levels = c("Mujer", "Hombre"))
 # Flitro de base personas ENEI 2018 se selecciono solo a las de Personas en Edad 
 # de Trabajar -PET-
 PET_18 <- filter(personasENEI_18, PPA03 > 14)
@@ -258,17 +261,13 @@ c4_02 <- PEA %>%
   group_by(dominio, EstadoConyugal, P03A02) %>%
   summarise( y = sum(factor)/ PEATOTAL * 100) %>%
   rename(x = dominio) %>%
-  rename(z1 = P03A02) %>%
+  rename(z = P03A02) %>%
   rename(w = EstadoConyugal) %>%
-  select(z1, w, x, y)
+  select(z, w, x, y)
 
-#Se unifico la columna sexo = z1 con la culumna Estado contyugal = w
-c4_02 <- unite(data = c4_02, col = z, sep = " ", z1, w)
 
-# Se creo la condición para posicionar a las mujeres 
-c4_02$z <- factor(c4_02$z, levels = c("Mujer con pareja", "Hombre con pareja", "Mujer sin pareja", "Hombre sin pareja"))
-
-g4_02 <- graficaColApilada(c4_02, "Sexo y Estado conyugal")
+g4_02 <- graficaCategoriasApiladas (c4_02, tipo = "barra", categoria_leyenda = "",
+                                    leyenda = "abajo")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g4_02.tex"), graph = g4_02)
 
@@ -288,19 +287,13 @@ PEATOTAL <- sum(PEA$factor)
 
 # Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
 PEA2022 <- PEA %>%
-  select(dominio, P03A02, factor) %>%
-  group_by(dominio, P03A02) %>%
-  summarise( y2022 = sum(factor)/ PEATOTAL * 100) %>%
+  mutate(w = "2022") %>%
+  select(dominio, P03A02, factor, w) %>%
+  group_by(dominio, P03A02, w) %>%
+  summarise( y = sum(factor)/ PEATOTAL * 100) %>%
   rename(x = dominio) %>%
   rename(z = P03A02) %>%
-  select(z, x, y2022)
-
-# Se segmenta el cuadro por dominio de estudio
-PEA2022 <- unite(data = PEA2022, col = z, sep = " ", z, x)
-
-#Verificación de porcetaje
-print(sum(PEA2022$y2022))
-
+  select(w, z, x, y)
 
 # CALCULO DE PEA 2018
 #VERIFICACIÓN DEL PEA 2018
@@ -322,32 +315,22 @@ PEATOTAL_18 <- sum(PEA_18$FACTOR)
 
 # Se crea el cuadro de PEA agrupado por dominio de estudio y sexo
 PEA2018 <- PEA_18 %>%
-  select(DOMINIO, PPA02, FACTOR) %>%
-  group_by(DOMINIO, PPA02) %>%
-  summarise( y2018 = sum(FACTOR)/ PEATOTAL_18 * 100) %>%
+  mutate(w = "2018") %>%
+  select(DOMINIO, PPA02, FACTOR, w) %>%
+  group_by(DOMINIO, PPA02, w) %>%
+  summarise( y = sum(FACTOR)/ PEATOTAL_18 * 100) %>%
   rename(x = DOMINIO) %>%
   rename(z = PPA02) %>%
-  select(z, x, y2018)
-
-# Se segmenta el cuadro por dominio de estudio
-PEA2018 <- unite(data = PEA2018, col = x, sep = " ", z, x)
-
-#Verificación de porcetaje
-print(sum(PEA2018$y2018))
-
-#Tabla comparativa de PEA entre  2018 y 2022
-#Unón de PEA 2022 a 2018
-c4_03_data <- cbind(PEA2018, PEA2022[, c("y2022")])
+  select(w, z, x, y)
 
 # Se renombro las columnas por años  
-c4_03 <- c4_03_data %>%
-  rename("2018" = y2018) %>%
-  rename("2022" = y2022)
+c4_03 <- rbind(PEA2018, PEA2022)
 
 #Crear grafica de columnas por categoria y exportar a latex
-g4_03 <- graficaColCategorias(data = c4_03, ruta = paste0(directorioGraficas,"g4_03.tex"),
-                              etiquetasCategorias = "A", etiquetas = "h")
+g4_03 <- graficaCategoriasApiladas (c4_03, tipo = "columna", categoria_leyenda = "",
+                                    leyenda = "abajo")
 
+exportarLatex(nombre = paste0(directorioGraficas, "g4_03.tex"), graph = g4_03)
 ################################################################################
 # 4.4.	Población económicamente activa por sexo, según Pueblos
 #(comparar 2018 y 2022)
@@ -442,11 +425,11 @@ TotalSector <- sum(PEA_Sector_economico$factor)
 c4_05 <- PEA_Sector_economico %>%
   select(dominio, formalidad, P03A02, factor) %>%
   group_by(dominio, formalidad, P03A02) %>%
-  summarise( z = sum(factor)/ TotalSector * 100) %>%
+  summarise( y = sum(factor)/ TotalSector * 100) %>%
   rename(x = dominio) %>%
-  rename(w = P03A02) %>%
-  rename(a = formalidad) %>%
-  select(w, a, x, z)
+  rename(z = P03A02) %>%
+  rename(w = formalidad) %>%
+  select(w, z, x, y)
 
 
 #Se unifico la columna y = sexo + sector economico 
@@ -459,6 +442,18 @@ c4_05 <- pivot_wider(c4_05, names_from = y, values_from = c(z))
 #Grafica para latex
 g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4_05.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
+
+#Crear grafica de columnas por categoria y exportar a latex
+g4_03 <- graficaCategoriasApiladas (c4_03, tipo = "columna", categoria_leyenda = "",
+                                    leyenda = "abajo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_03.tex"), graph = g4_03)
+
+#Crear grafica de columnas por categoria y exportar a latex
+g4_05 <- graficaCategoriasApiladas (c4_05, tipo = "columna", categoria_leyenda = "",
+                                    leyenda = "abajo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_05.tex"), graph = g4_05)
 
 # Verificación de porcentajes
 print(sum(c4_05$y))
@@ -521,8 +516,6 @@ c4_07 <- PO_CAT %>%
     rename(z = P03A02) %>%
     rename(x = P05C20)
 
-c4_07 <- pivot_wider(c4_07, names_from = z, values_from = c(y))  
-
 #Acortar los valores de la columna x
 c4_07 <- c4_07 %>%
   mutate(x = case_when(x == "En el servicio doméstico" ~ "Servicio doméstico",
@@ -535,8 +528,11 @@ c4_07 <- c4_07 %>%
                        TRUE ~ x))
 
 
-g4_07 <- graficaColCategorias(data = c4_07, ruta = paste0(directorioGraficas,"g4_07.tex"),
-                              etiquetasCategorias = "A", etiquetas = "h")
+g4_07 <- graficaCategorias(c4_07, tipo = "barra", decimales = TRUE, 
+                           categoria_leyenda = "", leyenda = "abajo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_07.tex"), graph = g4_07)
+
 
 print(sum(c4_07$Mujer))
 print(sum(c4_07$Hombre))
@@ -554,9 +550,10 @@ c4_08 <- ocupados_22 %>%
   group_by(P03A02, P05C03B_1D) %>%
   summarise( y = sum(factor) / Totalocupados_22 * 100, casos = n()) %>%
   rename(z = P03A02) %>%
-  rename(x = P05C03B_1D)
+  rename(x = P05C03B_1D) %>%
+  select(x,z,y)
 
-c4_08 <- pivot_wider(c4_08, names_from = z, values_from = c(y)) 
+c4_08 <- pivot_wider(c4_08, names_from = z, values_from = c(y))
 
 c4_08 <- c4_08 %>%
   mutate(x =case_when(x == "Comercio al por mayor y al por menor, transporte y almacenamiento, actividades de alojamiento y de servicio de comidas" ~ "Comercio",
@@ -571,8 +568,10 @@ c4_08 <- c4_08 %>%
                       x == "Información y comunicación" ~ "Comunicaciones",
                       x == "9999" ~ "NS/NR", TRUE ~ x)) # Reemplazando los valores y si ninguna condición se cumple conserva el valor original de la base almacenado temporalmente en col_categoría_ocupacional
 
-g4_08 <- graficaColCategorias(data = c4_08, ruta = paste0(directorioGraficas,"g4_08.tex"),
-                              etiquetasCategorias = "A", etiquetas = "h")
+c4_08 <- c4_08 %>%
+  rename("Categoría Ocupacional" = x) 
+  
+Tabla4_08 <- tablaLaTeX(c4_08, ruta = paste0(directorioGraficas, "Tabla4_08.tex"))
 
 ################################################################################
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
@@ -666,11 +665,10 @@ c4_12 <- asalariados%>%
   rename(x = P05C20) %>%
   select(x, z, y)
 
-#se convierte la columna sexo (z) a dos columnas por categoría
-c4_12 <- pivot_wider(c4_12, names_from = z, values_from = c(y)) 
+g4_12 <- graficaCategorias(c4_12, tipo = "barra", decimales = TRUE, 
+                           categoria_leyenda = "", leyenda = "lado")
 
-g4_12 <- graficaColCategorias(data = c4_12, ruta = paste0(directorioGraficas,"g4_12.tex"),
-                              etiquetasCategorias = "A", etiquetas = "h")
+exportarLatex(nombre = paste0(directorioGraficas, "g4_12.tex"), graph = g4_12)
 
 ################################################################################
 # 4.13.	Salarios o ingresos promedio mensual, desagregado por sexo, según pueblo
@@ -699,26 +697,32 @@ g4_12 <- graficaColCategorias(data = c4_12, ruta = paste0(directorioGraficas,"g4
 #Calculo de tasa de desocupados 2022
 #Se utiliza la base de desocupados para el claculo de desempleo del año 2022
 Tasa_desempleo_22 <- desocupados %>%
-  select(dominio, P03A02, factor) %>%
-  group_by(dominio,  P03A02) %>%
+  mutate(w = "2022") %>%
+  select(dominio, P03A02, factor, w) %>%
+  group_by(dominio,  P03A02, w) %>%
   summarise( y = sum(factor)/ PEATOTAL * 100, casos = n()) %>%
   rename(x = dominio) %>%
   rename(z = P03A02) %>%
-  select(x, z, y)
-
-Tasa_desempleo_22 <- pivot_wider(Tasa_desempleo_22, names_from = z, values_from = c(y)) 
+  select(w, x, z, y)
 
 #Calculo de tasa de desocupados 2018
 #Se utiliza la base de desocupados para el claculo de desempleo del año 2018
 Tasa_desempleo_18 <- desocupados_18 %>%
-  select(DOMINIO, PPA02, FACTOR) %>%
-  group_by(DOMINIO,  PPA02) %>%
+  mutate(w = "2018") %>%
+  select(DOMINIO, PPA02, FACTOR, w) %>%
+  group_by(DOMINIO,  PPA02, w) %>%
   summarise( y = sum(FACTOR)/ PEATOTAL_18 * 100, casos = n()) %>%
   rename(x = DOMINIO,) %>%
   rename(z = PPA02) %>%
-  select(x, z, y)
+  select(w,x, z, y)
 
-Tasa_desocupados_18 <- pivot_wider(Tasa_desempleo_18, names_from = z, values_from = c(y)) 
+c4_13 <- rbind(Tasa_desempleo_18, Tasa_desempleo_22)
+
+g4_13 <- graficaCategoriasApiladas (c4_13, tipo = "barra", categoria_leyenda = "",
+                                    leyenda = "abajo")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_13.tex"), graph = g4_13)
+
 
 ################################################################################
 # 4.14.	Mujeres jefas de hogar por número de hijas/hijos en la PO
@@ -741,10 +745,107 @@ c4_14 <- Mujeres_PO%>%
 g4_14 <- graficaAnillo(data = c4_14, nombre = paste0(directorioGraficas,"g4_14.tex"), preambulo = F)
 
 ################################################################################
-# 4.15.	Promedio de horas dedicadas a tareas domésticas no remuneradas 
-# por sexo (ODS)
+# 4.15. Porción de tiempo dedicado a quehaceres domésticos y cuidados no 
+#       remunerados por sexo 
 ################################################################################
 
+# Crear la tabla apartir del indicadpr 9.1 de documento principales resultados 
+# de la ENEI 2022. 
+
+Mujer <- c(21.0)
+Hombre <- c(3.9)
+
+c4_15 <- data.frame(x = c("Mujer", "Hombre"), y = c(Mujer, Hombre))
+
+g4_15 <- graficaAnillo(data = c4_15, nombre = paste0(directorioGraficas,"g4_15.tex"), preambulo = F)
+
+
 ################################################################################
-# 4.16.	Distribución de tareas no remuneradas en el hogar por sexo
+# 4.16.	Porción de tiempo dedicado a quehaceres domésticos y de 
+#       cuidados no remunerados por grupos de edad
 ################################################################################
+
+# PET por sexo
+PET_mujeres <- filter(PET, P03A02 == "Mujer")
+PET_hombres <- filter(PET, P03A02 == "Hombre")
+
+PETTOTAL <- sum(PET$factor)
+
+d16 <- PET %>%
+  filter(P03A03 >14) %>%
+  mutate( P07A01F = case_when( P07A01A == "Sí" ~ P07A01B + P07A01C/60 +
+                                 P07A01D + P07A01E/60,
+                               P07A01A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  mutate( P07A02F = case_when( P07A02A == "Sí" ~ P07A02B + P07A02C/60 +
+                                 P07A02D + P07A02E/60,
+                               P07A02A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  mutate( P07A03F = case_when( P07A03A == "Sí" ~ P07A03B + P07A03C/60 +
+                                 P07A03D + P07A03E/60,
+                               P07A03A == "No" ~ 0, TRUE ~ 0 ) ) %>%
+  mutate( P07A04F = case_when( P07A04A == "Sí" ~ P07A04B + P07A04C/60 +
+                                 P07A04D + P07A04E/60,
+                               P07A04A == "No" ~ 0, TRUE ~ 0 ) ) %>%
+  mutate(P07A05F = case_when( P07A05A == "Sí" ~ P07A05B + P07A05C/60 +
+                                P07A05D + P07A05E/60,
+                              P07A05A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(P07A06F = case_when( P07A06A == "Sí" ~ P07A06B + P07A06C/60 +
+                                P07A06D + P07A06E/60,
+                              P07A06A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(   P07A07F = case_when( P07A07A == "Sí" ~ P07A07B + P07A07C/60 +
+                                   P07A07D + P07A07E/60,
+                                 P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
+  mutate(   P07A08F = case_when( P07A08A == "Sí" ~ P07A08B + P07A08C/60 +
+                                   P07A08D + P07A08E/60,
+                                 P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(   P07A09F = case_when( P07A09A == "Sí" ~ P07A09B + P07A09C/60 +
+                                   P07A09D + P07A09E/60,
+                                 P07A09A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(   P07A10F = case_when( P07A10A == "Sí" ~ P07A10B + P07A10C/60 +
+                                   P07A10D + P07A10E/60,
+                                 P07A10A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate( P07Total = (P07A01F + P07A02F + P07A03F + P07A04F + P07A05F + P07A06F
+                      + P07A07F + P07A08F + P07A09F + P07A10F)/7 )
+
+d4_16 <- d16 %>%
+  mutate( expandido = P07Total * factor ) %>%
+  group_by(P03A02, GruposEdad) %>%
+  summarize( y = sum(expandido)) %>%
+  rename(x = P03A02, z = GruposEdad)
+
+PET_mujeres_15_29 <- filter(PET_mujeres, P03A03 > 14 & P03A03 < 30)
+PET_mujeres_15_29 <- sum(PET_mujeres_15_29$factor)
+
+PET_mujeres_30_65 <- filter(PET_mujeres, P03A03 > 29 & P03A03 < 65)
+PET_mujeres_30_65 <- sum(PET_mujeres_30_65$factor)
+
+PET_mujeres_65 <- filter(PET_mujeres, P03A03 > 64)
+PET_mujeres_65 <- sum(PET_mujeres_65$factor)
+
+PET_Hombres_15_29 <- filter(PET_hombres, P03A03 > 14 & P03A03 < 30)
+PET_Hombres_15_29 <- sum(PET_Hombres_15_29$factor)
+
+PET_Hombres_30_65 <- filter(PET_hombres, P03A03 > 29 & P03A03 < 65)
+PET_Hombres_30_65 <- sum(PET_Hombres_30_65$factor)
+
+PET_Hombres_65 <- filter(PET_hombres, P03A03 > 64)
+PET_hombre_65 <- sum(PET_Hombres_65$factor)
+
+mujeres_15_29 <- d4_16[1,3]/PET_mujeres_15_29 /24*100
+hombres_15_29 <- d4_16[4,3]/PET_Hombres_15_29/24*100
+mujeres_30_65 <- d4_16[2,3]/PET_mujeres_30_65/24*100
+hombres_30_65 <- d4_16[5,3]/PET_Hombres_30_65/24*100
+mujeres_65 <- d4_16[3,3]/PET_mujeres_65/24*100
+hombres_65 <- d4_16[6,3]/PET_hombre_65/24*100
+
+
+c4_16 <- data.frame(x =c("Mujer", "Hombre"), 
+                    y = c(mujeres_15_29[[1]], hombres_15_29[[1]] ), 
+                    z =  c(mujeres_30_65[[1]], hombres_30_65[[1]] ),
+                    w =  c(hombres_65[[1]], hombres_65[[1]] ) ) %>%
+  rename('15-29' = y , '30-65' = z, '65+' = w )
+
+g4_16 <- graficaColCategorias(c4_16, ruta = paste0(directorioGraficas,
+                                              "g4_16.tex"),
+                     preambulo = F, etiquetas = "h")
+

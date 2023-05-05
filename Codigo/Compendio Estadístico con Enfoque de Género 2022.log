@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  5 MAY 2023 15:36
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  5 MAY 2023 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1721,7 +1721,10 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 3.
-(./Graficas/g1_02.tex) (./Descripciones/des1_02.tex)
+(./Graficas/g1_02.tex) (./Descripciones/des1_02.tex
+Package hyperref Info: Reference (link) `Hfootnote.1' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.1' on input line 1.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 3--3
  []|[]| 
  []
@@ -1770,8 +1773,8 @@ Package hyperref Info: bookmark on input line 5:
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
  (./Descripciones/des1_03.tex
-Package hyperref Info: Reference (link) `Hfootnote.1' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.1' on input line 1.
+Package hyperref Info: Reference (link) `Hfootnote.2' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.2' on input line 1.
 )
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
 []|[]| 
@@ -1886,7 +1889,10 @@ Overfull \hbox (38.82619pt too wide) in paragraph at lines 11--11
  [][] 
  []
 
-(./Descripciones/des1_06.tex)
+(./Descripciones/des1_06.tex
+Package hyperref Info: Reference (link) `Hfootnote.3' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.3' on input line 1.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 11--11
 
  []
@@ -2286,7 +2292,10 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 27--27
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.13[]$ $| 
  []
 
-(./Descripciones/des1_15.tex)
+(./Descripciones/des1_15.tex
+Package hyperref Info: Reference (link) `Hfootnote.4' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.4' on input line 1.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 27--27
 []|[]| 
  []
@@ -2331,7 +2340,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 29.
-(./Graficas/g1_16.tex) (./Descripciones/des1_17.tex)
+(./Graficas/g1_16.tex) (./Descripciones/des1_16.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 29--29
  []|[]| 
  []
@@ -2384,7 +2393,10 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.15[]$ $| 
  []
 
-(./Descripciones/des1_16.tex)
+(./Descripciones/des1_17.tex
+Package hyperref Info: Reference (link) `Hfootnote.5' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.5' on input line 1.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 31--31
 []|[]| 
  []
@@ -2593,10 +2605,12 @@ e Activa por sexo, según Pueblos}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
  (./Descripciones/des4_04.tex
-Package hyperref Info: Reference (link) `Hfootnote.2' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.2' on input line 1.
-Package hyperref Info: Reference (link) `Hfootnote.3' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.3' on input line 1.
+Package hyperref Info: Reference (link) `Hfootnote.6' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.6' on input line 1.
+Package hyperref Info: Reference (link) `Hfootnote.7' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.7' on input line 1.
+Package hyperref Info: Reference (link) `Hfootnote.8' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.8' on input line 1.
 )
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 7--7
 []|[]| 
@@ -2639,7 +2653,10 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 9.
-(./Graficas/g4_05.tex) (./Descripciones/des4_05.tex)
+(./Graficas/g4_05.tex) (./Descripciones/des4_05.tex
+Package hyperref Info: Reference (link) `Hfootnote.9' on input line 3.
+Package hyperref Info: Anchor `Hfootnote.9' on input line 3.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 9--9
  []|[]| 
  []
@@ -2746,7 +2763,10 @@ Overfull \hbox (53.28107pt too wide) in paragraph at lines 13--13
  [][] 
  []
 
-(./Descripciones/des4_07.tex)
+(./Descripciones/des4_07.tex
+Package hyperref Info: Reference (link) `Hfootnote.10' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.10' on input line 1.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
 
  []
@@ -2792,7 +2812,10 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 15.
 \openout2 = `Graficas/Tabla4_08.aux'.
 
- (./Graficas/Tabla4_08.tex) (./Descripciones/des4_08.tex)
+ (./Graficas/Tabla4_08.tex) (./Descripciones/des4_08.tex
+Package hyperref Info: Reference (link) `Hfootnote.11' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.11' on input line 1.
+)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 15--15
  []|[]| 
  []
@@ -3052,10 +3075,8 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 25--25
  []
 
 (./Descripciones/des4_13.tex
-Package hyperref Info: Reference (link) `Hfootnote.4' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.4' on input line 1.
-Package hyperref Info: Reference (link) `Hfootnote.5' on input line 3.
-Package hyperref Info: Anchor `Hfootnote.5' on input line 3.
+Package hyperref Info: Reference (link) `Hfootnote.12' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.12' on input line 1.
 )
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 25--25
 []|[]| 
@@ -3474,7 +3495,7 @@ Here is how much of TeX's memory you used:
  56310 multiletter control sequences out of 15000+600000
  520724 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,22n,103p,952b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,22n,103p,1146b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (44 page
 s).

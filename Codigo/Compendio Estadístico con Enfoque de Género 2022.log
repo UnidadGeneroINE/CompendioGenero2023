@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  4 MAY 2023 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  5 MAY 2023 09:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2122,8 +2122,8 @@ nil según edades simples (13 -19 años)}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 21--21
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.10[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 21--21
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.10[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -2181,8 +2181,8 @@ exo}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 23--23
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.11[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 23--23
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.11[]$ $| 
  []
 
 (./Descripciones/des1_12.tex)
@@ -2220,8 +2220,8 @@ cos por sexo de jefatura de hogar}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 25--25
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.12[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 25--25
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.12[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -2279,8 +2279,8 @@ exo, según dominio de estudio }
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 27--27
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.13[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 27--27
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.13[]$ $| 
  []
 
 (./Descripciones/des1_15.tex)
@@ -2312,14 +2312,14 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 27--28
 Package hyperref Info: Anchor `section*.15' on input line 29.
 Package hyperref Info: bookmark on input line 29:
 (hyperref)             thecounter {1.14}
-(hyperref)             text {\numberline {\thesection } Mujeres jefas de hogar 
-por número de hijas/hijos }
+(hyperref)             text {\numberline {\thesection } Jefatura de hogar por s
+exo, según estado conyugal }
 (hyperref)             reference {section*.15}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 29--29
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.14[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 29--29
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.14[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -2371,14 +2371,14 @@ Package hyperref Info: Anchor `page.11' on input line 31.
 Package hyperref Info: Anchor `section*.16' on input line 31.
 Package hyperref Info: bookmark on input line 31:
 (hyperref)             thecounter {1.15}
-(hyperref)             text {\numberline {\thesection } Jefatura de hogar por s
-exo, según estado conyugal }
+(hyperref)             text {\numberline {\thesection } Mujeres jefas de hogar 
+por número de hijas/hijos }
 (hyperref)             reference {section*.16}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 31--31
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 1.15[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.15[]$ $| 
  []
 
 (./Descripciones/des1_16.tex)
@@ -2531,7 +2531,7 @@ Package hyperref Info: Anchor `section*.20' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {2.3}
 (hyperref)             text {\numberline {\thesection } PEA por sexo, según dom
-inio de estudio (comparar 2018 y 2022)}
+inio de estudio}
 (hyperref)             reference {section*.20}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2584,8 +2584,8 @@ Package hyperref Info: Anchor `page.15' on input line 7.
 Package hyperref Info: Anchor `section*.21' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {2.4}
-(hyperref)             text {\numberline {\thesection } PEA por sexo, según Pue
-blos (comparar 2018 y 2022)}
+(hyperref)             text {\numberline {\thesection } Población Económicament
+e Activa por sexo, según Pueblos}
 (hyperref)             reference {section*.21}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2623,8 +2623,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 7--8
 Package hyperref Info: Anchor `section*.22' on input line 9.
 Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {2.5}
-(hyperref)             text {\numberline {\thesection } PEA por sexo, según dom
-inio de estudio y sector económico}
+(hyperref)             text {\numberline {\thesection } Población Económicament
+e Activa por sexo, según dominio de estudio y sector económico}
 (hyperref)             reference {section*.22}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2681,7 +2681,7 @@ Package hyperref Info: Anchor `page.16' on input line 11.
 Package hyperref Info: Anchor `section*.23' on input line 11.
 Package hyperref Info: bookmark on input line 11:
 (hyperref)             thecounter {2.6}
-(hyperref)             text {\numberline {\thesection } Población ocupada por s
+(hyperref)             text {\numberline {\thesection } Población Ocupada por s
 exo, según rango de edad}
 (hyperref)             reference {section*.23}
 (hyperref)             toclevel {1}
@@ -2715,8 +2715,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 11--12
 Package hyperref Info: Anchor `section*.24' on input line 13.
 Package hyperref Info: bookmark on input line 13:
 (hyperref)             thecounter {2.7}
-(hyperref)             text {\numberline {\thesection } Población ocupada por s
-exo, según categoría ocupaciona}
+(hyperref)             text {\numberline {\thesection } Población Ocupada por s
+exo, según categoría ocupacional}
 (hyperref)             reference {section*.24}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2774,8 +2774,8 @@ Package hyperref Info: Anchor `page.17' on input line 15.
 Package hyperref Info: Anchor `section*.25' on input line 15.
 Package hyperref Info: bookmark on input line 15:
 (hyperref)             thecounter {2.8}
-(hyperref)             text {\numberline {\thesection } PO con acceso a seguro 
-social por sexo, según rama de actividad económica}
+(hyperref)             text {\numberline {\thesection } Población Ocupada con a
+cceso a seguro social por sexo, según rama de actividad económica}
 (hyperref)             reference {section*.25}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2831,7 +2831,7 @@ Package hyperref Info: Anchor `section*.26' on input line 17.
 Package hyperref Info: bookmark on input line 17:
 (hyperref)             thecounter {2.9}
 (hyperref)             text {\numberline {\thesection } Créditos otorgados a la
- pequeña y mediana empresa por sexo (comparar 2018 y 2022)}
+ pequeña y mediana empresa por sexo}
 (hyperref)             reference {section*.26}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2871,8 +2871,8 @@ r 2018 y 2022)}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 19--19
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.10[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 19--19
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.10[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -2941,8 +2941,8 @@ edio mensual por sexo, según dominio de estudio}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 21--21
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.11[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 21--21
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.11[]$ $| 
  []
 
 (./Descripciones/des4_11.tex)
@@ -2980,8 +2980,8 @@ edio mensual por sexo, según Categoría Ocupacional}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 23--23
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.12[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 23--23
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.12[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -3038,13 +3038,13 @@ Package hyperref Info: Anchor `section*.30' on input line 25.
 Package hyperref Info: bookmark on input line 25:
 (hyperref)             thecounter {2.13}
 (hyperref)             text {\numberline {\thesection } Tasa de desempleo por s
-exo y dominio de estudio (comparar 2018 y 2022)}
+exo y dominio de estudio}
 (hyperref)             reference {section*.30}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 25--25
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.13[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 25--25
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.13[]$ $| 
  []
 
 (./Descripciones/des4_13.tex
@@ -3082,13 +3082,13 @@ Package hyperref Info: Anchor `section*.31' on input line 27.
 Package hyperref Info: bookmark on input line 27:
 (hyperref)             thecounter {2.14}
 (hyperref)             text {\numberline {\thesection } Mujeres jefas de hogar 
-por número de hijas/hijos en la PO}
+por número de hijas(os) en la Población Ocupada}
 (hyperref)             reference {section*.31}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 27--27
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.14[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 27--27
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.14[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -3141,13 +3141,13 @@ Package hyperref Info: Anchor `section*.32' on input line 29.
 Package hyperref Info: bookmark on input line 29:
 (hyperref)             thecounter {2.15}
 (hyperref)             text {\numberline {\thesection } Mujeres jefas de hogar 
-por número de hijas/hijos en la PO}
+por número de hijas/hijos en la Población Ocupada}
 (hyperref)             reference {section*.32}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 29--29
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.15[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 29--29
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.15[]$ $| 
  []
 
 (./Descripciones/des4_15.tex)
@@ -3179,14 +3179,14 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 29--30
 Package hyperref Info: Anchor `section*.33' on input line 31.
 Package hyperref Info: bookmark on input line 31:
 (hyperref)             thecounter {2.16}
-(hyperref)             text {\numberline {\thesection } Porción de tiempo dedic
-ado a quehaceres domésticos y de cuidados no remunerados por grupos de edad}
+(hyperref)             text {\numberline {\thesection } Proporción de tiempo de
+dicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}
 (hyperref)             reference {section*.33}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
-Overfull \hbox (11.02249pt too wide) in paragraph at lines 31--31
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/24.88 2.16[]$ $| 
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 2.16[]$ $| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -3464,13 +3464,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36993 strings out of 476684
- 834607 string characters out of 5807583
+ 36995 strings out of 476684
+ 834723 string characters out of 5807583
  1899012 words of memory out of 5000000
- 56333 multiletter control sequences out of 15000+600000
- 520716 words of font info for 124 fonts, out of 8000000 for 9000
+ 56334 multiletter control sequences out of 15000+600000
+ 520724 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,22n,103p,995b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,22n,103p,1014b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (44 page
 s).

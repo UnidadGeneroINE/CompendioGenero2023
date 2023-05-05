@@ -184,7 +184,7 @@ g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph =
 # 1.2.	Población por sexo, según dominio de estudio
 ################################################################################
 
-c1_02 <- personasENEI %>%
+c1_02 <- personasENEIINE %>%
   group_by(P03A02, dominio) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
   rename(z = P03A02) %>%

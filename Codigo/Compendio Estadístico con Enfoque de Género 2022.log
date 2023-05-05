@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  5 MAY 2023 09:25
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  5 MAY 2023 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3140,8 +3140,8 @@ Package hyperref Info: Anchor `page.21' on input line 29.
 Package hyperref Info: Anchor `section*.32' on input line 29.
 Package hyperref Info: bookmark on input line 29:
 (hyperref)             thecounter {2.15}
-(hyperref)             text {\numberline {\thesection } Mujeres jefas de hogar 
-por número de hijas/hijos en la Población Ocupada}
+(hyperref)             text {\numberline {\thesection } Proporción de tiempo de
+dicado a quehaceres domésticos y cuidados no remunerados por sexo}
 (hyperref)             reference {section*.32}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -3464,10 +3464,10 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36995 strings out of 476684
- 834723 string characters out of 5807583
- 1899012 words of memory out of 5000000
- 56334 multiletter control sequences out of 15000+600000
+ 36971 strings out of 476684
+ 834328 string characters out of 5807583
+ 1900012 words of memory out of 5000000
+ 56310 multiletter control sequences out of 15000+600000
  520724 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,22n,103p,1014b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s

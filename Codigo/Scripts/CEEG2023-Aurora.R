@@ -757,8 +757,9 @@ Hombre <- c(3.9)
 
 c4_15 <- data.frame(x = c("Mujer", "Hombre"), y = c(Mujer, Hombre))
 
-g4_15 <- graficaAnillo(data = c4_15, nombre = paste0(directorioGraficas,"g4_15.tex"), preambulo = F)
-
+g4_15 <- graficaCol(c4_15)
+g4_15 <- etiquetasHorizontales(g4_15)
+exportarLatex(graph = g4_15, paste0(directorioGraficas, "g4_15.tex"))
 
 ################################################################################
 # 4.16.	Porción de tiempo dedicado a quehaceres domésticos y de 
@@ -839,13 +840,16 @@ mujeres_65 <- d4_16[3,3]/PET_mujeres_65/24*100
 hombres_65 <- d4_16[6,3]/PET_hombre_65/24*100
 
 
-c4_16 <- data.frame(x =c("Mujer", "Hombre"), 
+c4_16 <- data.frame(z =c("Mujer", "Hombre"), 
                     y = c(mujeres_15_29[[1]], hombres_15_29[[1]] ), 
-                    z =  c(mujeres_30_65[[1]], hombres_30_65[[1]] ),
+                    x =  c(mujeres_30_65[[1]], hombres_30_65[[1]] ),
                     w =  c(hombres_65[[1]], hombres_65[[1]] ) ) %>%
-  rename('15-29' = y , '30-65' = z, '65+' = w )
+  rename('15-29' = y , '30-65' = x, '65+' = w )
 
-g4_16 <- graficaColCategorias(c4_16, ruta = paste0(directorioGraficas,
-                                              "g4_16.tex"),
-                     preambulo = F, etiquetas = "h")
+c4_16 <- pivot_longer(c4_16, cols = 2:4, names_to = "x", values_to = "y") 
+c4_16$z <- factor(c4_16$z, levels = c("Mujer", "Hombre"))
 
+g4_16 <- graficaCategorias(c4_16, tipo = "columna", decimales = TRUE, 
+                           categoria_leyenda = "", leyenda = "arriba")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_16.tex"), graph = g4_16)

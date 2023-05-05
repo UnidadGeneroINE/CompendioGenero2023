@@ -198,15 +198,17 @@ PET <- filter(personasENEI, P03A03 > 14)
 c4_01 <- PET %>%
   filter(formalidad == "Formal" | 
            formalidad == "Informal") %>%
-  select(P03A02, formalidad, factor) %>%
+  select(P03A02, dominio, formalidad, factor) %>%
   group_by(P03A02, formalidad) %>%
-  summarise( z = sum(factor)) %>%
+  summarise(z = sum(factor)) %>%
   rename(x = formalidad) %>%
   rename(y = P03A02) %>%
   select(x, y, z)
 
 # Se creo la sumatoaria de personas que se encuentra en el sector formal e informal.
 TotalSector <- sum(c4_01$z)
+
+print(sum(c4_01$z))
 
 x <- c("Formal", "infromal")
 Mujer <- c(as.numeric(c4_01[2,3]/TotalSector*100), as.numeric(c4_01[1,3]/TotalSector*100))
@@ -259,11 +261,11 @@ conteoConyugal <- personasENEI %>%
 c4_02 <- PEA %>%
   select(dominio, EstadoConyugal, P03A02, factor) %>%
   group_by(dominio, EstadoConyugal, P03A02) %>%
-  summarise( y = sum(factor)/ PEATOTAL * 100) %>%
+  summarise( y = sum(factor)/ PEATOTAL * 100, total = sum(factor)) %>%
   rename(x = dominio) %>%
   rename(z = P03A02) %>%
   rename(w = EstadoConyugal) %>%
-  select(z, w, x, y)
+  select(z, w, x, y, total)
 
 
 g4_02 <- graficaCategoriasApiladas (c4_02, tipo = "barra", categoria_leyenda = "",
@@ -489,6 +491,20 @@ c4_06 <- data.frame(x, Mujer, Hombre)
 g4_06 <- graficaColCategorias(data = c4_06, ruta = paste0(directorioGraficas,"g4_06.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
+# PO_DOMINIO <- PO %>%
+#   select(P03A02, dominio, factor) %>%
+#   group_by(P03A02, dominio,) %>%
+#   summarise( y = sum(factor)/ TotalPO * 100, sum(factor)) %>%
+#   rename(z = P03A02) %>%
+#   rename(x = dominio)
+# 
+# print(sum(cPO_DOMINIO$y))
+# 
+# x <- c("15-29", "30-65", "65+")
+# Mujer <- c(as.numeric(c4_06[1,3]), as.numeric(c4_06[2,3]), as.numeric(c4_06[3,3]))
+# Hombre <- c(as.numeric(c4_06[4,3]), as.numeric(c4_06[5,3]), as.numeric(c4_06[6,3]))
+# 
+# c4_06 <- data.frame(x, Mujer, Hombre)
 
 ################################################################################
 # 4.7.	Población ocupada por sexo, según categoría ocupacional

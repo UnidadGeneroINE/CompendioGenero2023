@@ -198,9 +198,9 @@ PET <- filter(personasENEI, P03A03 > 14)
 c4_01 <- PET %>%
   filter(formalidad == "Formal" | 
            formalidad == "Informal") %>%
-  select(P03A02, dominio, formalidad, factor) %>%
+  select(P03A02, formalidad, factor) %>%
   group_by(P03A02, formalidad) %>%
-  summarise(z = sum(factor)) %>%
+  summarise( z = sum(factor)) %>%
   rename(x = formalidad) %>%
   rename(y = P03A02) %>%
   select(x, y, z)
@@ -208,9 +208,7 @@ c4_01 <- PET %>%
 # Se creo la sumatoaria de personas que se encuentra en el sector formal e informal.
 TotalSector <- sum(c4_01$z)
 
-print(sum(c4_01$z))
-
-x <- c("Formal", "infromal")
+x <- c("Formal", "informal")
 Mujer <- c(as.numeric(c4_01[2,3]/TotalSector*100), as.numeric(c4_01[1,3]/TotalSector*100))
 Hombre <- c(as.numeric(c4_01[4,3]/TotalSector*100), as.numeric(c4_01[3,3]/TotalSector*100))
 
@@ -261,11 +259,11 @@ conteoConyugal <- personasENEI %>%
 c4_02 <- PEA %>%
   select(dominio, EstadoConyugal, P03A02, factor) %>%
   group_by(dominio, EstadoConyugal, P03A02) %>%
-  summarise( y = sum(factor)/ PEATOTAL * 100, total = sum(factor)) %>%
+  summarise( y = sum(factor)/ PEATOTAL * 100) %>%
   rename(x = dominio) %>%
   rename(z = P03A02) %>%
   rename(w = EstadoConyugal) %>%
-  select(z, w, x, y, total)
+  select(z, w, x, y)
 
 
 g4_02 <- graficaCategoriasApiladas (c4_02, tipo = "barra", categoria_leyenda = "",
@@ -491,20 +489,6 @@ c4_06 <- data.frame(x, Mujer, Hombre)
 g4_06 <- graficaColCategorias(data = c4_06, ruta = paste0(directorioGraficas,"g4_06.tex"),
                               etiquetasCategorias = "A", etiquetas = "h")
 
-# PO_DOMINIO <- PO %>%
-#   select(P03A02, dominio, factor) %>%
-#   group_by(P03A02, dominio,) %>%
-#   summarise( y = sum(factor)/ TotalPO * 100, sum(factor)) %>%
-#   rename(z = P03A02) %>%
-#   rename(x = dominio)
-# 
-# print(sum(cPO_DOMINIO$y))
-# 
-# x <- c("15-29", "30-65", "65+")
-# Mujer <- c(as.numeric(c4_06[1,3]), as.numeric(c4_06[2,3]), as.numeric(c4_06[3,3]))
-# Hombre <- c(as.numeric(c4_06[4,3]), as.numeric(c4_06[5,3]), as.numeric(c4_06[6,3]))
-# 
-# c4_06 <- data.frame(x, Mujer, Hombre)
 
 ################################################################################
 # 4.7.	Población ocupada por sexo, según categoría ocupacional
@@ -773,8 +757,9 @@ Hombre <- c(3.9)
 
 c4_15 <- data.frame(x = c("Mujer", "Hombre"), y = c(Mujer, Hombre))
 
-g4_15 <- graficaAnillo(data = c4_15, nombre = paste0(directorioGraficas,"g4_15.tex"), preambulo = F)
-
+g4_15 <- graficaCol(c4_15)
+g4_15 <- etiquetasHorizontales(g4_15)
+exportarLatex(graph = g4_15, paste0(directorioGraficas, "g4_15.tex"))
 
 ################################################################################
 # 4.16.	Porción de tiempo dedicado a quehaceres domésticos y de 
@@ -855,13 +840,16 @@ mujeres_65 <- d4_16[3,3]/PET_mujeres_65/24*100
 hombres_65 <- d4_16[6,3]/PET_hombre_65/24*100
 
 
-c4_16 <- data.frame(x =c("Mujer", "Hombre"), 
+c4_16 <- data.frame(z =c("Mujer", "Hombre"), 
                     y = c(mujeres_15_29[[1]], hombres_15_29[[1]] ), 
-                    z =  c(mujeres_30_65[[1]], hombres_30_65[[1]] ),
+                    x =  c(mujeres_30_65[[1]], hombres_30_65[[1]] ),
                     w =  c(hombres_65[[1]], hombres_65[[1]] ) ) %>%
-  rename('15-29' = y , '30-65' = z, '65+' = w )
+  rename('15-29' = y , '30-65' = x, '65+' = w )
 
-g4_16 <- graficaColCategorias(c4_16, ruta = paste0(directorioGraficas,
-                                              "g4_16.tex"),
-                     preambulo = F, etiquetas = "h")
+c4_16 <- pivot_longer(c4_16, cols = 2:4, names_to = "x", values_to = "y") 
+c4_16$z <- factor(c4_16$z, levels = c("Mujer", "Hombre"))
 
+g4_16 <- graficaCategorias(c4_16, tipo = "columna", decimales = TRUE, 
+                           categoria_leyenda = "", leyenda = "arriba")
+
+exportarLatex(nombre = paste0(directorioGraficas, "g4_16.tex"), graph = g4_16)

@@ -208,7 +208,7 @@ c4_01 <- PET %>%
 # Se creo la sumatoaria de personas que se encuentra en el sector formal e informal.
 TotalSector <- sum(c4_01$z)
 
-x <- c("Formal", "infromal")
+x <- c("Formal", "informal")
 Mujer <- c(as.numeric(c4_01[2,3]/TotalSector*100), as.numeric(c4_01[1,3]/TotalSector*100))
 Hombre <- c(as.numeric(c4_01[4,3]/TotalSector*100), as.numeric(c4_01[3,3]/TotalSector*100))
 

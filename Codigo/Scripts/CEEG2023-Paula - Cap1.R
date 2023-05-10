@@ -232,7 +232,6 @@ c1_04 <- personasCenso %>%
   rename(z = PCP6) %>%
   rename(x = PCP13)
 
-g1_04 <- graficaBarPorcentajeApilada(c1_04, categoria_leyenda = "")
 g1_04 <- graficaPorcentajeApilada(c1_04, categoria_leyenda = "")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_04) 
@@ -275,15 +274,15 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_05)
 # 1.6.	Población por sexo, según tipo de vivienda (PENDIENTE DE TERMINAR)
 ################################################################################
 
-c1_06 <- merge(x = personasENEIINE, y = hogaresENEIINE, by = c("upm", "hogar_num")) %>%
+c1_06 <- merge(x = personasENEIINE, y = hogaresENEIINE, by = "hogar_num") %>%
   group_by(P03A02, P02A01) %>%
   summarize(y = sum(factor.x)/poblacion2022 *100) %>%
   mutate(P02A01 = case_when(P02A01 == "Cuarto_vecindad" ~ "Cuarto vecindad",
                             P02A01 == "Formal" ~ "Casa formal",
                             P02A01 == "Improvisada" ~ "Casa improvisada",
                             TRUE ~ P02A01)) %>%
-  rename(P03A02 = z) %>%
-  rename(P02A01 = x)
+  rename(z = P03A02) %>%
+  rename(x = P02A01)
 
 g1_06 <- graficaPorcentajeApilada(c1_06, tipo = "columna")
 

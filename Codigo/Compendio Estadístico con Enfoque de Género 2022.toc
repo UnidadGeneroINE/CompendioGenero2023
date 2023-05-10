@@ -4,11 +4,73 @@
 \contentsline {chapter}{\hbox to\@tempdima {1\hfil }Población y demografía}{1}{section*.1}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edado}{3}{section*.2}%
+\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Población por sexo, según grupos de edad}{3}{section*.2}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según dominio de estudio}{3}{section*.3}%
+\contentsline {section}{\hbox to\@tempdima {1.2\hfil } Población por sexo, según dominio de estudio}{4}{section*.3}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.3\hfil } Población por sexo, según Pueblos}{4}{section*.4}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.4\hfil } Población por sexo, según comunidad lingüística}{5}{section*.5}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.5\hfil } Población por sexo, según tipo de vivienda}{6}{section*.6}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.6\hfil } Mapa departamental por número de mujeres}{7}{section*.7}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.7\hfil } Mapa municipal por número de mujeres}{8}{section*.8}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.8\hfil } Esperanza de vida al nacer por sexo}{9}{section*.9}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.9\hfil } Tasa global de fecundidad (mujeres 15 a 49 años)}{9}{section*.10}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.10\hfil } Tasa de fecundidad juvenil según edades simples (13-19 años)}{10}{section*.11}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.11\hfil } Jefatura de hogar por sexo}{10}{section*.12}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.12\hfil } Acceso a servicios básicos por sexo de jefatura de hogar}{11}{section*.13}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.13\hfil } Jefatura de hogar por sexo, según dominio de estudio }{11}{section*.14}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.14\hfil } Jefatura de hogar por sexo, según estado conyugal }{12}{section*.15}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.15\hfil } Mujeres jefas de hogar por número de hijas(os) }{12}{section*.16}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Glosario}{5}{section*.4}%
+\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Economía y trabajo}{13}{section*.17}%
+\addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
+\color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
+\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Población de 15 años o más por sector económico, según sexo}{15}{section*.18}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{15}{section*.19}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{16}{section*.20}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{16}{section*.21}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{17}{section*.22}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Población Ocupada por sexo, según rango de edad}{17}{section*.23}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{18}{section*.24}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{19}{section*.25}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.9\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo}{19}{section*.26}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.10\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo, según rama de actividad económica}{20}{section*.27}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{20}{section*.28}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{21}{section*.29}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{21}{section*.30}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{22}{section*.31}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{22}{section*.32}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {2.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{23}{section*.33}%
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }\color {color3}
+\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Glosario}{25}{section*.34}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

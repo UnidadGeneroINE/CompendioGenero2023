@@ -35,42 +35,54 @@
 \contentsline {section}{\hbox to\@tempdima {1.15\hfil } Mujeres jefas de hogar por número de hijas(os) }{12}{section*.16}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Economía y trabajo}{13}{section*.17}%
+\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Salud}{13}{section*.17}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Población de 15 años o más por sector económico, según sexo}{15}{section*.18}%
+\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Nacimientos por edad de la madre, según grupos de edad}{15}{section*.18}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{15}{section*.19}%
+\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Porcentaje de partos atendidos, por tipo de asistencia}{15}{section*.19}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{16}{section*.20}%
+\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Tasa de mortalidad materna}{16}{section*.20}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{16}{section*.21}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{17}{section*.22}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Población Ocupada por sexo, según rango de edad}{17}{section*.23}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{18}{section*.24}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{19}{section*.25}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.9\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo}{19}{section*.26}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.10\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo, según rama de actividad económica}{20}{section*.27}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{20}{section*.28}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{21}{section*.29}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{21}{section*.30}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{22}{section*.31}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{22}{section*.32}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{23}{section*.33}%
+\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Defunciones de mujeres por Pueblo, según 12 principales causas de muerte}{17}{section*.21}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Glosario}{25}{section*.34}%
+\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Economía y trabajo}{19}{section*.22}%
+\addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
+\color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
+\contentsline {section}{\hbox to\@tempdima {3.1\hfil } Población de 15 años o más por sector económico, según sexo}{21}{section*.23}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{21}{section*.24}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{22}{section*.25}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{22}{section*.26}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{23}{section*.27}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.6\hfil } Población Ocupada por sexo, según rango de edad}{23}{section*.28}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{24}{section*.29}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{25}{section*.30}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.9\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo}{25}{section*.31}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.10\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo, según rama de actividad económica}{26}{section*.32}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{26}{section*.33}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{27}{section*.34}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{27}{section*.35}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{28}{section*.36}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{28}{section*.37}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{29}{section*.38}%
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }\color {color3}
+\contentsline {chapter}{\hbox to\@tempdima {4\hfil }Glosario}{31}{section*.39}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

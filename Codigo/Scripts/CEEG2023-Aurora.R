@@ -262,6 +262,15 @@ Tabla2_05 <- tablaLaTeX(c2_05, ruta = paste0(directorioGraficas, "Tabla2_05.tex"
 # grupos de edad (serie histórica de 2018 a 2023)                              #
 ################################################################################
 
+Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
+
+c2_08 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_8"))
+
+
+
+
+
+
 ################################################################################
 # 2.9.	Número de casos de mujeres seropositivas embarazadas entre 15 y 49 años# 
 # por Pueblo (serie histórica de 2018 a 2022)                                  #

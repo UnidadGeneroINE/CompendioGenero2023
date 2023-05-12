@@ -102,6 +102,13 @@ personasCenso$grupoEdad <- factor(personasCenso$grupoEdad, levels = c("0-14", "1
 personasENEI$grupoEdad <- factor(personasENEI$grupoEdad, levels = c("0-14", "15-29", "30-64", "65+"))
 personasENEI2018$grupoEdad <- factor(personasENEI2018$grupoEdad, levels = c("0-14", "15-29", "30-64", "65+"))
 
+# Contando personas de 15 años o más
+# a partir de haber verificado que todos los NAs en la P04A01 son 
+# en personas menores de 7 años y filtrando luego la edad
+
+genteMayorQue14_2022 <- sum(filter(personasENEI, !is.na(P04A01) & P03A03 > 14)$factor)
+genteMayorQue14_2018 <- sum(filter(personasENEI2018, !is.na(P03A01) & PPA03)$FACTOR)
+
 ############################################################################
 ###                                                                      ###
 ###                              CAPÍTULO 3                              ###
@@ -168,13 +175,6 @@ exportarLatex(nombre = paste0(directorioGraficas, "g3_01.tex"), graph = g3_01)
 # según dominio de estudio
 ################################################################################
 
-# Contando universo para el tema de alfabetismo (personas de 15 años o más)
-# a partir de haber verificado que todos los NAs en la P04A01 son 
-# en personas menores de 7 años y filtrando luego la edad
-
-genteMayorQue14_2022 <- sum(filter(personasENEI, !is.na(P04A01) & P03A03 > 14)$factor)
-genteMayorQue14_2018 <- sum(filter(personasENEI2018, !is.na(P03A01) & PPA03)$FACTOR)
-
 # Calculando el indicador para en 2022
 alfabetismo2022 <- filter(personasENEI, P04A01 == "Sí" & P03A03 > 14) %>%
   group_by(P03A02, dominio) %>%
@@ -197,3 +197,16 @@ exportarLatex(nombre = paste0(directorioGraficas, "g3_02.tex"), graph = g3_02)
 ################################################################################
 # 3.3.	Nivel educativo de la población de 15 años o más por sexo
 ################################################################################
+# Calculando el indicador para en 2022
+alfabetismo2022 <- filter(personasENEI, P04A01 == "Sí" & P03A03 > 14) %>%
+  group_by(P03A02, dominio) %>%
+  summarize(y = sum(factor)/genteMayorQue14_2022 * 100) %>%
+  cbind(x = c("2022", "2022", "2022", "2022", "2022", "2022")) %>%
+  rename(z = P03A02, w = dominio)
+
+# Calculando el indicador para en 2018
+alfabetismo2018 <- filter(personasENEI2018, P03A01 == "Si" & PPA03 > 14) %>%
+  group_by(PPA02, DOMINIO) %>%
+  summarize(y = sum(FACTOR)/genteMayorQue14_2018 * 100) %>%
+  cbind(x = c("2018", "2018", "2018", "2018", "2018", "2018")) %>%
+  rename(z = PPA02, w = DOMINIO)

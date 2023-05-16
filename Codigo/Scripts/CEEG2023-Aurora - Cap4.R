@@ -444,12 +444,6 @@ g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4
                               etiquetasCategorias = "A", etiquetas = "h")
 
 #Crear grafica de columnas por categoria y exportar a latex
-g4_03 <- graficaCategoriasApiladas (c4_03, tipo = "columna", categoria_leyenda = "",
-                                    leyenda = "abajo")
-
-exportarLatex(nombre = paste0(directorioGraficas, "g4_03.tex"), graph = g4_03)
-
-#Crear grafica de columnas por categoria y exportar a latex
 g4_05 <- graficaCategoriasApiladas (c4_05, tipo = "columna", categoria_leyenda = "",
                                     leyenda = "abajo")
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  15 MAY 2023 15:13
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.31)  16 MAY 2023 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2759,12 +2759,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 13.
 \openout2 = `Graficas/Tabla2_09.aux'.
 
-(./Graficas/Tabla2_09.tex)
-Overfull \hbox (23.07645pt too wide) in paragraph at lines 1--13
- [][] 
- []
-
-(./Descripciones/des2_09.tex)
+(./Graficas/Tabla2_09.tex) (./Descripciones/des2_09.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
 
  []

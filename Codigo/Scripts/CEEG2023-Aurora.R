@@ -268,7 +268,7 @@ c2_06 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_6"))
 
 c2_06$z <- factor(c2_06$z, levels = c("Mujeres", "Hombres"))
 
-#Grafica g2_08
+#Grafica g2_06
 g2_06 <- graficaApilada(c2_06, categoria_leyenda = "", tipo = "columna", 
                                      decimales = TRUE, leyenda = "arriba")
 
@@ -295,9 +295,8 @@ Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
 
 c2_08 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_8"))
 
+#Grafica g2_08
 g2_08 <- graficaLinea(c2_08, inicio = -1, ancho = 1.5, precision=2, escala = "normal", rotar = F, final = 1)
-# g3_03 <- etiquetasLineas(graph = g3_03, posiciones = c(0,1,2,3,4))
-
 
 # Enviar a Latex
 exportarLatex(nombre = paste0(directorioGraficas,"g2_08.tex"),
@@ -310,7 +309,7 @@ Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
 
 c2_09 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_9")) %>%
   rename("2018" = X2018, "2019" = X2019, "2020" = X2020, "2021" = X2021) %>%
-  rename("Causa de Muerte" = Causas.de.Muerte)
+  rename("Causas de Muerte" = Causa.de.muerte)
 
 # Enviar a Latex 
 Tabla2_09 <- tablaLaTeX(c2_09, ruta = paste0(directorioGraficas, "Tabla2_09.tex"))

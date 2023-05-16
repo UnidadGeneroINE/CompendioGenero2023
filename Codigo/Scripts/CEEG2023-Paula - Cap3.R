@@ -24,7 +24,7 @@ library(knitr)
 library(kableExtra) #devtools::install_github("haozhu233/kableExtra")
 library(colorspace)
 library(tidyr)
-
+library(tidyverse) #install.packages("tidyverse")
 
 # Rutas del directorio de bases y gráficas
 directorioBasesCenso <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Proyectos\\Compendio estadístico de género\\Bases\\"
@@ -108,6 +108,8 @@ personasENEI2018$grupoEdad <- factor(personasENEI2018$grupoEdad, levels = c("0-1
 
 genteMayorQue14_2022 <- sum(filter(personasENEI, !is.na(P04A01) & P03A03 > 14)$factor)
 genteMayorQue14_2018 <- sum(filter(personasENEI2018, !is.na(P03A01) & PPA03)$FACTOR)
+genteMayorQue6_2022 <- sum(filter(personasENEI, P03A03 > 6)$factor)
+genteMayorQue6_2018 <- sum(filter(personasENEI2018, PPA03 > 6)$FACTOR)
 
 ############################################################################
 ###                                                                      ###
@@ -143,14 +145,6 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
 # 3.1.	Tasa de alfabetismo en la población de 15 años o más por sexo, 
 # según grupos de edad
 ################################################################################
-
-# Contando universo para el tema de alfabetismo (personas de 15 años o más)
-# a partir de haber verificado que todos los NAs en la P04A01 son 
-# en personas menores de 7 años y filtrando luego la edad
-
-genteMayorQue14_2022 <- sum(filter(personasENEI, !is.na(P04A01) & P03A03 > 14)$factor)
-genteMayorQue14_2018 <- sum(filter(personasENEI2018, !is.na(P03A01) & PPA03)$FACTOR)
-
 # Calculando el indicador para en 2022
 alfabetismo2022 <- filter(personasENEI, P04A01 == "Sí" & P03A03 > 14) %>%
   group_by(P03A02, grupoEdad) %>%
@@ -198,15 +192,92 @@ exportarLatex(nombre = paste0(directorioGraficas, "g3_02.tex"), graph = g3_02)
 # 3.3.	Nivel educativo de la población de 15 años o más por sexo
 ################################################################################
 # Calculando el indicador para en 2022
-alfabetismo2022 <- filter(personasENEI, P04A01 == "Sí" & P03A03 > 14) %>%
-  group_by(P03A02, dominio) %>%
-  summarize(y = sum(factor)/genteMayorQue14_2022 * 100) %>%
-  cbind(x = c("2022", "2022", "2022", "2022", "2022", "2022")) %>%
-  rename(z = P03A02, w = dominio)
+educativo2022 <- filter(personasENEI, P03A03 > 14) %>%
+  mutate(P04A05A = case_when(P04A05A == "Maestría" ~ "Posgrado",
+                             P04A05A == "Doctorado" ~ "Posgrado",
+                            TRUE ~ P04A05A)) %>%
+  group_by(P03A02, P04A05A) %>%
+  summarize(Porcentaje = sum(factor)/genteMayorQue14_2022 * 100) %>%
+  rename(Sexo = P03A02, Nivel = P04A05A) %>%
+  pivot_wider(names_from = Sexo, values_from = Porcentaje)
 
 # Calculando el indicador para en 2018
-alfabetismo2018 <- filter(personasENEI2018, P03A01 == "Si" & PPA03 > 14) %>%
-  group_by(PPA02, DOMINIO) %>%
-  summarize(y = sum(FACTOR)/genteMayorQue14_2018 * 100) %>%
-  cbind(x = c("2018", "2018", "2018", "2018", "2018", "2018")) %>%
-  rename(z = PPA02, w = DOMINIO)
+educativo2018 <- filter(personasENEI2018, PPA03 > 14) %>%
+  group_by(PPA02, P03A05A) %>%
+  mutate(P03A05A = case_when(P03A05A == "Maestría" ~ "Posgrado",
+                             P03A05A == "Doctorado" ~ "Posgrado",
+                             TRUE ~ P03A05A)) %>%
+  summarize(Porcentaje = sum(FACTOR)/genteMayorQue14_2018 * 100) %>%
+  rename(Sexo = PPA02, Nivel = P03A05A) %>%
+  pivot_wider(names_from = Sexo, values_from = Porcentaje) %>%
+  rename(Mujeres_2018 = Mujer, 
+         Hombres_2018 = Hombre)
+
+c3_03 <- cbind(educativo2018, select(educativo2022, -Nivel))
+
+# Agregando niveles conforme a orden cronológcio  a Nivel Educativo
+c3_03$Nivel <- factor(c3_03$Nivel, levels = c("Ninguno", "Preprimaria", "Primaria", "Básico", "Diversificado", "Superior", "Posgrado"))
+c3_03 <- arrange(c3_03, c3_03$Nivel)
+
+g3_03 <- tablaLaTeX(data = c3_03, 
+                    nombre_columnas = c("Nivel Educativo", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2022" = 2),
+                    ruta = paste0(directorioGraficas, "g3_03.tex"))
+
+################################################################################
+# 3.4.	Tasa neta de escolaridad en el nivel primario por sexo 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_04 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.4"))
+g3_04 <- graficaDobleLinea(c3_04, ruta = paste0(directorioGraficas,"g3_04.tex"), inicio = 89.2,  fin = 96.2)
+
+################################################################################
+# 3.5.	Tasa neta de escolaridad en el nivel primario por sexo, según departamento 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_05 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.5"))
+g3_05 <- tablaLaTeX(c3_05,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    ruta = paste0(directorioGraficas,"g3_05.tex"))
+
+################################################################################
+# 3.6.	Tasa neta de escolaridad en el ciclo básico por sexo
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_06 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.6"))
+g3_06 <- graficaDobleLinea(c3_06, ruta = paste0(directorioGraficas,"g3_06.tex"), inicio = 42.8,  fin = 51.1)
+
+################################################################################
+# 3.7.	Tasa neta de escolaridad en el ciclo básico por sexo, según departamento 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_07 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.7"))
+g3_07 <- tablaLaTeX(c3_07,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    ruta = paste0(directorioGraficas,"g3_07.tex"))
+
+################################################################################
+# 3.8.	Tasa neta de escolaridad en el ciclo diversificado por sexo
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_08 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.8"))
+g3_08 <- graficaDobleLinea(c3_08, ruta = paste0(directorioGraficas,"g3_08.tex"), inicio = 20.5,  fin = 27.5)
+
+################################################################################
+# 3.9.	Tasa neta de escolaridad en el ciclo diversificado por sexo, según departamento
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.9"))
+g3_09 <- tablaLaTeX(c3_07,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    ruta = paste0(directorioGraficas,"g3_09.tex"))
+

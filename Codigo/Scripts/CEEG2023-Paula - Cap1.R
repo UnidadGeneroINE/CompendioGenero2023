@@ -198,13 +198,13 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_02.tex"), graph = g1_02)
 # 1.3.	Población por sexo, según Pueblos
 ################################################################################
 
-c1_03 <- personasENEIINE %>%
+c1_03 <- personasENEI %>%
   group_by(P03A02, P03A06) %>%
   summarize(y = sum(factor)/poblacion2022 *100) %>%
-  rename(Sexo = P03A02) %>%
-  rename(Pueblo = P03A06) %>%
-  mutate(Pueblo = case_when(Pueblo == "Afrodescendiente/Creole/Afro mestizo" ~ "Afrodescendiente*",
-                            TRUE ~ Pueblo))
+  rename(z = P03A02) %>%
+  rename(x = P03A06) %>%
+  mutate(x = case_when(x == "Afrodescendiente/Creole/Afro mestizo" ~ "Afrodescendiente*",
+                            TRUE ~ x))
 
 x <- c("Xinka", "Garífuna", "Ladino", "Afrodescendiente*", "Extranjero", "Maya")
 Hombre <- c(as.numeric(c1_03[1,3]), as.numeric(c1_03[2,3]), 
@@ -216,8 +216,8 @@ Mujer <- c(as.numeric(c1_03[7,3]), as.numeric(c1_03[8,3]),
 
 c1_03 <- data.frame(x, Mujer, Hombre)
 
-g1_03 <- graficaColCategorias(data = c1_03, ruta = paste0(directorioGraficas, "g1_03.tex"),
-                              etiquetas = "h")
+g1_03 <- graficaCategorias(c1_03, tipo = "barra", leyenda = "abajo")
+exportarLatex(g1_03, nombre = paste0(directorioGraficas, "g1_03.tex"))
 
 ################################################################################
 # 1.4.	Población por sexo, según comunidad lingüística

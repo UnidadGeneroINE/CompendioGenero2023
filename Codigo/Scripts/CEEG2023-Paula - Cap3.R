@@ -281,6 +281,16 @@ g3_09 <- tablaLaTeX(c3_07,
                     nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
                     ruta = paste0(directorioGraficas,"g3_09.tex"))
 
+################################################################################
+# 3.10.	Tasa de deserción en el nivel primario por sexo
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.9"))
+g3_09 <- tablaLaTeX(c3_07,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    ruta = paste0(directorioGraficas,"g3_09.tex"))
 
 ###################################################### DATOS EXTRA #############
 queerParejasCensos <- personasCenso %>%
@@ -299,4 +309,15 @@ filter(length(unique(P03A02)) < n()) %>%
 select(hogar_num, P03A05, P03A02) 
 
 
-# Exportando datos a Excel
+matrimonioInfantil <- filter(personasCenso,  PCP5 == "Esposa(o) o pareja" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP5) %>%
+  summarise(casos = n())
+
+matrimonioInfantil <- filter(personasCenso,  PCP34 != "Soltera(o)" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP5, PCP34, PCP35_A, PCP37, PCP38_C, DEPARTAMENTO) %>%
+  summarise(casos = n())
+
+matrimonioInfantil <- filter(personasCenso,  PCP34 != "Soltera(o)" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP34) %>%
+  summarise(casos = n())
+

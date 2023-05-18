@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  17 MAY 2023 14:56
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  18 MAY 2023 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1756,8 +1756,8 @@ Package hyperref Info: Anchor `page.3' on input line 7.
 Package hyperref Info: Anchor `section*.5' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {1.4}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el nivel primario por sexo}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el nivel primario por sexo}
 (hyperref)             reference {section*.5}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1790,8 +1790,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 7--8
 Package hyperref Info: Anchor `section*.6' on input line 9.
 Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {1.5}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el nivel primario por sexo, según departamento}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el nivel primario por sexo, según departamento}
 (hyperref)             reference {section*.6}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1850,8 +1850,8 @@ Package hyperref Info: Anchor `page.4' on input line 11.
 Package hyperref Info: Anchor `section*.7' on input line 11.
 Package hyperref Info: bookmark on input line 11:
 (hyperref)             thecounter {1.6}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el ciclo básico por sexo}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el ciclo básico por sexo}
 (hyperref)             reference {section*.7}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1908,8 +1908,8 @@ Package hyperref Info: Anchor `page.5' on input line 13.
 Package hyperref Info: Anchor `section*.8' on input line 13.
 Package hyperref Info: bookmark on input line 13:
 (hyperref)             thecounter {1.7}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el ciclo diversificado por sexo}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el ciclo diversificado por sexo}
 (hyperref)             reference {section*.8}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1942,8 +1942,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 13--14
 Package hyperref Info: Anchor `section*.9' on input line 15.
 Package hyperref Info: bookmark on input line 15:
 (hyperref)             thecounter {1.8}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el ciclo básico por sexo, según departamento}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el ciclo básico por sexo, según departamento}
 (hyperref)             reference {section*.9}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1998,8 +1998,8 @@ Package hyperref Info: Anchor `page.6' on input line 17.
 Package hyperref Info: Anchor `section*.10' on input line 17.
 Package hyperref Info: bookmark on input line 17:
 (hyperref)             thecounter {1.9}
-(hyperref)             text {\numberline {\thesection } Tasa neta de escolarida
-d en el ciclo diversificado por sexo, según departamento}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa neta de es
+colaridad en el ciclo diversificado por sexo, según departamento}
 (hyperref)             reference {section*.10}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2021,7 +2021,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 17.
 \openout2 = `Graficas/g3_09.aux'.
 
-(./Graficas/g3_09.tex) (./Descripciones/des3_05.tex)
+(./Graficas/g3_09.tex) (./Descripciones/des3_09.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
  []
@@ -2286,10 +2286,10 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36527 strings out of 476684
- 825047 string characters out of 5807583
- 1900012 words of memory out of 5000000
- 56003 multiletter control sequences out of 15000+600000
+ 36530 strings out of 476684
+ 825116 string characters out of 5807583
+ 1902012 words of memory out of 5000000
+ 56005 multiletter control sequences out of 15000+600000
  520708 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,21n,103p,828b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s

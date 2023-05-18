@@ -35,42 +35,85 @@
 \contentsline {section}{\hbox to\@tempdima {1.15\hfil } Mujeres jefas de hogar por número de hijas(os) }{12}{section*.16}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Economía y trabajo}{13}{section*.17}%
+\contentsline {chapter}{\hbox to\@tempdima {2\hfil }Salud}{13}{section*.17}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Población de 15 años o más por sector económico, según sexo}{15}{section*.18}%
+\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Número de casos de mujeres embarazadas entre 10 y 55 años atendidas por sistema de salud pública, 2018-2021 }{15}{section*.18}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{15}{section*.19}%
+\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Nacimientos por edad de la madre, según grupos de edad, 2018-2021 }{15}{section*.19}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{16}{section*.20}%
+\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Partos atendidos, por tipo de asistencia, 2018-2021}{16}{section*.20}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{16}{section*.21}%
+\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Personas notificadas con VIH/SIDA por sexo, 2018-2022 en porcentaje }{16}{section*.21}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{17}{section*.22}%
+\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Número de casos de mujeres seropositivas embarazadas entre 15 y 49 años por Pueblo, 2018-2022 }{17}{section*.22}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Población Ocupada por sexo, según rango de edad}{17}{section*.23}%
+\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Tasa de mortalidad materna, 2018-2021}{17}{section*.23}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{18}{section*.24}%
+\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Número de casos mortalidad materna según causa de muerte, 2018-2021}{18}{section*.24}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{19}{section*.25}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.9\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo}{19}{section*.26}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.10\hfil } Créditos otorgados a la micro, pequeña y mediana empresa por sexo, según rama de actividad económica}{20}{section*.27}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{20}{section*.28}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{21}{section*.29}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{21}{section*.30}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{22}{section*.31}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{22}{section*.32}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{23}{section*.33}%
+\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Defunciones de mujeres por Pueblo, según 12 principales causas de muerte}{19}{section*.25}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Glosario}{25}{section*.34}%
+\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Educación}{21}{section*.26}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
+\color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
+\contentsline {section}{\hbox to\@tempdima {3.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edado}{23}{section*.27}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.2\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según dominio de estudio}{23}{section*.28}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.3\hfil } Nivel educativo de la población de 15 años o más por sexo}{24}{section*.29}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.4\hfil } Tasa neta de escolaridad en el nivel primario por sexo}{24}{section*.30}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.5\hfil } Tasa neta de escolaridad en el nivel primario por sexo, según departamento}{25}{section*.31}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.6\hfil } Tasa neta de escolaridad en el ciclo básico por sexo}{26}{section*.32}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.7\hfil } Tasa neta de escolaridad en el ciclo diversificado por sexo}{26}{section*.33}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.8\hfil } Tasa neta de escolaridad en el ciclo básico por sexo, según departamento}{27}{section*.34}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {3.9\hfil } Tasa neta de escolaridad en el ciclo diversificado por sexo, según departamento}{28}{section*.35}%
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }\color {color3}
+\contentsline {chapter}{\hbox to\@tempdima {4\hfil }Economía y trabajo}{29}{section*.36}%
+\addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
+\color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
+\contentsline {section}{\hbox to\@tempdima {4.1\hfil } Población de 15 años o más por sector económico, según sexo}{31}{section*.37}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{31}{section*.38}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{32}{section*.39}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{32}{section*.40}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{33}{section*.41}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.6\hfil } Población Ocupada por sexo, según rango de edad}{33}{section*.42}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{34}{section*.43}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{35}{section*.44}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.9\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo}{35}{section*.45}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.10\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo, según rama de actividad económica}{36}{section*.46}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{36}{section*.47}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{37}{section*.48}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{37}{section*.49}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{38}{section*.50}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{38}{section*.51}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {4.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{39}{section*.52}%
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }
+\contentsline {chapter}{APÉNDICES}{41}{section*.52}%
+\addvspace {0.6\baselineskip }\color {color3}
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{43}{section*.53}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

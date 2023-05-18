@@ -444,12 +444,6 @@ g4_05 <- graficaColCategorias(data = c4_05, ruta = paste0(directorioGraficas,"g4
                               etiquetasCategorias = "A", etiquetas = "h")
 
 #Crear grafica de columnas por categoria y exportar a latex
-g4_03 <- graficaCategoriasApiladas (c4_03, tipo = "columna", categoria_leyenda = "",
-                                    leyenda = "abajo")
-
-exportarLatex(nombre = paste0(directorioGraficas, "g4_03.tex"), graph = g4_03)
-
-#Crear grafica de columnas por categoria y exportar a latex
 g4_05 <- graficaCategoriasApiladas (c4_05, tipo = "columna", categoria_leyenda = "",
                                     leyenda = "abajo")
 
@@ -628,15 +622,22 @@ g4_11 <- graficaColCategorias(data = c4_11, ruta = paste0(directorioGraficas,"g4
 #Indicador solicitado por UG Ingreso o salario promedio de madres por dominio de estudio
 # Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
 # Se agrupo por Dominio de Estudio 
+
+madres_asalariadas <- asalariados%>%
+  filter(P03A02 == "Mujer") %>%
+  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+
+madres_asalariadas_total <- sum(madres_asalariadas$factor)
+
 Salario_MAdres <- asalariados%>%
   filter(P03A02 == "Mujer") %>%
   filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
   mutate (ingresoPonderado = ingreso*factor) %>%
   select (dominio, factor, ingresoPonderado) %>%
   group_by (dominio) %>%
-  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), y = sum(factor)/madres_asalariadas_total*100) %>%
   rename(Dominio_Estudio = dominio) %>%
-  select(Dominio_Estudio, Ingreso_Promedio)
+  select(Dominio_Estudio, Ingreso_Promedio, y)
 
 ### Indicador soliciado por UG Ingreso o salario promedio de madres por categoría Ocuácional
 # Se filtro la Base de asalariados por mujeres que reportaron tener 1 o mas hijos.
@@ -647,9 +648,9 @@ Actividad_Madres <- asalariados%>%
   mutate (ingresoPonderado = ingreso*factor) %>%
   select(P05C20, factor, ingresoPonderado) %>%
   group_by(P05C20) %>%
-  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), casos = n()) %>%
+  summarize(Ingreso_Promedio = sum(ingresoPonderado)/sum(factor), casos = n(), y = sum(factor)/madres_asalariadas_total*100) %>%
   rename(Actividad_Ocupacional = P05C20) %>%
-  select(Actividad_Ocupacional, Ingreso_Promedio)
+  select(Actividad_Ocupacional, Ingreso_Promedio, y)
 
 ################################################################################
 # 4.12.	Salario o ingresos promedio mensual por sexo, según Categoría OCupacional
@@ -780,18 +781,21 @@ d16 <- PET %>%
   mutate( P07A02F = case_when( P07A02A == "Sí" ~ P07A02B + P07A02C/60 +
                                  P07A02D + P07A02E/60,
                                P07A02A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  
   mutate( P07A03F = case_when( P07A03A == "Sí" ~ P07A03B + P07A03C/60 +
                                  P07A03D + P07A03E/60,
                                P07A03A == "No" ~ 0, TRUE ~ 0 ) ) %>%
   mutate( P07A04F = case_when( P07A04A == "Sí" ~ P07A04B + P07A04C/60 +
                                  P07A04D + P07A04E/60,
                                P07A04A == "No" ~ 0, TRUE ~ 0 ) ) %>%
+  
   mutate(P07A05F = case_when( P07A05A == "Sí" ~ P07A05B + P07A05C/60 +
                                 P07A05D + P07A05E/60,
                               P07A05A == "No" ~ 0, TRUE ~ 0 )) %>%
   mutate(P07A06F = case_when( P07A06A == "Sí" ~ P07A06B + P07A06C/60 +
                                 P07A06D + P07A06E/60,
                               P07A06A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
   mutate(   P07A07F = case_when( P07A07A == "Sí" ~ P07A07B + P07A07C/60 +
                                    P07A07D + P07A07E/60,
                                  P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
@@ -799,6 +803,7 @@ d16 <- PET %>%
   mutate(   P07A08F = case_when( P07A08A == "Sí" ~ P07A08B + P07A08C/60 +
                                    P07A08D + P07A08E/60,
                                  P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
   mutate(   P07A09F = case_when( P07A09A == "Sí" ~ P07A09B + P07A09C/60 +
                                    P07A09D + P07A09E/60,
                                  P07A09A == "No" ~ 0, TRUE ~ 0 )) %>%
@@ -853,3 +858,139 @@ g4_16 <- graficaCategorias(c4_16, tipo = "columna", decimales = TRUE,
                            categoria_leyenda = "", leyenda = "arriba")
 
 exportarLatex(nombre = paste0(directorioGraficas, "g4_16.tex"), graph = g4_16)
+
+################################################################################
+# Porporción del dia dedicado a trabajo doméstico y de cuidados de 
+# madres trabajadorras
+#Revisión de numero de hijo por madres trabajadoras
+#Madres_trabajadoras <- asalariados%>%
+  #filter(P03A02 == "Mujer") %>%
+  #filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
+  #select( P03A02, P03A12, factor) %>%
+  #group_by(P03A02, P03A12) %>%
+  #summarise( y = sum(factor), casos = n()) 
+
+Madres_trabajadoras <- asalariados%>%
+  filter(P03A02 == "Mujer") %>%
+  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) %>%
+
+Trabajadorass <- filter(Madres_trabajadoras, P03A02 == "Mujer")
+
+m10 <- Madres_trabajadoras %>%
+  filter(P03A03 >14) %>%
+  mutate( P07A01F = case_when( P07A01A == "Sí" ~ P07A01B + P07A01C/60 +
+                                 P07A01D + P07A01E/60,
+                               P07A01A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  mutate( P07A02F = case_when( P07A02A == "Sí" ~ P07A02B + P07A02C/60 +
+                                 P07A02D + P07A02E/60,
+                               P07A02A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  
+  mutate( P07A03F = case_when( P07A03A == "Sí" ~ P07A03B + P07A03C/60 +
+                                 P07A03D + P07A03E/60,
+                               P07A03A == "No" ~ 0, TRUE ~ 0 ) ) %>%
+  mutate( P07A04F = case_when( P07A04A == "Sí" ~ P07A04B + P07A04C/60 +
+                                 P07A04D + P07A04E/60,
+                               P07A04A == "No" ~ 0, TRUE ~ 0 ) ) %>%
+  
+  mutate(P07A05F = case_when( P07A05A == "Sí" ~ P07A05B + P07A05C/60 +
+                                P07A05D + P07A05E/60,
+                              P07A05A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(P07A06F = case_when( P07A06A == "Sí" ~ P07A06B + P07A06C/60 +
+                                P07A06D + P07A06E/60,
+                              P07A06A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
+  mutate(   P07A07F = case_when( P07A07A == "Sí" ~ P07A07B + P07A07C/60 +
+                                   P07A07D + P07A07E/60,
+                                 P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
+  mutate(   P07A08F = case_when( P07A08A == "Sí" ~ P07A08B + P07A08C/60 +
+                                   P07A08D + P07A08E/60,
+                                 P07A07A == "No" ~ 0, TRUE ~ 0 )) %>%
+  
+  mutate(   P07A09F = case_when( P07A09A == "Sí" ~ P07A09B + P07A09C/60 +
+                                   P07A09D + P07A09E/60,
+                                 P07A09A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate(   P07A10F = case_when( P07A10A == "Sí" ~ P07A10B + P07A10C/60 +
+                                   P07A10D + P07A10E/60,
+                                 P07A10A == "No" ~ 0, TRUE ~ 0 )) %>%
+  mutate( P07Total = (P07A01F + P07A02F + P07A03F + P07A04F + P07A05F + P07A06F
+                      + P07A07F + P07A08F + P07A09F + P07A10F)/7 )
+
+m10_01 <- m10 %>%
+  mutate( expandido = P07Total * factor ) %>%
+  group_by(GruposEdad) %>%
+  summarize( y = sum(expandido)) %>%
+  rename(z = GruposEdad)
+
+Trabajadorass_15_29 <- filter(Trabajadorass, P03A03 > 14 & P03A03 < 30)
+Trabajadorass_15_29 <- sum(Trabajadorass_15_29$factor)
+
+Trabajadorass_30_65 <- filter(Trabajadorass, P03A03 > 29 & P03A03 < 65)
+Trabajadorass_30_65 <- sum(Trabajadorass_30_65$factor)
+
+Trabajadorass_65 <- filter(Trabajadorass, P03A03 > 64)
+Trabajadorass_65 <- sum(Trabajadorass_65$factor)
+
+
+mujeres_15_29 <- m10_01[1,2]/Trabajadorass_15_29 /24*100
+mujeres_30_65 <- m10_01[2,2]/Trabajadorass_30_65/24*100
+mujeres_65 <- m10_01[3,2]/Trabajadorass_65/24*100
+
+
+m10_01 <- data.frame(z =c("Mujer"), 
+                    y = c(mujeres_15_29[[1]]),
+                    x =  c(mujeres_30_65[[1]]),
+                    w =  c(mujeres_65[[1]])) %>%
+  rename('15-29' = y , '30-65' = x, '65+' = w )
+
+m10_01 <- pivot_longer(m10_01, cols = 2:4, names_to = "x", values_to = "y") 
+
+
+################################################################################
+## Proporción de la semana de madres con trabajo remunerado dedicada a apoyo a otros hogare o a la comunidad
+
+
+Madres_trabajadoras <- asalariados%>%
+  filter(P03A02 == "Mujer") %>%
+  filter(P03A12 %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+  
+Trabajadorass <- filter(Madres_trabajadoras, P03A02 == "Mujer")
+
+m12 <- Madres_trabajadoras %>%
+  filter(P03A03 >14) %>%
+  mutate( P07A01F = case_when( P07A12A == "Sí" ~ P07A12B + P07A12C/60 +
+                                 P07A12D + P07A12E/60,
+                               P07A12A == "No" ~ 0, TRUE ~ 0 ) )%>%
+  mutate( P07Total = (P07A01F/7))
+
+m12_01 <- m12 %>%
+  mutate( expandido = P07Total * factor ) %>%
+  group_by(GruposEdad) %>%
+  summarize( y = sum(expandido)) %>%
+  rename(z = GruposEdad)
+
+Comunitario_15_29 <- filter(Trabajadorass, P03A03 > 14 & P03A03 < 30)
+Comunitario_15_29 <- sum(Comunitario_15_29$factor)
+
+Comunitario_30_65 <- filter(Trabajadorass, P03A03 > 29 & P03A03 < 65)
+Comunitario_30_65 <- sum(Comunitario_30_65$factor)
+
+Comunitario_65 <- filter(Trabajadorass, P03A03 > 64)
+Comunitario_65 <- sum(Comunitario_65$factor)
+
+
+mujeres_comu_15_29 <- m12_01[1,2]/Comunitario_15_29*100
+mujeres_comu_30_65 <- m12_01[2,2]/Comunitario_30_65*100
+mujeres_comu_65 <- m12_01[3,2]/Comunitario_65*100
+
+
+m12_01 <- data.frame(z =c("Mujer"), 
+                     y = c(mujeres_comu_15_29[[1]]),
+                     x =  c(mujeres_comu_30_65[[1]]),
+                     w =  c(mujeres_comu_65[[1]])) %>%
+  rename('15-29' = y , '30-65' = x, '65+' = w )
+
+m12_01 <- pivot_longer(m12_01, cols = 2:4, names_to = "x", values_to = "y") 
+
+
+

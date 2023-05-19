@@ -282,15 +282,59 @@ g3_09 <- tablaLaTeX(c3_07,
                     ruta = paste0(directorioGraficas,"g3_09.tex"))
 
 ################################################################################
-# 3.10.	Tasa de deserción en el nivel primario por sexo
+# 3.10.	Tasa de deserción en el nivel primario por sexo (REVISAR)
 ################################################################################
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
-c3_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.9"))
-g3_09 <- tablaLaTeX(c3_07,
-                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
-                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
-                    ruta = paste0(directorioGraficas,"g3_09.tex"))
+c3_10 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.10")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_10$z <- factor(c3_10$z, levels = c("Mujer", "Hombre"))
+g3_10 <- graficaCategorias(c3_10)
+exportarLatex(g3_10, nombre = paste0(directorioGraficas,"g3_10.tex"))
+
+################################################################################
+# 3.11.	Tasa de deserción en el nivel primario por sexo, según departamento (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_11 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.11"))
+g3_11 <- tablaLaTeX(c3_11,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2),
+                    ruta = paste0(directorioGraficas,"g3_11.tex"))
+
+################################################################################
+# 3.12.	Tasa de deserción en el nivel básico por sexo (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_12 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.12")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_12$z <- factor(c3_12$z, levels = c("Mujer", "Hombre"))
+g3_12 <- graficaCategorias(c3_12, tipo = "barra")
+exportarLatex(g3_12, nombre = paste0(directorioGraficas,"g3_12.tex"))
+
+################################################################################
+# 3.13.	Tasa de deserción en el nivel básico por sexo, según departamento (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_13 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.13"))
+g3_13 <- tablaLaTeX(c3_13,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2),
+                    ruta = paste0(directorioGraficas,"g3_13.tex"))
+
+################################################################################
+# 3.14.	Tasa de deserción en el ciclo diversificado por sexo (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_14 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.14")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_14$z <- factor(c3_14$z, levels = c("Mujer", "Hombre"))
+g3_14 <- graficaAnillosMultiples(c3_14, leyenda_circulos = FALSE)
+exportarLatex(g3_10, nombre = paste0(directorioGraficas,"g3_10.tex"))
 
 ###################################################### DATOS EXTRA #############
 queerParejasCensos <- personasCenso %>%

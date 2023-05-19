@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  18 MAY 2023 11:44
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  19 MAY 2023 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1307,7 +1307,7 @@ LaTeX Info: Redefining \sffamily on input line 18.
 LaTeX Info: Redefining \ttfamily on input line 18.
 
 (./Graficas/g3_03.aux) (./Graficas/g3_05.aux) (./Graficas/g3_07.aux)
-(./Graficas/g3_09.aux))
+(./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux))
 \openout1 = `"Compendio Estadístico con Enfoque de Género 2022.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1321,7 +1321,8 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
 .
- (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
@@ -1583,8 +1584,12 @@ Package hyperref Info: Reference (link) `section*.7' on input line 17.
 Package hyperref Info: Reference (link) `section*.8' on input line 19.
 Package hyperref Info: Reference (link) `section*.9' on input line 21.
 Package hyperref Info: Reference (link) `section*.10' on input line 23.
-Package hyperref Info: Reference (link) `section*.10' on input line 26.
-Package hyperref Info: Reference (link) `section*.11' on input line 28.
+Package hyperref Info: Reference (link) `section*.11' on input line 25.
+Package hyperref Info: Reference (link) `section*.12' on input line 27.
+Package hyperref Info: Reference (link) `section*.13' on input line 29.
+Package hyperref Info: Reference (link) `section*.14' on input line 31.
+Package hyperref Info: Reference (link) `section*.14' on input line 34.
+Package hyperref Info: Reference (link) `section*.15' on input line 36.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1913,7 +1918,7 @@ colaridad en el ciclo diversificado por sexo}
 (hyperref)             reference {section*.8}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
- (./Descripciones/des3_04.tex)
+ (./Descripciones/des3_08.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 13--13
 []|[]| 
  []
@@ -1965,7 +1970,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 15.
 \openout2 = `Graficas/g3_07.aux'.
 
-(./Graficas/g3_07.tex) (./Descripciones/des3_05.tex)
+(./Graficas/g3_07.tex) (./Descripciones/des3_07.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 15--15
 
  []
@@ -2026,9 +2031,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
  []
 
-)
-Overfull \hbox (2.74396pt too wide) in paragraph at lines 17--42
-[]   
+
+Overfull \hbox (1.37164pt too wide) in paragraph at lines 17--18
+[]  
  []
 
 
@@ -2049,12 +2054,54 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.7' on input line 45.
+Package hyperref Info: Anchor `page.7' on input line 19.
 [7
 
 
 
 ]
+Package hyperref Info: Anchor `section*.11' on input line 19.
+Package hyperref Info: bookmark on input line 19:
+(hyperref)             thecounter {1.10}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa de deserci
+ón en el nivel primario por sexo}
+(hyperref)             reference {section*.11}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 19--19
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.10[]$ $| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 19.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 19.
+(./Graficas/g3_10.tex) (./Descripciones/des3_10.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 19--19
+ []|[]| 
+ []
+
+
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 19--19
+[][]
+ []
+
+
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 19--19
+[] 
+ []
+
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 19--20
+[]        
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
 
@@ -2070,33 +2117,221 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.8' on input line 45.
+Package hyperref Info: Anchor `page.8' on input line 21.
 [8
 
+
+
+]
+Package hyperref Info: Anchor `section*.12' on input line 21.
+Package hyperref Info: bookmark on input line 21:
+(hyperref)             thecounter {1.11}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa de deserci
+ón en el nivel básico por sexo}
+(hyperref)             reference {section*.12}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 21--21
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.11[]$ $| 
+ []
+
+(./Descripciones/des3_12.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 21--21
+[]|[]| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 21.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 21.
+(./Graficas/g3_12.tex)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 21--21
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 21--21
+[] 
+ []
+
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 21--22
+[]        
+ []
+
+Package hyperref Info: Anchor `section*.13' on input line 23.
+Package hyperref Info: bookmark on input line 23:
+(hyperref)             thecounter {1.12}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa de deserci
+ón en el nivel primario por sexo, según departamento}
+(hyperref)             reference {section*.13}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 23--23
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.12[]$ $| 
+ []
+
+
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 23--23
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 23.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 23.
+\openout2 = `Graficas/g3_11.aux'.
+
+(./Graficas/g3_11.tex) (./Descripciones/des3_11.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+
+ []
+
+
+Overfull \hbox (1.37164pt too wide) in paragraph at lines 23--24
+[]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
+
+Overfull \hbox (54.2025pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
+Package hyperref Info: Anchor `page.9' on input line 25.
+[9]
+Package hyperref Info: Anchor `section*.14' on input line 25.
+Package hyperref Info: bookmark on input line 25:
+(hyperref)             thecounter {1.13}
+(hyperref)             text {\numberline {\thesection } REVISAR Tasa de deserci
+ón en el nivel básico por sexo, según departamento}
+(hyperref)             reference {section*.14}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 25--25
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.13[]$ $| 
+ []
+
+
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 25--25
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 25.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 25.
+\openout2 = `Graficas/g3_13.aux'.
+
+(./Graficas/g3_13.tex) (./Descripciones/des3_13.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+
+ []
+
+)
+Overfull \hbox (2.74396pt too wide) in paragraph at lines 25--42
+[]   
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
+
+Overfull \hbox (90.3375pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
+Package hyperref Info: Anchor `page.10' on input line 45.
+[10
+
+
+
+]
+File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
+
+Overfull \hbox (54.2025pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
+Package hyperref Info: Anchor `page.11' on input line 45.
+[11
+
+
+
+]
+Package hyperref Info: Anchor `page.12' on input line 45.
+ [12
 
 
 ]
 Package hyperref Info: bookmark on input line 45:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.10}
+(hyperref)             reference {section*.14}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `page.9' on input line 45.
- [9
+Package hyperref Info: Anchor `page.13' on input line 45.
+ [13]
+Package hyperref Info: Anchor `page.14' on input line 45.
+ [14
 
 
 ]
-Package hyperref Info: Anchor `page.10' on input line 45.
- [10
-
-
-]
-Package hyperref Info: Anchor `section*.11' on input line 47.
+Package hyperref Info: Anchor `section*.15' on input line 47.
 Package hyperref Info: bookmark on input line 47:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.11}
+(hyperref)             reference {section*.15}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -2116,13 +2351,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--47
 
  []
 
-Package hyperref Info: Anchor `page.11' on input line 47.
-[11
+Package hyperref Info: Anchor `page.15' on input line 47.
+[15
 
 
 ]
-Package hyperref Info: Anchor `page.12' on input line 47.
- [12
+Package hyperref Info: Anchor `page.16' on input line 47.
+ [16
 
 
 ] (./Generalidades/glosario.tex
@@ -2141,8 +2376,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.13' on input line 17.
-[13]
+Package hyperref Info: Anchor `page.17' on input line 17.
+[17]
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
 
@@ -2158,8 +2393,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.14' on input line 36.
-[14]
+Package hyperref Info: Anchor `page.18' on input line 36.
+[18]
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -2175,8 +2410,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.15' on input line 46.
-[15]
+Package hyperref Info: Anchor `page.19' on input line 46.
+[19]
 Overfull \hbox (63.60626pt too wide) in paragraph at lines 50--64
 [][][][] 
  []
@@ -2214,16 +2449,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.16' on input line 51.
-[16]
+Package hyperref Info: Anchor `page.20' on input line 51.
+[20]
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
-Package hyperref Info: Anchor `page.17' on input line 51.
+Package hyperref Info: Anchor `page.21' on input line 51.
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
- [17]
+ [21]
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2280,19 +2515,19 @@ LaTeX Info: Redefining \sffamily on input line 18.
 LaTeX Info: Redefining \ttfamily on input line 18.
 
 (./Graficas/g3_03.aux) (./Graficas/g3_05.aux) (./Graficas/g3_07.aux)
-(./Graficas/g3_09.aux))
+(./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux))
 Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Género
  2022".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36530 strings out of 476684
- 825116 string characters out of 5807583
- 1902012 words of memory out of 5000000
- 56005 multiletter control sequences out of 15000+600000
+ 36636 strings out of 476684
+ 827964 string characters out of 5807583
+ 1900012 words of memory out of 5000000
+ 56077 multiletter control sequences out of 15000+600000
  520708 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,21n,103p,828b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (27 page
+Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (31 page
 s).

@@ -28,23 +28,21 @@ library(kableExtra) #install.packages("kableExtra")
 library(knitr) #install.packages("knitr")
 library(colorspace) #install.packages("colorspace")
 
+#Tabla latex 
+library(magrittr) #install.packages("magrittr")
+
+
 
 
 # Rutas del directorio de bases y gráficas
 directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\"
 directorioGraficas <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Graficas\\"
 directorioCenso <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\BASE_CENSO_2018\\"
+baseviolencia <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\"
 
 # Lectura de bases de datos
-hogaresENEI <- read.spss(paste0(directorioBases, "BD_HOGARES.sav"),
-                     use.value.labels = T,
-                     to.data.frame = T)
 
-personasENEI <- read.spss(paste0(directorioBases, "BASE_ENEI_22_PERSONAS.sav"), 
-                          to.data.frame =T)
-
-personasENEI_18 <- read.spss(paste0(directorioBases, "BASE_ENEI_18_PERSONAS.sav"), 
-                          to.data.frame =T)
+Datos_VIF <- paste0(baseviolencia, "DATOS_VIF_2022.xlsx")
 
 personasCENSO <- read.spss(paste0(directorioCenso, "PERSONA_CENSO_2018.sav"), 
                           to.data.frame =T)
@@ -101,19 +99,41 @@ personasCENSO <- personasCENSO %>%
 ################################################################################
 
 ################################################################################
-# 5.4.	Víctimas de violencia intrafamiliar por sexo, según Pueblos 
-# (serie histórica de 2018 a 2022)
+# 5.4.	Víctimas de violencia intrafamiliar por sexo, según Pueblos, 2018-22 
 ################################################################################
+
+c5_04 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_4")) %>%
+  rename("Pueblo" = pueblo.de.pertenencia)
+
+# Enviar a Latex 
+Tabla5_04 <-  tablaLaTeX(c5_04, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_04.tex"))
 
 ################################################################################
 # 5.5.	Víctimas de violencia intrafamiliar por sexo, según tipo de agresión 
 # sufrida (serie histórica de 2018 a 2022)
 ################################################################################
 
+c5_05 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_5")) %>%
+  rename("Tipo de Agresión" = Tipo.agresión)
+
+# Enviar a Latex 
+Tabla5_05 <-  tablaLaTeX(c5_05, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_05.tex"))
+
 ################################################################################
 # 5.6.	Instituciones que prestan atención a víctimas de violencia intrafamiliar,
 # según tipo de servicio brindado (período 2018 - 2022)
 ################################################################################
+
+c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_6")) %>%
+  rename("Tipo de Agresión" = Tipo.agresión)
+
+# Enviar a Latex 
+Tabla5_06 <-  tablaLaTeX(c5_05, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
+
+#falta agregar a latex 
 
 ################################################################################
 # 5.7.	Denuncias por los delitos contemplados en la Ley Contra el Femicidio 
@@ -162,7 +182,7 @@ personasCENSO <- personasCENSO %>%
 ################################################################################
 
 ################################################################################
-# 5.16. Estado conyugal de personas de 12 a 17 años, 2018 
+# 5.16. Estado conyugal en personas entre 12 a 17 años por sexo, 2018
 ################################################################################
 
 #Sebe cargar la base del CENSO PARA HACER ALGUN CAMBIO
@@ -189,6 +209,35 @@ c5_16 <- c5_16 %>%
 Tabla5_16 <- tablaLaTeX(c5_16, nombre_grupos = c(" ", " ", "Estado conyugal" = 5),
                         ruta = paste0(directorioGraficas, "Tabla5_16.tex"))
 
+rm(personasCENSO)
+################################################################################
+# Prueba para agrupar las filas en una tabla para latex
+Test <- data.frame(
+  Grupos = c("Grupo 1", "Grupo 1", "Grupo 2", "Grupo 2"),
+  Categorias = c("Categoría 1", "Categoría 2", "Categoría 1", "Categoría 2"),
+  Mujeres = c(10, 20, 30, 40),
+  Hombres = c(40, 30, 20, 10))
 
+Prueba <- tablaPrueba(Test, nombre_columnas = colnames(Test), 
+                        nombre_grupos = c(" ", " ", "Valores" = 2 ), nombre_grupos_filas = c("Grupo 1" = 2 , "Grupo 2" = 2 ), 
+                        opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Prueba.tex"))
+
+tablaPrueba <- function(data, nombre_columnas = colnames(data), 
+                       nombre_grupos = NULL, nombre_grupos_filas = NULL, opacidad_filas = 0.5, ruta){
+  kbl(data, format = "latex", align = "c", digits = 1, booktabs = TRUE,
+      linesep = "", col.names = nombre_columnas) %>%
+    add_header_above(nombre_grupos, bold = TRUE) %>%
+    kable_styling(latex_options = "striped",
+                  stripe_color = lighten(pkg.env$color2, amount = opacidad_filas)) %>% 
+    row_spec(0, bold = TRUE) %>% 
+    group_rows(groups = nombre_grupos_filas, bold = TRUE) %>%
+    save_kable(ruta)
+  
+  file <- readLines(ruta) %>%
+    .[!grepl("\\\\centering", .)] %>%
+    .[!grepl("\\\\begin\\{table\\}", .)] %>%
+    .[!grepl("\\\\end\\{table\\}", .)]
+  writeLines(file, ruta)
+}
 
 

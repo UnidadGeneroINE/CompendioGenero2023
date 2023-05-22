@@ -4,7 +4,7 @@
 \contentsline {chapter}{\hbox to\@tempdima {1\hfil }Educación}{1}{section*.1}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edado}{3}{section*.2}%
+\contentsline {section}{\hbox to\@tempdima {1.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edad}{3}{section*.2}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.2\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según dominio de estudio}{3}{section*.3}%
 \thispagestyle {empty}
@@ -30,8 +30,24 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.13\hfil } REVISAR Tasa de deserción en el nivel básico por sexo, según departamento}{11}{section*.14}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.14\hfil } REVISAR Tasa de deserción en el ciclo diversificado por sexo}{12}{section*.15}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.15\hfil } REVISAR Proporción de la población matriculada en la universidad por sexo, según tipo de universidad}{12}{section*.16}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.16\hfil } REVISAR Tasa de deserción en el nivel diversificado por sexo, según departamento}{13}{section*.17}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.17\hfil } REVISAR Proporción de la población matriculada en la universidad pública por sexo, según nivel}{14}{section*.18}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.18\hfil } REVISAR Proporción de la población matriculada en universidades privadas por sexo, según nivel}{14}{section*.19}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.19\hfil } REVISAR Proporción de la población graduada de la universidad por sexo, según tipo de universidad}{15}{section*.20}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.20\hfil } REVISAR Proporción de la población graduada de la universidad pública por sexo, según nivel}{15}{section*.21}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.21\hfil } REVISAR Proporción de la población graduada de universidades privadas por sexo, según nivel}{16}{section*.22}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{13}{section*.14}%
+\contentsline {chapter}{APÉNDICES}{17}{section*.22}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{15}{section*.15}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{19}{section*.23}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

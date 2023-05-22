@@ -402,6 +402,17 @@ c3_20$z <- factor(c3_20$z, levels = c("Mujer", "Hombre"))
 g3_20 <- graficaAnillosMultiples(c3_20, leyenda_circulos = FALSE, leyenda = "lado")
 exportarLatex(g3_20, nombre = paste0(directorioGraficas,"g3_20.tex"))
 
+################################################################################
+# 3.21.	Proporción de la población graduada de universidades privadas por sexo, según nivel (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_21 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.21"))
+g3_21 <- tablaLaTeX(c3_21,
+                    nombre_columnas = c("Tipo", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
+                    nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
+                    ruta = paste0(directorioGraficas,"g3_21.tex"))
+
 ###################################################### DATOS EXTRA #############
 queerParejasCensos <- personasCenso %>%
   group_by(NUM_VIVIENDA, NUM_HOGAR) %>%

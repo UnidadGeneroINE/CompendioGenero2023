@@ -46,8 +46,10 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.21\hfil } REVISAR Proporción de la población graduada de universidades privadas por sexo, según nivel}{16}{section*.22}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.22\hfil } Uso de teléfono celular por sexo}{16}{section*.23}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{17}{section*.22}%
+\contentsline {chapter}{APÉNDICES}{17}{section*.23}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{19}{section*.23}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{19}{section*.24}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

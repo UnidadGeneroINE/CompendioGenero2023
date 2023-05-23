@@ -397,9 +397,9 @@ g3_19 <- tablaLaTeX(c3_19,
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_20 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.20")) %>%
-  rename(x = Año, y = Porcentaje, z = Sexo)
+  rename(w = Año, y = Porcentaje, z = Sexo, x = Nivel)
 c3_20$z <- factor(c3_20$z, levels = c("Mujer", "Hombre"))
-g3_20 <- graficaAnillosMultiples(c3_20, leyenda_circulos = FALSE, leyenda = "lado")
+g3_20 <- graficaCategoriasApiladas(c3_20, leyenda = "lado", tipo = "barra")
 exportarLatex(g3_20, nombre = paste0(directorioGraficas,"g3_20.tex"))
 
 ################################################################################
@@ -412,6 +412,24 @@ g3_21 <- tablaLaTeX(c3_21,
                     nombre_columnas = c("Tipo", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
                     nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
                     ruta = paste0(directorioGraficas,"g3_21.tex"))
+
+################################################################################
+# 3.22.	Uso de teléfono celular por sexo   (ODS) 
+################################################################################
+
+c3_22 <- filter(personasENEI, P04C01A == "Sí") %>%
+  group_by(P03A02) %>%
+  summarise(y = sum(factor))
+
+poblacion_mayor_que_6_por_sexo <- filter(personasENEI, !is.na(P04A01) & P03A03 > 14) %>%
+  group_by(P03A02) %>%
+  summarise(y = sum(factor))
+
+c3_22$y <- c3_22$y/poblacion_mayor_que_6_por_sexo$y * 100
+
+g3_22 <- graficaCol(c3_22) %>%
+  etiquetasHorizontales()
+exportarLatex(graph = g3_22, nombre = paste0(directorioGraficas, "g3_22.tex"))
 
 ###################################################### DATOS EXTRA #############
 queerParejasCensos <- personasCenso %>%

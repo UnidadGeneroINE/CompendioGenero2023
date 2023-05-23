@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  22 MAY 2023 15:05
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  23 MAY 2023 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1598,8 +1598,9 @@ Package hyperref Info: Reference (link) `section*.19' on input line 41.
 Package hyperref Info: Reference (link) `section*.20' on input line 43.
 Package hyperref Info: Reference (link) `section*.21' on input line 45.
 Package hyperref Info: Reference (link) `section*.22' on input line 47.
-Package hyperref Info: Reference (link) `section*.22' on input line 50.
+Package hyperref Info: Reference (link) `section*.23' on input line 49.
 Package hyperref Info: Reference (link) `section*.23' on input line 52.
+Package hyperref Info: Reference (link) `section*.24' on input line 54.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -2089,7 +2090,12 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 19.
-(./Graficas/g3_10.tex) (./Descripciones/des3_10.tex)
+(./Graficas/g3_10.tex)
+Overfull \hbox (28.6007pt too wide) in paragraph at lines 19--19
+ [][] 
+ []
+
+(./Descripciones/des3_10.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 19--19
  []|[]| 
  []
@@ -2317,7 +2323,12 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 27.
-(./Graficas/g3_14.tex) (./Descripciones/des3_14.tex)
+(./Graficas/g3_14.tex)
+Overfull \hbox (28.6007pt too wide) in paragraph at lines 27--27
+ [][] 
+ []
+
+(./Descripciones/des3_14.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 27--27
  []|[]| 
  []
@@ -2734,9 +2745,9 @@ Overfull \hbox (67.4098pt too wide) in paragraph at lines 41--41
 [] 
  []
 
-)
-Overfull \hbox (10.97784pt too wide) in paragraph at lines 41--42
-[]         
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 41--42
+[]        
  []
 
 
@@ -2757,12 +2768,59 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.15' on input line 45.
+Package hyperref Info: Anchor `page.15' on input line 43.
 [15
 
 
 
 ]
+Package hyperref Info: Anchor `section*.23' on input line 43.
+Package hyperref Info: bookmark on input line 43:
+(hyperref)             thecounter {1.22}
+(hyperref)             text {\numberline {\thesection } Uso de teléfono celular
+ por sexo}
+(hyperref)             reference {section*.23}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 43--43
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.22[]$ $| 
+ []
+
+(./Descripciones/des3_22.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 43--43
+[]|[]| 
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 43.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 43.
+(./Graficas/g3_22.tex)
+File: Plantilla/ODS/ods5.pdf Graphic file (type pdf)
+<use Plantilla/ODS/ods5.pdf>
+
+Overfull \hbox (15.57791pt too wide) in paragraph at lines 43--43
+ []|[] 
+ []
+
+
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 43--43
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 43--43
+[] 
+ []
+
+)
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 43--42
+[]         
+ []
+
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
 
@@ -2787,7 +2845,7 @@ Package hyperref Info: Anchor `page.16' on input line 45.
 Package hyperref Info: bookmark on input line 45:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.22}
+(hyperref)             reference {section*.23}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.17' on input line 45.
@@ -2800,11 +2858,11 @@ Package hyperref Info: Anchor `page.18' on input line 45.
 
 
 ]
-Package hyperref Info: Anchor `section*.23' on input line 47.
+Package hyperref Info: Anchor `section*.24' on input line 47.
 Package hyperref Info: bookmark on input line 47:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.23}
+(hyperref)             reference {section*.24}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -2996,13 +3054,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36873 strings out of 476684
- 834617 string characters out of 5807583
+ 36899 strings out of 476684
+ 835187 string characters out of 5807583
  1900012 words of memory out of 5000000
- 56244 multiletter control sequences out of 15000+600000
+ 56262 multiletter control sequences out of 15000+600000
  520724 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,22n,103p,828b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,22n,103p,846b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (35 page
 s).

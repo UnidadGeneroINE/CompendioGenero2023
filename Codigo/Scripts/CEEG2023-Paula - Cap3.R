@@ -281,6 +281,155 @@ g3_09 <- tablaLaTeX(c3_07,
                     nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
                     ruta = paste0(directorioGraficas,"g3_09.tex"))
 
+################################################################################
+# 3.10.	Tasa de deserción en el nivel primario por sexo (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_10 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.10")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_10$z <- factor(c3_10$z, levels = c("Mujer", "Hombre"))
+g3_10 <- graficaAnillosMultiples(c3_10, leyenda_circulos = FALSE, leyenda = "lado")
+exportarLatex(g3_10, nombre = paste0(directorioGraficas,"g3_10.tex"))
+
+################################################################################
+# 3.11.	Tasa de deserción en el nivel primario por sexo, según departamento (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_11 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.11"))
+g3_11 <- tablaLaTeX(c3_11,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2),
+                    ruta = paste0(directorioGraficas,"g3_11.tex"))
+
+################################################################################
+# 3.12.	Tasa de deserción en el nivel básico por sexo (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_12 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.12")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_12$z <- factor(c3_12$z, levels = c("Mujer", "Hombre"))
+g3_12 <- graficaCategorias(c3_12, tipo = "barra")
+exportarLatex(g3_12, nombre = paste0(directorioGraficas,"g3_12.tex"))
+
+################################################################################
+# 3.13.	Tasa de deserción en el nivel básico por sexo, según departamento (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_13 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.13"))
+g3_13 <- tablaLaTeX(c3_13,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2),
+                    ruta = paste0(directorioGraficas,"g3_13.tex"))
+
+################################################################################
+# 3.14.	Tasa de deserción en el ciclo diversificado por sexo (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_14 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.14")) %>%
+  rename(x = Año, y = Tasa, z = Sexo)
+c3_14$z <- factor(c3_14$z, levels = c("Mujer", "Hombre"))
+g3_14 <- graficaAnillosMultiples(c3_14, leyenda_circulos = FALSE, leyenda = "lado")
+exportarLatex(g3_14, nombre = paste0(directorioGraficas,"g3_14.tex"))
+
+################################################################################
+# 3.15.	Tasa de deserción en el nivel diversificado por sexo, según departamento (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_15 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.15"))
+g3_15 <- tablaLaTeX(c3_15,
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2),
+                    ruta = paste0(directorioGraficas,"g3_15.tex"))
+
+################################################################################
+# 3.16.	Proporción de la población matriculada en la universidad por sexo, según tipo de universidad (pública o privada) (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_16 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.16"))
+g3_16 <- tablaLaTeX(c3_16,
+                    nombre_columnas = c("Tipo", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
+                    nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
+                    ruta = paste0(directorioGraficas,"g3_16.tex"))
+
+################################################################################
+# 3.17.	Proporción de la población matriculada en la universidad pública por sexo, según nivel (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_17 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.17")) %>%
+  rename(x = Nivel, w = Año, y = Porcentaje, z = Sexo)
+c3_17$z <- factor(c3_17$z, levels = c("Mujer", "Hombre"))
+g3_17 <- graficaCategoriasApiladas(c3_17, leyenda = "abajo", tipo = "barra")
+exportarLatex(g3_17, nombre = paste0(directorioGraficas,"g3_17.tex"))
+
+################################################################################
+# 3.18.	Proporción de la población matriculada en universidades privadas por sexo, según nivel (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_18 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.18"))
+g3_18 <- tablaLaTeX(c3_18,
+                    nombre_columnas = c("Nivel", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
+                    nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
+                    ruta = paste0(directorioGraficas,"g3_18.tex"))
+
+################################################################################
+# 3.19.	Proporción de la población graduada de la universidad por sexo, según tipo de universidad (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_19 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.19"))
+g3_19 <- tablaLaTeX(c3_19,
+                    nombre_columnas = c("Tipo", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
+                    nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
+                    ruta = paste0(directorioGraficas,"g3_19.tex"))
+
+################################################################################
+# 3.20.	Proporción de la población graduada de la universidad pública por sexo, según nivel (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_20 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.20")) %>%
+  rename(w = Año, y = Porcentaje, z = Sexo, x = Nivel)
+c3_20$z <- factor(c3_20$z, levels = c("Mujer", "Hombre"))
+g3_20 <- graficaCategoriasApiladas(c3_20, leyenda = "lado", tipo = "barra")
+exportarLatex(g3_20, nombre = paste0(directorioGraficas,"g3_20.tex"))
+
+################################################################################
+# 3.21.	Proporción de la población graduada de universidades privadas por sexo, según nivel (REVISAR)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
+c3_21 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.21"))
+g3_21 <- tablaLaTeX(c3_21,
+                    nombre_columnas = c("Tipo", "Mujeres", "Hombres", "Ignorado", "Mujeres", "Hombres", "Ignorado"),
+                    nombre_grupos = c(" " = 1, "2021" = 3, "2022*" = 3),
+                    ruta = paste0(directorioGraficas,"g3_21.tex"))
+
+################################################################################
+# 3.22.	Uso de teléfono celular por sexo   (ODS) 
+################################################################################
+
+c3_22 <- filter(personasENEI, P04C01A == "Sí") %>%
+  group_by(P03A02) %>%
+  summarise(y = sum(factor))
+
+poblacion_mayor_que_6_por_sexo <- filter(personasENEI, !is.na(P04A01) & P03A03 > 14) %>%
+  group_by(P03A02) %>%
+  summarise(y = sum(factor))
+
+c3_22$y <- c3_22$y/poblacion_mayor_que_6_por_sexo$y * 100
+
+g3_22 <- graficaCol(c3_22) %>%
+  etiquetasHorizontales()
+exportarLatex(graph = g3_22, nombre = paste0(directorioGraficas, "g3_22.tex"))
 
 ###################################################### DATOS EXTRA #############
 queerParejasCensos <- personasCenso %>%
@@ -299,4 +448,15 @@ filter(length(unique(P03A02)) < n()) %>%
 select(hogar_num, P03A05, P03A02) 
 
 
-# Exportando datos a Excel
+matrimonioInfantil <- filter(personasCenso,  PCP5 == "Esposa(o) o pareja" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP5) %>%
+  summarise(casos = n())
+
+matrimonioInfantil <- filter(personasCenso,  PCP34 != "Soltera(o)" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP5, PCP34, PCP35_A, PCP37, PCP38_C, DEPARTAMENTO) %>%
+  summarise(casos = n())
+
+matrimonioInfantil <- filter(personasCenso,  PCP34 != "Soltera(o)" & PCP7 < 18) %>%
+  group_by(PCP7, PCP6, PCP34) %>%
+  summarise(casos = n())
+

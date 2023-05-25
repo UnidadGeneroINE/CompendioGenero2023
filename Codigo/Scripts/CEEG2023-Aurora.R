@@ -44,6 +44,8 @@ baseviolencia <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Gi
 
 Datos_VIF <- paste0(baseviolencia, "DATOS_VIF_2022.xlsx")
 
+Datos_VCM <- paste0(baseviolencia, "DATOS_VCM_2022.xlsx")
+
 personasCENSO <- read.spss(paste0(directorioCenso, "PERSONA_CENSO_2018.sav"), 
                           to.data.frame =T)
 
@@ -82,32 +84,112 @@ personasCENSO <- personasCENSO %>%
 ###                                                                      ###
 ############################################################################
 
+################################################################################
+# 5.1	Tasa de denuncia por cada 1,000 mujeres por departamento (2022)
+################################################################################
+c5_01 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_1"))
+
+#Crear grafica y etiquetas
+g5_01 <- graficaBar(c5_01, ancho = 0.6)
+g5_01 <- etiquetasBarras(g5_01, precision = 1)
+
+# Enviar grafica a latex
+exportarLatex(nombre = paste0(directorioGraficas,"g5_01.tex"),
+              graph = g5_01, preambulo = F)
+
 
 ################################################################################
-# 5.1.	Denuncias por los delitos contemplados en la Ley para Prevenir, Sancionar 
-# y Erradicar la Violencia Intrafamiliar por sexo, según departamento de registro 
+# 5.2	Denuncias por los delitos contemplados en la Ley Contra el Femicidio 
+# y Otras Formas de Violencia Contra a la Mujer por departamento de registro (2022)
 ################################################################################
 
-################################################################################
-# 5.2.	Denuncias por los delitos contemplados en la Ley para Prevenir, Sancionar 
-# y Erradicar la Violencia Intrafamiliar por sexo, según tipo de agresión sufrida
-################################################################################
+#Tabla 1 
+c5_02 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_2")) %>%
+  rename("El Progreso" = El.Progreso) %>%
+  rename("Santa Rosa" = Santa.Rosa)
+# Enviar a Latex 
+Tabla5_02 <-  tablaLaTeX(c5_02, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_02.tex"))
 
-################################################################################
-# 5.3.	Denuncias por los delitos contemplados en la Ley para Prevenir, Sancionar
-# y Erradicar la Violencia Intrafamiliar por sexo, según grupos de edad
-################################################################################
-
-################################################################################
-# 5.4.	Víctimas de violencia intrafamiliar por sexo, según Pueblos, 2018-22 
-################################################################################
-
-c5_04 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_4")) %>%
-  rename("Pueblo" = pueblo.de.pertenencia)
+#Tabla 1A 
+c5_02A <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_2A")) %>%
+  rename("San Marcos" = San.Marcos)
 
 # Enviar a Latex 
-Tabla5_04 <-  tablaLaTeX(c5_04, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
-                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_04.tex"))
+Tabla5_02A <-  tablaLaTeX(c5_02A, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_02A.tex"))
+
+#Tabla 1A 
+c5_02B <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_2B")) %>%
+  rename("Baja Verapaz" = Baja.Verapaz) %>%
+  rename("Alta Verapaz" = Alta.Verapaz)
+
+# Enviar a Latex 
+Tabla5_02B <-  tablaLaTeX(c5_02B, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_02B.tex"))
+
+################################################################################
+# 5.3.	Denuncias por los delitos contemplados en la Ley Contra el Femicidio 
+# y Otras Formas de Violencia Contra a la Mujer por tipo de delito, 
+# según grupos de edad 
+################################################################################
+
+c5_03 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_3")) %>%
+  rename("Tipo de delito" = Tipo.de.delito) %>%
+  rename("0-14" = X0.14) %>%
+  rename("15-29" = X15.29) %>%
+  rename("30-45" = X30.45) %>%
+  rename("45-64" = X45.64) %>%
+  rename("65+" = X65.)
+
+# Enviar a Latex 
+Tabla5_03 <-  tablaLaTeX(c5_03, nombre_grupos = c(" ", "Grupos de edad" = 5, " "),
+                         opacidad_filas = 0.4, ruta = paste0(directorioGraficas, "Tabla5_03.tex"))
+
+################################################################################
+# 5.4.	Denuncia por los delitos contemplados en la Ley Contra el Femicidio 
+# y Otras Formas de Violencia Contra a la Mujer por tipo de delito, 
+# según Pueblos
+################################################################################
+
+c5_04 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_4")) %>%
+  rename("Tipo de violencia(delito)" = Tipo.de.delito..violencia.) %>%
+  rename("No indica" = No.indica)
+
+# Enviar a Latex 
+Tabla5_04 <-  tablaLaTeX(c5_04, nombre_grupos = c(" ", "Pueblo de pertenencia" = 5, " "),
+                         opacidad_filas = 0.4, ruta = paste0(directorioGraficas, "Tabla5_04.tex"))
+
+################################################################################
+# 5.5.	Mujeres víctimas de violencia contra la mujer, según Pueblos
+################################################################################
+
+c5_05 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_5")) %>%
+  rename("Pueblo" = Pueblo.de.pertenencia) %>%
+  rename("2018" = X2018, "2019" = X2019, "2020" = X2020, "2021" = X2021, "2022" = X2022)
+
+# Enviar a Latex 
+Tabla5_05 <-  tablaLaTeX(c5_05, opacidad_filas = 0.4, ruta = paste0(directorioGraficas, "Tabla5_05.tex"))
+
+
+################################################################################
+# 5.6. Mujeres víctimas de violencia contra la mujer, según tipo de violencia sufrida 
+# (serie histórica de 2018 a 2022)
+################################################################################
+
+c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_6")) %>%
+  rename("Tipo de violencia" = Tipo.de.violencia) %>%
+  rename("2018" = X2018, "2019" = X2019, "2020" = X2020, "2021" = X2021, "2022" = X2022)
+
+# Enviar a Latex 
+Tabla5_06 <-  tablaLaTeX(c5_06, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
+
+################################################################################
+# 5.10.	Víctimas de violencia intrafamiliar por sexo, según Pueblos, 2018-22 
+################################################################################
+
+c5_10 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_10"))
+
+# Enviar a Latex 
+Tabla5_10 <-  tablaLaTeX(c5_10, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_10.tex"))
 
 ################################################################################
 # 5.5.	Víctimas de violencia intrafamiliar por sexo, según tipo de agresión 
@@ -127,59 +209,12 @@ Tabla5_05 <-  tablaLaTeX(c5_05, nombre_grupos = c(" ", "2018" = 2, "2022" = 2),
 ################################################################################
 
 c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_6")) %>%
-  rename("Tipo de Agresión" = Tipo.agresión)
+  rename("Institución que recibió la denuncia" = Institución.que.recibió.la.denuncia)
 
 # Enviar a Latex 
-Tabla5_06 <-  tablaLaTeX(c5_05, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+Tabla5_06 <-  tablaLaTeX(c5_06, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
                          opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
 
-#falta agregar a latex 
-
-################################################################################
-# 5.7.	Denuncias por los delitos contemplados en la Ley Contra el Femicidio 
-# y Otras Formas de Violencia Contra a la Mujer por departamento de registro
-################################################################################
-
-################################################################################
-# 5.8.	Denuncias por los delitos contemplados en la Ley Contra el Femicidio 
-# y Otras Formas de Violencia Contra a la Mujer por tipo de delito, 
-# según grupos de edad 
-################################################################################
-
-################################################################################
-# 5.9.	Denuncia por los delitos contemplados en la Ley Contra el Femicidio 
-# y Otras Formas de Violencia Contra a la Mujer por tipo de delito, 
-# según Pueblos
-################################################################################
-
-################################################################################
-# 5.10.	Víctimas de violencia contra la mujer, según Pueblos 
-# (serie histórica de 2018 a 2022)
-################################################################################
-
-################################################################################
-# 5.11.	Víctimas de violencia contra la mujer, según tipo de agresión sufrida 
-# (serie histórica de 2018 a 2022)
-################################################################################
-
-################################################################################
-# 5.12.	Muertes violentas por sexo, según causa de muerte y grupos de edad 
-# (comparar 2018 y 2022)
-################################################################################
-
-################################################################################
-# 5.13.	Muertes violentas de mujeres relacionadas con hechos delictivos 
-# (serie histórica 2018 - 2022)
-################################################################################
-
-################################################################################
-# 5.14.	Índice de mortalidad femenina (serie histórica 2018 - 2022)
-################################################################################
-
-################################################################################
-# 5.15.	Mujeres privadas de libertad por tipo de delito 
-# (serie histórica 2018 - 2022)
-################################################################################
 
 ################################################################################
 # 5.16. Estado conyugal en personas entre 12 a 17 años por sexo, 2018

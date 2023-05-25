@@ -174,3 +174,13 @@ tablaLaTeX(data = c5_08A, ruta = paste0(directorioGraficas, "g5_08.tex"))
 
 c5_08B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "PNC"))
 tablaLaTeX(data = c5_08B, ruta = paste0(directorioGraficas, "BORRAR.tex"))
+
+################################################################################
+# 5.9. Índice de mortalidad femenina  
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Tasa_mortalidad_femenina.xlsx")
+c5_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Limpia"))
+g9_05 <- graficaLinea(data = c5_09, rotar = F)
+exportarLatex(graph = g9_05, nombre = paste0(directorioGraficas, "g5_09.tex"))
+

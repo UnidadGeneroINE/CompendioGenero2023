@@ -160,18 +160,26 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {5.9\hfil } Índice de mortalidad femenina}{57}{section*.75}%
 \thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {5.10\hfil } Víctimas de violencia intrafamiliar por sexo, según Pueblos}{58}{section*.76}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {5.11\hfil } Víctimas de violencia intrafamiliar por sexo, según tipo de violencia}{58}{section*.77}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {5.12\hfil } Instituciones que prestan atención a víctimas de violencia intrafamiliar}{59}{section*.78}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {5.13\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{60}{section*.79}%
+\thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación sociopolítica}{59}{section*.76}%
+\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación sociopolítica}{61}{section*.80}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Personas electas para el Organismo Legislativo por sexo }{61}{section*.77}%
+\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Personas electas para el Organismo Legislativo por sexo }{63}{section*.81}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Mujeres magistradas en el Organismo Judicial}{61}{section*.78}%
+\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Mujeres magistradas en el Organismo Judicial}{63}{section*.82}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres electas para alcaldías}{62}{section*.79}%
+\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres electas para alcaldías}{64}{section*.83}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{63}{section*.79}%
+\contentsline {chapter}{APÉNDICES}{65}{section*.83}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{65}{section*.80}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{67}{section*.84}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

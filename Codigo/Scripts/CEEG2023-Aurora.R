@@ -182,7 +182,7 @@ c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_6")) %>%
 Tabla5_06 <-  tablaLaTeX(c5_06, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
 
 ################################################################################
-# 5.10.	Víctimas de violencia intrafamiliar por sexo, según Pueblos, 2018-22 
+# 5.10.	Víctimas de violencia intrafamiliar por sexo, según Pueblos (2018 - 2022)
 ################################################################################
 
 c5_10 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_10"))
@@ -192,28 +192,41 @@ Tabla5_10 <-  tablaLaTeX(c5_10, nombre_grupos = c(" ", "2018" = 2, "2022" = 2),
                          opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_10.tex"))
 
 ################################################################################
-# 5.5.	Víctimas de violencia intrafamiliar por sexo, según tipo de agresión 
+# 5.11.	Víctimas de violencia intrafamiliar por sexo, según tipo de agresión 
 # sufrida (serie histórica de 2018 a 2022)
 ################################################################################
 
-c5_05 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_5")) %>%
+c5_11 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_11")) %>%
   rename("Tipo de Agresión" = Tipo.agresión)
 
 # Enviar a Latex 
-Tabla5_05 <-  tablaLaTeX(c5_05, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
-                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_05.tex"))
+Tabla5_11 <-  tablaLaTeX(c5_11, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_11.tex"))
 
 ################################################################################
-# 5.6.	Instituciones que prestan atención a víctimas de violencia intrafamiliar,
+# 5.12.	Instituciones que prestan atención a víctimas de violencia intrafamiliar,
 # según tipo de servicio brindado (período 2018 - 2022)
 ################################################################################
 
-c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_6")) %>%
-  rename("Institución que recibió la denuncia" = Institución.que.recibió.la.denuncia)
+c5_12 <- data.frame(read.xlsx(xlsxFile = Datos_VIF, sheet = "5_12")) %>%
+  rename("Ministerio Público" = Ministerio.Público) %>%
+  rename("Procuraduría General de la Nación" = Procuraduría.General.de.la.Nación) %>%
+  rename("Policía Nacional Civil" = Policía.Nacional.Civil) %>%
+  rename("Juzgados de Paz y de Familia" = Juzgados.de.Paz.y.de.Familia) %>%
+  rename("Bufetes Populares" = 	Bufetes.Populares) %>%
+  rename("Procuraduría de los Derechos Humanos" = Procuraduría.de.los.Derechos.Humanos)
 
 # Enviar a Latex 
-Tabla5_06 <-  tablaLaTeX(c5_06, nombre_grupos = c(" ", "2018" = 2, "2022" = 2), 
-                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
+Tabla5_12 <-  tablaLaTeX(c5_12, nombre_grupos = c(" ", " ","Institución que recibió la denuncia" = 6), 
+                         opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_12.tex"))
+
+
+################################################################################
+# 5.13.	Mujeres privadas de libertad por tipo de delito 
+# (serie histórica 2018 - 2022)
+################################################################################
+
+
 
 
 ################################################################################

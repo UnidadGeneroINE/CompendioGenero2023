@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  24 MAY 2023 09:51
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  25 MAY 2023 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1305,8 +1305,7 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 LaTeX Info: Redefining \rmfamily on input line 18.
 LaTeX Info: Redefining \sffamily on input line 18.
 LaTeX Info: Redefining \ttfamily on input line 18.
-
-(./Graficas/g6_01.aux))
+)
 \openout1 = `"Compendio Estadístico con Enfoque de Género 2022.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1320,7 +1319,8 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
 .
- (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
@@ -1574,8 +1574,10 @@ LaTeX Info: Redefining \sffamily on input line 2.
 LaTeX Info: Redefining \ttfamily on input line 2.
 Package hyperref Info: Reference (link) `section*.1' on input line 4.
 Package hyperref Info: Reference (link) `section*.2' on input line 7.
-Package hyperref Info: Reference (link) `section*.2' on input line 10.
-Package hyperref Info: Reference (link) `section*.3' on input line 12.
+Package hyperref Info: Reference (link) `section*.3' on input line 9.
+Package hyperref Info: Reference (link) `section*.4' on input line 11.
+Package hyperref Info: Reference (link) `section*.4' on input line 14.
+Package hyperref Info: Reference (link) `section*.5' on input line 16.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -1628,58 +1630,108 @@ Package hyperref Info: Anchor `page.2' on input line 46.
 Package hyperref Info: Anchor `section*.2' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {1.1}
-(hyperref)             text {\numberline {\thesection } REVISAR Tasa de deserci
-ón en el nivel primario por sexo, según departamento}
+(hyperref)             text {\numberline {\thesection } Personas electas para e
+l Organismo Legislativo por sexo }
 (hyperref)             reference {section*.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 1.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 1.
+ (./Graficas/g6_02.tex)
+(./Descripciones/des6_02.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 1--1
+ []|[]| 
+ []
+
 
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 1--1
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 1--1
+[] 
+ []
 
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 1--2
+[]        
+ []
+
+Package hyperref Info: Anchor `section*.3' on input line 3.
+Package hyperref Info: bookmark on input line 3:
+(hyperref)             thecounter {1.2}
+(hyperref)             text {\numberline {\thesection } Mujeres magistradas en 
+el Organismo Judicial}
+(hyperref)             reference {section*.3}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+(./Descripciones/des6_04.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 3--3
+[]|[]| 
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 1.
+            Default family used instead on input line 3.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 1.
-\openout2 = `Graficas/g6_01.aux'.
-
-(./Graficas/g6_01.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 10-
+            Default family used instead on input line 3.
+(./Graficas/g6_04.tex)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 3--3
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-[]|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 15-
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 3--3
+[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 10-
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 3--4
+[]        
+ []
+
+Package hyperref Info: Anchor `section*.4' on input line 5.
+Package hyperref Info: bookmark on input line 5:
+(hyperref)             thecounter {1.3}
+(hyperref)             text {\numberline {\thesection } Mujeres electas para al
+caldías}
+(hyperref)             reference {section*.4}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 5.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 5.
+(./Graficas/g6_07.tex) (./Descripciones/des6_07.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 5--5
+ []|[]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-[]|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 15-
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 5--5
+[][]
  []
 
-) (./Descripciones/des3_11.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
 
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 5--5
+[] 
  []
 
 )
-Overfull \hbox (2.74396pt too wide) in paragraph at lines 1--48
-[]   
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 5--48
+[]         
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
@@ -1697,34 +1749,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
 Package hyperref Info: Anchor `page.3' on input line 49.
-[3
+[3]
+File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
+
+Overfull \hbox (90.3375pt too wide) has occurred while \output is active
+ [][] 
+ []
 
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-]
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
 Package hyperref Info: Anchor `page.4' on input line 49.
- [4
-
-
-]
+[4]
 Package hyperref Info: bookmark on input line 49:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.2}
+(hyperref)             reference {section*.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.5' on input line 49.
- [5]
+ [5
+
+
+]
 Package hyperref Info: Anchor `page.6' on input line 49.
  [6
 
 
 ]
-Package hyperref Info: Anchor `section*.3' on input line 51.
+Package hyperref Info: Anchor `section*.5' on input line 51.
 Package hyperref Info: bookmark on input line 51:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.3}
+(hyperref)             reference {section*.5}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -1906,20 +1969,19 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 LaTeX Info: Redefining \rmfamily on input line 18.
 LaTeX Info: Redefining \sffamily on input line 18.
 LaTeX Info: Redefining \ttfamily on input line 18.
-
-(./Graficas/g6_01.aux))
+)
 Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Género
  2022".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36262 strings out of 476684
- 818848 string characters out of 5807583
- 1865012 words of memory out of 5000000
- 55805 multiletter control sequences out of 15000+600000
- 518124 words of font info for 110 fonts, out of 8000000 for 9000
+ 36387 strings out of 476684
+ 820681 string characters out of 5807583
+ 1890012 words of memory out of 5000000
+ 55914 multiletter control sequences out of 15000+600000
+ 520327 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,17n,92p,675b,1218s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,19n,92p,877b,1452s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (23 page
 s).

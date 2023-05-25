@@ -146,8 +146,8 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
 ################################################################################
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_violentas_por_sexo_según_causa_de_muerte_2018_y_2022.xlsx")
-c5_02A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2018"))
-tablaLaTeX(data = c5_02A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+c5_07A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2018"))
+tablaLaTeX(data = c5_07A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
                                        "Mujeres", "Hombres", "Ignorado", 
                                        "Mujeres", "Hombres", "Ignorado",
                                        "Mujeres", "Hombres", "Ignorado"),
@@ -155,8 +155,8 @@ tablaLaTeX(data = c5_02A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres"
                              "Herida de arma de fuego" = 3, "Decapitación" = 3), 
            ruta = paste0(directorioGraficas, "g5_07.tex"))
 
-c5_02B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2022"))
-tablaLaTeX(data = c5_02B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+c5_07B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2022"))
+tablaLaTeX(data = c5_07B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
                                               "Mujeres", "Hombres", "Ignorado", 
                                               "Mujeres", "Hombres", "Ignorado",
                                               "Mujeres", "Hombres", "Ignorado"),
@@ -168,21 +168,9 @@ tablaLaTeX(data = c5_02B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres"
 # 5.8. Muertes violentas de mujeres relacionadas con hechos delictivos 
 ################################################################################
 
-xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_violentas_por_sexo_según_causa_de_muerte_2018_y_2022.xlsx")
-c6_02A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "MP"))
-tablaLaTeX(data = c6_02A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
-                                              "Mujeres", "Hombres", "Ignorado", 
-                                              "Mujeres", "Hombres", "Ignorado",
-                                              "Mujeres", "Hombres", "Ignorado"),
-           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
-                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
-           ruta = paste0(directorioGraficas, "g5_07.tex"))
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_Violentas_de_Mujeres_relacionadas_con_hechos_delictivos_2018-2022.xlsx")
+c5_08A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "MP"))
+tablaLaTeX(data = c5_08A, ruta = paste0(directorioGraficas, "g5_08.tex"))
 
-c6_02B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "PNC"))
-tablaLaTeX(data = c6_02B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
-                                              "Mujeres", "Hombres", "Ignorado", 
-                                              "Mujeres", "Hombres", "Ignorado",
-                                              "Mujeres", "Hombres", "Ignorado"),
-           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
-                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
-           ruta = paste0(directorioGraficas, "BORRAR.tex"))
+c5_08B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "PNC"))
+tablaLaTeX(data = c5_08B, ruta = paste0(directorioGraficas, "BORRAR.tex"))

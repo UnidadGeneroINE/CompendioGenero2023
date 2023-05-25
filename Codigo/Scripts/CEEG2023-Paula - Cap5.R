@@ -142,33 +142,47 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
                               etiquetas = "h")
 
 ################################################################################
-# 6.2.	Personas electas para el Organismo Legislativo por sexo
+# 5.7.	Muertes violentas por sexo, según causa de muerte y grupos de edad 
 ################################################################################
 
-xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\PARTICIPACIÓN_SOCIOPOLÍTICA\\Diputados 2023.xlsx")
-c6_02 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "TOTALES")) %>%
-  rename(x = Año, y = Casos, z = Sexo)
-c6_02$z <- factor(c6_02$z, levels = c("Mujeres", "Hombres"))
-g6_02 <- graficaAnillosMultiples(c6_02, leyenda_circulos = FALSE, leyenda = "lado")
-exportarLatex(graph = g6_02, nombre = paste0(directorioGraficas, "g6_02.tex"))
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_violentas_por_sexo_según_causa_de_muerte_2018_y_2022.xlsx")
+c5_02A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2018"))
+tablaLaTeX(data = c5_02A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                       "Mujeres", "Hombres", "Ignorado", 
+                                       "Mujeres", "Hombres", "Ignorado",
+                                       "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "g5_07.tex"))
+
+c5_02B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2022"))
+tablaLaTeX(data = c5_02B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado",
+                                              "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "BORRAR.tex"))
 
 ################################################################################
-# 6.4.	Mujeres magistradas en el Organismo Judicial
-##################################################L##############################
-
-xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\PARTICIPACIÓN_SOCIOPOLÍTICA\\6.4_MUJERES_MAGISTRADAS_EN_EL_OJ.xlsx")
-c6_04 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "6.4Limpia"))
-g6_04 <- graficaApilada(c6_04, tipo = "columna", leyenda = "abajo")
-exportarLatex(graph = g6_04, nombre = paste0(directorioGraficas, "g6_04.tex"))
-
-################################################################################
-# 6.7.	Mujeres electas para alcaldías 
+# 5.8. Muertes violentas de mujeres relacionadas con hechos delictivos 
 ################################################################################
 
-x <- c("Mujeres", "Hombres")
-y <- c(8, 332)
-c6_07 <- data.frame(x, y)
-c6_07$x <- factor(c6_07$x, levels = c("Mujeres", "Hombres"))
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_violentas_por_sexo_según_causa_de_muerte_2018_y_2022.xlsx")
+c6_02A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "MP"))
+tablaLaTeX(data = c6_02A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado",
+                                              "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "g5_07.tex"))
 
-# Exportar a latex
-g6_07 <- graficaAnillo(data = c6_07, nombre = paste0(directorioGraficas, "g6_07.tex"), preambulo = F)
+c6_02B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "PNC"))
+tablaLaTeX(data = c6_02B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado",
+                                              "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "BORRAR.tex"))

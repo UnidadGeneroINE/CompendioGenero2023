@@ -22,10 +22,16 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {1.9\hfil } Instituciones que prestan atención a víctimas de violencia intrafamiliar}{9}{section*.10}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {1.10\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{10}{section*.11}%
+\contentsline {section}{\hbox to\@tempdima {1.10\hfil } Mujeres privadas de libertad}{10}{section*.11}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.11\hfil } Mujeres privadas de libertad por tipo de delito}{10}{section*.12}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.12\hfil } Hombres privados de libertad por delitos relacionados con violencia contra la mujer }{11}{section*.13}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {1.13\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{12}{section*.14}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{11}{section*.11}%
+\contentsline {chapter}{APÉNDICES}{13}{section*.14}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{13}{section*.12}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{15}{section*.15}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

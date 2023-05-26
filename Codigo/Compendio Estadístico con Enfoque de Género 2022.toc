@@ -38,148 +38,141 @@
 \contentsline {chapter}{\hbox to\@tempdima {2\hfil }Salud}{13}{section*.17}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Número de casos de mujeres embarazadas entre 10 y 55 años atendidas por sistema de salud pública, 2018-2021 }{15}{section*.18}%
+\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Personas notificadas con VIH/SIDA por sexo, 2018-2022 en porcentaje }{15}{section*.18}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Nacimientos por edad de la madre, según grupos de edad, 2018-2021 }{15}{section*.19}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Partos atendidos, por tipo de asistencia, 2018-2021}{16}{section*.20}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.4\hfil } Personas notificadas con VIH/SIDA por sexo, 2018-2022 en porcentaje }{16}{section*.21}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Número de casos de mujeres seropositivas embarazadas entre 15 y 49 años por Pueblo, 2018-2022 }{17}{section*.22}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Tasa de mortalidad materna, 2018-2021}{17}{section*.23}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Número de casos mortalidad materna según causa de muerte, 2018-2021}{18}{section*.24}%
-\thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Defunciones de mujeres por Pueblo, según 12 principales causas de muerte}{19}{section*.25}%
+\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Tasa de mortalidad materna, 2018-2021}{15}{section*.19}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Educación}{21}{section*.26}%
+\contentsline {chapter}{\hbox to\@tempdima {3\hfil }Educación}{17}{section*.20}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {3.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edad}{23}{section*.27}%
+\contentsline {section}{\hbox to\@tempdima {3.1\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según grupos de edad}{19}{section*.21}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.2\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según dominio de estudio}{23}{section*.28}%
+\contentsline {section}{\hbox to\@tempdima {3.2\hfil } Tasa de alfabetismo en la población de 15 años o más por sexo, según dominio de estudio}{19}{section*.22}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.3\hfil } Nivel educativo de la población de 15 años o más por sexo}{24}{section*.29}%
+\contentsline {section}{\hbox to\@tempdima {3.3\hfil } Nivel educativo de la población de 15 años o más por sexo}{20}{section*.23}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.4\hfil } REVISAR Tasa neta de escolaridad en el nivel primario por sexo}{24}{section*.30}%
+\contentsline {section}{\hbox to\@tempdima {3.4\hfil } REVISAR Tasa neta de escolaridad en el nivel primario por sexo}{20}{section*.24}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.5\hfil } REVISAR Tasa neta de escolaridad en el nivel primario por sexo, según departamento}{25}{section*.31}%
+\contentsline {section}{\hbox to\@tempdima {3.5\hfil } REVISAR Tasa neta de escolaridad en el nivel primario por sexo, según departamento}{21}{section*.25}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.6\hfil } REVISAR Tasa neta de escolaridad en el ciclo básico por sexo}{26}{section*.32}%
+\contentsline {section}{\hbox to\@tempdima {3.6\hfil } REVISAR Tasa neta de escolaridad en el ciclo básico por sexo}{22}{section*.26}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.7\hfil } REVISAR Tasa neta de escolaridad en el ciclo diversificado por sexo}{26}{section*.33}%
+\contentsline {section}{\hbox to\@tempdima {3.7\hfil } REVISAR Tasa neta de escolaridad en el ciclo diversificado por sexo}{22}{section*.27}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.8\hfil } REVISAR Tasa neta de escolaridad en el ciclo básico por sexo, según departamento}{27}{section*.34}%
+\contentsline {section}{\hbox to\@tempdima {3.8\hfil } REVISAR Tasa neta de escolaridad en el ciclo básico por sexo, según departamento}{23}{section*.28}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.9\hfil } REVISAR Tasa neta de escolaridad en el ciclo diversificado por sexo, según departamento}{28}{section*.35}%
+\contentsline {section}{\hbox to\@tempdima {3.9\hfil } REVISAR Tasa neta de escolaridad en el ciclo diversificado por sexo, según departamento}{24}{section*.29}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.10\hfil } REVISAR Tasa de deserción en el nivel primario por sexo}{29}{section*.36}%
+\contentsline {section}{\hbox to\@tempdima {3.10\hfil } REVISAR Tasa de deserción en el nivel primario por sexo}{25}{section*.30}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.11\hfil } REVISAR Tasa de deserción en el nivel básico por sexo}{29}{section*.37}%
+\contentsline {section}{\hbox to\@tempdima {3.11\hfil } REVISAR Tasa de deserción en el nivel básico por sexo}{25}{section*.31}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.12\hfil } REVISAR Tasa de deserción en el nivel primario por sexo, según departamento}{30}{section*.38}%
+\contentsline {section}{\hbox to\@tempdima {3.12\hfil } REVISAR Tasa de deserción en el nivel primario por sexo, según departamento}{26}{section*.32}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.13\hfil } REVISAR Tasa de deserción en el nivel básico por sexo, según departamento}{31}{section*.39}%
+\contentsline {section}{\hbox to\@tempdima {3.13\hfil } REVISAR Tasa de deserción en el nivel básico por sexo, según departamento}{27}{section*.33}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.14\hfil } REVISAR Tasa de deserción en el ciclo diversificado por sexo}{32}{section*.40}%
+\contentsline {section}{\hbox to\@tempdima {3.14\hfil } REVISAR Tasa de deserción en el ciclo diversificado por sexo}{28}{section*.34}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.15\hfil } REVISAR Proporción de la población matriculada en la universidad por sexo, según tipo de universidad}{32}{section*.41}%
+\contentsline {section}{\hbox to\@tempdima {3.15\hfil } REVISAR Proporción de la población matriculada en la universidad por sexo, según tipo de universidad}{28}{section*.35}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.16\hfil } REVISAR Tasa de deserción en el nivel diversificado por sexo, según departamento}{33}{section*.42}%
+\contentsline {section}{\hbox to\@tempdima {3.16\hfil } REVISAR Tasa de deserción en el nivel diversificado por sexo, según departamento}{29}{section*.36}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.17\hfil } REVISAR Proporción de la población matriculada en la universidad pública por sexo, según nivel}{34}{section*.43}%
+\contentsline {section}{\hbox to\@tempdima {3.17\hfil } REVISAR Proporción de la población matriculada en la universidad pública por sexo, según nivel}{30}{section*.37}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.18\hfil } REVISAR Proporción de la población matriculada en universidades privadas por sexo, según nivel}{34}{section*.44}%
+\contentsline {section}{\hbox to\@tempdima {3.18\hfil } REVISAR Proporción de la población matriculada en universidades privadas por sexo, según nivel}{30}{section*.38}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.19\hfil } REVISAR Proporción de la población graduada de la universidad por sexo, según tipo de universidad}{35}{section*.45}%
+\contentsline {section}{\hbox to\@tempdima {3.19\hfil } REVISAR Proporción de la población graduada de la universidad por sexo, según tipo de universidad}{31}{section*.39}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.20\hfil } REVISAR Proporción de la población graduada de la universidad pública por sexo, según nivel}{35}{section*.46}%
+\contentsline {section}{\hbox to\@tempdima {3.20\hfil } REVISAR Proporción de la población graduada de la universidad pública por sexo, según nivel}{31}{section*.40}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.21\hfil } REVISAR Proporción de la población graduada de universidades privadas por sexo, según nivel}{36}{section*.47}%
+\contentsline {section}{\hbox to\@tempdima {3.21\hfil } REVISAR Proporción de la población graduada de universidades privadas por sexo, según nivel}{32}{section*.41}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.22\hfil } Uso de teléfono celular por sexo}{36}{section*.48}%
+\contentsline {section}{\hbox to\@tempdima {3.22\hfil } Uso de teléfono celular por sexo}{32}{section*.42}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {4\hfil }Economía y trabajo}{37}{section*.49}%
+\contentsline {chapter}{\hbox to\@tempdima {4\hfil }Economía y trabajo}{33}{section*.43}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {4.1\hfil } Población de 15 años o más por sector económico, según sexo}{39}{section*.50}%
+\contentsline {section}{\hbox to\@tempdima {4.1\hfil } Población de 15 años o más por sector económico, según sexo}{35}{section*.44}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{39}{section*.51}%
+\contentsline {section}{\hbox to\@tempdima {4.2\hfil } Tasa de participación económica por dominio de estudio, sexo y estado conyugal}{35}{section*.45}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{40}{section*.52}%
+\contentsline {section}{\hbox to\@tempdima {4.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio}{36}{section*.46}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{40}{section*.53}%
+\contentsline {section}{\hbox to\@tempdima {4.4\hfil } Población Económicamente Activa por sexo, según Pueblos}{36}{section*.47}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{41}{section*.54}%
+\contentsline {section}{\hbox to\@tempdima {4.5\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{37}{section*.48}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.6\hfil } Población Ocupada por sexo, según rango de edad}{41}{section*.55}%
+\contentsline {section}{\hbox to\@tempdima {4.6\hfil } Población Ocupada por sexo, según rango de edad}{37}{section*.49}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{42}{section*.56}%
+\contentsline {section}{\hbox to\@tempdima {4.7\hfil } Población Ocupada por sexo, según categoría ocupacional}{38}{section*.50}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{43}{section*.57}%
+\contentsline {section}{\hbox to\@tempdima {4.8\hfil } Población Ocupada con acceso a seguro social por sexo, según rama de actividad económica}{39}{section*.51}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.9\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo}{43}{section*.58}%
+\contentsline {section}{\hbox to\@tempdima {4.9\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo}{39}{section*.52}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.10\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo, según rama de actividad económica}{44}{section*.59}%
+\contentsline {section}{\hbox to\@tempdima {4.10\hfil } Créditos otorgados a la pequeña y mediana empresa por sexo, según rama de actividad económica}{40}{section*.53}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{44}{section*.60}%
+\contentsline {section}{\hbox to\@tempdima {4.11\hfil } Salario o ingresos promedio mensual por sexo, según dominio de estudio}{40}{section*.54}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{45}{section*.61}%
+\contentsline {section}{\hbox to\@tempdima {4.12\hfil } Salario o ingresos promedio mensual por sexo, según Categoría Ocupacional}{41}{section*.55}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{45}{section*.62}%
+\contentsline {section}{\hbox to\@tempdima {4.13\hfil } Tasa de desempleo por sexo y dominio de estudio}{41}{section*.56}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{46}{section*.63}%
+\contentsline {section}{\hbox to\@tempdima {4.14\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{42}{section*.57}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{46}{section*.64}%
+\contentsline {section}{\hbox to\@tempdima {4.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{42}{section*.58}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{47}{section*.65}%
+\contentsline {section}{\hbox to\@tempdima {4.16\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{43}{section*.59}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {5\hfil }Violencia}{49}{section*.66}%
+\contentsline {chapter}{\hbox to\@tempdima {5\hfil }Violencia}{45}{section*.60}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {5.1\hfil } Tasa de denuncia de Violencia contra la mujer por departamento de registro}{51}{section*.67}%
+\contentsline {section}{\hbox to\@tempdima {5.1\hfil } Tasa de denuncia de Violencia contra la mujer por departamento de registro}{47}{section*.61}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.2\hfil } Denuncias por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer por departamento de registro}{52}{section*.68}%
+\contentsline {section}{\hbox to\@tempdima {5.2\hfil } Denuncias por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer por departamento de registro}{48}{section*.62}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.3\hfil } Denuncias por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer, según grupos de edad}{53}{section*.69}%
+\contentsline {section}{\hbox to\@tempdima {5.3\hfil } Denuncias por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer, según grupos de edad}{49}{section*.63}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.4\hfil } Denuncia por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer, según Pueblo}{54}{section*.70}%
+\contentsline {section}{\hbox to\@tempdima {5.4\hfil } Denuncia por los delitos contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra a la Mujer, según Pueblo}{50}{section*.64}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.5\hfil } Mujeres víctimas de violencia contra la mujer, según Pueblos }{55}{section*.71}%
+\contentsline {section}{\hbox to\@tempdima {5.5\hfil } Mujeres víctimas de violencia contra la mujer, según Pueblos }{51}{section*.65}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.6\hfil } Mujeres víctimas de violencia contra la mujer, según tipo de violencia sufrida }{55}{section*.72}%
+\contentsline {section}{\hbox to\@tempdima {5.6\hfil } Mujeres víctimas de violencia contra la mujer, según tipo de violencia sufrida }{51}{section*.66}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.7\hfil } Muertes violentas por sexo, según causa de muerte y grupos de edad}{56}{section*.73}%
+\contentsline {section}{\hbox to\@tempdima {5.7\hfil } Muertes violentas por sexo, según causa de muerte y grupos de edad}{52}{section*.67}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.8\hfil } Muertes violentas de mujeres relacionadas con hechos delictivos}{57}{section*.74}%
+\contentsline {section}{\hbox to\@tempdima {5.8\hfil } Muertes violentas de mujeres relacionadas con hechos delictivos}{53}{section*.68}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.9\hfil } Índice de mortalidad femenina}{57}{section*.75}%
+\contentsline {section}{\hbox to\@tempdima {5.9\hfil } Índice de mortalidad femenina}{53}{section*.69}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.10\hfil } Víctimas de violencia intrafamiliar por sexo, según Pueblos}{58}{section*.76}%
+\contentsline {section}{\hbox to\@tempdima {5.10\hfil } Víctimas de violencia intrafamiliar por sexo, según Pueblos}{54}{section*.70}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.11\hfil } Víctimas de violencia intrafamiliar por sexo, según tipo de violencia}{58}{section*.77}%
+\contentsline {section}{\hbox to\@tempdima {5.11\hfil } Víctimas de violencia intrafamiliar por sexo, según tipo de violencia}{54}{section*.71}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.12\hfil } Instituciones que prestan atención a víctimas de violencia intrafamiliar}{59}{section*.78}%
+\contentsline {section}{\hbox to\@tempdima {5.12\hfil } Instituciones que prestan atención a víctimas de violencia intrafamiliar}{55}{section*.72}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.13\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{60}{section*.79}%
+\contentsline {section}{\hbox to\@tempdima {5.13\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{56}{section*.73}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación sociopolítica}{61}{section*.80}%
+\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación sociopolítica}{57}{section*.74}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Personas electas para el Organismo Legislativo por sexo }{63}{section*.81}%
+\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Participación en los Consejos de Desarrollo por sexo, según cargo }{59}{section*.75}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Mujeres magistradas en el Organismo Judicial}{63}{section*.82}%
+\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Personas electas para el Organismo Legislativo por sexo }{60}{section*.76}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres electas para alcaldías}{64}{section*.83}%
+\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres magistradas en el Organismo Judicial}{60}{section*.77}%
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {6.4\hfil } Mujeres electas para alcaldías}{61}{section*.78}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{65}{section*.83}%
+\contentsline {chapter}{APÉNDICES}{63}{section*.78}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{67}{section*.84}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Glosario}{65}{section*.79}%
+\color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
+\addvspace {0.6\baselineskip }\color {color3}
+\contentsline {chapter}{\hbox to\@tempdima {B\hfil }Información Ampliada}{71}{section*.80}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

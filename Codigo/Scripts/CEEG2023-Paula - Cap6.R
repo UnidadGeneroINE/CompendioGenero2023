@@ -142,6 +142,29 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
                               etiquetas = "h")
 
 ################################################################################
+# 6.1.	Participación en los Consejos de Desarrollo por sexo, según cargo
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\PARTICIPACIÓN_SOCIOPOLÍTICA\\Consejos.xlsx")
+c6_01 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Consejos"))
+g6_01 <- tablaLaTeX(c6_01, nombre_columnas = c("", "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres", 
+                                               "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2,
+                                      "Titulares" = 2, "Suplentes" = 2,
+                                      "Titulares" = 2, "Suplentes" = 2,
+                                      "Titulares" = 2, "Suplentes" = 2,
+                                      "Titulares" = 2, "Suplentes" = 2),
+                    ruta = paste0(directorioGraficas, "g6_01.tex"))
+
+################################################################################
 # 6.2.	Personas electas para el Organismo Legislativo por sexo
 ################################################################################
 
@@ -172,3 +195,17 @@ c6_07$x <- factor(c6_07$x, levels = c("Mujeres", "Hombres"))
 
 # Exportar a latex
 g6_07 <- graficaAnillo(data = c6_07, nombre = paste0(directorioGraficas, "g6_07.tex"), preambulo = F)
+
+################################################################################
+# ANEXOS
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\PARTICIPACIÓN_SOCIOPOLÍTICA\\Consejos.xlsx")
+anexo6_01A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Consejos18-19"))
+anexo6_01A <- tablaLaTeX(anexo6_01A, nombre_columnas = c("", "Mujeres", "Hombres", 
+                                                       "Mujeres", "Hombres", 
+                                                       "Mujeres", "Hombres", 
+                                                       "Mujeres", "Hombres"),
+                        nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2,
+                                          "Titulares" = 2, "Suplentes" = 2),
+                        ruta = paste0(directorioGraficas, "anexo6_01A.tex"))

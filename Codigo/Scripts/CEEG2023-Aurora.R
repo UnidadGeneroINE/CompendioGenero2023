@@ -46,6 +46,8 @@ Datos_VIF <- paste0(baseviolencia, "DATOS_VIF_2022.xlsx")
 
 Datos_VCM <- paste0(baseviolencia, "DATOS_VCM_2022.xlsx")
 
+Datos_MPL <- paste0(baseviolencia, "DATOS_MPL_2022.xlsx")
+
 personasCENSO <- read.spss(paste0(directorioCenso, "PERSONA_CENSO_2018.sav"), 
                           to.data.frame =T)
 
@@ -222,12 +224,33 @@ Tabla5_12 <-  tablaLaTeX(c5_12, nombre_grupos = c(" ", " ","Institución que rec
 
 
 ################################################################################
-# 5.13.	Mujeres privadas de libertad por tipo de delito 
-# (serie histórica 2018 - 2022)
+# 5.13.	Mujeres privadas de libertad (serie histórica 2018 - 2022)
+################################################################################
+Datos_MPL
+c5_13 <- data.frame(read.xlsx(xlsxFile = Datos_MPL, sheet = "5_13"))
+
+g5_13 <- graficaLinea(c5_13, rotar = F, inicio = 4500, final = 6500, precision = 0)
+exportarLatex(nombre = paste0(directorioGraficas,"g5_13.tex"),
+              graph = g5_13, preambulo = F)
+
+################################################################################
+# 5.14.	Mujeres privadas de libertad por tipo de delito (serie histórica 2018 - 2022)
+################################################################################
+Datos_MPL
+c5_14 <- data.frame(read.xlsx(xlsxFile = Datos_MPL, sheet = "5_14")) %>%
+  rename("Tipo de delito" = Tipo.de.delito, "2018" = X2018, "2019" = X2019, "2020" = X2020, "2021" = X2021, "2022" = X2022)
+
+Tabla5_14 <-  tablaLaTeX(c5_14, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_14.tex"))
+
+################################################################################
+# 5.14.	5.16.	Hombres privados de libertad por delitos relacionados con 
+# violencia contra la mujer (serie histórica 2018 - 2022)
 ################################################################################
 
+c5_15 <- data.frame(read.xlsx(xlsxFile = Datos_MPL, sheet = "5_15")) %>%
+  rename("Tipo de delito" = Tipo.de.delito, "2018" = X2018, "2019" = X2019, "2020" = X2020, "2021" = X2021, "2022" = X2022)
 
-
+Tabla5_15 <-  tablaLaTeX(c5_15, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_15.tex"))
 
 ################################################################################
 # 5.16. Estado conyugal en personas entre 12 a 17 años por sexo, 2018

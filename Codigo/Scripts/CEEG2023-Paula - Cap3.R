@@ -281,3 +281,21 @@ g3_09 <- tablaLaTeX(c3_07,
                     nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
                     ruta = paste0(directorioGraficas,"g3_09.tex"))
 
+
+###################################################### DATOS EXTRA #############
+queerParejasCensos <- personasCenso %>%
+  group_by(NUM_VIVIENDA, NUM_HOGAR) %>%
+  filter(all(PCP5 %in% c("Jefe o jefa de hogar", "Esposa(o) o pareja"))) %>%
+  subset(duplicated(NUM_VIVIENDA) | duplicated(NUM_VIVIENDA, fromLast = TRUE)) %>%
+  filter(length(unique(PCP6)) < n()) #%>%
+  # select(NUM_VIVIENDA, NUM_HOGAR, PCP5, PCP6) 
+
+queerParejasCensosDepto <- queerParejasCensos %>%
+  group_by(DEPARTAMENTO)
+
+queerParejasENEI22 <- personasENEI %>%
+group_by(hogar_num) %>%
+filter(all(P03A05 %in% c("Jefe (a) del hogar", "Esposo (a) o compañero (a)"))) %>%
+subset(duplicated(hogar_num) | duplicated(hogar_num, fromLast = TRUE)) %>%
+filter(length(unique(P03A02)) < n()) #%>%
+# select(hogar_num, P03A05, P03A02) 

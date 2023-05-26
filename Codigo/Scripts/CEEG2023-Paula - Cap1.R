@@ -165,7 +165,7 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
                               etiquetas = "h")
 
 ################################################################################
-# 1.1.	Población por sexo, según grupos de edad
+# 1.1.	(OBSOLETA) Población por sexo, según grupos de edad - 2018
 ################################################################################
 
 c1_01 <- personasCenso %>%
@@ -175,6 +175,19 @@ c1_01 <- personasCenso %>%
   arrange(factor(x, levels = quinqueneos))
 
 # Indica el orden en el que se debe mostrar los grupos quinquenales
+c1_01$x <- factor(c1_01$x, levels = quinqueneos)
+
+g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
+g1_01 <- exportarLatex(nombre = paste0(directorioGraficas, "g1_01.tex"), graph = g1_01)
+
+################################################################################
+# 1.1. Población por sexo, según grupos de edad (2022)
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "Poblacion_estimacion_2022_por_sexo.xlsx")
+c1_01 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2022")) %>%
+  arrange(factor(x, levels = quinqueneos))
+c1_01$z <- factor(c1_01$z, levels = c("Mujer", "Hombre"))
 c1_01$x <- factor(c1_01$x, levels = quinqueneos)
 
 g1_01 <- graficaPiramide(data = c1_01, escala = 1000)
@@ -478,3 +491,5 @@ poblacion2018ENEI <- sum(personasENEIINE2018$FACTOR)
 
 tablaColApiladas(df, nombre_columnas = c("", "AH", "BEEE", "CI", "D", "EEH", "AH", "BEEE", "CI"), nombre_grupos= c("", "2018" = 4, "2019" = 4), ruta = paste0(directorioGraficas, "TABLA.tex"))
 
+
+################################################################################

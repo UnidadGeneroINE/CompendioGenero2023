@@ -36,6 +36,7 @@ directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\
 BasesSalud <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\SALUD\\"
 directorioGraficas <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Graficas\\"
 
+anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255))
 
 ############################################################################
 ###                                                                      ###
@@ -62,10 +63,25 @@ Tabla2_01 <- tablaLaTeX(c2_01, ruta = paste0(directorioGraficas, "Tabla2_01.tex"
 # planificación familiar por sexo                                              #
 ################################################################################
 
+Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
+
+c2_02 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_2"))
+
+Tabla2_02 <- tablaLaTeX(c2_02,nombre_grupos = c(" ", "Usuarios nuevos" = 2, "Usuarios reconsultas" = 2), 
+                        opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla2_02.tex"))
+
 ################################################################################
 # 2.3.	Población entre 15 y 49 años que han usado algún método de             #
 # planificación familiar por tipo de método                                    #
 ################################################################################
+
+Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
+
+c2_03 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_3")) %>%
+  rename("Tipo de Método" = Tipo.de.Método)
+
+# Enviar a Latex 
+Tabla2_03 <- tablaLaTeX(c2_03, ruta = paste0(directorioGraficas, "Tabla2_03.tex"))  
 
 ################################################################################
 # 2.4.	Nacimientos por edad de la madre, según grupos de edad                 #
@@ -103,7 +119,7 @@ c2_06 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_6"))
 
 c2_06$z <- factor(c2_06$z, levels = c("Mujeres", "Hombres"))
 
-#Grafica g2_06
+#Grafica grafica categorias apiladas g2_06
 g2_06 <- graficaApilada(c2_06, categoria_leyenda = "", tipo = "columna", 
                                      decimales = TRUE, leyenda = "arriba")
 

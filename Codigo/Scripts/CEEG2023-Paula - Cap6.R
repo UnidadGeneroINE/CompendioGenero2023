@@ -209,3 +209,18 @@ anexo6_01A <- tablaLaTeX(anexo6_01A, nombre_columnas = c("", "Mujeres", "Hombres
                         nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2,
                                           "Titulares" = 2, "Suplentes" = 2),
                         ruta = paste0(directorioGraficas, "anexo6_01A.tex"))
+
+anexo6_01B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Consejos20-21"))
+anexo6_01B <- tablaLaTeX(anexo6_01B, nombre_columnas = c("", "Mujeres", "Hombres", 
+                                                         "Mujeres", "Hombres", 
+                                                         "Mujeres", "Hombres", 
+                                                         "Mujeres", "Hombres"),
+                         nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2,
+                                           "Titulares" = 2, "Suplentes" = 2),
+                         ruta = paste0(directorioGraficas, "anexo6_01B.tex"))
+
+anexo6_01C <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Consejos22"))
+anexo6_01C <- tablaLaTeX(anexo6_01C, nombre_columnas = c("", "Mujeres", "Hombres", 
+                                                         "Mujeres", "Hombres"),
+                         nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2),
+                         ruta = paste0(directorioGraficas, "anexo6_01C.tex"))

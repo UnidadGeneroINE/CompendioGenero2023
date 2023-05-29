@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  29 MAY 2023 10:13
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  29 MAY 2023 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6747,6 +6747,12 @@ Package hyperref Info: Anchor `page.72' on input line 54.
 \openout2 = `Graficas/anexo6_01A.aux'.
 
  (./Graficas/anexo6_01A.tex)
+\openout2 = `Graficas/anexo6_01B.aux'.
+
+(./Graficas/anexo6_01B.tex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -6762,18 +6768,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.73' on input line 6.
+Package hyperref Info: Anchor `page.73' on input line 10.
 [73
 
 
 
 ]
-\openout2 = `Graficas/anexo6_01B.aux'.
-
- (./Graficas/anexo6_01B.tex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
 
@@ -6825,7 +6825,6 @@ Package hyperref Info: Anchor `page.75' on input line 56.
 ]
 Package hyperref Info: Anchor `page.76' on input line 56.
  [76
-
 
 
 
@@ -7030,9 +7029,6 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 ) (./Graficas/Tabla5_15.aux) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux)
 (./Graficas/anexo6_01A.aux) (./Graficas/anexo6_01B.aux)
 (./Graficas/anexo6_01C.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Género
  2022".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.

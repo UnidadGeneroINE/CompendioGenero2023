@@ -75,6 +75,14 @@ Tabla2_02 <- tablaLaTeX(c2_02,nombre_grupos = c(" ", "Usuarios nuevos" = 2, "Usu
 # planificación familiar por tipo de método                                    #
 ################################################################################
 
+Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
+
+c2_03 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_3")) %>%
+  rename("Tipo de Método" = Tipo.de.Método)
+
+# Enviar a Latex 
+Tabla2_03 <- tablaLaTeX(c2_03, ruta = paste0(directorioGraficas, "Tabla2_03.tex"))  
+
 ################################################################################
 # 2.4.	Nacimientos por edad de la madre, según grupos de edad                 #
 ################################################################################
@@ -111,7 +119,7 @@ c2_06 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_6"))
 
 c2_06$z <- factor(c2_06$z, levels = c("Mujeres", "Hombres"))
 
-#Grafica g2_06
+#Grafica grafica categorias apiladas g2_06
 g2_06 <- graficaApilada(c2_06, categoria_leyenda = "", tipo = "columna", 
                                      decimales = TRUE, leyenda = "arriba")
 

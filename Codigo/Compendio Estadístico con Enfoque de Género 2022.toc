@@ -48,13 +48,13 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.5\hfil } Partos atendidos, por tipo de asistencia}{17}{section*.22}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Personas notificadas con VIH/SIDA por sexo, 2018-2022 en porcentaje }{17}{section*.23}%
+\contentsline {section}{\hbox to\@tempdima {2.6\hfil } Personas notificadas con VIH/SIDA por sexo}{17}{section*.23}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Número de casos de mujeres seropositivas embarazadas entre 15 y 49 años por Pueblo, 2018-2022 }{18}{section*.24}%
+\contentsline {section}{\hbox to\@tempdima {2.7\hfil } Número de casos de mujeres seropositivas embarazadas entre 15 y 49 años por Pueblo}{18}{section*.24}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Tasa de mortalidad materna, 2018-2021}{18}{section*.25}%
+\contentsline {section}{\hbox to\@tempdima {2.8\hfil } Tasa de mortalidad materna}{18}{section*.25}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.9\hfil } Número de casos mortalidad materna según causa de muerte, 2018-2021}{19}{section*.26}%
+\contentsline {section}{\hbox to\@tempdima {2.9\hfil } Número de casos mortalidad materna según causa de muerte}{19}{section*.26}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.10\hfil } Defunciones de mujeres por Pueblo, según 12 principales causas de muerte}{20}{section*.27}%
 \thispagestyle {empty}

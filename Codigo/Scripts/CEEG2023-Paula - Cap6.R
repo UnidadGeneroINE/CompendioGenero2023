@@ -146,22 +146,14 @@ g0_00 <- graficaColCategorias(data = poblacion_por_pueblos, ruta = paste0(direct
 ################################################################################
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\PARTICIPACIÓN_SOCIOPOLÍTICA\\Consejos.xlsx")
-c6_01 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Consejos"))
+c6_01 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "ConsejosSuma"))
 g6_01 <- tablaLaTeX(c6_01, nombre_columnas = c("", "Mujeres", "Hombres", 
                                                "Mujeres", "Hombres", 
                                                "Mujeres", "Hombres", 
                                                "Mujeres", "Hombres", 
-                                               "Mujeres", "Hombres", 
-                                               "Mujeres", "Hombres", 
-                                               "Mujeres", "Hombres", 
-                                               "Mujeres", "Hombres", 
-                                               "Mujeres", "Hombres", 
                                                "Mujeres", "Hombres"),
-                    nombre_grupos = c(" " = 1, "Titulares" = 2, "Suplentes" = 2,
-                                      "Titulares" = 2, "Suplentes" = 2,
-                                      "Titulares" = 2, "Suplentes" = 2,
-                                      "Titulares" = 2, "Suplentes" = 2,
-                                      "Titulares" = 2, "Suplentes" = 2),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2,
+                                      "2020" = 2, "2021" = 2, "2022" = 2),
                     ruta = paste0(directorioGraficas, "g6_01.tex"))
 
 ################################################################################

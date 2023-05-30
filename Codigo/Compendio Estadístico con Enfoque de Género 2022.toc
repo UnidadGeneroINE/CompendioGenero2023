@@ -46,7 +46,7 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.4\hfil } Nacimientos por edad de la madre, según grupos de edad}{16}{section*.21}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Partos atendidos, por tipo de asistencia}{17}{section*.22}%
+\contentsline {section}{\hbox to\@tempdima {2.5\hfil } Partos atendidos por tipo de asistencia}{17}{section*.22}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.6\hfil } Personas notificadas con VIH/SIDA por sexo}{17}{section*.23}%
 \thispagestyle {empty}

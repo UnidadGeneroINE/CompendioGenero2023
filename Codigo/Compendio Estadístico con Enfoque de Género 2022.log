@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  30 MAY 2023 14:46
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  30 MAY 2023 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1313,13 +1313,14 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux)
 (./Graficas/g3_16.aux) (./Graficas/g3_15.aux) (./Graficas/g3_18.aux)
 (./Graficas/g3_19.aux) (./Graficas/g3_21.aux) (./Graficas/Tabla4_04.aux)
-(./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_10.aux) (./Graficas/Tabla5_02.aux
-) (./Graficas/Tabla5_03.aux) (./Graficas/Tabla5_04.aux)
-(./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux) (./Graficas/g5_07.aux)
-(./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux) (./Graficas/Tabla5_11.aux)
-(./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux) (./Graficas/Tabla5_15.aux
-) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux) (./Graficas/anexo6_01A.aux)
-(./Graficas/anexo6_01B.aux) (./Graficas/anexo6_01C.aux))
+(./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_09.aux) (./Graficas/Tabla4_10.aux
+) (./Graficas/Tabla5_02.aux) (./Graficas/Tabla5_03.aux)
+(./Graficas/Tabla5_04.aux) (./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux
+) (./Graficas/g5_07.aux) (./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux)
+(./Graficas/Tabla5_11.aux) (./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux
+) (./Graficas/Tabla5_15.aux) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux)
+(./Graficas/anexo6_01A.aux) (./Graficas/anexo6_01B.aux)
+(./Graficas/anexo6_01C.aux))
 \openout1 = `"Compendio Estadístico con Enfoque de Género 2022.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -2783,8 +2784,8 @@ Package hyperref Info: Anchor `page.15' on input line 8.
 Package hyperref Info: Anchor `section*.22' on input line 9.
 Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {2.5}
-(hyperref)             text {\numberline {\thesection } Partos atendidos, por t
-ipo de asistencia}
+(hyperref)             text {\numberline {\thesection } Partos atendidos por ti
+po de asistencia}
 (hyperref)             reference {section*.22}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -3103,7 +3104,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 ...10.tex}}{INE - Estadísticas Vitales, 2021}
+l.19 ...10.tex}}{INE - Estadísticas Vitales, 2022}
                                                   {}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4989,7 +4990,9 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 17.
-(./Graficas/g4_09.tex)
+\openout2 = `Graficas/Tabla4_09.aux'.
+
+(./Graficas/Tabla4_09.tex)
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 17--17
 [][]
  []
@@ -5122,6 +5125,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Info: Anchor `page.43' on input line 22.
 [43
+
+
+
 
 
 
@@ -7790,22 +7796,23 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux)
 (./Graficas/g3_16.aux) (./Graficas/g3_15.aux) (./Graficas/g3_18.aux)
 (./Graficas/g3_19.aux) (./Graficas/g3_21.aux) (./Graficas/Tabla4_04.aux)
-(./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_10.aux) (./Graficas/Tabla5_02.aux
-) (./Graficas/Tabla5_03.aux) (./Graficas/Tabla5_04.aux)
-(./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux) (./Graficas/g5_07.aux)
-(./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux) (./Graficas/Tabla5_11.aux)
-(./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux) (./Graficas/Tabla5_15.aux
-) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux) (./Graficas/anexo6_01A.aux)
-(./Graficas/anexo6_01B.aux) (./Graficas/anexo6_01C.aux))
+(./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_09.aux) (./Graficas/Tabla4_10.aux
+) (./Graficas/Tabla5_02.aux) (./Graficas/Tabla5_03.aux)
+(./Graficas/Tabla5_04.aux) (./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux
+) (./Graficas/g5_07.aux) (./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux)
+(./Graficas/Tabla5_11.aux) (./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux
+) (./Graficas/Tabla5_15.aux) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux)
+(./Graficas/anexo6_01A.aux) (./Graficas/anexo6_01B.aux)
+(./Graficas/anexo6_01C.aux))
 Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Género
  2022".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38615 strings out of 476684
- 882869 string characters out of 5807583
- 1928012 words of memory out of 5000000
- 57464 multiletter control sequences out of 15000+600000
+ 38638 strings out of 476684
+ 883782 string characters out of 5807583
+ 1929012 words of memory out of 5000000
+ 57483 multiletter control sequences out of 15000+600000
  522293 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,29n,103p,1174b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s

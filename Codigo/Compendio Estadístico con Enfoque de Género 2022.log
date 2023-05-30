@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  29 MAY 2023 15:33
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  30 MAY 2023 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2540,7 +2540,7 @@ Package hyperref Info: Anchor `section*.18' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {2.1}
 (hyperref)             text {\numberline {\thesection } Número de casos de muje
-res embarazadas entre 10 y 55 años atendidas por sistema de salud pública}
+res embarazadas entre 10 y 55 años atendidas por el sistema de salud pública}
 (hyperref)             reference {section*.18}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -4453,14 +4453,6 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 43.
 (./Graficas/g3_22.tex)
-File: Plantilla/ODS/ods5.pdf Graphic file (type pdf)
-<use Plantilla/ODS/ods5.pdf>
-
-Overfull \hbox (15.57791pt too wide) in paragraph at lines 43--43
- []|[] 
- []
-
-
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 43--43
 [][]
  []
@@ -4598,7 +4590,7 @@ Package hyperref Info: Anchor `section*.53' on input line 3.
 Package hyperref Info: bookmark on input line 3:
 (hyperref)             thecounter {4.2}
 (hyperref)             text {\numberline {\thesection } Tasa de participación e
-conómica por dominio de estudio, sexo y estado conyugal}
+conómica por dominio de estudio, sexo y estado conyugal }
 (hyperref)             reference {section*.53}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -4917,7 +4909,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 ...4_08.tex}}{INE - ENEI 2022, ENEI 2 2018}{}
+l.15 ...raficas/Tabla4_08.tex}}{INE - ENEI 2022}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5091,8 +5083,8 @@ Overfull \hbox (44.82545pt too wide) in paragraph at lines 21--21
  []
 
 
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 19--22
-[]        
+Overfull \hbox (33.41606pt too wide) in paragraph at lines 19--22
+[]\TU/OpenSans-CondLight.ttf(0)/m/n/10.95 00      []
  []
 
 
@@ -5313,6 +5305,14 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 29.
 (./Graficas/g4_15.tex)
+File: Plantilla/ODS/ods5.pdf Graphic file (type pdf)
+<use Plantilla/ODS/ods5.pdf>
+
+Overfull \hbox (15.57791pt too wide) in paragraph at lines 29--29
+ []|[] 
+ []
+
+
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 29--29
 [][]
  []
@@ -5351,6 +5351,8 @@ Overfull \hbox (4.51688pt too wide) in paragraph at lines 31--31
  []|[]| 
  []
 
+File: Plantilla/ODS/ods5.pdf Graphic file (type pdf)
+<use Plantilla/ODS/ods5.pdf>
 
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 31--31
 [][]
@@ -5361,12 +5363,12 @@ Overfull \hbox (67.4098pt too wide) in paragraph at lines 31--31
 [] 
  []
 
-
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 31--32
-[]        
+)
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 31--46
+[]         
  []
 
-)
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
@@ -5443,7 +5445,7 @@ Package hyperref Info: Anchor `section*.69' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {5.1}
 (hyperref)             text {\numberline {\thesection } Tasa de denuncia de Vio
-lencia contra la mujer por departamento de registro}
+lencia Contra la Mujer por departamento de registro}
 (hyperref)             reference {section*.69}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5485,7 +5487,7 @@ Package hyperref Info: bookmark on input line 3:
 (hyperref)             thecounter {5.2}
 (hyperref)             text {\numberline {\thesection } Denuncias por los delit
 os contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contr
-a a la Mujer por departamento de registro}
+a la Mujer por departamento de registro}
 (hyperref)             reference {section*.70}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5574,7 +5576,7 @@ Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {5.3}
 (hyperref)             text {\numberline {\thesection } Denuncias por los delit
 os contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contr
-a a la Mujer, según grupos de edad}
+a la Mujer, según grupos de edad}
 (hyperref)             reference {section*.71}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5653,7 +5655,7 @@ Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {5.4}
 (hyperref)             text {\numberline {\thesection } Denuncia por los delito
 s contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra
- a la Mujer, según Pueblo}
+ la Mujer, según Pueblo}
 (hyperref)             reference {section*.72}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5730,8 +5732,8 @@ Package hyperref Info: Anchor `page.53' on input line 9.
 Package hyperref Info: Anchor `section*.73' on input line 9.
 Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {5.5}
-(hyperref)             text {\numberline {\thesection } Mujeres víctimas de vio
-lencia contra la mujer, según Pueblos }
+(hyperref)             text {\numberline {\thesection } Mujeres víctimas de Vio
+lencia Contra la Mujer, según Pueblos (número de mujeres) }
 (hyperref)             reference {section*.73}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5807,7 +5809,7 @@ Package hyperref Info: Anchor `section*.74' on input line 11.
 Package hyperref Info: bookmark on input line 11:
 (hyperref)             thecounter {5.6}
 (hyperref)             text {\numberline {\thesection } Mujeres víctimas de vio
-lencia contra la mujer, según tipo de violencia sufrida }
+lencia Contra la Mujer, según tipo de violencia sufrida }
 (hyperref)             reference {section*.74}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5969,10 +5971,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 15.
 \openout2 = `Graficas/g5_08.aux'.
 
- (./Graficas/g5_08.tex) (./Descripciones/des5_16.tex
-Package hyperref Info: Reference (link) `Hfootnote.29' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.29' on input line 1.
-)
+ (./Graficas/g5_08.tex) (./Descripciones/des5_08.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 15--15
  []|[]| 
  []
@@ -6063,8 +6062,8 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 19--19
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 5.10[]$ $| 
  []
 
-Package hyperref Info: Reference (link) `Hfootnote.30' on input line 19.
-Package hyperref Info: Anchor `Hfootnote.30' on input line 19.
+Package hyperref Info: Reference (link) `Hfootnote.29' on input line 19.
+Package hyperref Info: Anchor `Hfootnote.29' on input line 19.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 19.
@@ -6148,8 +6147,8 @@ Overfull \hbox (4.51688pt too wide) in paragraph at lines 21--21
 []|[]| 
  []
 
-Package hyperref Info: Reference (link) `Hfootnote.31' on input line 21.
-Package hyperref Info: Anchor `Hfootnote.31' on input line 21.
+Package hyperref Info: Reference (link) `Hfootnote.30' on input line 21.
+Package hyperref Info: Anchor `Hfootnote.30' on input line 21.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 21.
@@ -6214,8 +6213,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 
  []
 
-Package hyperref Info: Reference (link) `Hfootnote.32' on input line 23.
-Package hyperref Info: Anchor `Hfootnote.32' on input line 23.
+Package hyperref Info: Reference (link) `Hfootnote.31' on input line 23.
+Package hyperref Info: Anchor `Hfootnote.31' on input line 23.
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 23.
@@ -6242,8 +6241,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 Juzgados
  []
 
-Package hyperref Info: Reference (link) `Hfootnote.33' on input line 5.
-Package hyperref Info: Anchor `Hfootnote.33' on input line 5.
+Package hyperref Info: Reference (link) `Hfootnote.32' on input line 5.
+Package hyperref Info: Anchor `Hfootnote.32' on input line 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\TU/OpenSans-CondLight.ttf(0)/b/n/10.95 Bufetes
@@ -6563,8 +6562,8 @@ or  <return>  to continue without it.
 \openout2 = `Graficas/Tabla5_16.aux'.
 
 (./Graficas/Tabla5_16.tex) (./Descripciones/des5_16.tex
-Package hyperref Info: Reference (link) `Hfootnote.34' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.34' on input line 1.
+Package hyperref Info: Reference (link) `Hfootnote.33' on input line 1.
+Package hyperref Info: Anchor `Hfootnote.33' on input line 1.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
@@ -7113,13 +7112,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.81' on input line 46.
+Package hyperref Info: Anchor `page.81' on input line 47.
 [81]
-Overfull \hbox (63.60626pt too wide) in paragraph at lines 50--64
+Overfull \hbox (63.60626pt too wide) in paragraph at lines 51--65
 [][][][] 
  []
 
-Package hyperref Info: bookmark on input line 64:
+Package hyperref Info: bookmark on input line 65:
 (hyperref)             thecounter {B.1}
 (hyperref)             text {\protect \numberline {\csname the\@captype \endcsn
 ame }{\ignorespaces Categorías de acuerdo a la Clasificación Industrial Interna
@@ -7127,7 +7126,7 @@ cional Uniforme de todas las Actividades Económicas -CIIU-.}}
 (hyperref)             reference {table.B.1}
 (hyperref)             toclevel {0}
 (hyperref)             type {lot}.
-Package hyperref Info: Anchor `table.B.1' on input line 64.
+Package hyperref Info: Anchor `table.B.1' on input line 65.
 )
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
@@ -7289,13 +7288,13 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38610 strings out of 476684
- 882754 string characters out of 5807583
- 1930012 words of memory out of 5000000
- 57460 multiletter control sequences out of 15000+600000
+ 38615 strings out of 476684
+ 882869 string characters out of 5807583
+ 1928012 words of memory out of 5000000
+ 57464 multiletter control sequences out of 15000+600000
  522293 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,29n,103p,1156b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,29n,103p,1174b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Compendio Estadístico con Enfoque de Género 2022.pdf (98 page
 s).

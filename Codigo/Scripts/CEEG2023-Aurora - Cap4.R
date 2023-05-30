@@ -571,15 +571,18 @@ Tabla4_08 <- tablaLaTeX(c4_08, ruta = paste0(directorioGraficas, "Tabla4_08.tex"
 # 4.9.	Créditos otorgados a la pequeña y mediana empresa por sexo 
 # (comparar 2018 y 2022)
 ################################################################################
-
-ECONOMÍA_Y_TRABAJO <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\ECONOMÍA_Y_TRABAJO\\"
+# se acutualizo la ubicación del archivo
+ECONOMÍA_Y_TRABAJO <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\GitHub\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\ECONOMÍA_Y_TRABAJO\\"
 
 Creditos <- paste0(ECONOMÍA_Y_TRABAJO, "4-11_4-12.xlsx")
 
-c4_09 <- data.frame(read.xlsx(xlsxFile = Creditos, sheet = "sexo"))
+c4_09 <- data.frame(read.xlsx(xlsxFile = Creditos, sheet = "creditos"))
 
-g4_09 <- graficaColCategorias(data = c4_09, ruta = paste0(directorioGraficas,"g4_09.tex"),
-                                       etiquetasCategorias = "A", etiquetas = "h")
+# Se acordo usar en tabla
+# g4_09 <- graficaColCategorias(data = c4_09, ruta = paste0(directorioGraficas,"g4_09.tex"),
+                                       # etiquetasCategorias = "A", etiquetas = "h")
+#Tabla latex 
+Tabla4_09 <- tablaLaTeX(c4_09, ruta = paste0(directorioGraficas, "Tabla4_09.tex"))
 
 ################################################################################
 # 4.10.	Créditos otorgados a la pequeña y mediana empresa por sexo, según 

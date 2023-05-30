@@ -38,11 +38,11 @@
 \contentsline {chapter}{\hbox to\@tempdima {2\hfil }Salud}{13}{section*.17}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Número de casos de mujeres embarazadas entre 10 y 55 años atendidas por el sistema de salud pública}{15}{section*.18}%
+\contentsline {section}{\hbox to\@tempdima {2.1\hfil } Número de casos de mujeres embarazadas entre 10 y 54 años atendidas por el sistema de salud pública}{15}{section*.18}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Método de planificación familiar entregados por el sistema de salud pública por sexo}{15}{section*.19}%
+\contentsline {section}{\hbox to\@tempdima {2.2\hfil } Métodos de planificación familiar entregados por el sistema de salud pública por sexo}{15}{section*.19}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Método de planificación familiar entregados por sexo, según tipo de método}{16}{section*.20}%
+\contentsline {section}{\hbox to\@tempdima {2.3\hfil } Métodos de planificación familiar entregados por sexo, según tipo de método}{16}{section*.20}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.4\hfil } Nacimientos por edad de la madre, según grupos de edad}{16}{section*.21}%
 \thispagestyle {empty}
@@ -56,7 +56,7 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {2.9\hfil } Número de casos mortalidad materna según causa de muerte}{19}{section*.26}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {2.10\hfil } Defunciones de mujeres por Pueblo, según 12 principales causas de muerte}{20}{section*.27}%
+\contentsline {section}{\hbox to\@tempdima {2.10\hfil } Defunciones de mujeres por Pueblo, según causa de muerte}{20}{section*.27}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
 \contentsline {chapter}{\hbox to\@tempdima {3\hfil }Educación}{21}{section*.28}%

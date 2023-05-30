@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  30 MAY 2023 14:24
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  30 MAY 2023 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2550,7 +2550,7 @@ Package hyperref Info: Anchor `section*.18' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {2.1}
 (hyperref)             text {\numberline {\thesection } Número de casos de muje
-res embarazadas entre 10 y 55 años atendidas por el sistema de salud pública}
+res embarazadas entre 10 y 54 años atendidas por el sistema de salud pública}
 (hyperref)             reference {section*.18}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2568,7 +2568,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 ...Tabla2_01.tex}}{INE - MSPAS - SIGSA 2022}{}
+l.1 ...Tabla2_01.tex}}{INE - MSPAS - SIGSA 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2599,8 +2599,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 1--2
 Package hyperref Info: Anchor `section*.19' on input line 3.
 Package hyperref Info: bookmark on input line 3:
 (hyperref)             thecounter {2.2}
-(hyperref)             text {\numberline {\thesection } Método de planificación
- familiar entregados por el sistema de salud pública por sexo}
+(hyperref)             text {\numberline {\thesection } Métodos de planificació
+n familiar entregados por el sistema de salud pública por sexo}
 (hyperref)             reference {section*.19}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2632,7 +2632,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...Tabla2_02.tex}}{INE - MSPAS - SIGSA 2022}{}
+l.3 ...Tabla2_02.tex}}{INE - MSPAS - SIGSA 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2658,8 +2658,8 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 3--4
 Package hyperref Info: Anchor `section*.20' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {2.3}
-(hyperref)             text {\numberline {\thesection } Método de planificación
- familiar entregados por sexo, según tipo de método}
+(hyperref)             text {\numberline {\thesection } Métodos de planificació
+n familiar entregados por sexo, según tipo de método}
 (hyperref)             reference {section*.20}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -2676,7 +2676,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 ...Tabla2_03.tex}}{INE - MSPAS - SIGSA 2022}{}
+l.5 ...Tabla2_03.tex}}{INE - MSPAS - SIGSA 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2913,7 +2913,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.13 ...icas/Tabla2_07.tex}}{MSPAS - SIGSA 2022}{}
+l.13 ...icas/Tabla2_07.tex}}{MSPAS - SIGSA 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3071,7 +3071,7 @@ Package hyperref Info: Anchor `section*.27' on input line 19.
 Package hyperref Info: bookmark on input line 19:
 (hyperref)             thecounter {2.10}
 (hyperref)             text {\numberline {\thesection } Defunciones de mujeres 
-por Pueblo, según 12 principales causas de muerte}
+por Pueblo, según causa de muerte}
 (hyperref)             reference {section*.27}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -7804,7 +7804,7 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 Here is how much of TeX's memory you used:
  38615 strings out of 476684
  882869 string characters out of 5807583
- 1929012 words of memory out of 5000000
+ 1928012 words of memory out of 5000000
  57464 multiletter control sequences out of 15000+600000
  522293 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

@@ -230,7 +230,7 @@ g3_03 <- tablaLaTeX(data = c3_03,
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_04 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.4"))
-g3_04 <- graficaDobleLinea(c3_04, ruta = paste0(directorioGraficas,"g3_04.tex"), inicio = 89.2,  fin = 96.2)
+g3_04 <- graficaDobleLinea(c3_04, ruta = paste0(directorioGraficas,"g3_04.tex"), inicio = 83.2,  fin = 102.2)
 
 ################################################################################
 # 3.5.	Tasa neta de escolaridad en el nivel primario por sexo, según departamento 
@@ -249,7 +249,7 @@ g3_05 <- tablaLaTeX(c3_05,
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_06 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.6"))
-g3_06 <- graficaDobleLinea(c3_06, ruta = paste0(directorioGraficas,"g3_06.tex"), inicio = 42.8,  fin = 51.1)
+g3_06 <- graficaDobleLinea(c3_06, ruta = paste0(directorioGraficas,"g3_06.tex"), inicio = 32.8,  fin = 61.1)
 
 ################################################################################
 # 3.7.	Tasa neta de escolaridad en el ciclo básico por sexo, según departamento 
@@ -268,7 +268,7 @@ g3_07 <- tablaLaTeX(c3_07,
 
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_08 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.8"))
-g3_08 <- graficaDobleLinea(c3_08, ruta = paste0(directorioGraficas,"g3_08.tex"), inicio = 20.5,  fin = 27.5)
+g3_08 <- graficaDobleLinea(c3_08, ruta = paste0(directorioGraficas,"g3_08.tex"), inicio = 10.5,  fin = 37.5)
 
 ################################################################################
 # 3.9.	Tasa neta de escolaridad en el ciclo diversificado por sexo, según departamento

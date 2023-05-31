@@ -82,11 +82,11 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {3.10\hfil } Tasa de deserción en el nivel primario por sexo}{29}{section*.38}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.11\hfil } Tasa de deserción en el nivel básico por sexo}{29}{section*.39}%
+\contentsline {section}{\hbox to\@tempdima {3.11\hfil } Tasa de deserción en el ciclo básico por sexo}{29}{section*.39}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {3.12\hfil } Tasa de deserción en el nivel primario por sexo, según departamento}{30}{section*.40}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.13\hfil } Tasa de deserción en el nivel básico por sexo, según departamento}{31}{section*.41}%
+\contentsline {section}{\hbox to\@tempdima {3.13\hfil } Tasa de deserción en el ciclo básico por sexo, según departamento}{31}{section*.41}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {3.14\hfil } Tasa de deserción en el ciclo diversificado por sexo}{32}{section*.42}%
 \thispagestyle {empty}

@@ -75,7 +75,7 @@ poblacion2022 <- sum(personasENEIINE$factor)
 poblacionMaya2018 <- nrow(filter(personasCenso, PCP12 == "Maya"))
 
 # Total jefaturas de hogar ENEI 2022
-jefaturas_de_hogar_22 <- filter(personasENEIINE, P03A05 == "Jefe (a) del hogar")
+jefaturas_de_hogar_22 <- filter(personasENEI, P03A05 == "Jefe (a) del hogar")
 total_jefaturas_de_hogar_22 <- sum(jefaturas_de_hogar_22$factor)
 
 # Agregando columna quinqueneo que indica el grupo de edad al que pertenece
@@ -357,11 +357,12 @@ g1_12 <- graficaAnillo(c1_12, nombre = paste0(directorioGraficas,"g1_12.tex"),
 ################################################################################
 # Calculando el número de jefaturas por sexo
 jefaturas_por_sexo <- jefaturas_de_hogar_22 %>% group_by(P03A02) %>% summarize(y = sum(factor))
-jefas <- as.numeric(jefaturas_por_sexo[1,2])
-jefes <- as.numeric(jefaturas_por_sexo[2,2])
+jefes <- as.numeric(jefaturas_por_sexo[1,2])
+jefas <- as.numeric(jefaturas_por_sexo[2,2])
 
 # Uniendo bases de datos de personas (jefaturas) y hogares ENEI 2022
-c1_14 <- merge(x = jefaturas_de_hogar_22, y = hogaresENEIINE, by = "hogar_num")
+c1_14 <- merge(x = jefaturas_de_hogar_22, y = hogaresENEI, by = "hogar_num")
+c1_14$P03A02 <- factor(c1_14$P03A02, levels = c("Mujer", "Hombre"))
 
 # Calculando el número (expandido) de jefaturas por sexo que tiene acceso a agua
 agua <- filter(c1_14, P02B03 == "Tubería_dentro" | P02B03 == "Tubería_fuera") %>%
@@ -395,14 +396,27 @@ electricidad <- filter(c1_14, P02A05C == "Si") %>%
 electricidad[1,2] <- as.numeric(electricidad[1,2])/jefas *100
 electricidad[2,2] <- as.numeric(electricidad[2,2])/jefes *100
 
+# Calculando el porcentaje que tiene acceso a todos los servicios sobre el 100% de cada sexo
+servicios <- filter(c1_14, (P02B03 == "Tubería_dentro" | P02B03 == "Tubería_fuera") & # Filtro ODS Agua
+                      P02B07 != "No_tiene" & # Filtro ODS Saneamiento
+                      (P02B09 == "Servicio_municipal" | P02B09 == "Servicio_privado") & # Filtro ODS Extracción de basura
+                      P02A05C == "Si") %>% # Filtro ODS Electricidad
+  group_by(P03A02) %>%
+  summarize(y = sum(factor.x))
+# Calculando el porcentaje que tiene acceso a electricidad sobre el 100% de cada sexo
+servicios[1,2] <- as.numeric(servicios[1,2])/jefas *100
+servicios[2,2] <- as.numeric(servicios[2,2])/jefes *100
+
 # Creando base de datos para graficar
 agua <- cbind(x = c("agua", "agua"), agua)
 extraccion <- cbind(x = c("extracción de basura", "extracción de basura"), extraccion)
 electricidad <- cbind(x = c("electricidad", "electricidad"), electricidad)
-c1_14 <- data.frame(rbind(agua, extraccion, electricidad)) %>%
+saneamiento <- cbind(x = c("saneamiento", "saneamiento"), saneamiento)
+servicios <- cbind(x = c("servicios básicos", "servicios básicos"), servicios)
+c1_14 <- data.frame(rbind(agua, extraccion, electricidad, saneamiento, servicios)) %>%
   rename(z = P03A02)
-
-g1_14 <- graficaCategorias(c1_14, leyenda = "lado")
+c1_14$z <- factor(c1_14$z, levels = c("Mujer", "Hombre"))
+g1_14 <- graficaCategorias(c1_14, leyenda = "lado", tipo = "barra")
 exportarLatex(nombre = paste0(directorioGraficas,"g1_14.tex"), graph = g1_14)
 
 ################################################################################

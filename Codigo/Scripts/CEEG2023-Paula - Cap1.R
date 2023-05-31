@@ -287,7 +287,7 @@ exportarLatex(nombre = paste0(directorioGraficas, "g1_04.tex"), graph = g1_05)
 # 1.6.	Población por sexo, según tipo de vivienda (PENDIENTE DE TERMINAR)
 ################################################################################
 
-c1_06 <- merge(x = personasENEIINE, y = hogaresENEIINE, by = "hogar_num") %>%
+c1_06 <- merge(x = personasENEI, y = hogaresENEI, by = "hogar_num") %>%
   group_by(P03A02, P02A01) %>%
   summarize(y = sum(factor.x)/poblacion2022 *100) %>%
   mutate(P02A01 = case_when(P02A01 == "Cuarto_vecindad" ~ "Cuarto vecindad",

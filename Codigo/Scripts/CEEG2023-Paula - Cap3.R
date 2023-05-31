@@ -239,8 +239,8 @@ g3_04 <- graficaDobleLinea(c3_04, ruta = paste0(directorioGraficas,"g3_04.tex"),
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_05 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.5"))
 g3_05 <- tablaLaTeX(c3_05,
-                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
-                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2, "2022" = 2),
                     ruta = paste0(directorioGraficas,"g3_05.tex"))
 
 ################################################################################
@@ -258,8 +258,8 @@ g3_06 <- graficaDobleLinea(c3_06, ruta = paste0(directorioGraficas,"g3_06.tex"),
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_07 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.7"))
 g3_07 <- tablaLaTeX(c3_07,
-                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
-                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2, "2022" = 2),
                     ruta = paste0(directorioGraficas,"g3_07.tex"))
 
 ################################################################################
@@ -277,8 +277,8 @@ g3_08 <- graficaDobleLinea(c3_08, ruta = paste0(directorioGraficas,"g3_08.tex"),
 xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\EDUCACIÓN\\EducaciónSinFormato.xlsx")
 c3_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "3.9"))
 g3_09 <- tablaLaTeX(c3_09,
-                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
-                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2),
+                    nombre_columnas = c("Departamento", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres", "Mujeres", "Hombres"),
+                    nombre_grupos = c(" " = 1, "2018" = 2, "2019" = 2, "2020" = 2, "2021" = 2, "2022" = 2),
                     ruta = paste0(directorioGraficas,"g3_09.tex"))
 
 ################################################################################

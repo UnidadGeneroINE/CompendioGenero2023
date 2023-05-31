@@ -88,11 +88,11 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {3.13\hfil } Tasa de deserción en el ciclo básico por sexo, según departamento}{31}{section*.41}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.14\hfil } Tasa de deserción en el ciclo diversificado por sexo}{32}{section*.42}%
+\contentsline {section}{\hbox to\@tempdima {3.14\hfil } Tasa de deserción en el nivel diversificado por sexo, según departamento}{32}{section*.42}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.15\hfil } Proporción de la población matriculada en la universidad por sexo, según tipo de universidad}{32}{section*.43}%
+\contentsline {section}{\hbox to\@tempdima {3.15\hfil } Tasa de deserción en el ciclo diversificado por sexo}{33}{section*.43}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {3.16\hfil } Tasa de deserción en el nivel diversificado por sexo, según departamento}{33}{section*.44}%
+\contentsline {section}{\hbox to\@tempdima {3.16\hfil } Proporción de la población matriculada en la universidad por sexo, según tipo de universidad}{33}{section*.44}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {3.17\hfil } Proporción de la población matriculada en la universidad pública por sexo, según nivel}{34}{section*.45}%
 \thispagestyle {empty}

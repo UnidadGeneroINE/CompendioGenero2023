@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAY 2023 14:58
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAY 2023 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1311,7 +1311,7 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/Tabla2_07.aux) (./Graficas/Tabla2_09.aux) (./Graficas/Tabla2_10.aux
 ) (./Graficas/g3_03.aux) (./Graficas/g3_05.aux) (./Graficas/g3_07.aux)
 (./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux)
-(./Graficas/g3_16.aux) (./Graficas/g3_15.aux) (./Graficas/g3_18.aux)
+(./Graficas/g3_15.aux) (./Graficas/g3_16.aux) (./Graficas/g3_18.aux)
 (./Graficas/g3_19.aux) (./Graficas/g3_21.aux) (./Graficas/Tabla4_04.aux)
 (./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_09.aux) (./Graficas/Tabla4_10.aux
 ) (./Graficas/Tabla5_02.aux) (./Graficas/Tabla5_03.aux)
@@ -2592,7 +2592,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 ...Tabla2_01.tex}}{INE - MSPAS - SIGSA 2023}{}
+l.1 ...abla2_01.tex}}{INE - MSPAS - SIGSA, 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2656,7 +2656,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...Tabla2_02.tex}}{INE - MSPAS - SIGSA 2023}{}
+l.3 ...abla2_02.tex}}{INE - MSPAS - SIGSA, 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2700,7 +2700,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 ...Tabla2_03.tex}}{INE - MSPAS - SIGSA 2023}{}
+l.5 ...abla2_03.tex}}{INE - MSPAS - SIGSA, 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2937,7 +2937,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.13 ...icas/Tabla2_07.tex}}{MSPAS - SIGSA 2023}{}
+l.13 ...cas/Tabla2_07.tex}}{MSPAS - SIGSA, 2023}{}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3971,7 +3971,7 @@ Package hyperref Info: Anchor `section*.42' on input line 27.
 Package hyperref Info: bookmark on input line 27:
 (hyperref)             thecounter {3.14}
 (hyperref)             text {\numberline {\thesection } Tasa de deserción en el
- ciclo diversificado por sexo}
+ nivel diversificado por sexo, según departamento}
 (hyperref)             reference {section*.42}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -3980,35 +3980,45 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 27--27
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.14[]$ $| 
  []
 
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 27.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 27.
-(./Graficas/g3_14.tex)
-Overfull \hbox (28.6007pt too wide) in paragraph at lines 27--27
- [][] 
- []
-
-(./Descripciones/des3_14.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 27--27
- []|[]| 
- []
-
 
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 27--27
 [][]
  []
 
 
-Overfull \hbox (67.4098pt too wide) in paragraph at lines 27--27
-[] 
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 27.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 27.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 ...orcionados por el Ministerio de Educación}
+                                                   %14
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\openout2 = `Graficas/g3_15.aux'.
+
+(./Graficas/g3_15.tex) (./Descripciones/des3_15.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+
  []
 
 
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 27--28
-[]        
+Overfull \hbox (1.37164pt too wide) in paragraph at lines 27--28
+[]  
  []
 
 
@@ -4038,8 +4048,8 @@ Package hyperref Info: Anchor `page.31' on input line 29.
 Package hyperref Info: Anchor `section*.43' on input line 29.
 Package hyperref Info: bookmark on input line 29:
 (hyperref)             thecounter {3.15}
-(hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión matriculada en la universidad por sexo, según tipo de universidad}
+(hyperref)             text {\numberline {\thesection } Tasa de deserción en el
+ ciclo diversificado por sexo}
 (hyperref)             reference {section*.43}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -4048,104 +4058,35 @@ Overfull \hbox (4.15552pt too wide) in paragraph at lines 29--29
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.15[]$ $| 
  []
 
-(./Descripciones/des3_16.tex)
-Overfull \hbox (4.51688pt too wide) in paragraph at lines 29--29
-[]|[]| 
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 29.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 29.
+(./Graficas/g3_14.tex)
+Overfull \hbox (28.6007pt too wide) in paragraph at lines 29--29
+ [][] 
  []
 
-Package hyperref Info: Reference (link) `Hfootnote.6' on input line 29.
-Package hyperref Info: Anchor `Hfootnote.6' on input line 29.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 29.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 29.
+(./Descripciones/des3_14.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 29--29
+ []|[]| 
+ []
 
-! LaTeX Error: There's no line here to end.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 ...Universidades públicas y privadas, 2023}{}
-                                                   %15
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\openout2 = `Graficas/g3_16.aux'.
-
-(./Graficas/g3_16.tex
-Package hyperref Info: Reference (link) `Hfootnote.7' on input line 10.
-Package hyperref Info: Anchor `Hfootnote.7' on input line 10.
-)
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 29--29
 [][]
  []
 
 
-Overfull \hbox (44.82545pt too wide) in paragraph at lines 29--29
+Overfull \hbox (67.4098pt too wide) in paragraph at lines 29--29
 [] 
  []
 
 
 Overfull \hbox (9.60553pt too wide) in paragraph at lines 29--30
 []        
- []
-
-Package hyperref Info: Anchor `section*.44' on input line 31.
-Package hyperref Info: bookmark on input line 31:
-(hyperref)             thecounter {3.16}
-(hyperref)             text {\numberline {\thesection } Tasa de deserción en el
- nivel diversificado por sexo, según departamento}
-(hyperref)             reference {section*.44}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-
-Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.16[]$ $| 
- []
-
-
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 31--31
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-
- []
-
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 31.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 31.
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 ...orcionados por el Ministerio de Educación}
-                                                   %16
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\openout2 = `Graficas/g3_15.aux'.
-
-(./Graficas/g3_15.tex) (./Descripciones/des3_15.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-
- []
-
-
-Overfull \hbox (1.37164pt too wide) in paragraph at lines 31--32
-[]  
  []
 
 
@@ -4166,12 +4107,71 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.32' on input line 33.
+Package hyperref Info: Anchor `page.32' on input line 31.
 [32
 
 
 
 ]
+Package hyperref Info: Anchor `section*.44' on input line 31.
+Package hyperref Info: bookmark on input line 31:
+(hyperref)             thecounter {3.16}
+(hyperref)             text {\numberline {\thesection } Proporción de la poblac
+ión matriculada en la universidad por sexo, según tipo de universidad}
+(hyperref)             reference {section*.44}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.16[]$ $| 
+ []
+
+(./Descripciones/des3_16.tex)
+Overfull \hbox (4.51688pt too wide) in paragraph at lines 31--31
+[]|[]| 
+ []
+
+Package hyperref Info: Reference (link) `Hfootnote.6' on input line 31.
+Package hyperref Info: Anchor `Hfootnote.6' on input line 31.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 31.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 31.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ...Universidades públicas y privadas, 2023}{}
+                                                   %16
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\openout2 = `Graficas/g3_16.aux'.
+
+(./Graficas/g3_16.tex
+Package hyperref Info: Reference (link) `Hfootnote.7' on input line 10.
+Package hyperref Info: Anchor `Hfootnote.7' on input line 10.
+)
+Overfull \hbox (1.10617pt too wide) in paragraph at lines 31--31
+[][]
+ []
+
+
+Overfull \hbox (44.82545pt too wide) in paragraph at lines 31--31
+[] 
+ []
+
+
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 31--32
+[]        
+ []
+
 Package hyperref Info: Anchor `section*.45' on input line 33.
 Package hyperref Info: bookmark on input line 33:
 (hyperref)             thecounter {3.17}
@@ -4750,7 +4750,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.7 ...a4_04.tex}}{INE - ENEI 2022, ENEI 2 2018}{}
-                                                  
+                                                   %4
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -4955,7 +4955,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.15 ...raficas/Tabla4_08.tex}}{INE - ENEI 2022}{}
-                                                  
+                                                   %8
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5068,7 +5068,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.19 ...el Desarrollo de la MIPYME, MINECO 2023}{}
-                                                  
+                                                   %10
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5130,8 +5130,8 @@ Overfull \hbox (44.82545pt too wide) in paragraph at lines 21--21
  []
 
 
-Overfull \hbox (33.41606pt too wide) in paragraph at lines 19--22
-[]\TU/OpenSans-CondLight.ttf(0)/m/n/10.95 00      []
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 19--22
+[]        
  []
 
 
@@ -5505,7 +5505,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...porcionados por el Ministerio Público 2023}
+l.3 ...orcionados por el Ministerio Público, 2023}
                                                   {} %2
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5524,7 +5524,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...porcionados por el Ministerio Público 2023}
+l.3 ...orcionados por el Ministerio Público, 2023}
                                                   {} %2
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5594,7 +5594,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 ...porcionados por el Ministerio Público 2023}
+l.5 ...orcionados por el Ministerio Públic,o 2023}
                                                   {} %3
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5673,7 +5673,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.7 ...porcionados por el Ministerio Público 2023}
+l.7 ...orcionados por el Ministerio Público, 2023}
                                                   {} %4
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5742,7 +5742,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...rcionados por el Ministerio Público 2023}{}
+l.9 ...cionados por el Ministerio Público, 2023}{}
                                                    %5
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5822,7 +5822,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ...cionados por el Ministerio Público 2023}{}
+l.11 ...ionados por el Ministerio Público, 2023}{}
                                                    %6
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5901,7 +5901,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.13 ...es del INE, con los datos del INACIF 2023}
+l.13 ...s del INE, con los datos del INACIF, 2023}
                                                   {} %7
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6066,7 +6066,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 ...nes nombradas en el Decreto 97-96 20223}{}
+l.19 ...nes nombradas en el Decreto 97-96, 2023}{}
                                                    %10
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6151,7 +6151,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.21 ...ones nombradas en el Decreto 97-96 2023}{}
+l.21 ...nes nombradas en el Decreto 97-96, 2023}{}
                                                    %11
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6217,7 +6217,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 ...ciones nombradas en el Decreto 97-96 2023}
+l.23 ...iones nombradas en el Decreto 97-96, 2023}
                                                   {} %12
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6266,7 +6266,7 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 15--15
 ! Missing } inserted.
 <inserted text> 
                 }
-l.23 ...ciones nombradas en el Decreto 97-96 2023}
+l.23 ...iones nombradas en el Decreto 97-96, 2023}
                                                   {} %12
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -6405,7 +6405,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 ...s por el Ministerio de Gobernación 2023}{}
+l.27 ... por el Ministerio de Gobernación, 2023}{}
                                                    %14
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6464,7 +6464,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 ...dos por el Ministerio de Gobernación 2023}
+l.29 ...os por el Ministerio de Gobernación, 2023}
                                                   {} %15
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7688,7 +7688,7 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/Tabla2_07.aux) (./Graficas/Tabla2_09.aux) (./Graficas/Tabla2_10.aux
 ) (./Graficas/g3_03.aux) (./Graficas/g3_05.aux) (./Graficas/g3_07.aux)
 (./Graficas/g3_09.aux) (./Graficas/g3_11.aux) (./Graficas/g3_13.aux)
-(./Graficas/g3_16.aux) (./Graficas/g3_15.aux) (./Graficas/g3_18.aux)
+(./Graficas/g3_15.aux) (./Graficas/g3_16.aux) (./Graficas/g3_18.aux)
 (./Graficas/g3_19.aux) (./Graficas/g3_21.aux) (./Graficas/Tabla4_04.aux)
 (./Graficas/Tabla4_08.aux) (./Graficas/Tabla4_09.aux) (./Graficas/Tabla4_10.aux
 ) (./Graficas/Tabla5_02.aux) (./Graficas/Tabla5_03.aux)

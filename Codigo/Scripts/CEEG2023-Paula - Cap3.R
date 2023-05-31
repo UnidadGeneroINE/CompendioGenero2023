@@ -449,3 +449,7 @@ filter(all(P03A05 %in% c("Jefe (a) del hogar", "Esposo (a) o compañero (a)"))) 
 subset(duplicated(hogar_num) | duplicated(hogar_num, fromLast = TRUE)) %>%
 filter(length(unique(P03A02)) < n()) #%>%
 # select(hogar_num, P03A05, P03A02) 
+
+
+
+temp <- person

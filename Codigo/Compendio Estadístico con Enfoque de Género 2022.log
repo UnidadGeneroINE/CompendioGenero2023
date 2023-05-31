@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAY 2023 12:18
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  31 MAY 2023 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1318,9 +1318,8 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/Tabla5_04.aux) (./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux
 ) (./Graficas/g5_07.aux) (./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux)
 (./Graficas/Tabla5_11.aux) (./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux
-) (./Graficas/Tabla5_15.aux) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux)
-(./Graficas/anexo6_01A.aux) (./Graficas/anexo6_01B.aux)
-(./Graficas/anexo6_01C.aux))
+) (./Graficas/Tabla5_15.aux) (./Graficas/g6_01.aux) (./Graficas/anexo6_01A.aux)
+(./Graficas/anexo6_01B.aux) (./Graficas/anexo6_01C.aux))
 \openout1 = `"Compendio Estadístico con Enfoque de Género 2022.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1683,16 +1682,15 @@ Package hyperref Info: Reference (link) `section*.79' on input line 169.
 Package hyperref Info: Reference (link) `section*.80' on input line 171.
 Package hyperref Info: Reference (link) `section*.81' on input line 173.
 Package hyperref Info: Reference (link) `section*.82' on input line 175.
-Package hyperref Info: Reference (link) `section*.83' on input line 177.
-Package hyperref Info: Reference (link) `section*.84' on input line 180.
+Package hyperref Info: Reference (link) `section*.83' on input line 178.
+Package hyperref Info: Reference (link) `section*.84' on input line 181.
 Package hyperref Info: Reference (link) `section*.85' on input line 183.
 Package hyperref Info: Reference (link) `section*.86' on input line 185.
 Package hyperref Info: Reference (link) `section*.87' on input line 187.
-Package hyperref Info: Reference (link) `section*.88' on input line 189.
+Package hyperref Info: Reference (link) `section*.87' on input line 190.
 Package hyperref Info: Reference (link) `section*.88' on input line 192.
-Package hyperref Info: Reference (link) `section*.89' on input line 194.
-Package hyperref Info: Reference (link) `section*.90' on input line 197.
-Package hyperref Info: Reference (link) `section*.91' on input line 200.
+Package hyperref Info: Reference (link) `section*.89' on input line 195.
+Package hyperref Info: Reference (link) `section*.90' on input line 198.
 )
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
@@ -5507,8 +5505,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...porcionados por el Ministerio Público 2022}
-                                                  {}
+l.3 ...porcionados por el Ministerio Público 2023}
+                                                  {} %2
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5526,8 +5524,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 ...porcionados por el Ministerio Público 2022}
-                                                  {}
+l.3 ...porcionados por el Ministerio Público 2023}
+                                                  {} %2
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5596,8 +5594,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 ...porcionados por el Ministerio Público 2022}
-                                                  {}
+l.5 ...porcionados por el Ministerio Público 2023}
+                                                  {} %3
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5675,8 +5673,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.7 ...porcionados por el Ministerio Público 2022}
-                                                  {}
+l.7 ...porcionados por el Ministerio Público 2023}
+                                                  {} %4
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5744,8 +5742,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...rcionados por el Ministerio Público 2022}{}
-                                                  
+l.9 ...rcionados por el Ministerio Público 2023}{}
+                                                   %5
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5824,8 +5822,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ...cionados por el Ministerio Público 2022}{}
-                                                  
+l.11 ...cionados por el Ministerio Público 2023}{}
+                                                   %6
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5903,7 +5901,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.13 ...s del INE, con los datos del INACIF, 2023}
+l.13 ...es del INE, con los datos del INACIF 2023}
                                                   {} %7
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6068,8 +6066,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 ...ones nombradas en el Decreto 97-96 2022}{}
-                                                  
+l.19 ...nes nombradas en el Decreto 97-96 20223}{}
+                                                   %10
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -6153,8 +6151,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.21 ...ones nombradas en el Decreto 97-96 2022}{}
-                                                  
+l.21 ...ones nombradas en el Decreto 97-96 2023}{}
+                                                   %11
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -6219,8 +6217,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 ...ciones nombradas en el Decreto 97-96 2022}
-                                                  {}
+l.23 ...ciones nombradas en el Decreto 97-96 2023}
+                                                  {} %12
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -6268,8 +6266,8 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 15--15
 ! Missing } inserted.
 <inserted text> 
                 }
-l.23 ...ciones nombradas en el Decreto 97-96 2022}
-                                                  {}
+l.23 ...ciones nombradas en el Decreto 97-96 2023}
+                                                  {} %12
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -6407,8 +6405,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 ...s por el Ministerio de Gobernación 2022}{}
-                                                  
+l.27 ...s por el Ministerio de Gobernación 2023}{}
+                                                   %14
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -6466,8 +6464,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 ...dos por el Ministerio de Gobernación 2022}
-                                                  {}
+l.29 ...dos por el Ministerio de Gobernación 2023}
+                                                  {} %15
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -6484,7 +6482,7 @@ Overfull \hbox (1.37164pt too wide) in paragraph at lines 29--30
 []  
  []
 
-
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
@@ -6502,72 +6500,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.58' on input line 31.
+Package hyperref Info: Anchor `page.58' on input line 50.
 [58
 
 
 
 ]
-Package hyperref Info: Anchor `section*.83' on input line 31.
-Package hyperref Info: bookmark on input line 31:
-(hyperref)             thecounter {5.16}
-(hyperref)             text {\numberline {\thesection } Estado conyugal en pers
-onas entre 12 a 17 años por sexo}
-(hyperref)             reference {section*.83}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-
-Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
-[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 5.16[]$ $| 
- []
-
-
-Overfull \hbox (1.10617pt too wide) in paragraph at lines 31--31
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-
- []
-
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 31.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 31.
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 ...Graficas/Tabla5_16.tex}}{INE - Censo 2018}
-                                                  {}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\openout2 = `Graficas/Tabla5_16.aux'.
-
-(./Graficas/Tabla5_16.tex) (./Descripciones/des5_16.tex
-Package hyperref Info: Reference (link) `Hfootnote.37' on input line 1.
-Package hyperref Info: Anchor `Hfootnote.37' on input line 1.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-
- []
-
-
-Overfull \hbox (1.37164pt too wide) in paragraph at lines 31--32
-[]  
- []
-
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -6589,33 +6527,17 @@ Package hyperref Info: Anchor `page.59' on input line 50.
 
 
 ]
-File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
-<use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
-
-Overfull \hbox (90.3375pt too wide) has occurred while \output is active
- [][] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 803.61624pt, for example:
-(fancyhdr)                \setlength{\headheight}{803.61624pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
-
 Package hyperref Info: Anchor `page.60' on input line 50.
-[60
-
+ [60
 
 
 ]
-Package hyperref Info: Anchor `section*.84' on input line 50.
+Package hyperref Info: Anchor `section*.83' on input line 50.
 Package hyperref Info: bookmark on input line 50:
 (hyperref)             thecounter {6}
 (hyperref)             text {\numberline {\thechapter }Participación \mbox {soc
 iopolítica}}
-(hyperref)             reference {section*.84}
+(hyperref)             reference {section*.83}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -6646,21 +6568,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--50
  []
 
 Package hyperref Info: Anchor `page.61' on input line 50.
-[61
-
-
-]
+[61]
 Package hyperref Info: Anchor `page.62' on input line 50.
  [62
 
 
 ] (./Capitulos/capitulo6.tex
-Package hyperref Info: Anchor `section*.85' on input line 1.
+Package hyperref Info: Anchor `section*.84' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {6.1}
 (hyperref)             text {\numberline {\thesection } Participación en los Co
 nsejos de Desarrollo por sexo}
-(hyperref)             reference {section*.85}
+(hyperref)             reference {section*.84}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
@@ -6718,12 +6637,12 @@ Overfull \hbox (1.37164pt too wide) in paragraph at lines 1--2
 []  
  []
 
-Package hyperref Info: Anchor `section*.86' on input line 3.
+Package hyperref Info: Anchor `section*.85' on input line 3.
 Package hyperref Info: bookmark on input line 3:
 (hyperref)             thecounter {6.2}
 (hyperref)             text {\numberline {\thesection } Personas electas para e
 l Organismo Legislativo por sexo }
-(hyperref)             reference {section*.86}
+(hyperref)             reference {section*.85}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -6776,12 +6695,12 @@ Package hyperref Info: Anchor `page.63' on input line 5.
 
 
 ]
-Package hyperref Info: Anchor `section*.87' on input line 5.
+Package hyperref Info: Anchor `section*.86' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {6.3}
 (hyperref)             text {\numberline {\thesection } Mujeres magistradas en 
 el Organismo Judicial}
-(hyperref)             reference {section*.87}
+(hyperref)             reference {section*.86}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
  (./Descripciones/des6_04.tex)
@@ -6810,12 +6729,12 @@ Overfull \hbox (9.60553pt too wide) in paragraph at lines 5--6
 []        
  []
 
-Package hyperref Info: Anchor `section*.88' on input line 7.
+Package hyperref Info: Anchor `section*.87' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {6.4}
 (hyperref)             text {\numberline {\thesection } Mujeres electas para al
 caldías}
-(hyperref)             reference {section*.88}
+(hyperref)             reference {section*.87}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -6889,7 +6808,7 @@ Package hyperref Info: Anchor `page.66' on input line 53.
 Package hyperref Info: bookmark on input line 53:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
-(hyperref)             reference {section*.88}
+(hyperref)             reference {section*.87}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.67' on input line 53.
@@ -6899,11 +6818,11 @@ Package hyperref Info: Anchor `page.68' on input line 53.
 
 
 ]
-Package hyperref Info: Anchor `section*.89' on input line 55.
+Package hyperref Info: Anchor `section*.88' on input line 55.
 Package hyperref Info: bookmark on input line 55:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Información Ampliada}
-(hyperref)             reference {section*.89}
+(hyperref)             reference {section*.88}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -7023,11 +6942,11 @@ Package hyperref Info: Anchor `page.74' on input line 57.
 
 
 ]
-Package hyperref Info: Anchor `section*.90' on input line 57.
+Package hyperref Info: Anchor `section*.89' on input line 57.
 Package hyperref Info: bookmark on input line 57:
 (hyperref)             thecounter {B}
 (hyperref)             text {\numberline {\thechapter }Glosario}
-(hyperref)             reference {section*.90}
+(hyperref)             reference {section*.89}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -7640,11 +7559,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Info: Anchor `page.80' on input line 59.
 [80]
-Package hyperref Info: Anchor `section*.91' on input line 59.
+Package hyperref Info: Anchor `section*.90' on input line 59.
 Package hyperref Info: bookmark on input line 59:
 (hyperref)             thecounter {C}
 (hyperref)             text {\numberline {\thechapter }Fuentes}
-(hyperref)             reference {section*.91}
+(hyperref)             reference {section*.90}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
@@ -7776,18 +7695,17 @@ LaTeX Info: Redefining \ttfamily on input line 18.
 (./Graficas/Tabla5_04.aux) (./Graficas/Tabla5_05.aux) (./Graficas/Tabla5_06.aux
 ) (./Graficas/g5_07.aux) (./Graficas/g5_08.aux) (./Graficas/Tabla5_10.aux)
 (./Graficas/Tabla5_11.aux) (./Graficas/Tabla5_12.aux) (./Graficas/Tabla5_14.aux
-) (./Graficas/Tabla5_15.aux) (./Graficas/Tabla5_16.aux) (./Graficas/g6_01.aux)
-(./Graficas/anexo6_01A.aux) (./Graficas/anexo6_01B.aux)
-(./Graficas/anexo6_01C.aux))
+) (./Graficas/Tabla5_15.aux) (./Graficas/g6_01.aux) (./Graficas/anexo6_01A.aux)
+(./Graficas/anexo6_01B.aux) (./Graficas/anexo6_01C.aux))
 Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Género
  2022".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38602 strings out of 476684
- 882825 string characters out of 5807583
+ 38566 strings out of 476684
+ 881637 string characters out of 5807583
  1928012 words of memory out of 5000000
- 57456 multiletter control sequences out of 15000+600000
+ 57430 multiletter control sequences out of 15000+600000
  522293 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,30n,103p,1089b,1481s stack positions out of 10000i,1000n,20000p,200000b,200000s

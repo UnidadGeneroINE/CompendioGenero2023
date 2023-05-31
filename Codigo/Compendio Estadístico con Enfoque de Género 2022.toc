@@ -174,28 +174,26 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {5.15\hfil } Hombres privados de libertad por delitos relacionados con violencia contra la mujer }{59}{section*.82}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {5.16\hfil } Estado conyugal en personas entre 12 a 17 años por sexo}{60}{section*.83}%
-\thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación \mbox {sociopolítica}}{61}{section*.84}%
+\contentsline {chapter}{\hbox to\@tempdima {6\hfil }Participación \mbox {sociopolítica}}{61}{section*.83}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
-\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Participación en los Consejos de Desarrollo por sexo}{63}{section*.85}%
+\contentsline {section}{\hbox to\@tempdima {6.1\hfil } Participación en los Consejos de Desarrollo por sexo}{63}{section*.84}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Personas electas para el Organismo Legislativo por sexo }{64}{section*.86}%
+\contentsline {section}{\hbox to\@tempdima {6.2\hfil } Personas electas para el Organismo Legislativo por sexo }{64}{section*.85}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres magistradas en el Organismo Judicial}{64}{section*.87}%
+\contentsline {section}{\hbox to\@tempdima {6.3\hfil } Mujeres magistradas en el Organismo Judicial}{64}{section*.86}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {6.4\hfil } Mujeres electas para alcaldías}{65}{section*.88}%
+\contentsline {section}{\hbox to\@tempdima {6.4\hfil } Mujeres electas para alcaldías}{65}{section*.87}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }
-\contentsline {chapter}{APÉNDICES}{67}{section*.88}%
+\contentsline {chapter}{APÉNDICES}{67}{section*.87}%
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Información Ampliada}{69}{section*.89}%
+\contentsline {chapter}{\hbox to\@tempdima {A\hfil }Información Ampliada}{69}{section*.88}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {B\hfil }Glosario}{75}{section*.90}%
+\contentsline {chapter}{\hbox to\@tempdima {B\hfil }Glosario}{75}{section*.89}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 
 \addvspace {0.6\baselineskip }\color {color3}
-\contentsline {chapter}{\hbox to\@tempdima {C\hfil }Fuentes}{81}{section*.91}%
+\contentsline {chapter}{\hbox to\@tempdima {C\hfil }Fuentes}{81}{section*.90}%
 \color {color1}\setlength \sp@ce@skip {0.2\baselineskip }\vskip \sp@ce@skip 

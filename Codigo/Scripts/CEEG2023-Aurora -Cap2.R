@@ -33,7 +33,7 @@ library(tibble) #install.packages("tibble")
 
 # Rutas del directorio de bases y gráficas
 directorioBases <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\"
-BasesSalud <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\SALUD\\"
+BasesSalud <- "C:\\Users\\pgalvez\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Bases\\datos_administrativos\\Indicadores_de_Género\\SALUD\\"
 directorioGraficas <- "C:\\Users\\Unidadgenero\\OneDrive - ine.gob.gt\\Documentos\\Github\\CompendioGenero2023\\Codigo\\Graficas\\"
 
 anual(color1 = rgb(54,50,131, maxColorValue = 255), color2 = rgb(116, 112, 200, maxColorValue = 255))
@@ -147,7 +147,7 @@ Datos_Salud <- paste0(BasesSalud, "CapSalud.xlsx")
 c2_08 <- data.frame(read.xlsx(xlsxFile = Datos_Salud, sheet = "2_8"))
 
 #Grafica g2_08
-g2_08 <- graficaLinea(c2_08, inicio = -1, ancho = 1.5, precision=2, escala = "normal", rotar = F, final = 1)
+g2_08 <- graficaLinea(c2_08, inicio = 4.5, ancho = 1.5, precision=2, escala = "normal", rotar = F, final = 4.5)
 
 # Enviar a Latex
 exportarLatex(nombre = paste0(directorioGraficas,"g2_08.tex"),

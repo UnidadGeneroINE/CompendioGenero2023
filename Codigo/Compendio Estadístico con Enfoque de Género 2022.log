@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  1 JUN 2023 15:15
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  1 JUN 2023 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1924,11 +1924,6 @@ Overfull \hbox (38.82619pt too wide) in paragraph at lines 7--7
  []
 
 (./Descripciones/des1_04.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--7
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
  []
@@ -5616,11 +5611,6 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 (./Descripciones/des5_02.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
 
  []

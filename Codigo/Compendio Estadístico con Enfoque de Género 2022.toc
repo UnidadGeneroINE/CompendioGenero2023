@@ -136,9 +136,9 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {4.13\hfil } Mujeres jefas de hogar por número de hijas(os) en la Población Ocupada}{45}{section*.64}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.14\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por sexo}{46}{section*.65}%
+\contentsline {section}{\hbox to\@tempdima {4.14\hfil } Proporción de tiempo dedicado a quehaceres \mbox {domésticos} y cuidados no remunerados por sexo}{46}{section*.65}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.15\hfil } Proporción de tiempo dedicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}{46}{section*.66}%
+\contentsline {section}{\hbox to\@tempdima {4.15\hfil } Proporción de tiempo dedicado a quehaceres \mbox {domésticos} y cuidados no remunerados por grupos de edad}{46}{section*.66}%
 \thispagestyle {empty}
 \addvspace {0.6\baselineskip }\color {color3}
 \contentsline {chapter}{\hbox to\@tempdima {5\hfil }Violencia}{47}{section*.67}%

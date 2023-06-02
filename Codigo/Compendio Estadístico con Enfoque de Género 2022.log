@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  1 JUN 2023 15:26
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  2 JUN 2023 09:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2965,7 +2965,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.13 ...cas/Tabla2_07.tex}}{MSPAS - SIGSA, 2023}{}
-                                                  
+                                                   %7
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5350,13 +5350,19 @@ Package hyperref Info: Anchor `section*.65' on input line 30.
 Package hyperref Info: bookmark on input line 30:
 (hyperref)             thecounter {4.14}
 (hyperref)             text {\numberline {\thesection } Proporción de tiempo de
-dicado a quehaceres domésticos y cuidados no remunerados por sexo}
+dicado a quehaceres \mbox {domésticos} y cuidados no remunerados por sexo}
 (hyperref)             reference {section*.65}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 30--30
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 4.14[]$ $| 
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 30--30
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de tiempo dedicado a qu
+ehaceres
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -5386,13 +5392,20 @@ Package hyperref Info: Anchor `section*.66' on input line 32.
 Package hyperref Info: bookmark on input line 32:
 (hyperref)             thecounter {4.15}
 (hyperref)             text {\numberline {\thesection } Proporción de tiempo de
-dicado a quehaceres domésticos y cuidados no remunerados por grupos de edad}
+dicado a quehaceres \mbox {domésticos} y cuidados no remunerados por grupos de 
+edad}
 (hyperref)             reference {section*.66}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 32--32
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 4.15[]$ $| 
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 32--32
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de tiempo dedicado a qu
+ehaceres
  []
 
 (./Descripciones/des4_16.tex)

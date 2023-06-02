@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  2 JUN 2023 09:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  2 JUN 2023 09:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2417,13 +2417,19 @@ Package hyperref Info: Anchor `section*.14' on input line 27.
 Package hyperref Info: bookmark on input line 27:
 (hyperref)             thecounter {1.13}
 (hyperref)             text {\numberline {\thesection } Jefatura de hogar por s
-exo, según dominio de estudio }
+exo, según dominio de \mbox {estudio} }
 (hyperref)             reference {section*.14}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 27--27
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 1.13[]$ $| 
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 27--27
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Jefatura de hogar por sexo, según 
+dominio de
  []
 
 (./Descripciones/des1_15.tex
@@ -2946,17 +2952,22 @@ Package hyperref Info: Anchor `section*.24' on input line 13.
 Package hyperref Info: bookmark on input line 13:
 (hyperref)             thecounter {2.7}
 (hyperref)             text {\numberline {\thesection } Número de casos de muje
-res seropositivas embarazadas entre 15 y 49 años por Pueblo}
+res seropositivas \mbox {embarazadas} entre 15 y 49 años por Pueblo}
 (hyperref)             reference {section*.24}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 13.
-LaTeX Info: Symbol \texttwelveudash not provided by
-            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
-            Default family used instead on input line 13.
 
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Número de casos de mujeres seropos
+itivas
+ []
+
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 13.
+LaTeX Info: Symbol \texttwelveudash not provided by
+            font family OpenSans-CondLight.ttf(0) in TS1 encoding.
+            Default family used instead on input line 13.
 
 ! LaTeX Error: There's no line here to end.
 
@@ -3874,7 +3885,7 @@ Package hyperref Info: Anchor `section*.40' on input line 23.
 Package hyperref Info: bookmark on input line 23:
 (hyperref)             thecounter {3.12}
 (hyperref)             text {\numberline {\thesection } Tasa de deserción en el
- nivel primario por sexo, según departamento}
+ nivel primario por \mbox {sexo}, \mbox {según} departamento}
 (hyperref)             reference {section*.40}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -4187,13 +4198,19 @@ Package hyperref Info: Anchor `section*.44' on input line 31.
 Package hyperref Info: bookmark on input line 31:
 (hyperref)             thecounter {3.16}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión matriculada en la universidad por sexo, según tipo de universidad}
+ión matriculada en la \mbox {universidad} por sexo, según tipo de universidad}
 (hyperref)             reference {section*.44}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 31--31
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.16[]$ $| 
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 31--31
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población matricu
+lada en la
  []
 
 (./Descripciones/des3_16.tex)
@@ -4246,13 +4263,19 @@ Package hyperref Info: Anchor `section*.45' on input line 33.
 Package hyperref Info: bookmark on input line 33:
 (hyperref)             thecounter {3.17}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión matriculada en la universidad pública por sexo, según nivel}
+ión matriculada en la \mbox {universidad} pública por sexo, según nivel}
 (hyperref)             reference {section*.45}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 33--33
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.17[]$ $| 
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 33--33
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población matricu
+lada en la
  []
 
 Package hyperref Info: Reference (link) `Hfootnote.9' on input line 33.
@@ -4311,13 +4334,19 @@ Package hyperref Info: Anchor `section*.46' on input line 35.
 Package hyperref Info: bookmark on input line 35:
 (hyperref)             thecounter {3.18}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión matriculada en universidades privadas por sexo, según nivel}
+ión matriculada en \mbox {universidades} privadas por sexo, según nivel}
 (hyperref)             reference {section*.46}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 35--35
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.18[]$ $| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población matricu
+lada en
  []
 
 (./Descripciones/des3_18.tex)
@@ -4369,13 +4398,19 @@ Package hyperref Info: Anchor `section*.47' on input line 37.
 Package hyperref Info: bookmark on input line 37:
 (hyperref)             thecounter {3.19}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión graduada de la universidad por sexo, según tipo de universidad}
+ión graduada de la \mbox {universidad} por sexo, según tipo de universidad}
 (hyperref)             reference {section*.47}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 37--37
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.19[]$ $| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población graduad
+a de la
  []
 
 Package hyperref Info: Reference (link) `Hfootnote.12' on input line 37.
@@ -4423,13 +4458,19 @@ Package hyperref Info: Anchor `section*.48' on input line 39.
 Package hyperref Info: bookmark on input line 39:
 (hyperref)             thecounter {3.20}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión graduada de la universidad pública por sexo, según nivel}
+ión graduada de la \mbox {universidad} pública por sexo, según nivel}
 (hyperref)             reference {section*.48}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 39--39
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.20[]$ $| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población graduad
+a de la
  []
 
 (./Descripciones/des3_20.tex)
@@ -4493,13 +4534,19 @@ Package hyperref Info: Anchor `section*.49' on input line 41.
 Package hyperref Info: bookmark on input line 41:
 (hyperref)             thecounter {3.21}
 (hyperref)             text {\numberline {\thesection } Proporción de la poblac
-ión graduada de universidades privadas por sexo, según nivel}
+ión graduada de \mbox {universidades} privadas por sexo, según nivel}
 (hyperref)             reference {section*.49}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 41--41
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 3.21[]$ $| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Proporción de la población graduad
+a de
  []
 
 Package hyperref Info: Reference (link) `Hfootnote.15' on input line 41.
@@ -4822,7 +4869,7 @@ Package hyperref Info: Anchor `section*.55' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {4.4}
 (hyperref)             text {\numberline {\thesection } Tasa de participación e
-conómica por dominio de estudio, sexo y estado conyugal }
+conómica por dominio de \mbox {estudio}, sexo y estado conyugal }
 (hyperref)             reference {section*.55}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -4944,10 +4991,16 @@ Package hyperref Info: Anchor `section*.58' on input line 13.
 Package hyperref Info: bookmark on input line 13:
 (hyperref)             thecounter {4.7}
 (hyperref)             text {\numberline {\thesection } Población Ocupada por s
-exo, según categoría ocupacional}
+exo, según categoría \mbox {ocupacional}}
 (hyperref)             reference {section*.58}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
+
+Underfull \hbox (badness 5388) in paragraph at lines 13--13
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Población Ocupada por sexo, según 
+categoría
+ []
+
 
 Overfull \hbox (1.10617pt too wide) in paragraph at lines 13--13
 [][]
@@ -5084,11 +5137,17 @@ Package hyperref Info: Anchor `section*.60' on input line 17.
 Package hyperref Info: bookmark on input line 17:
 (hyperref)             thecounter {4.9}
 (hyperref)             text {\numberline {\thesection } Créditos otorgados a la
- pequeña y mediana empresa por sexo}
+ pequeña y mediana \mbox {empresa} por sexo}
 (hyperref)             reference {section*.60}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
- (./Descripciones/des4_09.tex)
+
+Underfull \hbox (badness 6625) in paragraph at lines 17--17
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Créditos otorgados a la pequeña y 
+mediana
+ []
+
+(./Descripciones/des4_09.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 17--17
 []|[]| 
  []
@@ -5120,13 +5179,25 @@ Package hyperref Info: Anchor `section*.61' on input line 19.
 Package hyperref Info: bookmark on input line 19:
 (hyperref)             thecounter {4.10}
 (hyperref)             text {\numberline {\thesection } Créditos otorgados a la
- pequeña y mediana empresa por sexo, según rama de actividad económica}
+ pequeña y mediana \mbox {empresa} por sexo, según rama de actividad \mbox {eco
+nómica}}
 (hyperref)             reference {section*.61}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 19--19
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 4.10[]$ $| 
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 19--19
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Créditos otorgados a la pequeña y 
+mediana
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 19--19
+[] \TU/OpenSans-CondLight.ttf(0)/b/n/20.74 por sexo, según rama de actividad
  []
 
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -5174,13 +5245,19 @@ Package hyperref Info: Anchor `section*.62' on input line 21.
 Package hyperref Info: bookmark on input line 21:
 (hyperref)             thecounter {4.11}
 (hyperref)             text {\numberline {\thesection } Salario o ingresos prom
-edio mensual por sexo, según dominio de estudio}
+edio mensual por \mbox {sexo}, \mbox {según} dominio de estudio}
 (hyperref)             reference {section*.62}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 
 Overfull \hbox (4.15552pt too wide) in paragraph at lines 21--21
 []|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 4.11[]$ $| 
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 21--21
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Salario o ingresos promedio mensua
+l por [],
  []
 
 (./Descripciones/des4_11.tex)
@@ -5568,8 +5645,8 @@ Package hyperref Info: Anchor `section*.69' on input line 3.
 Package hyperref Info: bookmark on input line 3:
 (hyperref)             thecounter {5.2}
 (hyperref)             text {\numberline {\thesection } Denuncias por los delit
-os contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contr
-a la Mujer por departamento de registro}
+os contemplados en la Ley Contra el Femicidio y \mbox {Otras} Formas de Violenc
+ia \mbox {Contra} la Mujer por departamento de registro}
 (hyperref)             reference {section*.69}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5657,8 +5734,8 @@ Package hyperref Info: Anchor `section*.70' on input line 5.
 Package hyperref Info: bookmark on input line 5:
 (hyperref)             thecounter {5.3}
 (hyperref)             text {\numberline {\thesection } Denuncias por los delit
-os contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contr
-a la Mujer, según grupos de edad}
+os contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia \mbox
+ {Contra} la Mujer, según grupos de edad}
 (hyperref)             reference {section*.70}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5741,8 +5818,8 @@ Package hyperref Info: Anchor `section*.71' on input line 7.
 Package hyperref Info: bookmark on input line 7:
 (hyperref)             thecounter {5.4}
 (hyperref)             text {\numberline {\thesection } Denuncia por los delito
-s contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia Contra
- la Mujer, según Pueblo}
+s contemplados en la Ley Contra el Femicidio y Otras Formas de Violencia \mbox 
+{Contra} la Mujer, según Pueblo}
 (hyperref)             reference {section*.71}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -5825,10 +5902,16 @@ Package hyperref Info: Anchor `section*.72' on input line 9.
 Package hyperref Info: bookmark on input line 9:
 (hyperref)             thecounter {5.5}
 (hyperref)             text {\numberline {\thesection } Mujeres víctimas de Vio
-lencia Contra la Mujer, según Pueblos (número de mujeres) }
+lencia Contra la Mujer, \mbox {según} Pueblos (número de mujeres) }
 (hyperref)             reference {section*.72}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
+
+Underfull \hbox (badness 1342) in paragraph at lines 9--9
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Mujeres víctimas de Violencia Cont
+ra la Mujer,
+ []
+
 Package hyperref Info: Reference (link) `Hfootnote.31' on input line 9.
 Package hyperref Info: Anchor `Hfootnote.31' on input line 9.
 LaTeX Info: Symbol \texttwelveudash not provided by
@@ -5837,7 +5920,6 @@ LaTeX Info: Symbol \texttwelveudash not provided by
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 9.
-
 
 ! LaTeX Error: There's no line here to end.
 
@@ -5901,17 +5983,17 @@ Package hyperref Info: Anchor `section*.73' on input line 11.
 Package hyperref Info: bookmark on input line 11:
 (hyperref)             thecounter {5.6}
 (hyperref)             text {\numberline {\thesection } Mujeres víctimas de vio
-lencia Contra la Mujer, según tipo de violencia sufrida }
+lencia Contra la Mujer, \mbox {según} tipo de violencia sufrida}
 (hyperref)             reference {section*.73}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
- (./Descripciones/des5_06.tex
-Underfull \hbox (badness 1337) in paragraph at lines 3--4
-[]\TU/OpenSans-CondLight.ttf(0)/m/n/10.95 Durante 2018 y 2022 se registró 87,91
-1
+
+Underfull \hbox (badness 1484) in paragraph at lines 11--11
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Mujeres víctimas de violencia Cont
+ra la Mujer,
  []
 
-)
+(./Descripciones/des5_06.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 11--11
 []|[]| 
  []
@@ -6062,10 +6144,16 @@ Package hyperref Info: Anchor `section*.75' on input line 15.
 Package hyperref Info: bookmark on input line 15:
 (hyperref)             thecounter {5.8}
 (hyperref)             text {\numberline {\thesection } Muertes violentas de mu
-jeres relacionadas con hechos delictivos}
+jeres relacionadas con \mbox {hechos} delictivos}
 (hyperref)             reference {section*.75}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
+
+Underfull \hbox (badness 1721) in paragraph at lines 15--15
+[]|[]\TU/OpenSans-CondLight.ttf(0)/b/n/20.74 Muertes violentas de mujeres relac
+ionadas con
+ []
+
 LaTeX Info: Symbol \texttwelveudash not provided by
             font family OpenSans-CondLight.ttf(0) in TS1 encoding.
             Default family used instead on input line 15.
@@ -6074,7 +6162,7 @@ LaTeX Info: Symbol \texttwelveudash not provided by
             Default family used instead on input line 15.
 \openout2 = `Graficas/g5_08.aux'.
 
- (./Graficas/g5_08.tex) (./Descripciones/des5_08.tex)
+(./Graficas/g5_08.tex) (./Descripciones/des5_08.tex)
 Overfull \hbox (4.51688pt too wide) in paragraph at lines 15--15
  []|[]| 
  []

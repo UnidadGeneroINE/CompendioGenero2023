@@ -756,8 +756,8 @@ g4_14 <- graficaAnillo(data = c4_14, nombre = paste0(directorioGraficas,"g4_14.t
 # Crear la tabla apartir del indicadpr 9.1 de documento principales resultados 
 # de la ENEI 2022. 
 
-Mujer <- c(21.0)
-Hombre <- c(3.9)
+Mujer <- c(22.3)
+Hombre <- c(3.8)
 
 c4_15 <- data.frame(x = c("Mujer", "Hombre"), y = c(Mujer, Hombre))
 

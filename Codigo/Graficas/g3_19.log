@@ -1,0 +1,517 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.28)  8 JUN 2023 11:45
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**g3_19.tex
+(./g3_19.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+! Undefined control sequence.
+l.1 \resizebox
+              {\textwidth}{!}{\begin{tabular}[t]{ccccccc}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.1 \resizebox{\textwidth}
+                          {!}{\begin{tabular}[t]{ccccccc}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.1 \resizebox{\textwidth}
+                          {!}{\begin{tabular}[t]{ccccccc}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \resizebox{\textwidth}{!
+                            }{\begin{tabular}[t]{ccccccc}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ! ("21) in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+! Undefined control sequence.
+l.2 \toprule
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \cmidrule 
+                          
+l.4 \cmidrule
+             (l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+! Undefined control sequence.
+l.4 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule
+                                          (l{3pt}r{3pt}){5-7}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.6 \midrule
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.7 \cellcolor
+              [HTML]{B6B3FF}{Público} & \cellcolor[HTML]{B6B3FF}{61.4} & \ce...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no P ("50) in font nullfont!
+Missing character: There is no ú ("FA) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+! Undefined control sequence.
+l.7 \cellcolor[HTML]{B6B3FF}{Público} & \cellcolor
+                                                  [HTML]{B6B3FF}{61.4} & \ce...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+! Undefined control sequence.
+l.7 ...\cellcolor[HTML]{B6B3FF}{61.4} & \cellcolor
+                                                  [HTML]{B6B3FF}{38.6} & \ce...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+! Undefined control sequence.
+l.7 ...\cellcolor[HTML]{B6B3FF}{38.6} & \cellcolor
+                                                  [HTML]{B6B3FF}{-} & \cellc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+! Undefined control sequence.
+l.7 ... & \cellcolor[HTML]{B6B3FF}{-} & \cellcolor
+                                                  [HTML]{B6B3FF}{50.6} & \ce...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+! Undefined control sequence.
+l.7 ...\cellcolor[HTML]{B6B3FF}{50.6} & \cellcolor
+                                                  [HTML]{B6B3FF}{49.4} & \ce...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+! Undefined control sequence.
+l.7 ...\cellcolor[HTML]{B6B3FF}{49.4} & \cellcolor
+                                                  [HTML]{B6B3FF}{0.0}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no H ("48) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no P ("50) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no v ("76) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+! Undefined control sequence.
+\@footnotetext ...tins {\reset@font \footnotesize 
+                                                  \interlinepenalty \interfo...
+l.8 ...y Universidad Galileo no reportaron datos.}
+                                                   & 60.7 & 39.3 & - & 36.6 ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@footnotetext ...}\color@begingroup \@makefntext 
+                                                  {\rule \z@ \footnotesep \i...
+l.8 ...y Universidad Galileo no reportaron datos.}
+                                                   & 60.7 & 39.3 & - & 36.6 ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (11.25pt too wide) in paragraph at lines 8--8
+[][]\TU/lmr/m/n/10 La
+ []
+
+
+Overfull \hbox (19.17pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Uni-
+ []
+
+
+Overfull \hbox (16.69pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 ver-
+ []
+
+
+Overfull \hbox (10.05pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 si-
+ []
+
+
+Overfull \hbox (16.12pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 dad
+ []
+
+
+Overfull \hbox (23.51pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Fran-
+ []
+
+
+Overfull \hbox (20.6pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 cisco
+ []
+
+
+Overfull \hbox (21.42pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Mar-
+ []
+
+
+Overfull \hbox (12.25pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 ro-
+ []
+
+
+Overfull \hbox (21.96pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 quín,
+ []
+
+
+Overfull \hbox (19.17pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Uni-
+ []
+
+
+Overfull \hbox (16.69pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 ver-
+ []
+
+
+Overfull \hbox (10.05pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 si-
+ []
+
+
+Overfull \hbox (16.12pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 dad
+ []
+
+
+Overfull \hbox (15.97pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Ru-
+ []
+
+
+Overfull \hbox (11.7pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 ral
+ []
+
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 de
+ []
+
+
+Overfull \hbox (47.85pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Guatemala
+ []
+
+
+Overfull \hbox (5.28pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 y
+ []
+
+
+Overfull \hbox (19.17pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Uni-
+ []
+
+
+Overfull \hbox (16.69pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 ver-
+ []
+
+
+Overfull \hbox (10.05pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 si-
+ []
+
+
+Overfull \hbox (16.12pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 dad
+ []
+
+
+Overfull \hbox (30.63pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 Galileo
+ []
+
+
+Overfull \hbox (10.56pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 no
+ []
+
+
+Overfull \hbox (11.69pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (18.09pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 por-
+ []
+
+
+Overfull \hbox (23.37pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 taron
+ []
+
+
+Overfull \hbox (26.17pt too wide) in paragraph at lines 8--8
+\TU/lmr/m/n/10 datos.| 
+ []
+
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.9 \bottomrule
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+! Emergency stop.
+<*> g3_19.tex
+             
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 32 strings out of 476684
+ 615 string characters out of 5807583
+ 1844012 words of memory out of 5000000
+ 20374 multiletter control sequences out of 15000+600000
+ 512311 words of font info for 35 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 21i,11n,12p,241b,194s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

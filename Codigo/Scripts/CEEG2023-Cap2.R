@@ -1,5 +1,5 @@
 # READ ME: SCRIPT PARA COMPENDIO ESTADÍSTICO CON ENFOQUE DE GÉNERO 2022
-# AUTOR: Aurora Monzon - ABRIL 2023
+# AUTOR: Aurora Monzon - 2023
 
 #################################################################
 ##            	                                               ##

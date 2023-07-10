@@ -1,5 +1,5 @@
 # READ ME: SCRIPT PARA COMPENDIO ESTADÍSTICO CON ENFOQUE DE GÉNERO 2022
-# AUTOR: Aurora Monzon - ABRIL 2023
+# AUTOR: Aurora Monzon y Paula Gálvez Molina - 2023
 
 #################################################################
 ##            	                                               ##
@@ -182,6 +182,49 @@ c5_06 <- data.frame(read.xlsx(xlsxFile = Datos_VCM, sheet = "5_6")) %>%
 
 # Enviar a Latex 
 Tabla5_06 <-  tablaLaTeX(c5_06, opacidad_filas = 0.5, ruta = paste0(directorioGraficas, "Tabla5_06.tex"))
+
+################################################################################
+# 5.7.	Muertes violentas por sexo, según causa de muerte y grupos de edad 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_violentas_por_sexo_según_causa_de_muerte_2018_y_2022.xlsx")
+c5_07A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2018"))
+tablaLaTeX(data = c5_07A, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado",
+                                              "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "g5_07.tex"))
+
+c5_07B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "2022"))
+tablaLaTeX(data = c5_07B, nombre_columnas = c("Grupo Edad", "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado", 
+                                              "Mujeres", "Hombres", "Ignorado",
+                                              "Mujeres", "Hombres", "Ignorado"),
+           nombre_grupos = c(" " = 1, "Asfixia" = 3, "Herida de Arma Blanca" = 3, 
+                             "Herida de arma de fuego" = 3, "Decapitación" = 3), 
+           ruta = paste0(directorioGraficas, "BORRAR.tex"))
+
+################################################################################
+# 5.8. Muertes violentas de mujeres relacionadas con hechos delictivos 
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Hechos_Delictivos\\Muertes_Violentas_de_Mujeres_relacionadas_con_hechos_delictivos_2018-2022.xlsx")
+c5_08A <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "MP"))
+tablaLaTeX(data = c5_08A, ruta = paste0(directorioGraficas, "g5_08.tex"))
+
+c5_08B <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "PNC"))
+tablaLaTeX(data = c5_08B, ruta = paste0(directorioGraficas, "BORRAR.tex"))
+
+################################################################################
+# 5.9. Índice de mortalidad femenina  
+################################################################################
+
+xlsxFile1 <- paste0(directorioBases, "datos_administrativos\\Indicadores_de_Género\\VIOLENCIA\\Tasa_mortalidad_femenina.xlsx")
+c5_09 <- data.frame(read.xlsx(xlsxFile = xlsxFile1, sheet = "Limpia"))
+g9_05 <- graficaLinea(data = c5_09, rotar = F)
+exportarLatex(graph = g9_05, nombre = paste0(directorioGraficas, "g5_09.tex"))
 
 ################################################################################
 # 5.10.	Víctimas de violencia intrafamiliar por sexo, según Pueblos (2018 - 2022)

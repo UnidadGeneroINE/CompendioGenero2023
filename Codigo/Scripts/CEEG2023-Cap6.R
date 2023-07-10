@@ -1,5 +1,5 @@
 # READ ME: SCRIPT PARA COMPENDIO ESTADÍSTICO CON ENFOQUE DE GÉNERO 2022
-# AUTOR: PAULA GÁLVEZ MOLINA - MAYO 2023
+# AUTOR: PAULA GÁLVEZ MOLINA - 2023
 
 
 #################################################################

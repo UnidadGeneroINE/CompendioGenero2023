@@ -1,3 +1,4 @@
+\xpginauxfiletrue 
 \thispagestyle {empty}
 \selectlanguage *{spanish}
 \addvspace {0.6\baselineskip }\color {color3}
@@ -116,7 +117,7 @@
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {4.3\hfil } Población Económicamente Activa por sexo, según dominio de estudio y sector económico}{40}{section*.54}%
 \thispagestyle {empty}
-\contentsline {section}{\hbox to\@tempdima {4.4\hfil } Tasa de participación económica por dominio de \mbox {estudio}, sexo y estado conyugal }{40}{section*.55}%
+\contentsline {section}{\hbox to\@tempdima {4.4\hfil } Población Económicamente Activa por dominio de \mbox {estudio}, sexo y estado conyugal }{40}{section*.55}%
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {4.5\hfil } Población Ocupada por sexo, según rango de edad}{41}{section*.56}%
 \thispagestyle {empty}

@@ -533,8 +533,44 @@ print(sum(c4_07$Hombre))
 
 ################################################################################
 # 4.8.  Población ocupada con acceso a seguro social por sexo, según rama de 
-#       actividad económica Porcentaje 
+#       actividad económica Porcentaje (EN REVISION)
 ################################################################################
+#Correcciones 
+test <- PO  %>%
+  group_by(P03A02, P05C03B_1D) %>%
+  summarise( y = sum(factor) / Testocupados_22 * 100, casos = n()) %>%
+  rename(z = P03A02) %>%
+  rename(x = P05C03B_1D) %>%
+  select(x,z,y)
+
+test2 <- ocupados %>%
+  filter( P05C07A == "Afiliado" |
+          P05C07A == "Beneficiario" | 
+          P05C07A == "Pensionado") %>%
+  group_by(P03A02, P05C03B_1D) %>%
+  summarise( y = sum(factor) / Testocupados * 100, casos = n()) %>%
+  rename(z = P03A02) %>%
+  rename(x = P05C03B_1D) %>%
+  select(x,z,y)
+
+IGGS <- sum(test$y)
+
+Ocupados_seguro <- PO %>%
+  group_by(P05C07A) %>%
+  summarise(y = n())
+
+#total de ocupados afiliados Esto esta mal 
+Testocupados_22<- sum(test$y)
+
+Testocupados <- sum(test2$y)
+
+c4_08 <- test %>%
+  select(P03A02, P05C03B_1D, y) %>%
+  group_by(P03A02, P05C03B_1D) %>%
+  summarise( y = y / Testocupados_22 * 100) %>%
+  rename(z = P03A02) %>%
+  rename(x = P05C03B_1D) %>%
+  select(x,z,y)
 
 #total de ocupados afiliados 
 Totalocupados_22<- sum(ocupados_22$factor)

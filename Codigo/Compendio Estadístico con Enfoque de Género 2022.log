@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.5)  12 DEC 2023 17:10
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.5)  12 DEC 2023 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1522,46 +1522,37 @@ File: Plantilla/Portada_CEEG_2022.pdf Graphic file (type pdf)
  [1
 
 ]
-Package hyperref Info: Anchor `page.2' on input line 10.
- [2
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
 
-]
-(./Generalidades/organizacion.tex)
-File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
-<use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
-
-Overfull \hbox (54.2025pt too wide) has occurred while \output is active
- [][] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 803.61624pt, for example:
-(fancyhdr)                \setlength{\headheight}{803.61624pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
-
-Package hyperref Info: Anchor `page.3' on input line 15.
-[3]
-Package hyperref Info: Anchor `page.4' on input line 15.
- [4
-
-
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
-
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 
 (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./Generalidades/participantes.tex)
+File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
+
+Overfull \hbox (90.3375pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
+Package hyperref Info: Anchor `page.2' on input line 24.
+[2
+
+] (./Generalidades/organizacion.tex)
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
 
@@ -1577,14 +1568,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.5' on input line 22.
+Package hyperref Info: Anchor `page.3' on input line 31.
+[3
+
+
+
+
+]
+Package hyperref Info: Anchor `page.4' on input line 31.
+ [4
+
+
+] (./Generalidades/participantes.tex)
+File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
+<use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
+
+Overfull \hbox (54.2025pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 803.61624pt, for example:
+(fancyhdr)                \setlength{\headheight}{803.61624pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
+
+Package hyperref Info: Anchor `page.5' on input line 38.
 [5]
-Package hyperref Info: Anchor `page.6' on input line 22.
+Package hyperref Info: Anchor `page.6' on input line 38.
  [6
 
 
 ] (./Generalidades/presentacion-Brenda.tex
-Underfull \hbox (badness 10000) in paragraph at lines 23--2
+Underfull \hbox (badness 10000) in paragraph at lines 39--2
 
  []
 
@@ -1609,14 +1627,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.7' on input line 27.
+Package hyperref Info: Anchor `page.7' on input line 43.
 [7]
-Package hyperref Info: Anchor `page.8' on input line 27.
+Package hyperref Info: Anchor `page.8' on input line 43.
  [8
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
@@ -1723,41 +1741,41 @@ Package hyperref Info: Reference (link) `section*.90' on input line 199.
 \tf@toc=\write5
 \openout5 = `"Compendio Estadístico con Enfoque de Género 2022.toc"'.
 
-Package hyperref Info: Anchor `page.11' on input line 32.
+Package hyperref Info: Anchor `page.11' on input line 48.
  [11]
-Package hyperref Info: Anchor `page.0' on input line 35.
+Package hyperref Info: Anchor `page.0' on input line 51.
  [0
 
 
 
 ]
-Package hyperref Info: Anchor `section*.1' on input line 35.
-Package hyperref Info: bookmark on input line 35:
+Package hyperref Info: Anchor `section*.1' on input line 51.
+Package hyperref Info: bookmark on input line 51:
 (hyperref)             thecounter {1}
 (hyperref)             text {\numberline {\thechapter }Población y demografía}
 (hyperref)             reference {section*.1}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 35--35
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 51--51
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
-Package hyperref Info: Anchor `page.1' on input line 35.
+Package hyperref Info: Anchor `page.1' on input line 51.
 [1]
-Package hyperref Info: Anchor `page.2' on input line 35.
+Package hyperref Info: Anchor `page.2' on input line 51.
  [2
 
 
@@ -2569,7 +2587,7 @@ Overfull \hbox (44.82545pt too wide) in paragraph at lines 29--29
  []
 
 )
-Overfull \hbox (10.97784pt too wide) in paragraph at lines 29--37
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 29--53
 []         
  []
 
@@ -2588,38 +2606,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.12' on input line 38.
+Package hyperref Info: Anchor `page.12' on input line 54.
 [12]
-Package hyperref Info: Anchor `section*.17' on input line 38.
-Package hyperref Info: bookmark on input line 38:
+Package hyperref Info: Anchor `section*.17' on input line 54.
+Package hyperref Info: bookmark on input line 54:
 (hyperref)             thecounter {2}
 (hyperref)             text {\numberline {\thechapter }Salud}
 (hyperref)             reference {section*.17}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 38--38
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 54--54
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
 
  []
 
-Package hyperref Info: Anchor `page.13' on input line 38.
+Package hyperref Info: Anchor `page.13' on input line 54.
 [13
 
 
 ]
-Package hyperref Info: Anchor `page.14' on input line 38.
+Package hyperref Info: Anchor `page.14' on input line 54.
  [14
 
 
@@ -3222,7 +3240,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
  []
 
 )
-Overfull \hbox (2.74396pt too wide) in paragraph at lines 22--40
+Overfull \hbox (2.74396pt too wide) in paragraph at lines 22--56
 []   
  []
 
@@ -3244,7 +3262,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.19' on input line 41.
+Package hyperref Info: Anchor `page.19' on input line 57.
 [19
 
 
@@ -3265,42 +3283,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.20' on input line 41.
+Package hyperref Info: Anchor `page.20' on input line 57.
 [20
 
 
 
 ]
-Package hyperref Info: Anchor `section*.28' on input line 41.
-Package hyperref Info: bookmark on input line 41:
+Package hyperref Info: Anchor `section*.28' on input line 57.
+Package hyperref Info: bookmark on input line 57:
 (hyperref)             thecounter {3}
 (hyperref)             text {\numberline {\thechapter }Educación}
 (hyperref)             reference {section*.28}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 41--41
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 57--57
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 
  []
 
-Package hyperref Info: Anchor `page.21' on input line 41.
+Package hyperref Info: Anchor `page.21' on input line 57.
 [21
 
 
 ]
-Package hyperref Info: Anchor `page.22' on input line 41.
+Package hyperref Info: Anchor `page.22' on input line 57.
  [22
 
 
@@ -4681,7 +4699,7 @@ Overfull \hbox (44.82545pt too wide) in paragraph at lines 43--43
  []
 
 )
-Overfull \hbox (10.97784pt too wide) in paragraph at lines 43--43
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 43--59
 []         
  []
 
@@ -4700,42 +4718,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.36' on input line 44.
+Package hyperref Info: Anchor `page.36' on input line 60.
 [36
 
 
 
 ]
-Package hyperref Info: Anchor `section*.51' on input line 44.
-Package hyperref Info: bookmark on input line 44:
+Package hyperref Info: Anchor `section*.51' on input line 60.
+Package hyperref Info: bookmark on input line 60:
 (hyperref)             thecounter {4}
 (hyperref)             text {\numberline {\thechapter }Economía y trabajo}
 (hyperref)             reference {section*.51}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 44--44
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 60--60
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 
  []
 
-Package hyperref Info: Anchor `page.37' on input line 44.
+Package hyperref Info: Anchor `page.37' on input line 60.
 [37
 
 
 ]
-Package hyperref Info: Anchor `page.38' on input line 44.
+Package hyperref Info: Anchor `page.38' on input line 60.
  [38
 
 
@@ -5543,12 +5561,12 @@ Overfull \hbox (44.82545pt too wide) in paragraph at lines 29--29
  []
 
 )
-Overfull \hbox (9.60553pt too wide) in paragraph at lines 27--46
+Overfull \hbox (9.60553pt too wide) in paragraph at lines 27--62
 []        
  []
 
 
-Overfull \hbox (10.97784pt too wide) in paragraph at lines 27--46
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 27--62
 []         
  []
 
@@ -5570,7 +5588,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.45' on input line 46.
+Package hyperref Info: Anchor `page.45' on input line 62.
 [45]
 File: Plantilla/Cintillo_Izquierda_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Izquierda_CEEG_2022.pdf>
@@ -5587,38 +5605,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.46' on input line 47.
+Package hyperref Info: Anchor `page.46' on input line 63.
 [46]
-Package hyperref Info: Anchor `section*.67' on input line 47.
-Package hyperref Info: bookmark on input line 47:
+Package hyperref Info: Anchor `section*.67' on input line 63.
+Package hyperref Info: bookmark on input line 63:
 (hyperref)             thecounter {5}
 (hyperref)             text {\numberline {\thechapter }Violencia}
 (hyperref)             reference {section*.67}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--47
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 47--47
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 63--63
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--47
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 
  []
 
-Package hyperref Info: Anchor `page.47' on input line 47.
+Package hyperref Info: Anchor `page.47' on input line 63.
 [47
 
 
 ]
-Package hyperref Info: Anchor `page.48' on input line 47.
+Package hyperref Info: Anchor `page.48' on input line 63.
  [48
 
 
@@ -6745,7 +6763,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.58' on input line 50.
+Package hyperref Info: Anchor `page.58' on input line 66.
 [58
 
 
@@ -6766,19 +6784,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.59' on input line 50.
+Package hyperref Info: Anchor `page.59' on input line 66.
 [59
 
 
 
 ]
-Package hyperref Info: Anchor `page.60' on input line 50.
+Package hyperref Info: Anchor `page.60' on input line 66.
  [60
 
 
 ]
-Package hyperref Info: Anchor `section*.83' on input line 50.
-Package hyperref Info: bookmark on input line 50:
+Package hyperref Info: Anchor `section*.83' on input line 66.
+Package hyperref Info: bookmark on input line 66:
 (hyperref)             thecounter {6}
 (hyperref)             text {\numberline {\thechapter }Participación \mbox {soc
 iopolítica}}
@@ -6786,35 +6804,35 @@ iopolítica}}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
  []
 
 
-Overfull \hbox (20.9258pt too wide) in paragraph at lines 50--50
+Overfull \hbox (20.9258pt too wide) in paragraph at lines 66--66
  []\TU/OpenSansCondensedBold(0)/m/n/72.26999 Participación 
  []
 
 
-Overfull \hbox (7.30458pt too wide) in paragraph at lines 50--50
+Overfull \hbox (7.30458pt too wide) in paragraph at lines 66--66
  []| 
  []
 
 File: Plantilla/Capitulo_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Capitulo_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 50--50
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 66--66
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
  []
 
-Package hyperref Info: Anchor `page.61' on input line 50.
+Package hyperref Info: Anchor `page.61' on input line 66.
 [61]
-Package hyperref Info: Anchor `page.62' on input line 50.
+Package hyperref Info: Anchor `page.62' on input line 66.
  [62
 
 
@@ -7009,7 +7027,7 @@ Overfull \hbox (67.4098pt too wide) in paragraph at lines 7--7
  []
 
 )
-Overfull \hbox (10.97784pt too wide) in paragraph at lines 7--52
+Overfull \hbox (10.97784pt too wide) in paragraph at lines 7--68
 []         
  []
 
@@ -7031,7 +7049,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.64' on input line 53.
+Package hyperref Info: Anchor `page.64' on input line 69.
 [64]
 File: Plantilla/Cintillo_Derecha_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Cintillo_Derecha_CEEG_2022.pdf>
@@ -7048,61 +7066,61 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.65' on input line 53.
+Package hyperref Info: Anchor `page.65' on input line 69.
 [65]
-Package hyperref Info: Anchor `page.66' on input line 53.
+Package hyperref Info: Anchor `page.66' on input line 69.
  [66
 
 
 ]
-Package hyperref Info: bookmark on input line 53:
+Package hyperref Info: bookmark on input line 69:
 (hyperref)             thecounter {}
 (hyperref)             text {APÉNDICES}
 (hyperref)             reference {section*.87}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `page.67' on input line 53.
+Package hyperref Info: Anchor `page.67' on input line 69.
  [67]
-Package hyperref Info: Anchor `page.68' on input line 53.
+Package hyperref Info: Anchor `page.68' on input line 69.
  [68
 
 
 ]
-Package hyperref Info: Anchor `section*.88' on input line 55.
-Package hyperref Info: bookmark on input line 55:
+Package hyperref Info: Anchor `section*.88' on input line 71.
+Package hyperref Info: bookmark on input line 71:
 (hyperref)             thecounter {A}
 (hyperref)             text {\numberline {\thechapter }Información Ampliada}
 (hyperref)             reference {section*.88}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 
  []
 
 
-Overfull \hbox (3.14061pt too wide) in paragraph at lines 55--55
+Overfull \hbox (3.14061pt too wide) in paragraph at lines 71--71
  []\TU/OpenSansCondensedBold(0)/m/n/72.26999 Información 
  []
 
 File: Plantilla/Apendice_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Apendice_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 55--55
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 71--71
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 
  []
 
-Package hyperref Info: Anchor `page.69' on input line 55.
+Package hyperref Info: Anchor `page.69' on input line 71.
 [69
 
 
 ]
-Package hyperref Info: Anchor `page.70' on input line 55.
+Package hyperref Info: Anchor `page.70' on input line 71.
  [70
 
 
@@ -7180,45 +7198,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.73' on input line 57.
+Package hyperref Info: Anchor `page.73' on input line 73.
 [73
 
 
 
 ]
-Package hyperref Info: Anchor `page.74' on input line 57.
+Package hyperref Info: Anchor `page.74' on input line 73.
  [74
 
 
 
 ]
-Package hyperref Info: Anchor `section*.89' on input line 57.
-Package hyperref Info: bookmark on input line 57:
+Package hyperref Info: Anchor `section*.89' on input line 73.
+Package hyperref Info: bookmark on input line 73:
 (hyperref)             thecounter {B}
 (hyperref)             text {\numberline {\thechapter }Glosario}
 (hyperref)             reference {section*.89}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
 
  []
 
 File: Plantilla/Apendice_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Apendice_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 57--57
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 73--73
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
 
  []
 
-Package hyperref Info: Anchor `page.75' on input line 57.
+Package hyperref Info: Anchor `page.75' on input line 73.
 [75]
-Package hyperref Info: Anchor `page.76' on input line 57.
+Package hyperref Info: Anchor `page.76' on input line 73.
  [76
 
 
@@ -7804,38 +7822,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.80' on input line 59.
+Package hyperref Info: Anchor `page.80' on input line 75.
 [80]
-Package hyperref Info: Anchor `section*.90' on input line 59.
-Package hyperref Info: bookmark on input line 59:
+Package hyperref Info: Anchor `section*.90' on input line 75.
+Package hyperref Info: bookmark on input line 75:
 (hyperref)             thecounter {C}
 (hyperref)             text {\numberline {\thechapter }Fuentes}
 (hyperref)             reference {section*.90}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
 File: Plantilla/Apendice_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Apendice_CEEG_2022.pdf>
 
-Overfull \hbox (54.3663pt too wide) in paragraph at lines 59--59
+Overfull \hbox (54.3663pt too wide) in paragraph at lines 75--75
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
-Package hyperref Info: Anchor `page.81' on input line 59.
+Package hyperref Info: Anchor `page.81' on input line 75.
 [81
 
 
 ]
-Package hyperref Info: Anchor `page.82' on input line 59.
+Package hyperref Info: Anchor `page.82' on input line 75.
  [82
 
 
@@ -7855,7 +7873,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-791.61624pt}.
 
-Package hyperref Info: Anchor `page.83' on input line 61.
+Package hyperref Info: Anchor `page.83' on input line 77.
 [83]
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf>
@@ -7869,7 +7887,7 @@ File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
-Package hyperref Info: Anchor `page.84' on input line 63.
+Package hyperref Info: Anchor `page.84' on input line 79.
 File: Plantilla/Contraportada_CEEG_2022.pdf Graphic file (type pdf)
 <use Plantilla/Contraportada_CEEG_2022.pdf, page 1>
  [84
@@ -7965,11 +7983,11 @@ Package rerunfilecheck Info: File `"Compendio Estadístico con Enfoque de Géner
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38456 strings out of 475591
- 867393 string characters out of 5777375
+ 38469 strings out of 475591
+ 867777 string characters out of 5777375
  1996432 words of memory out of 5000000
- 58418 multiletter control sequences out of 15000+600000
- 568075 words of font info for 138 fonts, out of 8000000 for 9000
+ 58426 multiletter control sequences out of 15000+600000
+ 568107 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,30n,103p,1102b,1482s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

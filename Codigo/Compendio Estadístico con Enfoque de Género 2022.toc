@@ -1,5 +1,7 @@
+\xpginauxfiletrue 
 \thispagestyle {empty}
 \selectlanguage *{spanish}
+\contentsline {part}{I\hspace {1em}title}{3}{part.1}%
 \addvspace {0.6\baselineskip }\color {color3}
 \contentsline {chapter}{\hbox to\@tempdima {1\hfil }Población y demografía}{1}{section*.1}%
 \addvspace {0.2\baselineskip }{\color {color2}\hrule height 0.9pt} \setlength \sp@ce@skip {0.6\baselineskip }\vskip \sp@ce@skip \color {color1}
